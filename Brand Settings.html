@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Infinite Factory OS — Brand & Settings</title>
+<meta name="viewport" content="width=1280" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root { --ok: #1A7F37; --nav: #1F2937; --nav-hover: #2A3441; --nav-active: #111827; --bg: #FFFFFF; --panel: #FAFAFA; --row: #F3F4F6; --border: #E5E7EB; --text: #111827; --text-muted: #6B7280; --text-on-nav: #E5E7EB; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-size: 13px; line-height: 19px; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .app { display: grid; grid-template-columns: 220px 1fr; min-height: 100vh; }
+  .nav { background: var(--nav); color: var(--text-on-nav); padding: 18px 0 14px; display: flex; flex-direction: column; border-right: 1px solid #0b1220; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+  .nav .brand { padding: 0 18px 18px; font-weight: 700; font-size: 14px; color: #fff; display: flex; align-items: center; gap: 9px; }
+  .brand-mark { width: 18px; height: 18px; border-radius: 4px; background: linear-gradient(135deg, #7C3AED 0%, #0E7490 100%); flex: 0 0 auto; }
+  .brand-mark::after { content: ""; position: absolute; inset: 4px; background: var(--nav); border-radius: 1px; }
+  .brand-mark::before { content: ""; position: absolute; left: 7px; top: 3px; bottom: 3px; width: 4px; background: linear-gradient(180deg,#7C3AED,#0E7490); }
+  .nav .group-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #6B7280; padding: 10px 18px 6px; }
+  .nav a { display: flex; align-items: center; gap: 10px; padding: 6px 18px; color: var(--text-on-nav); text-decoration: none; font-size: 13px; line-height: 20px; border-left: 2px solid transparent; }
+  .nav a:hover { background: var(--nav-hover); }
+  .nav a.active { background: var(--nav-active); border-left-color: #fff; color: #fff; font-weight: 600; }
+  .nav-foot { margin-top: auto; padding: 10px 18px; border-top: 1px solid #0b1220; font-size: 11px; color: #9CA3AF; }
+  .nav-foot .who { color: #fff; font-weight: 500; font-size: 12px; }
+  .main { background: var(--bg); display: flex; flex-direction: column; }
+  .pageHead { padding: 16px 24px 12px; border-bottom: 1px solid var(--border); }
+  .pageHead h1 { margin: 0; font-size: 22px; font-weight: 600; }
+  .pageHead .meta { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+  .content { flex: 1; padding: 24px; overflow-y: auto; }
+  .section { margin-bottom: 32px; }
+  .section h2 { font-size: 14px; font-weight: 600; margin: 0 0 16px; }
+  .field-group { background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 16px; margin-bottom: 12px; }
+  .field-group label { display: block; font-weight: 600; font-size: 12px; margin-bottom: 6px; }
+  .field-group input { width: 100%; padding: 8px; border: 1px solid var(--border); border-radius: 4px; font-size: 12px; }
+  .field-group input:focus { outline: none; border-color: #7C3AED; }
+  .btn { background: #0F766E; color: white; padding: 8px 16px; border-radius: 4px; border: none; font-size: 12px; cursor: pointer; }
+  .btn-secondary { background: var(--panel); color: var(--text); border: 1px solid var(--border); }
+</style>
+</head>
+<body>
+<div class="app">
+  <nav class="nav">
+    <div class="brand"><div class="brand-mark"></div> Infinite Factory OS</div>
+    <div class="group-label">Navigation</div>
+    <a href="Home Health.html">Home / Health</a>
+    <a href="Niches.html">Niches</a>
+    <a href="Content Pipeline.html">Content Pipeline</a>
+    <a href="Editor Queue.html">Editor Queue</a>
+    <a href="Scenarios.html">Scenarios</a>
+    <a href="Prompts Agents.html">Prompts & Agents</a>
+    <div class="group-label">Analytics</div>
+    <a href="Performance.html">Performance</a>
+    <a href="Learning Insights.html">Learning Insights</a>
+    <div class="group-label">Business</div>
+    <a href="Offers Intake.html">Offers & Intake</a>
+    <a href="Monetization.html">Monetization</a>
+    <a href="Storefront.html">Storefront</a>
+    <div class="group-label">Settings</div>
+    <a href="Brand Settings.html" class="active">Brand & Settings</a>
+    <div class="nav-foot"><div class="who">David</div>dmurphy@example.com</div>
+  </nav>
+
+  <div class="main">
+    <div class="pageHead">
+      <h1>Brand & Settings</h1>
+      <div class="meta">Brand configuration, account settings, and sub-niches</div>
+    </div>
+
+    <div class="content">
+      <div class="section">
+        <h2>Brand Voice</h2>
+        <div class="field-group">
+          <label>Brand Name</label>
+          <input type="text" value="Modern Parenting Co." />
+        </div>
+        <div class="field-group">
+          <label>Brand Voice & Tone</label>
+          <input type="text" value="Practical, warm, evidence-based, conversational" />
+        </div>
+        <div class="field-group">
+          <label>Brand Values</label>
+          <input type="text" value="Empowering parents, evidence-based strategies, community-first" />
+        </div>
+        <button class="btn">Save Changes</button>
+      </div>
+
+      <div class="section">
+        <h2>Sub-niches Configuration</h2>
+        <div style="background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 16px; margin-bottom: 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border);">
+            <div>
+              <div style="font-weight: 600; font-size: 13px;">Toddler Life</div>
+              <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Status: Active • Voice: Candid, practical</div>
+            </div>
+            <button class="btn btn-secondary">Edit</button>
+          </div>
+        </div>
+
+        <div style="background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 16px; margin-bottom: 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border);">
+            <div>
+              <div style="font-weight: 600; font-size: 13px;">Baby Sleep</div>
+              <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Status: Active • Voice: Scientific, authoritative</div>
+            </div>
+            <button class="btn btn-secondary">Edit</button>
+          </div>
+        </div>
+
+        <div style="background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 16px; margin-bottom: 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border);">
+            <div>
+              <div style="font-weight: 600; font-size: 13px;">School Age Kids</div>
+              <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Status: Active • Voice: Relatable, strategic</div>
+            </div>
+            <button class="btn btn-secondary">Edit</button>
+          </div>
+        </div>
+
+        <button class="btn">+ Add Sub-niche</button>
+      </div>
+
+      <div class="section">
+        <h2>Account & Integrations</h2>
+        <div class="field-group">
+          <label>Primary Email</label>
+          <input type="text" value="dmurphy@example.com" />
+        </div>
+        <div class="field-group">
+          <label>Instagram Accounts Connected</label>
+          <input type="text" value="@modernparentingco (Primary)" disabled />
+        </div>
+        <div style="background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 16px;">
+          <div style="font-size: 12px; color: var(--text-muted);">Connected integrations:</div>
+          <div style="margin-top: 8px; font-size: 12px;">
+            <div>✓ Make.com (workflow automation)</div>
+            <div>✓ Airtable (content database)</div>
+            <div>✓ Cloudflare Pages (hero slides)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

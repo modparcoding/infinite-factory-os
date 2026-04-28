@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Infinite Factory OS — Offers & Intake</title>
+<meta name="viewport" content="width=1280" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root { --ok: #1A7F37; --warn: #B07A00; --err: #C00000; --info: #1F6FEB; --nav: #1F2937; --nav-hover: #2A3441; --nav-active: #111827; --bg: #FFFFFF; --panel: #FAFAFA; --row: #F3F4F6; --border: #E5E7EB; --text: #111827; --text-muted: #6B7280; --text-on-nav: #E5E7EB; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-size: 13px; line-height: 19px; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .app { display: grid; grid-template-columns: 220px 1fr; min-height: 100vh; }
+  .nav { background: var(--nav); color: var(--text-on-nav); padding: 18px 0 14px; display: flex; flex-direction: column; border-right: 1px solid #0b1220; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+  .nav .brand { padding: 0 18px 18px; font-weight: 700; font-size: 14px; color: #fff; display: flex; align-items: center; gap: 9px; }
+  .brand-mark { width: 18px; height: 18px; border-radius: 4px; background: linear-gradient(135deg, #7C3AED 0%, #0E7490 100%); position: relative; flex: 0 0 auto; }
+  .brand-mark::after { content: ""; position: absolute; inset: 4px; background: var(--nav); border-radius: 1px; }
+  .brand-mark::before { content: ""; position: absolute; left: 7px; top: 3px; bottom: 3px; width: 4px; background: linear-gradient(180deg,#7C3AED,#0E7490); }
+  .nav .group-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #6B7280; padding: 10px 18px 6px; }
+  .nav a { display: flex; align-items: center; gap: 10px; padding: 6px 18px; color: var(--text-on-nav); text-decoration: none; font-size: 13px; line-height: 20px; border-left: 2px solid transparent; }
+  .nav a:hover { background: var(--nav-hover); }
+  .nav a.active { background: var(--nav-active); border-left-color: #fff; color: #fff; font-weight: 600; }
+  .nav-foot { margin-top: auto; padding: 10px 18px; border-top: 1px solid #0b1220; font-size: 11px; color: #9CA3AF; }
+  .nav-foot .who { color: #fff; font-weight: 500; font-size: 12px; }
+  .main { background: var(--bg); display: flex; flex-direction: column; }
+  .pageHead { padding: 16px 24px 12px; border-bottom: 1px solid var(--border); }
+  .pageHead h1 { margin: 0; font-size: 22px; font-weight: 600; }
+  .pageHead .meta { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+  .content { flex: 1; padding: 24px; overflow-y: auto; }
+  .table { width: 100%; border-collapse: collapse; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .table th { background: var(--panel); padding: 10px 12px; text-align: left; font-weight: 600; font-size: 12px; border-bottom: 1px solid var(--border); }
+  .table td { padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 12px; }
+  .table tr:hover { background: var(--row); }
+  .offer-card { background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 16px; margin-bottom: 12px; }
+  .offer-card .title { font-weight: 600; font-size: 13px; margin: 0 0 4px; }
+  .offer-card .network { font-size: 11px; color: var(--text-muted); }
+  .btn { background: #0F766E; color: white; padding: 6px 12px; border-radius: 4px; border: none; font-size: 12px; cursor: pointer; }
+</style>
+</head>
+<body>
+<div class="app">
+  <nav class="nav">
+    <div class="brand"><div class="brand-mark"></div> Infinite Factory OS</div>
+    <div class="group-label">Navigation</div>
+    <a href="Home Health.html">Home / Health</a>
+    <a href="Niches.html">Niches</a>
+    <a href="Content Pipeline.html">Content Pipeline</a>
+    <a href="Editor Queue.html">Editor Queue</a>
+    <a href="Scenarios.html">Scenarios</a>
+    <a href="Prompts Agents.html">Prompts & Agents</a>
+    <div class="group-label">Analytics</div>
+    <a href="Performance.html">Performance</a>
+    <a href="Learning Insights.html">Learning Insights</a>
+    <div class="group-label">Business</div>
+    <a href="Offers Intake.html" class="active">Offers & Intake</a>
+    <a href="Monetization.html">Monetization</a>
+    <a href="Storefront.html">Storefront</a>
+    <div class="group-label">Settings</div>
+    <a href="Brand Settings.html">Brand & Settings</a>
+    <div class="nav-foot"><div class="who">David</div>dmurphy@example.com</div>
+  </nav>
+
+  <div class="main">
+    <div class="pageHead">
+      <h1>Offers & Intake</h1>
+      <div class="meta">Affiliate networks & new partner queue</div>
+    </div>
+
+    <div class="content">
+      <h2 style="font-size: 14px; font-weight: 600; margin: 0 0 16px;">Active Offers (5)</h2>
+      
+      <div class="offer-card">
+        <div style="display: flex; justify-content: space-between;">
+          <div>
+            <div class="title">Scandiborn</div>
+            <div class="network">Network: Awin • 0 sales</div>
+          </div>
+          <button class="btn">Manage</button>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div style="display: flex; justify-content: space-between;">
+          <div>
+            <div class="title">Baker Ross</div>
+            <div class="network">Network: Awin • 0 sales</div>
+          </div>
+          <button class="btn">Manage</button>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div style="display: flex; justify-content: space-between;">
+          <div>
+            <div class="title">Kokoso Baby</div>
+            <div class="network">Network: Awin • 0 sales</div>
+          </div>
+          <button class="btn">Manage</button>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div style="display: flex; justify-content: space-between;">
+          <div>
+            <div class="title">Timmee Tippee</div>
+            <div class="network">Network: Awin • 0 sales</div>
+          </div>
+          <button class="btn">Manage</button>
+        </div>
+      </div>
+
+      <div class="offer-card">
+        <div style="display: flex; justify-content: space-between;">
+          <div>
+            <div class="title">Manscaped Lawn Mower 5.0</div>
+            <div class="network">Network: Amazon • 0 sales</div>
+          </div>
+          <button class="btn">Manage</button>
+        </div>
+      </div>
+
+      <h2 style="font-size: 14px; font-weight: 600; margin: 32px 0 16px;">Intake Queue (3 pending)</h2>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Brand</th>
+            <th>Network</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>DINORUN Montessori Toy</td>
+            <td>Amazon</td>
+            <td style="color: var(--warn);">⚠ Review needed</td>
+            <td><button class="btn">Review</button></td>
+          </tr>
+          <tr>
+            <td>Instant Pot Duo 7-in-1</td>
+            <td>Amazon</td>
+            <td style="color: var(--warn);">⚠ Pending approval</td>
+            <td><button class="btn">Approve</button></td>
+          </tr>
+          <tr>
+            <td>Graco Pack 'N Play</td>
+            <td>Amazon</td>
+            <td style="color: var(--warn);">⚠ Awaiting docs</td>
+            <td><button class="btn">Follow up</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>

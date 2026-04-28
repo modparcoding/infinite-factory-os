@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Infinite Factory OS — Niches</title>
+<meta name="viewport" content="width=1280" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ok: #1A7F37; --warn: #B07A00; --err: #C00000; --info: #1F6FEB;
+    --type-viral: #FDE68A; --type-authority: #BFDBFE; --type-engagement: #BBF7D0; --type-sales: #FECACA;
+    --pillar-monitor: #0E7490; --pillar-execute: #7C3AED; --pillar-edit: #0F766E; --pillar-monetize: #B45309;
+    --nav: #1F2937; --nav-hover: #2A3441; --nav-active: #111827;
+    --bg: #FFFFFF; --panel: #FAFAFA; --row: #F3F4F6; --border: #E5E7EB; --border-strong: #D1D5DB;
+    --text: #111827; --text-muted: #6B7280; --text-faint: #9CA3AF;
+    --text-on-nav: #E5E7EB; --text-on-nav-muted: #9CA3AF;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    line-height: 19px;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; font-feature-settings: "tnum" 1; }
+  .app { display: grid; grid-template-columns: 220px 1fr; min-height: 100vh; }
+  
+  /* Navigation */
+  .nav {
+    background: var(--nav);
+    color: var(--text-on-nav);
+    padding: 18px 0 14px;
+    display: flex; flex-direction: column;
+    border-right: 1px solid #0b1220;
+    position: sticky; top: 0; height: 100vh;
+    overflow-y: auto;
+  }
+  .nav .brand {
+    padding: 0 18px 18px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    color: #fff;
+    display: flex; align-items: center; gap: 9px;
+  }
+  .brand-mark {
+    width: 18px; height: 18px; border-radius: 4px;
+    background: linear-gradient(135deg, #7C3AED 0%, #0E7490 100%);
+    position: relative;
+    flex: 0 0 auto;
+  }
+  .brand-mark::after {
+    content: ""; position: absolute; inset: 4px; background: var(--nav);
+    border-radius: 1px;
+  }
+  .brand-mark::before {
+    content: ""; position: absolute; left: 7px; top: 3px; bottom: 3px; width: 4px; background: linear-gradient(180deg,#7C3AED,#0E7490);
+  }
+  .nav .group-label {
+    font-size: 10px; line-height: 14px; text-transform: uppercase;
+    letter-spacing: 0.08em; color: #6B7280;
+    padding: 10px 18px 6px;
+  }
+  .nav a {
+    display: flex; align-items: center; gap: 10px;
+    padding: 6px 18px; color: var(--text-on-nav);
+    text-decoration: none; font-size: 13px; line-height: 20px;
+    border-left: 2px solid transparent;
+  }
+  .nav a:hover { background: var(--nav-hover); }
+  .nav a.active {
+    background: var(--nav-active);
+    border-left-color: #fff;
+    color: #fff; font-weight: 600;
+  }
+  .nav a .dot {
+    width: 6px; height: 6px; border-radius: 50%; background: transparent;
+  }
+  .nav a.active .dot { background: #fff; }
+  .nav a .badge {
+    margin-left: auto;
+    background: #374151; color: #E5E7EB;
+    font-size: 10px; line-height: 14px;
+    padding: 1px 6px; border-radius: 10px;
+    font-weight: 600;
+  }
+  .nav-foot {
+    margin-top: auto;
+    padding: 10px 18px;
+    border-top: 1px solid #0b1220;
+    font-size: 11px; line-height: 15px; color: var(--text-on-nav-muted);
+  }
+  .nav-foot .who { color: #fff; font-weight: 500; font-size: 12px; }
+
+  /* Content */
+  .main { background: var(--bg); display: flex; flex-direction: column; }
+  .pageHead {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    padding: 16px 24px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .pageHead h1 {
+    margin: 0; font-size: 22px; line-height: 28px;
+    font-weight: 600; letter-spacing: -0.015em;
+  }
+  .pageHead h1 .light { color: var(--text-muted); font-weight: 400; }
+  .pageHead .meta {
+    display: flex; gap: 10px; align-items: center;
+    font-size: 12px; color: var(--text-muted);
+  }
+
+  .content {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+  }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px;
+  }
+  .card h3 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .card p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .table th {
+    background: var(--panel);
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+  }
+  .table tr:hover { background: var(--row); }
+  .table tr:last-child td { border-bottom: none; }
+
+  .stat-box {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px;
+    text-align: center;
+  }
+  .stat-box .value {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 8px 0;
+    color: var(--text);
+  }
+  .stat-box .label {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <nav class="nav">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      Infinite Factory OS
+    </div>
+    
+    <div class="group-label">Navigation</div>
+    <a href="Home Health.html">Home / Health</a>
+    <a href="Niches.html" class="active">Niches</a>
+    <a href="Content Pipeline.html">Content Pipeline</a>
+    <a href="Editor Queue.html">Editor Queue <span class="badge">5</span></a>
+    <a href="Scenarios.html">Scenarios</a>
+    <a href="Prompts Agents.html">Prompts & Agents</a>
+    
+    <div class="group-label">Analytics</div>
+    <a href="Performance.html">Performance</a>
+    <a href="Learning Insights.html">Learning Insights</a>
+    
+    <div class="group-label">Business</div>
+    <a href="Offers Intake.html">Offers & Intake</a>
+    <a href="Monetization.html">Monetization</a>
+    <a href="Storefront.html">Storefront</a>
+    
+    <div class="group-label">Settings</div>
+    <a href="Brand Settings.html">Brand & Settings</a>
+
+    <div class="nav-foot">
+      <div class="who">David</div>
+      dmurphy@example.com
+    </div>
+  </nav>
+
+  <div class="main">
+    <div class="pageHead">
+      <h1>Niches</h1>
+      <div class="meta">Sub-niche overview & performance</div>
+    </div>
+
+    <div class="content">
+      <div class="grid">
+        <div class="card">
+          <h3>Toddler Life</h3>
+          <p>Status: Active</p>
+          <p>Posts this week: 8</p>
+          <p>Reach: 3.2k</p>
+        </div>
+        <div class="card">
+          <h3>Baby Sleep</h3>
+          <p>Status: Active</p>
+          <p>Posts this week: 11</p>
+          <p>Reach: 4.1k</p>
+        </div>
+        <div class="card">
+          <h3>School Age Kids</h3>
+          <p>Status: Active</p>
+          <p>Posts this week: 10</p>
+          <p>Reach: 2.6k</p>
+        </div>
+        <div class="card">
+          <h3>Family Meals</h3>
+          <p>Status: Active</p>
+          <p>Posts this week: 9</p>
+          <p>Reach: 2.5k</p>
+        </div>
+        <div class="card">
+          <h3>Dad Life</h3>
+          <p>Status: Paused</p>
+          <p>Posts this week: 0</p>
+          <p>Reach: —</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 32px;">
+        <h2 style="font-size: 16px; margin: 0 0 16px;">Performance snapshot — all niches</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Sub-niche</th>
+              <th>Pipeline</th>
+              <th>Posts/wk</th>
+              <th>Reach</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Toddler Life</td>
+              <td>8</td>
+              <td>5</td>
+              <td>3.2k</td>
+              <td style="color: var(--ok);">● Active</td>
+            </tr>
+            <tr>
+              <td>Baby Sleep</td>
+              <td>11</td>
+              <td>6</td>
+              <td>4.1k</td>
+              <td style="color: var(--ok);">● Active</td>
+            </tr>
+            <tr>
+              <td>School Age Kids</td>
+              <td>10</td>
+              <td>4</td>
+              <td>2.6k</td>
+              <td style="color: var(--ok);">● Active</td>
+            </tr>
+            <tr>
+              <td>Family Meals</td>
+              <td>9</td>
+              <td>5</td>
+              <td>2.5k</td>
+              <td style="color: var(--ok);">● Active</td>
+            </tr>
+            <tr>
+              <td>Dad Life</td>
+              <td>0</td>
+              <td>0</td>
+              <td>—</td>
+              <td style="color: var(--warn);">● Paused</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

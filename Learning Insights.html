@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Infinite Factory OS — Learning Insights</title>
+<meta name="viewport" content="width=1280" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root { --ok: #1A7F37; --warn: #B07A00; --err: #C00000; --info: #1F6FEB; --nav: #1F2937; --nav-hover: #2A3441; --nav-active: #111827; --bg: #FFFFFF; --panel: #FAFAFA; --row: #F3F4F6; --border: #E5E7EB; --text: #111827; --text-muted: #6B7280; --text-on-nav: #E5E7EB; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-size: 13px; line-height: 19px; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .app { display: grid; grid-template-columns: 220px 1fr; min-height: 100vh; }
+  .nav { background: var(--nav); color: var(--text-on-nav); padding: 18px 0 14px; display: flex; flex-direction: column; border-right: 1px solid #0b1220; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+  .nav .brand { padding: 0 18px 18px; font-weight: 700; font-size: 14px; color: #fff; display: flex; align-items: center; gap: 9px; }
+  .brand-mark { width: 18px; height: 18px; border-radius: 4px; background: linear-gradient(135deg, #7C3AED 0%, #0E7490 100%); position: relative; flex: 0 0 auto; }
+  .brand-mark::after { content: ""; position: absolute; inset: 4px; background: var(--nav); border-radius: 1px; }
+  .brand-mark::before { content: ""; position: absolute; left: 7px; top: 3px; bottom: 3px; width: 4px; background: linear-gradient(180deg,#7C3AED,#0E7490); }
+  .nav .group-label { font-size: 10px; line-height: 14px; text-transform: uppercase; letter-spacing: 0.08em; color: #6B7280; padding: 10px 18px 6px; }
+  .nav a { display: flex; align-items: center; gap: 10px; padding: 6px 18px; color: var(--text-on-nav); text-decoration: none; font-size: 13px; line-height: 20px; border-left: 2px solid transparent; }
+  .nav a:hover { background: var(--nav-hover); }
+  .nav a.active { background: var(--nav-active); border-left-color: #fff; color: #fff; font-weight: 600; }
+  .nav-foot { margin-top: auto; padding: 10px 18px; border-top: 1px solid #0b1220; font-size: 11px; color: #9CA3AF; }
+  .nav-foot .who { color: #fff; font-weight: 500; font-size: 12px; }
+  .main { background: var(--bg); display: flex; flex-direction: column; }
+  .pageHead { padding: 16px 24px 12px; border-bottom: 1px solid var(--border); }
+  .pageHead h1 { margin: 0; font-size: 22px; font-weight: 600; }
+  .pageHead .meta { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+  .content { flex: 1; padding: 24px; overflow-y: auto; }
+  .insight-card { background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 16px; margin-bottom: 16px; }
+  .insight-card .title { font-weight: 600; font-size: 13px; margin: 0 0 8px; }
+  .insight-card .desc { font-size: 12px; color: var(--text-muted); margin: 0 0 8px; }
+  .insight-card .tag { display: inline-block; background: rgba(31, 111, 235, 0.1); color: var(--info); padding: 2px 8px; border-radius: 3px; font-size: 10px; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="app">
+  <nav class="nav">
+    <div class="brand"><div class="brand-mark"></div> Infinite Factory OS</div>
+    <div class="group-label">Navigation</div>
+    <a href="Home Health.html">Home / Health</a>
+    <a href="Niches.html">Niches</a>
+    <a href="Content Pipeline.html">Content Pipeline</a>
+    <a href="Editor Queue.html">Editor Queue</a>
+    <a href="Scenarios.html">Scenarios</a>
+    <a href="Prompts Agents.html">Prompts & Agents</a>
+    <div class="group-label">Analytics</div>
+    <a href="Performance.html">Performance</a>
+    <a href="Learning Insights.html" class="active">Learning Insights</a>
+    <div class="group-label">Business</div>
+    <a href="Offers Intake.html">Offers & Intake</a>
+    <a href="Monetization.html">Monetization</a>
+    <a href="Storefront.html">Storefront</a>
+    <div class="group-label">Settings</div>
+    <a href="Brand Settings.html">Brand & Settings</a>
+    <div class="nav-foot"><div class="who">David</div>dmurphy@example.com</div>
+  </nav>
+
+  <div class="main">
+    <div class="pageHead">
+      <h1>Learning Insights</h1>
+      <div class="meta">Winning hooks, formats, and themes</div>
+    </div>
+
+    <div class="content">
+      <h2 style="font-size: 14px; font-weight: 600; margin: 0 0 16px;">Top Performing Hooks</h2>
+      
+      <div class="insight-card">
+        <div class="title">"You wish you'd known this earlier"</div>
+        <div class="desc">9 posts • Avg reach: 3.8k • Engagement: 11.2%</div>
+        <div class="tag">VIRAL</div>
+      </div>
+
+      <div class="insight-card">
+        <div class="title">"Tonight you'll wish you'd known this"</div>
+        <div class="desc">7 posts • Avg reach: 3.2k • Engagement: 8.9%</div>
+        <div class="tag">VIRAL</div>
+      </div>
+
+      <div class="insight-card">
+        <div class="title">"For toddlers who fight bedtime..."</div>
+        <div class="desc">12 posts • Avg reach: 2.9k • Engagement: 9.4%</div>
+        <div class="tag">ENGAGEMENT</div>
+      </div>
+
+      <div class="insight-card">
+        <div class="title">"Here's what nobody tells you about..."</div>
+        <div class="desc">8 posts • Avg reach: 3.1k • Engagement: 10.1%</div>
+        <div class="tag">AUTHORITY</div>
+      </div>
+
+      <h2 style="font-size: 14px; font-weight: 600; margin: 32px 0 16px;">Content Format Winners</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+        <div class="insight-card">
+          <div class="title">Carousel (5+ slides)</div>
+          <div class="desc">Avg reach: 3.5k • 12.3% engagement</div>
+        </div>
+        <div class="insight-card">
+          <div class="title">Reel (15-30s)</div>
+          <div class="desc">Avg reach: 4.1k • 13.8% engagement</div>
+        </div>
+        <div class="insight-card">
+          <div class="title">Static Image</div>
+          <div class="desc">Avg reach: 1.8k • 6.2% engagement</div>
+        </div>
+        <div class="insight-card">
+          <div class="title">Text + Image</div>
+          <div class="desc">Avg reach: 2.3k • 7.9% engagement</div>
+        </div>
+      </div>
+
+      <h2 style="font-size: 14px; font-weight: 600; margin: 32px 0 16px;">Best Publishing Times</h2>
+      <div class="insight-card">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+          <div style="text-align: center;">
+            <div style="font-size: 16px; font-weight: 700;">8am</div>
+            <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">Peak reach</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 16px; font-weight: 700;">1pm</div>
+            <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">Secondary peak</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 16px; font-weight: 700;">7pm</div>
+            <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">Evening surge</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
