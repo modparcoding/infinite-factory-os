@@ -1,0 +1,585 @@
+INFINITE FACTORY OS
+Design Brief for Claude Design
+An operator UI for the multi-niche autonomous content &amp; monetization system
+Prepared by Claude · 2026-04-25
+Source: infinite_factory_blueprint_v37.docx + live Airtable read
+Contents
+1. What we are building
+Infinite Factory OS is a single operator surface for the autonomous Instagram affiliate content system that today is run across Airtable, Make.com, fal.ai, Cloudflare Workers, the Instagram Graph API, OpenAI, and Awin. The system already has 35 Airtable tables and 25 Make.com scenarios spread across 6 layers of automation. Operating it currently requires opening four to six different consoles and reasoning across them by hand.
+The OS does not replace those backends. It puts a single, business-language UI in front of them so that one person — and eventually a small team and a few collaborating agents — can monitor the system, execute work that needs human judgment, edit prompts and content, and grow revenue across multiple niches without losing the thread.
+It must scale across many niches in parallel. Today: one parent niche (Parenting &amp; Family) with five sub-niches (one paused). Within months: more parent niches and dozens of sub-niches. The architecture must be reusable, modular, and non-bespoke.
+1.1 Working name and naming alternatives
+Working title: Infinite Factory OS. Final name to be chosen by Dave; alternatives to consider:
+Factory Floor — emphasises the hands-on, operator-day-to-day feel
+Atlas — a single map across niches, scenarios, content, and revenue
+Mission Control — frames it as a launch / operations console
+CEO Console — keeps the original framing of an executive surface
+Studio — ties to the four-content-type creative model
+1.2 Why now
+The system has matured past the point where ad-hoc inspection of Airtable tables is enough. As of 2026-04-25 there are 293 Ideas, 152 Captions, 104 Assets, ~72 published posts, 7 affiliate offers, 1 active account, 1 storefront site, and 0 sales recorded. The bottleneck is no longer creation; it is decision-making, rework, and routing across surfaces. A purpose-built operator UI moves the limit out from human attention.
+2. Audience and use cases
+2.1 Primary user
+Dave — founder, CEO, and currently the only operator. Already knows every table, scenario, and prompt by name. The OS is built for him first, which means: dense information, technical labels are fine (Airtable IDs, Make scenario IDs, error codes), no marketing polish.
+2.2 Future users
+Codex — collaborating coding agent that needs to read state and execute structured actions; UI should expose data shapes that an agent can also consume.
+Niche operators — once additional niches launch, lower-trust users who manage one niche each.
+Stakeholders / partners — a future read-only &quot;investor view&quot; is a v3 concern, not MVP.
+2.3 Top jobs to be done
+Morning health check: in 30 seconds, see if the factory ran overnight and which scenarios are red.
+Approve content: clear the Editor Queue without leaving the OS — preview, edit caption, re-render slide, approve, publish.
+Diagnose a broken scenario: see error rate, last execution, recent payloads, and one-click open in Make.com.
+Edit a prompt safely: change a system prompt with a versioned snapshot, see diff, roll back if needed.
+Grow a niche: launch a new sub-niche from a brief, monitor pipeline filling, see first revenue come in.
+Add an offer: paste a URL, watch the intake queue enrich it, decide whether it goes on the storefront and the bio.
+See what is making money: weekly per-niche revenue, top offers, cost-per-publish trend.
+3. The four pillars
+The system is organised around four operator pillars. Every module satisfies at least one. The home page is the only place where all four are visible simultaneously; everything else is specialised.
+Pillar
+One-line
+Key actions enabled
+MONITOR
+Is the factory healthy and the business growing?
+Layer health · scenario error rates · last-publish time · KPI cards · per-niche performance · revenue trend
+EXECUTE
+Take work that needs me forward.
+Run scenario · approve content · re-render slide · publish · launch new niche · score new offer · rebuild storefront feed
+EDIT
+Change the system safely.
+Edit prompt with version snapshot · update sub-niche brief · rewrite caption · adjust CTA · update brand voice · merge blueprint changes
+MONETIZE
+Grow revenue across niches.
+Per-niche revenue · top offers · intake new affiliate offer · storefront eligibility · attribution · bio-link priority
+4. Sitemap
+Twelve modules organised under the four pillars. The sitemap is colour-coded: each module shows the pillars it satisfies. The MVP set (5 modules) is identified in section 11.
+Figure 1 · Sitemap with pillar mapping and live snapshot 2026-04-25
+5. Module map
+Each module is bound to specific Airtable tables and Make.com scenarios. Moving Claude Design straight to a working data model.
+#
+Module
+Pillars
+Backing Airtable tables
+Backing Make scenarios
+MVP
+1
+Home / Health
+M, X
+Ideas, Assets, Captions, Sub-Niches, Error Log
+All scenario telemetry
+Yes
+2
+Niches
+M, E
+Niches, Sub-Niches, Brand Briefs, Parent Niche Briefs, Accounts
+S1a, S1b
+No
+3
+Content Pipeline
+M, X, E
+Ideas, Scripts, Captions, Assets, Carousel Slides
+S2b–S2e
+Yes
+4
+Editor Queue
+X, E
+Assets, Editor Reviews, Captions, Carousel Slides
+S2d
+Yes
+5
+Scenarios
+M, X
+Error Log (telemetry only)
+All 25 scenarios via Make API
+No
+6
+Prompts &amp; Agents
+E
+Prompt Templates
+S2b, S2c, S2d (which call OpenAI)
+No
+7
+Performance
+M
+Performance, Assets, Accounts
+S4a (when fixed)
+No
+8
+Learning Insights
+M, E
+Learning Insights, Performance
+S4b
+No
+9
+Offers &amp; Intake
+Mz, E
+Affiliate Offers, Offer Intake Queue, Products, Keyword Tags
+S5g
+No
+10
+Monetization
+M, Mz
+Sales, Leads, Affiliate Offers, Sub-Niches, Accounts
+S5a–S5f
+Yes
+11
+Storefront
+Mz, E
+Storefront Sites, Storefront Sub-Niches, Storefront Hero Slides, Storefront Sections, Storefront Feed
+S6a/b/c (named S5i/j/k in Make)
+No
+12
+Brand &amp; Settings
+E
+Sub-Niches, Niches, Accounts, Carousel Render Identities, Carousel Templates
+S1a, S6 brand setup
+Yes
+Pillar key: M = Monitor · X = Execute · E = Edit · Mz = Monetize.
+6. Key screens
+Four wireframes follow. They are intentionally low-fidelity — Claude Design will produce the polished mockups; these define structure, density, and content slots.
+6.1 Home / Health — hybrid CEO + Operator
+The only page where both the operator concerns and the CEO concerns coexist. Left half answers &quot;is the factory healthy?&quot;. Right half answers &quot;is the business growing?&quot;. On smaller viewports, the two halves collapse to tabs.
+Components on the operator side:
+Layer health row — five chips, one per layer, with status pulled from active blockers + scenario error rates.
+Active blockers panel — top 8 with priority, age, and one-click drill into the relevant module or scenario.
+Throughput sparkline — 14-day history of Ideas → Captions → Assets → Published. The drop on Apr 25 (S2b stop) should be visually obvious.
+Components on the CEO side:
+KPI strip — Posts published (30d), Total reach, Affiliate clicks, Net revenue.
+Sub-niches table — per sub-niche pipeline depth, posts/wk, reach, status. Includes &quot;Launch new niche&quot; button.
+Decisions waiting on you — list of items requiring human input across modules.
+Figure 2 · Home / Health — hybrid layout
+6.2 Content Pipeline — kanban over the production funnel
+Every Idea moves left-to-right through six columns: Ideas → Scripts &amp; Captions → Assets → Editor Gate → Published → Cleanup. Filters at top by sub-niche, content type (VIRAL / AUTHORITY / ENGAGEMENT / SALES — colour-coded with the same tokens used everywhere), and format (Reel / Carousel / Static). Each card is a real Airtable record. Click opens a side drawer with full record + edit + run-scenario actions. Drag between columns triggers a status change with confirmation.
+Why kanban: the Make.com pipeline is already a left-to-right flow; mirroring it makes drop-offs (e.g. 293 Ideas vs 152 Captions vs 104 Assets vs 72 Published) immediately visible.
+Figure 3 · Content Pipeline — filterable kanban
+6.3 Editor Queue — single-screen approval surface
+Left rail: queue list. Right pane: full asset detail with carousel preview, caption text, Editor Agent v2 reasoning, audit trail, and an action bar (Approve · Edit caption + retry · Re-render slide · Reject · Skip). Designed so a single review takes ~30 seconds.
+Editor Agent v2 reasoning is shown verbatim from Airtable Editor Reviews. Score breakdown (Hook, CTA, Brand Fit, Clarity, Engagement) is rendered as a small radar or bar set. The CTA flag and contamination rule outputs are highlighted because they are the most common rejection reason.
+Figure 4 · Editor Queue — list + detail
+6.4 Monetization — revenue across niches
+Top KPI strip; main chart is per-sub-niche revenue stacked over time once Awin starts reporting; right-hand table lists top offers; bottom-left surfaces the Offer Intake Queue with the current S5g failure mode visible; bottom-right shows the storefront status. This is the page that earns its keep when revenue exists.
+Figure 5 · Monetization — revenue, offers, intake, storefront
+7. Data model — what each screen shows
+Every screen is grounded in a real Airtable record shape. Field names below come from a live read of base appLHjLQKQEM8j8Tm on 2026-04-25. Use these exact names in mockups.
+7.1 Ideas (tblbdoBNRQNmmPNWn) — 35 fields, 293 records
+Most-used fields: Idea ID, Idea Text, Sub-Niche, Status, Make Status, Type, Format, Production Lifecycle, Hook Style, Emotion Trigger, Content Pattern, Account, CEO Custom Instructions, Carousel Slides, Cleanup Decision.
+Status enum: In Production (210), Rejected (45), Draft (38). Make Status enum: Pending (233), Success (60). Type enum: Viral (155), Sales (99), Authority (20), Engagement (19). Format enum: Carousel (51), Reel (28), Static (21), empty (193).
+7.2 Assets (tblTxolPEjAvOzIdV) — 55 fields, 104 records
+Most-used: Asset ID, Account, Caption, Hook (lookup), CTA (lookup), File, URL, Make Status, Editor Decision, Publishing Queue, Instagram Media ID, Video Engine, Content Tier, Routing Status, Carousel Slides, Asset Lifecycle, Posted URL, Instagram Publish Mode, Carousel Publish JSON, Carousel Slide URLs.
+Make Status enum: Success (~95), Pending (~3), Error (3 — Asset-243, Asset-284, Asset-286). Editor Decision enum: Published, Rejected, Manual Review, Auto Publish, Auto Publish with Minor Edit.
+7.3 Captions (tbloKHh6R95ZTZiLC) — 23 fields, 152 records
+Most-used: Caption ID, Script (link), Caption Text, Hook, CTA, Make Status, Plan Review Status, Plan Review Notes, Carousel Slide Plan JSON, Carousel Plan QA Status, Carousel Plan QA Notes.
+Plan Review Status enum: Approved, Auto-Approved, Pending, Rejected, plus Carousel Plan QA Status: Valid (current default).
+7.4 Sub-Niches (tblDipl7C4g10KBqF) — 37 fields, 6 records
+Most-used: Sub-Niche Name, Parent Niche, Brand Voice, Target Audience, Keywords, Global CTA, Pipeline Count, Visual Style Guide, Brand Colours, Music Style, Status, Hook Patterns, CTA Style, Reel Style, Carousel Render Identity Override.
+Active sub-niches: Toddler Life (8 ideas), Baby Sleep (11), School Age Kids (10), Family Meals (9). Paused: Dad Life. Plus one empty record.
+7.5 Affiliate Offers (tble469gEhJSaSJok) — 43 fields, 7 records
+Most-used: Offer Name, Affiliate Link, Sub-Niche, Offer CTA, Active?, Network, Brand, Commission Rate, Cookie Length, Product Type, Offer Scope, Storefront Title, Storefront Subtitle, Image URL, Bio Live, Bio Sort Order, Storefront Eligible (formula), Currently Eligible (formula).
+Networks: Awin (5: Scandiborn, Baker Ross, Kokoso Baby, Tommee Tippee, plus one), Amazon Associates (3: Manscaped, DINORUN, Instant Pot). All Active = true. All Total Sales = 0.
+7.6 Sales / Leads / Performance — current state
+Sales (tbl0iwDQVnz7Fo4tT, 18 fields): 0 records. Schema includes Sale Date, Gross Amount, Commission Rate, Net Amount, Status, Awin Transaction ID, Amazon Transaction ID, links to Lead, Account, Sub-Niche, Affiliate Offer.
+Leads (tblktelqJMVcpfjhK, 18 fields): 1 record (Source: Story Swipe Up, Status: Lost).
+Performance (tbluJ2yHYUBAFOpLP, 20 fields): 105 records, mostly Instagram, mostly Synced, 1 Failed. Fields: Views, Likes, Reach, Date Posted, Shares, Saves, Platform Post ID, Metrics Sync Status.
+7.7 The full table set
+All 35 tables are listed below. The OS surfaces a subset directly; others are visible in their owning module or hidden under &quot;advanced&quot;.
+Table
+ID
+Fields
+Surfaced in module(s)
+Ideas
+tblbdoBNRQNmmPNWn
+35
+Content Pipeline · Home
+Scripts
+tblz8TnjzGOMdgrok
+25
+Content Pipeline
+Captions
+tbloKHh6R95ZTZiLC
+23
+Content Pipeline · Editor Queue
+Assets
+tblTxolPEjAvOzIdV
+55
+Content Pipeline · Editor Queue · Performance
+Carousel Slides
+tblKHUVK7GO1vZ4rL
+35
+Editor Queue (preview) · Content Pipeline (drawer)
+Carousel Templates
+tbl502Q4E4uBWDrol
+12
+Brand &amp; Settings
+Carousel Render Identities
+tblF5Oaul1aIfQNjY
+21
+Brand &amp; Settings
+Editor Reviews
+tblBqZd7ilnUylRbu
+11
+Editor Queue (reasoning + scores)
+Performance
+tbluJ2yHYUBAFOpLP
+20
+Performance · Home (KPI)
+Learning Insights
+tblN95TWWlmJhucwJ
+14
+Learning Insights · Niches
+Sub-Niches
+tblDipl7C4g10KBqF
+37
+Niches · Brand &amp; Settings · Home
+Niches
+tblfhelk9xo0nWXb5
+12
+Niches
+Brand Briefs
+tblqGF6NlQ52L6xBk
+18
+Niches · Brand &amp; Settings
+Parent Niche Briefs
+tblYm2KhJ5zcWCv5a
+15
+Niches · Brand &amp; Settings
+Content Angles
+tblioaKl0AjlPMNhX
+18
+Niches · Learning Insights
+Content Clusters
+tbl1WuKk4AcK9N7w1
+10
+Learning Insights
+Content Formats
+tble1c8D7GUqifYDN
+10
+Brand &amp; Settings
+Accounts
+tbloQXiQxqic5Dj7x
+20
+Brand &amp; Settings · Home · Performance
+Account Clusters
+tblD8HXgimLb6gtyM
+10
+Brand &amp; Settings
+Affiliate Offers
+tble469gEhJSaSJok
+43
+Offers &amp; Intake · Monetization · Storefront
+Offer Intake Queue
+tblSjBLEASCXk2meU
+22
+Offers &amp; Intake · Monetization
+Products
+tbl5zqFJGjhA8VMpd
+18
+Offers &amp; Intake
+Proposals
+tblN59lTORfVbX49H
+13
+Niches
+Leads
+tblktelqJMVcpfjhK
+18
+Monetization
+Sales
+tbl0iwDQVnz7Fo4tT
+18
+Monetization · Home (KPI)
+Keyword Tags
+tblg08USceXc4LU2E
+9
+Brand &amp; Settings · Offers
+Storefront Sites
+tbl80dKJ9cVJskqRf
+41
+Storefront
+Storefront Sub-Niches
+tblGQ4VhkHnckhOke
+32
+Storefront
+Storefront Sections
+tblndtFtBnpMQPHri
+8
+Storefront
+Storefront Hero Slides
+tblcVY3ZoPixi7x7U
+11
+Storefront
+Storefront Feed
+tblO1Ztbj7y4ys6Pa
+21
+Storefront · Monetization
+Prompt Templates
+tblzZ2CUpj5y74a0Y
+6
+Prompts &amp; Agents
+Publishing Queue
+tblLPz1dVjQdTJnru
+16
+Content Pipeline (advanced)
+Error Log
+tblfHx1n7LFztPkaK
+9
+Scenarios · Home
+Cleanup Views
+tblAFZs5Kl1wCedDs
+6
+Brand &amp; Settings
+8. External system bindings
+System
+What the OS does with it
+Auth model
+Notes
+Airtable
+Read + write all surfaced records. System of record.
+Airtable PAT scoped to base appLHjLQKQEM8j8Tm
+Use field IDs, not names, for forwards-compat.
+Make.com API
+Read scenario state, executions, errors. Trigger run/stop. Open in Make.com on edit.
+Make API token (ops scope)
+25 scenarios. Some named differently in Make than blueprint.
+Cloudflare
+Show Worker status (storefront-feed-worker, hero-overlay-renderer). Trigger feed rebuild.
+CF API token
+Workers: storefront-feed-worker, hero-overlay-renderer.
+Cloudflare R2
+Read asset URLs for previews (carousel slides, hero images).
+Same CF token, R2 read
+Asset slide URLs follow Caption-ID-slide-NN convention.
+Instagram Graph API
+Show post status, last-publish time, basic metrics. Open post in Instagram on click.
+IG Business token via Account record
+@modernparentingco currently the only live account.
+fal.ai
+Show video generation job status, retry, view output.
+fal API key
+Asset.Provider Job ID + Video Output URL bind to fal jobs.
+OpenAI Responses API
+Trigger prompt-only validation runs, agent calls. Read run cost.
+OpenAI platform key (currently missing — see blockers)
+Web Search + JSON mode incompatible — UI must guard.
+Awin
+Pull transactions, clicks, commission. Push to Sales table.
+Awin API key (publisher)
+Currently 0 transactions reported.
+GitHub
+Read storefront repo state (modparcoding/infinite-factory-storefront). Show last deploy.
+GH PAT (read)
+Optional in MVP.
+9. Design system constraints
+9.1 Density and tone
+Dense and information-rich. This is a tool, not a marketing surface. Whitespace exists for legibility, not for breathing room. Numbers and IDs are first-class citizens; render IDs in monospace.
+No marketing illustrations, no celebratory micro-animations, no gradients on primary surfaces. The system aesthetic is closer to Linear, Stripe Dashboard, or a high-quality internal admin tool than to a consumer SaaS landing page.
+9.2 Mode
+Dark left navigation + light content area as the default (matches mac-app feel). Full dark mode is v2; full light mode is v2.
+9.3 Type scale
+Sans-serif system stack (Inter or system-ui), with a monospaced face (JetBrains Mono or system-ui-monospace) for IDs, JSON, and timestamps. Suggested scale:
+Display 24/32 — page titles only.
+H1 18/24 · H2 14/20 · H3 13/18 — section headers.
+Body 13/19 — primary text. Small 11/16 — meta. Caption 10/14 — column labels.
+Numbers in KPI cards: 22–28pt bold, with a 11pt label above and a 10pt comparison below.
+9.4 Colour tokens
+Three semantic palettes: status, content type, and pillar.
+Token
+Hex
+Use
+status.ok
+#1A7F37
+Healthy scenarios, success states, positive deltas
+status.warn
+#B07A00
+Manual Review, partial degradation, unscored
+status.err
+#C00000
+Scenario errors, rejected items, missing keys
+status.info
+#1F6FEB
+Pending / processing
+type.viral
+#FDE68A
+VIRAL content (yellow)
+type.authority
+#BFDBFE
+AUTHORITY content (blue)
+type.engagement
+#BBF7D0
+ENGAGEMENT content (green)
+type.sales
+#FECACA
+SALES content (red)
+pillar.monitor
+#0E7490
+Monitor pillar tagging
+pillar.execute
+#7C3AED
+Execute pillar tagging
+pillar.edit
+#0F766E
+Edit pillar tagging
+pillar.monetize
+#B45309
+Monetize pillar tagging
+surface.nav
+#1F2937
+Left navigation bar
+surface.bg
+#FFFFFF
+Content area background
+surface.panel
+#FAFAFA
+Panel background
+surface.row
+#F3F4F6
+Alt row / column background
+The four content type colours map exactly to existing Airtable singleSelect colours so that the same palette is consistent in Airtable and in the OS.
+9.5 Component primitives needed
+Left navigation with module list, current-module highlight, badge counts (e.g. &quot;Editor Queue (5)&quot;).
+KPI card: label · big number · sub-line. Optional sparkline.
+Status chip: ok/warn/err/info, with optional count.
+Type pill: viral/authority/engagement/sales (4 colours, accessible contrast).
+Filter chip group with active state.
+Kanban column with header, count, scrollable card list.
+Record card: ID line · sub-niche · type+format · status. Click → drawer.
+Side drawer: header, tabs, scrollable body, sticky action bar at bottom.
+Data table with sticky header, sortable columns, row hover, link cells.
+Audit-trail line item with timestamp + actor + linked record.
+Code/JSON block with copy and &quot;open in Airtable&quot; affordance.
+Toast / system notification anchored bottom-right.
+Confirm modal (used for run-scenario, reject-asset, rebuild-feed).
+10. Interaction patterns
+10.1 Open-in-source
+Every record card and every scenario row has an &quot;open in source&quot; affordance — Airtable record link, Make.com scenario URL, fal.ai job page, GitHub commit, etc. Operators must never feel trapped in the OS; the underlying tools are still the source of truth.
+10.2 Run-scenario contract
+Anywhere a Make scenario can be triggered: the action shows the scenario ID + name, last execution time, last status, and a confirmation step on click. After triggering, a toast appears and the relevant scenario row goes into &quot;Running&quot; state until polled.
+10.3 Edit-with-snapshot contract
+Any edit to a Prompt Template, Sub-Niche brief, or Brand voice writes a snapshot to .ai/prompt_versions/ (or equivalent) before the change is committed. The diff is shown in the UI; rollback restores the snapshot. This mirrors the existing rollback discipline established in handoffs.
+10.4 Multi-niche scope
+Every page that contains data has a niche scope selector at the top right (default: All niches). Selection persists per session. Where appropriate, comparisons are side-by-side rather than concatenated.
+10.5 Empty states
+All current zero states are real and visible: 0 sales, 0 storefront-eligible offers, 0 hero slides, 0 sections. Empty states must explain (a) what would normally be here, (b) the upstream blocker, and (c) the closest action that would create the first record.
+11. MVP vs v2 phasing
+11.1 MVP — the five modules that earn their keep today
+Build these first because they correspond to active pain or active value:
+Home / Health — replaces the morning Airtable + Make.com sweep.
+Content Pipeline — replaces filtered Airtable views and gives a visual sense of drop-off.
+Editor Queue — clears the daily approval backlog without leaving the OS.
+Monetization — even with £0 revenue today, this is the page that makes growth legible.
+Brand &amp; Settings — one place to read sub-niches, voices, accounts; required for every other module to make sense.
+11.2 v2 — pulled in once MVP earns its place
+Niches — niche launch checklist, brand brief generator UI, dedicated overview per sub-niche.
+Scenarios — Make.com control surface (run, stop, inspect last 50 executions, see error rates).
+Prompts &amp; Agents — versioned prompt editor with diff and rollback.
+Performance — per-post and per-niche metrics with engagement trends.
+Learning Insights — winning hooks/formats, weekly insight rollups.
+Offers &amp; Intake — manual scoring of offer intake queue, bio-link priority management.
+Storefront — site builder UI, hero slide editor, feed rebuild.
+11.3 v3 and beyond
+Stakeholder / investor read-only dashboard.
+Per-niche operator role with scoped permissions.
+Agent-facing structured endpoints so Codex can read state programmatically.
+12. What Claude Design should produce first
+Claude Design will be opened separately at claude.com. Suggested first-session output:
+A polished mockup of the five MVP screens (Home/Health, Content Pipeline, Editor Queue, Monetization, Brand &amp; Settings).
+A design system file: colour tokens, type scale, spacing scale, and the 13 component primitives listed in section 9.5.
+A clickable HTML prototype tying the five MVP screens together via the left navigation.
+Light + dark variants of the navigation and one content panel (to verify token discipline).
+Inputs to drop into Claude Design at the start:
+This brief (.docx).
+The infinite_factory_blueprint_v37.docx for full system context.
+A screenshot of the current Airtable base for visual anchoring (optional).
+The five wireframe SVGs as separate uploads if Claude Design accepts them; otherwise as PNGs.
+12.1 Constraints to convey to Claude Design
+Reusable component design — same KPI card on every page, same record card across modules.
+Field names must match Airtable exactly (Make Status not status, Editor Decision not decision).
+Use the four content type colours from section 9.4.
+Density first — at 1280px content width, the Home page should fit without scrolling.
+IDs in monospace (Asset-306, Caption-280, recXXX...).
+13. Appendix A — Live snapshot 2026-04-25
+Numbers below come from a live read of base appLHjLQKQEM8j8Tm at 21:08 UTC. Use them to ground mockups in real volumes; the mockups should not show inflated or invented numbers.
+Metric
+Value
+Notes
+Niches
+1
+Parenting &amp; Family (Status: Active)
+Sub-Niches active
+4 + 1 paused (Dad Life)
+Toddler Life, Baby Sleep, School Age Kids, Family Meals
+Sub-Niches with empty record
+1
+recSkEjLbuyU3LqQP — needs cleanup
+Ideas total
+293
+Highest single source of pipeline state
+Ideas by Status
+210 In Production · 45 Rejected · 38 Draft
+Ideas by Make Status
+233 Pending · 60 Success
+Ideas by Type
+155 Viral · 99 Sales · 20 Authority · 19 Engagement
+Sales overweighted; OS should make this visible
+Ideas by Format
+51 Carousel · 28 Reel · 21 Static · 193 empty
+Format empty for older Ideas
+Captions total
+152
+4 Pending review currently
+Assets total
+104
+3 Make-Status=Error (Asset-243, 284, 286)
+Assets Published
+~72
+Mostly single-photo
+Carousel Assets
+5
+All currently sharing identical R2 slide URLs (known bug)
+Performance records
+105
+1 Failed metrics sync
+Accounts active
+1
+@modernparentingco on Instagram
+Affiliate Offers
+7
+5 Awin (Scandiborn, Baker Ross, Kokoso Baby, Tommee Tippee, +1) · 2 Amazon (Manscaped, DINORUN, Instant Pot)
+Offer Intake Queue
+Multiple errors
+S5g 100% error rate
+Storefront Sites
+1
+Modern Parenting Co · modernparentingco.com · Active · Last build 2026-04-11
+Storefront-eligible offers
+0
+No offer currently passes Storefront Eligible formula
+Sales total
+0
+Awin sync pending
+Leads
+1
+Story Swipe Up source · Lost
+Editor Reviews
+1+
+Editor Agent v2 active; latest scoring on Asset-306
+13.1 Active blockers (as of 2026-04-25 21:08 UTC)
+All eight came from the 2026-04-24 live diagnostic and are tracked in .ai/tasks.md.
+S2b Copywriter (4311386) deactivated — 6 BlueprintValidationError problems, multiple 422/400 failures.
+S2b Carousel Slide Plan / Body Lines / Framework Steps JSON — wrong Airtable field types (object vs single-line). Stringify or change schema.
+S2b Web Search + JSON mode used together in one OpenAI call — incompatible. Split or remove Web Search.
+S2c GenerateImage missing prompt — needs ifempty() guard upstream.
+S2d Editor Gate writes &quot;Auto Publish with Minor Edit&quot; to wrong field; correct field is Assets fldDU5rbjd35PV60w (Publishing Decision).
+S2e Carousel publish — empty Meta Graph response. Investigate parent CAROUSEL container POST.
+Carousel Asset Generator emits identical R2 URLs across all 5 Carousel Assets — needs unique per-Idea rendering.
+Error Log (tblfHx1n7LFztPkaK) and Publishing Queue (tblLPz1dVjQdTJnru) tables effectively unused. Wire up or deprecate.
+14. Appendix B — Sources of truth
+Current blueprint: infinite_factory_blueprint_v37.docx
+Current prompt implementation guide: PROMPT_IMPLEMENTATION_GUIDE_v2_FOUR_CONTENT_TYPES.md
+Shared memory: .ai/current-source.md, .ai/project-memory.md, .ai/tasks.md, .ai/handoffs.md, .ai/agents.md
+Live Airtable read: base appLHjLQKQEM8j8Tm — read-only, 2026-04-25 21:08 UTC
+Make.com scenario blueprint last fetched 2026-04-25 by Codex (S2e audit)
+Cloudflare deployments: storefront-feed-worker, hero-overlay-renderer (last release 2026-04-25 11:19 UTC)
+15. Appendix C — How this brief was produced
+1. Read .ai/current-source.md, project-memory.md, tasks.md, handoffs.md, agents.md as required by project rules.
+2. Verified existence of Anthropic&apos;s Claude Design product (launched 2026-04-17, research preview, powered by Claude Opus 4.7).
+3. Pulled live Airtable schema for base appLHjLQKQEM8j8Tm — read-only, with explicit user permission. Counted records and sampled current state for Ideas, Assets, Captions, Sub-Niches, Niches, Affiliate Offers, Performance, Accounts, Storefront Sites, Sales, Leads.
+4. Mapped 35 tables to 12 modules across 4 pillars. Drafted MVP cut.
+5. Built five low-fidelity wireframes (sitemap + 4 key screens) using current data and exact field names.
+6. Compiled this brief. No live writes were made to any system.
