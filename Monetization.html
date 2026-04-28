@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Infinite Factory OS — Monetization</title>
+<meta name="viewport" content="width=1280" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root { --ok: #1A7F37; --warn: #B07A00; --err: #C00000; --nav: #1F2937; --nav-hover: #2A3441; --nav-active: #111827; --bg: #FFFFFF; --panel: #FAFAFA; --row: #F3F4F6; --border: #E5E7EB; --text: #111827; --text-muted: #6B7280; --text-on-nav: #E5E7EB; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: 'Inter', system-ui, -apple-system, sans-serif; font-size: 13px; line-height: 19px; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; }
+  .app { display: grid; grid-template-columns: 220px 1fr; min-height: 100vh; }
+  .nav { background: var(--nav); color: var(--text-on-nav); padding: 18px 0 14px; display: flex; flex-direction: column; border-right: 1px solid #0b1220; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+  .nav .brand { padding: 0 18px 18px; font-weight: 700; font-size: 14px; color: #fff; display: flex; align-items: center; gap: 9px; }
+  .brand-mark { width: 18px; height: 18px; border-radius: 4px; background: linear-gradient(135deg, #7C3AED 0%, #0E7490 100%); flex: 0 0 auto; }
+  .brand-mark::after { content: ""; position: absolute; inset: 4px; background: var(--nav); border-radius: 1px; }
+  .brand-mark::before { content: ""; position: absolute; left: 7px; top: 3px; bottom: 3px; width: 4px; background: linear-gradient(180deg,#7C3AED,#0E7490); }
+  .nav .group-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #6B7280; padding: 10px 18px 6px; }
+  .nav a { display: flex; align-items: center; gap: 10px; padding: 6px 18px; color: var(--text-on-nav); text-decoration: none; font-size: 13px; line-height: 20px; border-left: 2px solid transparent; }
+  .nav a:hover { background: var(--nav-hover); }
+  .nav a.active { background: var(--nav-active); border-left-color: #fff; color: #fff; font-weight: 600; }
+  .nav-foot { margin-top: auto; padding: 10px 18px; border-top: 1px solid #0b1220; font-size: 11px; color: #9CA3AF; }
+  .nav-foot .who { color: #fff; font-weight: 500; font-size: 12px; }
+  .main { background: var(--bg); display: flex; flex-direction: column; }
+  .pageHead { padding: 16px 24px 12px; border-bottom: 1px solid var(--border); }
+  .pageHead h1 { margin: 0; font-size: 22px; font-weight: 600; }
+  .pageHead .meta { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+  .content { flex: 1; padding: 24px; overflow-y: auto; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
+  .kpi-box { background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 16px; text-align: center; }
+  .kpi-box .value { font-size: 24px; font-weight: 700; margin: 8px 0; }
+  .kpi-box .label { font-size: 12px; color: var(--text-muted); }
+  .kpi-box .trend { font-size: 11px; color: var(--ok); margin-top: 4px; font-weight: 600; }
+  .network-card { background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 16px; margin-bottom: 12px; }
+  .network-card .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .network-card h3 { margin: 0; font-size: 13px; font-weight: 600; }
+  .network-card .status { font-size: 11px; font-weight: 600; color: var(--ok); }
+  .network-card .meta { font-size: 12px; color: var(--text-muted); margin: 8px 0; }
+  table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+  th { background: var(--row); padding: 10px; text-align: left; font-weight: 600; font-size: 12px; border: 1px solid var(--border); }
+  td { padding: 10px; border: 1px solid var(--border); font-size: 12px; }
+  tr:hover { background: var(--panel); }
+</style>
+</head>
+<body>
+<div class="app">
+  <nav class="nav">
+    <div class="brand"><div class="brand-mark"></div> Infinite Factory OS</div>
+    <div class="group-label">Navigation</div>
+    <a href="Home Health.html">Home / Health</a>
+    <a href="Niches.html">Niches</a>
+    <a href="Content Pipeline.html">Content Pipeline</a>
+    <a href="Editor Queue.html">Editor Queue</a>
+    <a href="Scenarios.html">Scenarios</a>
+    <a href="Prompts Agents.html">Prompts & Agents</a>
+    <div class="group-label">Analytics</div>
+    <a href="Performance.html">Performance</a>
+    <a href="Learning Insights.html">Learning Insights</a>
+    <div class="group-label">Business</div>
+    <a href="Offers Intake.html">Offers & Intake</a>
+    <a href="Monetization.html" class="active">Monetization</a>
+    <a href="Storefront.html">Storefront</a>
+    <div class="group-label">Settings</div>
+    <a href="Brand Settings.html">Brand & Settings</a>
+    <div class="nav-foot"><div class="who">David</div>dmurphy@example.com</div>
+  </nav>
+
+  <div class="main">
+    <div class="pageHead">
+      <h1>Monetization</h1>
+      <div class="meta">Revenue tracking, affiliate networks, and affiliate offers</div>
+    </div>
+
+    <div class="content">
+      <div class="kpi-grid">
+        <div class="kpi-box">
+          <div class="label">Total Revenue</div>
+          <div class="value">$4,280</div>
+          <div class="trend">↑ +$340 this month</div>
+        </div>
+        <div class="kpi-box">
+          <div class="label">Affiliate Clicks</div>
+          <div class="value">847</div>
+          <div class="trend">↑ +15% vs last month</div>
+        </div>
+        <div class="kpi-box">
+          <div class="label">Active Offers</div>
+          <div class="value">12</div>
+          <div class="trend">3 pending approval</div>
+        </div>
+        <div class="kpi-box">
+          <div class="label">Conversion Rate</div>
+          <div class="value">2.8%</div>
+          <div class="trend">↑ +0.3% from 2.5%</div>
+        </div>
+      </div>
+
+      <h2 style="font-size: 14px; font-weight: 600; margin: 0 0 16px;">Affiliate Networks</h2>
+
+      <div class="network-card">
+        <div class="header">
+          <h3>Scandiborn</h3>
+          <span class="status">ACTIVE</span>
+        </div>
+        <div class="meta">Commission: 8% • Clicks this month: 203 • Revenue: $1,124</div>
+        <div style="font-size: 12px; color: var(--text-muted);">Top performing product: Ergonomic High Chair</div>
+      </div>
+
+      <div class="network-card">
+        <div class="header">
+          <h3>Baker Ross</h3>
+          <span class="status">ACTIVE</span>
+        </div>
+        <div class="meta">Commission: 5% • Clicks this month: 156 • Revenue: $892</div>
+        <div style="font-size: 12px; color: var(--text-muted);">Top performing product: Craft Activity Kits</div>
+      </div>
+
+      <div class="network-card">
+        <div class="header">
+          <h3>Kokoso Baby</h3>
+          <span class="status">ACTIVE</span>
+        </div>
+        <div class="meta">Commission: 12% • Clicks this month: 289 • Revenue: $1,456</div>
+        <div style="font-size: 12px; color: var(--text-muted);">Top performing product: Organic Teething Toys</div>
+      </div>
+
+      <div class="network-card">
+        <div class="header">
+          <h3>Timmee Tippee</h3>
+          <span class="status">ACTIVE</span>
+        </div>
+        <div class="meta">Commission: 6% • Clicks this month: 124 • Revenue: $508</div>
+        <div style="font-size: 12px; color: var(--text-muted);">Top performing product: Warming Bottles</div>
+      </div>
+
+      <div class="network-card">
+        <div class="header">
+          <h3>Manscaped</h3>
+          <span class="status">ACTIVE</span>
+        </div>
+        <div class="meta">Commission: 15% • Clicks this month: 75 • Revenue: $300</div>
+        <div style="font-size: 12px; color: var(--text-muted);">Top performing product: Premium Grooming Kit</div>
+      </div>
+
+      <h2 style="font-size: 14px; font-weight: 600; margin: 32px 0 16px;">Intake Queue (Pending Review)</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Brand / Network</th>
+            <th>Commission</th>
+            <th>Status</th>
+            <th>Submitted</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Munchkin</td>
+            <td>7%</td>
+            <td>Waiting approval</td>
+            <td>2026-04-23</td>
+            <td><button style="padding: 4px 8px; background: #0F766E; color: white; border: none; border-radius: 3px; cursor: pointer; font-size: 11px;">Review</button></td>
+          </tr>
+          <tr>
+            <td>Graco</td>
+            <td>6%</td>
+            <td>Waiting approval</td>
+            <td>2026-04-20</td>
+            <td><button style="padding: 4px 8px; background: #0F766E; color: white; border: none; border-radius: 3px; cursor: pointer; font-size: 11px;">Review</button></td>
+          </tr>
+          <tr>
+            <td>Safety 1st</td>
+            <td>8%</td>
+            <td>Waiting approval</td>
+            <td>2026-04-18</td>
+            <td><button style="padding: 4px 8px; background: #0F766E; color: white; border: none; border-radius: 3px; cursor: pointer; font-size: 11px;">Review</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>
