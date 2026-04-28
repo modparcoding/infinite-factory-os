@@ -1,0 +1,1341 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Infinite Factory OS — Content Pipeline</title>
+<meta name="viewport" content="width=1440" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ok: #1A7F37;
+    --warn: #B07A00;
+    --err: #C00000;
+    --info: #1F6FEB;
+    --type-viral: #FDE68A;
+    --type-authority: #BFDBFE;
+    --type-engagement: #BBF7D0;
+    --type-sales: #FECACA;
+    --pillar-monitor: #0E7490;
+    --pillar-execute: #7C3AED;
+    --pillar-edit: #0F766E;
+    --pillar-monetize: #B45309;
+    --nav: #1F2937;
+    --nav-hover: #2A3441;
+    --nav-active: #111827;
+    --bg: #FFFFFF;
+    --panel: #FAFAFA;
+    --row: #F3F4F6;
+    --row-hover: #ECEEF1;
+    --border: #E5E7EB;
+    --border-strong: #D1D5DB;
+    --text: #111827;
+    --text-muted: #6B7280;
+    --text-faint: #9CA3AF;
+    --text-on-nav: #E5E7EB;
+    --text-on-nav-muted: #9CA3AF;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    line-height: 19px;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; font-feature-settings: "tnum" 1; }
+  .num  { font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
+
+  /* ========== Shell ========== */
+  .app { display: grid; grid-template-columns: 220px 1fr; min-height: 100vh; }
+
+  /* ========== Nav (mirror Home Health) ========== */
+  .nav {
+    background: var(--nav); color: var(--text-on-nav);
+    padding: 18px 0 14px;
+    display: flex; flex-direction: column;
+    border-right: 1px solid #0b1220;
+    position: sticky; top: 0; height: 100vh;
+  }
+  .nav .brand {
+    padding: 0 18px 18px; font-weight: 700; font-size: 14px;
+    letter-spacing: -0.01em; color: #fff;
+    display: flex; align-items: center; gap: 9px;
+  }
+  .brand-mark {
+    width: 18px; height: 18px; border-radius: 4px;
+    background: linear-gradient(135deg, #7C3AED 0%, #0E7490 100%);
+    position: relative; flex: 0 0 auto;
+  }
+  .brand-mark::after { content: ""; position: absolute; inset: 4px; background: var(--nav); border-radius: 1px; }
+  .brand-mark::before { content: ""; position: absolute; left: 7px; top: 3px; bottom: 3px; width: 4px; background: linear-gradient(180deg,#7C3AED,#0E7490); }
+  .nav a {
+    display: flex; align-items: center; gap: 10px;
+    padding: 6px 18px; color: var(--text-on-nav);
+    text-decoration: none; font-size: 13px; line-height: 20px;
+    border-left: 2px solid transparent;
+  }
+  .nav a:hover { background: var(--nav-hover); }
+  .nav a.active {
+    background: var(--nav-active);
+    border-left-color: #fff;
+    color: #fff; font-weight: 600;
+  }
+  .nav a .dot { width: 6px; height: 6px; border-radius: 50%; background: transparent; }
+  .nav a.active .dot { background: #fff; }
+  .nav a .badge {
+    margin-left: auto; background: #374151; color: #E5E7EB;
+    font-size: 10px; padding: 1px 6px; border-radius: 8px; font-weight: 600;
+  }
+  .nav a .badge.warn { background: rgba(176,122,0,0.25); color: #FCD34D; }
+  .nav a .badge.err  { background: rgba(192,0,0,0.25);  color: #FCA5A5; }
+  .nav-foot {
+    margin-top: auto; padding: 10px 18px;
+    border-top: 1px solid #0b1220;
+    font-size: 11px; line-height: 15px; color: var(--text-on-nav-muted);
+  }
+  .nav-foot .who { color: #fff; font-weight: 500; font-size: 12px; }
+
+  /* ========== Page chrome ========== */
+  .main { background: var(--bg); display: flex; flex-direction: column; min-width: 0; }
+  .pageHead {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    padding: 16px 24px 12px;
+    border-bottom: 1px solid var(--border);
+    gap: 16px;
+  }
+  .pageHead h1 {
+    margin: 0; font-size: 22px; line-height: 28px;
+    font-weight: 600; letter-spacing: -0.015em;
+  }
+  .pageHead h1 .light { color: var(--text-muted); font-weight: 400; }
+  .pageHead .meta {
+    display: flex; gap: 10px; align-items: center;
+    font-size: 12px; color: var(--text-muted);
+    flex-wrap: nowrap; white-space: nowrap;
+  }
+  .pageHead .meta .sep { color: var(--border-strong); }
+
+  /* ========== Filter bar ========== */
+  .filterbar {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 24px;
+    border-bottom: 1px solid var(--border);
+    background: var(--panel);
+    flex-wrap: wrap;
+  }
+  .filterbar .label {
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--text-faint); margin-right: 2px;
+  }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 3px 9px;
+    border: 1px solid var(--border-strong); border-radius: 4px;
+    background: #fff; color: var(--text);
+    font-size: 12px; line-height: 18px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .chip:hover { background: var(--row); }
+  .chip .caret { color: var(--text-faint); margin-left: 2px; font-size: 10px; }
+  .chip .count { color: var(--text-muted); font-size: 11px; }
+  .chip.active { background: var(--text); color: #fff; border-color: var(--text); }
+  .chip.active .count { color: #D1D5DB; }
+  .chip.danger {
+    background: #FEE2E2; color: #7F1D1D; border-color: #FCA5A5;
+    font-weight: 500;
+  }
+  .chip.danger:hover { background: #FECACA; }
+  .chip.toggle {
+    border-style: dashed;
+    color: var(--text-muted);
+  }
+  .chip.toggle.on {
+    background: rgba(31,111,235,0.08); color: var(--info); border-color: var(--info); border-style: solid;
+  }
+  .filterbar .grow { flex: 1; }
+  .search {
+    position: relative;
+  }
+  .search input {
+    border: 1px solid var(--border-strong); border-radius: 4px;
+    background: #fff; padding: 4px 8px 4px 26px;
+    font-size: 12px; line-height: 18px; color: var(--text);
+    font-family: inherit;
+    width: 220px;
+  }
+  .search input::placeholder { color: var(--text-faint); }
+  .search::before {
+    content: "⌕"; position: absolute; left: 8px; top: 50%; transform: translateY(-50%);
+    color: var(--text-faint); font-size: 13px;
+  }
+
+  /* ========== Body ========== */
+  .body {
+    padding: 16px 24px 20px;
+    display: flex; flex-direction: column;
+    gap: 16px;
+    flex: 1; min-width: 0;
+  }
+  .section-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+    margin-bottom: 4px;
+  }
+  .section-head h2 {
+    margin: 0; font-size: 14px; line-height: 20px;
+    font-weight: 600; letter-spacing: -0.005em;
+  }
+  .section-head h2 .pillar-tag {
+    display: inline-block; font-size: 10px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    padding: 1px 6px; border-radius: 3px;
+    margin-right: 8px; vertical-align: 1px;
+  }
+  .section-head h2 .pillar-tag.execute { background: rgba(124,58,237,0.10); color: var(--pillar-execute); }
+  .section-head h2 .pillar-tag.edit    { background: rgba(15,118,110,0.10); color: var(--pillar-edit); }
+  .section-head .sub {
+    font-size: 11px; color: var(--text-muted); white-space: nowrap;
+  }
+
+  /* ========== Stage rail (kanban summary) ========== */
+  .stagerail {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .stage {
+    padding: 10px 12px 11px;
+    border-right: 1px solid var(--border);
+    min-width: 0;
+    cursor: pointer;
+    position: relative;
+  }
+  .stage:last-child { border-right: 0; }
+  .stage:hover { background: var(--panel); }
+  .stage.active { background: var(--row); }
+  .stage.active::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--text);
+  }
+  .stage .s-name {
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--text-muted); font-weight: 600;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .stage .s-name .scn {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 9px; padding: 0 4px; border-radius: 2px;
+    background: var(--row); color: var(--text-muted);
+    text-transform: none; letter-spacing: 0;
+  }
+  .stage .s-count {
+    font-size: 22px; line-height: 26px; font-weight: 600; letter-spacing: -0.01em;
+    margin-top: 4px; display: flex; align-items: baseline; gap: 6px;
+  }
+  .stage .s-meta {
+    font-size: 11px; line-height: 15px; color: var(--text-muted);
+    margin-top: 2px;
+  }
+  .stage .s-blocked {
+    color: var(--err); font-weight: 500;
+  }
+  .stage.blocked .s-count { color: var(--err); }
+  .stage .arrow {
+    position: absolute; right: -8px; top: 50%; transform: translateY(-50%);
+    width: 16px; height: 16px; background: #fff;
+    border-top: 1px solid var(--border); border-right: 1px solid var(--border);
+    transform-origin: center; transform: translateY(-50%) rotate(45deg);
+    z-index: 2;
+  }
+
+  /* ========== Card primitive ========== */
+  .card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+  .card-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 9px 12px 7px;
+    border-bottom: 1px solid var(--border);
+  }
+  .card-head h3 {
+    margin: 0;
+    font-size: 13px; line-height: 18px; font-weight: 600;
+  }
+  .card-head .right {
+    font-size: 11px; color: var(--text-muted);
+    display: flex; align-items: center; gap: 10px;
+    white-space: nowrap;
+  }
+  .card-head a.link { color: var(--info); text-decoration: none; font-size: 11px; }
+  .card-head a.link:hover { text-decoration: underline; }
+
+  /* ========== Blocker strip ========== */
+  .blocker-strip {
+    background: #FEF2F2;
+    border: 1px solid #FCA5A5;
+    border-radius: 6px;
+    padding: 9px 12px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .blocker-strip .icon {
+    width: 20px; height: 20px; border-radius: 50%;
+    background: var(--err); color: #fff;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700;
+    flex: 0 0 auto;
+  }
+  .blocker-strip .ttl {
+    font-weight: 600; color: #7F1D1D; font-size: 12px;
+  }
+  .blocker-strip .frags {
+    color: #991B1B; font-size: 12px;
+    display: flex; gap: 14px; flex-wrap: wrap;
+  }
+  .blocker-strip .frags span { white-space: nowrap; }
+  .blocker-strip .frags .scn {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px; padding: 0 4px; background: #FEE2E2; border-radius: 2px;
+    margin-right: 4px;
+  }
+  .blocker-strip .actions {
+    margin-left: auto;
+    display: flex; gap: 6px;
+  }
+  .btn-danger {
+    background: var(--err); color: #fff;
+    border: 0; border-radius: 4px;
+    font-size: 11px; line-height: 18px; padding: 3px 10px;
+    font-family: inherit; font-weight: 500;
+    cursor: pointer;
+  }
+  .btn-ghost {
+    background: #fff; color: var(--text);
+    border: 1px solid var(--border-strong); border-radius: 4px;
+    font-size: 11px; line-height: 18px; padding: 3px 10px;
+    font-family: inherit; cursor: pointer;
+  }
+  .btn-ghost:hover { background: var(--row); }
+  .btn-primary {
+    background: var(--text); color: #fff;
+    border: 0; border-radius: 4px;
+    font-size: 11px; line-height: 18px; padding: 3px 10px;
+    font-family: inherit; font-weight: 500;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background: #000; }
+
+  /* ========== Pipeline table ========== */
+  .pipe {
+    width: 100%; border-collapse: collapse;
+    font-size: 12px;
+  }
+  .pipe thead th {
+    background: var(--panel);
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-align: left;
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  .pipe thead th.r { text-align: right; }
+  .pipe thead th.c { text-align: center; }
+  .pipe tbody tr.idea-row {
+    border-top: 1px solid var(--border);
+    cursor: pointer;
+  }
+  .pipe tbody tr.idea-row:first-child { border-top: 0; }
+  .pipe tbody tr.idea-row:hover { background: var(--row-hover); }
+  .pipe tbody tr.idea-row.selected { background: rgba(31,111,235,0.06); }
+  .pipe tbody tr.idea-row.selected td:first-child { box-shadow: inset 3px 0 0 var(--info); }
+  .pipe td {
+    padding: 9px 10px;
+    vertical-align: middle;
+    color: var(--text);
+  }
+  .pipe td.r { text-align: right; }
+  .pipe td.c { text-align: center; }
+  .pipe .expand-cell {
+    width: 22px; padding-right: 0; padding-left: 12px;
+    color: var(--text-faint); user-select: none;
+  }
+  .pipe .expand-cell .twist {
+    display: inline-block; width: 12px; transition: transform 120ms ease;
+  }
+  .idea-row.open .expand-cell .twist { transform: rotate(90deg); }
+  .pipe .id-cell { width: 78px; }
+  .pipe .id-cell .id {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px; color: var(--text-muted);
+  }
+  .pipe .title-cell .title {
+    font-weight: 500; color: var(--text);
+    display: block;
+  }
+  .pipe .title-cell .sub {
+    color: var(--text-muted); font-size: 11px; margin-top: 1px;
+    display: flex; gap: 8px; align-items: center;
+  }
+  .pipe .title-cell .sub .niche-tag {
+    color: var(--text-muted); font-weight: 500;
+  }
+  .pipe .type-pill {
+    display: inline-block; padding: 1px 7px;
+    border-radius: 3px; font-size: 10px; line-height: 14px;
+    font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+    color: #1F2937;
+  }
+  .pipe .type-pill.viral      { background: var(--type-viral); }
+  .pipe .type-pill.authority  { background: var(--type-authority); }
+  .pipe .type-pill.engagement { background: var(--type-engagement); }
+  .pipe .type-pill.sales      { background: var(--type-sales); }
+  .pipe .format-cell {
+    color: var(--text-muted); font-size: 11px;
+    width: 80px;
+  }
+  .pipe .format-cell .fmt-icon {
+    display: inline-block; width: 10px; height: 10px;
+    background: var(--text-muted); border-radius: 1px;
+    margin-right: 4px; vertical-align: -1px;
+  }
+
+  /* Stage progress strip in row */
+  .stage-progress {
+    display: inline-flex; align-items: center; gap: 2px;
+    width: 200px;
+  }
+  .stage-progress .pip {
+    flex: 1; height: 6px; border-radius: 1px; background: var(--row);
+    position: relative;
+  }
+  .stage-progress .pip.done { background: #1A7F37; }
+  .stage-progress .pip.now { background: #1F2937; }
+  .stage-progress .pip.now::after {
+    content: ""; position: absolute; inset: -1px; border: 1.5px solid #1F2937;
+    border-radius: 2px;
+  }
+  .stage-progress .pip.err { background: var(--err); }
+  .stage-progress .pip.warn { background: var(--warn); }
+  .stage-progress .pip.todo { background: #E5E7EB; }
+  .stage-progress + .stage-label {
+    font-size: 11px; color: var(--text-muted); margin-left: 8px;
+    white-space: nowrap;
+  }
+
+  .status-cell { width: 130px; }
+  .status-pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  .status-pill .dot { width: 7px; height: 7px; border-radius: 50%; flex: 0 0 auto; }
+  .status-pill.ok    { color: var(--ok); }
+  .status-pill.ok .dot   { background: var(--ok); }
+  .status-pill.warn  { color: var(--warn); }
+  .status-pill.warn .dot { background: var(--warn); }
+  .status-pill.err   { color: var(--err); font-weight: 500; }
+  .status-pill.err .dot  { background: var(--err); }
+  .status-pill.idle  { color: var(--text-muted); }
+  .status-pill.idle .dot { background: var(--text-faint); }
+  .status-pill.review { color: var(--info); font-weight: 500; }
+  .status-pill.review .dot { background: var(--info); }
+
+  .age-cell { width: 60px; color: var(--text-muted); }
+
+  /* Asset child rows (expanded) */
+  .pipe tr.asset-row {
+    background: #FAFAFA;
+    border-top: 1px dashed var(--border);
+  }
+  .pipe tr.asset-row td {
+    padding: 7px 10px;
+    font-size: 11px;
+  }
+  .pipe tr.asset-row td.indent {
+    padding-left: 56px;
+    color: var(--text-muted);
+  }
+  .pipe tr.asset-row .asset-id {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    color: var(--text-muted); font-size: 10px;
+    margin-right: 8px;
+  }
+  .pipe tr.asset-row .asset-name { color: var(--text); }
+  .pipe tr.asset-row .err-frag { color: var(--err); }
+
+  /* ========== Side panel (review/edit drawer) ========== */
+  .layout-with-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 460px;
+    gap: 16px;
+    align-items: start;
+  }
+  .panel {
+    position: sticky; top: 16px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    align-self: flex-start;
+    max-height: calc(100vh - 32px);
+    display: flex; flex-direction: column;
+  }
+  .panel-head {
+    padding: 10px 14px 9px;
+    border-bottom: 1px solid var(--border);
+    background: var(--panel);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .panel-head .ctx {
+    flex: 1; min-width: 0;
+  }
+  .panel-head .ctx .crumbs {
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--text-faint); font-weight: 600;
+  }
+  .panel-head .ctx .crumbs .scn {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-left: 4px; text-transform: none; letter-spacing: 0;
+  }
+  .panel-head .ctx .ttl {
+    font-size: 14px; line-height: 19px; font-weight: 600;
+    margin-top: 2px;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .panel-head .close {
+    background: transparent; border: 0; cursor: pointer;
+    color: var(--text-muted); font-size: 18px; line-height: 1;
+    padding: 2px 6px; border-radius: 3px;
+    flex: 0 0 auto;
+  }
+  .panel-head .close:hover { background: var(--row); color: var(--text); }
+
+  .panel-tabs {
+    display: flex; gap: 0;
+    border-bottom: 1px solid var(--border);
+    padding: 0 14px;
+  }
+  .panel-tab {
+    padding: 8px 12px 7px;
+    font-size: 12px; line-height: 16px;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+  }
+  .panel-tab.active {
+    color: var(--text); font-weight: 600;
+    border-bottom-color: var(--text);
+  }
+  .panel-tab .badge {
+    display: inline-block;
+    background: var(--row); color: var(--text-muted);
+    font-size: 10px; padding: 0 5px; border-radius: 8px;
+    margin-left: 4px; font-weight: 600;
+  }
+  .panel-tab.active .badge { background: var(--text); color: #fff; }
+  .panel-tab .badge.warn { background: rgba(176,122,0,0.18); color: var(--warn); }
+
+  .panel-body {
+    flex: 1; overflow-y: auto;
+    padding: 14px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+
+  .meta-grid {
+    display: grid; grid-template-columns: 100px 1fr;
+    row-gap: 6px; column-gap: 12px;
+    font-size: 12px;
+  }
+  .meta-grid .k {
+    color: var(--text-muted);
+    font-size: 11px;
+    line-height: 18px;
+  }
+  .meta-grid .v {
+    color: var(--text);
+    line-height: 18px;
+  }
+  .meta-grid .v .pill {
+    display: inline-block; padding: 1px 6px; border-radius: 3px;
+    font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+    background: var(--type-engagement); color: #14532D;
+  }
+
+  /* Slide preview list */
+  .slides {
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .slide {
+    border: 1px solid var(--border); border-radius: 6px;
+    padding: 0;
+    overflow: hidden;
+    background: #fff;
+  }
+  .slide.warn-slide { border-color: var(--warn); }
+  .slide-head {
+    display: flex; align-items: center;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    padding: 6px 10px;
+    font-size: 11px;
+    gap: 8px;
+  }
+  .slide-head .num {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    color: var(--text-muted); font-weight: 600;
+    font-size: 10px;
+  }
+  .slide-head .role {
+    color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; font-size: 9px; font-weight: 600;
+  }
+  .slide-head .alert {
+    margin-left: auto; color: var(--warn); font-weight: 500; font-size: 11px;
+  }
+  .slide-body {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 0;
+  }
+  .slide-thumb {
+    aspect-ratio: 4/5;
+    background: #1F2937 linear-gradient(135deg, #1F2937 0%, #374151 100%);
+    color: #E5E7EB;
+    padding: 10px 8px;
+    font-size: 10px;
+    line-height: 12px;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+    border-right: 1px solid var(--border);
+    position: relative;
+    font-weight: 500;
+  }
+  .slide-thumb.repeat::after {
+    content: "♻ identical R2 url"; position: absolute; bottom: 4px; left: 4px; right: 4px;
+    font-size: 8px; color: #FCD34D;
+    background: rgba(0,0,0,0.4); padding: 1px 3px; border-radius: 2px;
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .slide-edit {
+    padding: 8px 10px;
+  }
+  .slide-edit textarea {
+    width: 100%;
+    border: 1px solid var(--border); border-radius: 3px;
+    background: #fff;
+    font-family: inherit; font-size: 12px; line-height: 17px;
+    color: var(--text);
+    padding: 6px 8px;
+    resize: vertical;
+    min-height: 40px;
+  }
+  .slide-edit textarea:focus {
+    outline: none; border-color: var(--info);
+    box-shadow: 0 0 0 2px rgba(31,111,235,0.15);
+  }
+  .slide-edit .edit-meta {
+    margin-top: 4px;
+    font-size: 10px; color: var(--text-faint);
+    display: flex; justify-content: space-between;
+  }
+  .slide-edit .edited-tag {
+    color: var(--info); font-weight: 500;
+  }
+
+  /* Caption editor block */
+  .field-block {
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .field-label {
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--text-muted); font-weight: 600;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .field-label .helper {
+    text-transform: none; letter-spacing: 0; font-weight: 400; color: var(--text-faint);
+    font-size: 10px;
+    margin-left: auto;
+  }
+  .field-label .revert {
+    color: var(--info); cursor: pointer; text-transform: none;
+    letter-spacing: 0; font-weight: 500; font-size: 10px;
+  }
+  .caption-text {
+    border: 1px solid var(--border); border-radius: 4px;
+    background: #fff;
+    padding: 9px 10px;
+    font-family: inherit;
+    font-size: 12px; line-height: 18px;
+    color: var(--text);
+    width: 100%;
+    resize: vertical;
+    min-height: 96px;
+  }
+  .caption-text:focus {
+    outline: none; border-color: var(--info);
+    box-shadow: 0 0 0 2px rgba(31,111,235,0.15);
+  }
+  .caption-text.edited { border-left: 2px solid var(--info); }
+  .field-meta {
+    display: flex; justify-content: space-between;
+    font-size: 10px; color: var(--text-faint);
+  }
+  .field-meta .edited {
+    color: var(--info); font-weight: 500;
+  }
+
+  /* Audit trail */
+  .audit {
+    display: flex; flex-direction: column;
+    border-left: 1px solid var(--border);
+    padding-left: 12px;
+    gap: 10px;
+  }
+  .audit-row {
+    font-size: 11px; line-height: 15px;
+    position: relative;
+  }
+  .audit-row::before {
+    content: ""; position: absolute; left: -16px; top: 5px;
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--text-faint);
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1px var(--border);
+  }
+  .audit-row.user::before { background: var(--info); box-shadow: 0 0 0 1px var(--info); }
+  .audit-row.err::before { background: var(--err); box-shadow: 0 0 0 1px var(--err); }
+  .audit-row .who { font-weight: 500; }
+  .audit-row .when { color: var(--text-faint); margin-left: 6px; }
+  .audit-row .what { color: var(--text-muted); display: block; }
+
+  /* Panel footer (actions) */
+  .panel-foot {
+    border-top: 1px solid var(--border);
+    padding: 10px 14px;
+    background: var(--panel);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .panel-foot .approve {
+    background: var(--ok); color: #fff;
+    border: 0; border-radius: 4px;
+    font-size: 12px; line-height: 18px; padding: 5px 12px;
+    font-family: inherit; font-weight: 600;
+    cursor: pointer;
+    flex: 1;
+  }
+  .panel-foot .approve:hover { background: #166534; }
+  .panel-foot .approve .dirty-tag {
+    font-weight: 400; opacity: 0.85; margin-left: 4px;
+  }
+  .panel-foot .reject {
+    background: #fff; color: var(--err);
+    border: 1px solid #FCA5A5; border-radius: 4px;
+    font-size: 12px; line-height: 18px; padding: 5px 10px;
+    font-family: inherit; font-weight: 500;
+    cursor: pointer;
+  }
+  .panel-foot .reject:hover { background: #FEE2E2; }
+  .panel-foot .more {
+    background: #fff; color: var(--text);
+    border: 1px solid var(--border-strong); border-radius: 4px;
+    padding: 5px 8px; font-size: 12px; cursor: pointer;
+  }
+  .panel-foot .more:hover { background: var(--row); }
+
+  /* Footnote */
+  .footnote {
+    font-size: 11px; line-height: 16px;
+    color: var(--text-muted);
+    padding: 8px 0 0; text-align: right;
+    border-top: 1px dashed var(--border);
+    margin-top: 4px;
+  }
+
+  /* Helpers */
+  .err-frag { color: var(--err); font-weight: 500; }
+  .warn-frag { color: var(--warn); font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ============== LEFT NAV ============== -->
+  <aside class="nav">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <span>Infinite Factory OS</span>
+    </div>
+
+    <a href="Home Health.html"><span class="dot"></span>Home / Health</a>
+    <a href="#"><span class="dot"></span>Niches</a>
+    <a href="#" class="active"><span class="dot"></span>Content Pipeline<span class="badge warn">7</span></a>
+    <a href="#"><span class="dot"></span>Editor Queue<span class="badge warn">5</span></a>
+    <a href="#"><span class="dot"></span>Scenarios<span class="badge err">6</span></a>
+    <a href="#"><span class="dot"></span>Prompts &amp; Agents</a>
+    <a href="#"><span class="dot"></span>Performance</a>
+    <a href="#"><span class="dot"></span>Learning Insights</a>
+    <a href="#"><span class="dot"></span>Offers &amp; Intake<span class="badge">3</span></a>
+    <a href="#"><span class="dot"></span>Monetization</a>
+    <a href="#"><span class="dot"></span>Storefront</a>
+    <a href="#"><span class="dot"></span>Brand &amp; Settings</a>
+
+    <div class="nav-foot">
+      <div class="who">Dave</div>
+      <div>dmurphy.ireland@gmail.com</div>
+      <div style="margin-top:6px;">Base <span class="mono">appLHjLQKQEM8j8Tm</span></div>
+    </div>
+  </aside>
+
+  <!-- ============== MAIN ============== -->
+  <main class="main">
+
+    <header class="pageHead">
+      <h1>Content Pipeline <span class="light">— what needs you, what's stuck</span></h1>
+      <div class="meta">
+        <span>38 ideas in flight</span>
+        <span class="sep">·</span>
+        <span>7 awaiting your approval</span>
+        <span class="sep">·</span>
+        <span>Refreshed <span class="mono">21:08 UTC</span></span>
+      </div>
+    </header>
+
+    <!-- Filter bar -->
+    <div class="filterbar">
+      <span class="label">Sub-niche</span>
+      <button class="chip">All <span class="count">· 5</span><span class="caret">▾</span></button>
+      <span class="label">Stage</span>
+      <button class="chip">Any<span class="caret">▾</span></button>
+      <span class="label">Format</span>
+      <button class="chip">All<span class="caret">▾</span></button>
+      <button class="chip active">Awaiting approval <span class="count" style="color:#D1D5DB;">7</span></button>
+      <button class="chip danger">▲ Blocked <span class="count" style="color:#7F1D1D;">4</span></button>
+      <button class="chip toggle on">▢ Has error</button>
+      <button class="chip toggle">⌛ Stale &gt;7d</button>
+      <span class="grow"></span>
+      <span class="search"><input placeholder="Search ideas, captions, IDs…" /></span>
+    </div>
+
+    <div class="body">
+
+      <!-- ============== STAGE RAIL ============== -->
+      <section>
+        <div class="section-head">
+          <h2><span class="pillar-tag execute">Execute</span>Stages — flow snapshot</h2>
+          <span class="sub">Click a stage to filter the table below</span>
+        </div>
+        <div class="stagerail">
+          <div class="stage">
+            <div class="s-name">Idea draft <span class="scn">S2a</span></div>
+            <div class="s-count num">141</div>
+            <div class="s-meta">+18 today · 7d avg 22</div>
+          </div>
+          <div class="stage blocked">
+            <div class="s-name">Caption <span class="scn">S2b</span></div>
+            <div class="s-count num">47</div>
+            <div class="s-meta s-blocked">▲ scenario deactivated · 6 errs</div>
+          </div>
+          <div class="stage">
+            <div class="s-name">Asset <span class="scn">S2c</span></div>
+            <div class="s-count num">23</div>
+            <div class="s-meta">3 carousels · 1 reel · <span class="warn-frag">1 url-reuse</span></div>
+          </div>
+          <div class="stage active">
+            <div class="s-name">Editor gate <span class="scn">S2d</span></div>
+            <div class="s-count num">7</div>
+            <div class="s-meta">awaiting your review</div>
+          </div>
+          <div class="stage">
+            <div class="s-name">Scheduled</div>
+            <div class="s-count num">12</div>
+            <div class="s-meta">next post 06:30 UTC</div>
+          </div>
+          <div class="stage blocked">
+            <div class="s-name">Published <span class="scn">S2e</span></div>
+            <div class="s-count num">72</div>
+            <div class="s-meta s-blocked">▲ Meta empty response</div>
+          </div>
+          <div class="stage">
+            <div class="s-name">Failed</div>
+            <div class="s-count num">4</div>
+            <div class="s-meta">2 retryable · 2 manual</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== BLOCKER STRIP ============== -->
+      <div class="blocker-strip">
+        <span class="icon">!</span>
+        <span class="ttl">2 systemic blockers affecting this pipeline</span>
+        <div class="frags">
+          <span><span class="scn">S2b</span>Copywriter deactivated — 6 BlueprintValidationError on Carousel Slide Plan</span>
+          <span><span class="scn">S2e</span>Carousel publish — empty Meta Graph response (1d)</span>
+        </div>
+        <div class="actions">
+          <button class="btn-ghost">View scenarios →</button>
+          <button class="btn-danger">Pause pipeline</button>
+        </div>
+      </div>
+
+      <!-- ============== TABLE + PANEL ============== -->
+      <div class="layout-with-panel">
+
+        <div class="card" style="overflow:hidden;">
+          <div class="card-head">
+            <h3>Awaiting your approval <span style="color:var(--text-muted);font-weight:500;">(7)</span></h3>
+            <div class="right">
+              <span>Sorted by stage age, oldest first</span>
+              <a href="#" class="link">Bulk actions ▾</a>
+            </div>
+          </div>
+
+          <table class="pipe">
+            <thead>
+              <tr>
+                <th style="width:22px;"></th>
+                <th class="id-cell">ID</th>
+                <th>Idea / asset</th>
+                <th>Type</th>
+                <th>Format</th>
+                <th>Pipeline</th>
+                <th class="status-cell">Status</th>
+                <th class="age-cell r">Age</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <!-- ROW 1 — selected, expanded -->
+              <tr class="idea-row open selected">
+                <td class="expand-cell"><span class="twist">▶</span></td>
+                <td class="id-cell"><span class="id">I-1284</span></td>
+                <td class="title-cell">
+                  <span class="title">Why your toddler refuses to nap (and the 3-step reset)</span>
+                  <span class="sub"><span class="niche-tag">Toddler Life</span> · idea v3 · CEO instructions: "lean into reassurance, not advice"</span>
+                </td>
+                <td><span class="type-pill engagement">Engagement</span></td>
+                <td class="format-cell"><span class="fmt-icon"></span>Carousel</td>
+                <td>
+                  <span class="stage-progress">
+                    <span class="pip done"></span>
+                    <span class="pip done"></span>
+                    <span class="pip done"></span>
+                    <span class="pip now"></span>
+                    <span class="pip todo"></span>
+                    <span class="pip todo"></span>
+                  </span>
+                  <span class="stage-label">Editor gate</span>
+                </td>
+                <td class="status-cell"><span class="status-pill review"><span class="dot"></span>Manual review</span></td>
+                <td class="age-cell r mono">2d</td>
+              </tr>
+              <!-- nested asset rows -->
+              <tr class="asset-row">
+                <td colspan="3" class="indent"><span class="asset-id">A-306</span><span class="asset-name">Carousel · 6 slides · slide 4 flagged for revision</span></td>
+                <td colspan="3"><span class="warn-frag">⚠ Asset gen reused identical R2 URL on slide 3 &amp; 5</span></td>
+                <td colspan="2" class="r"><a href="#" style="color:var(--info);font-size:11px;text-decoration:none;">Open in panel →</a></td>
+              </tr>
+
+              <!-- ROW 2 -->
+              <tr class="idea-row">
+                <td class="expand-cell"><span class="twist">▶</span></td>
+                <td class="id-cell"><span class="id">I-1287</span></td>
+                <td class="title-cell">
+                  <span class="title">5 hidden cues your baby is overtired (before the meltdown)</span>
+                  <span class="sub"><span class="niche-tag">Baby Sleep</span> · idea v2</span>
+                </td>
+                <td><span class="type-pill viral">Viral</span></td>
+                <td class="format-cell"><span class="fmt-icon" style="background:#7C3AED;"></span>Reel</td>
+                <td>
+                  <span class="stage-progress">
+                    <span class="pip done"></span>
+                    <span class="pip done"></span>
+                    <span class="pip done"></span>
+                    <span class="pip now"></span>
+                    <span class="pip todo"></span>
+                    <span class="pip todo"></span>
+                  </span>
+                  <span class="stage-label">Editor gate</span>
+                </td>
+                <td class="status-cell"><span class="status-pill review"><span class="dot"></span>Awaiting review</span></td>
+                <td class="age-cell r mono">1d</td>
+              </tr>
+
+              <!-- ROW 3 — blocked at caption -->
+              <tr class="idea-row">
+                <td class="expand-cell"><span class="twist">▶</span></td>
+                <td class="id-cell"><span class="id">I-1289</span></td>
+                <td class="title-cell">
+                  <span class="title">The "no-bargain" bedtime script (works in 3 nights)</span>
+                  <span class="sub"><span class="niche-tag">Toddler Life</span> · idea v1</span>
+                </td>
+                <td><span class="type-pill authority">Authority</span></td>
+                <td class="format-cell"><span class="fmt-icon"></span>Carousel</td>
+                <td>
+                  <span class="stage-progress">
+                    <span class="pip done"></span>
+                    <span class="pip err"></span>
+                    <span class="pip todo"></span>
+                    <span class="pip todo"></span>
+                    <span class="pip todo"></span>
+                    <span class="pip todo"></span>
+                  </span>
+                  <span class="stage-label">Caption · failed</span>
+                </td>
+                <td class="status-cell"><span class="status-pill err"><span class="dot"></span>Blocked · S2b</span></td>
+                <td class="age-cell r mono">3d</td>
+              </tr>
+
+              <!-- ROW 4 -->
+              <tr class="idea-row">
+                <td class="expand-cell"><span class="twist">▶</span></td>
+                <td class="id-cell"><span class="id">I-1291</span></td>
+                <td class="title-cell">
+                  <span class="title">School-night dinners under £8 — 10-minute rotation</span>
+                  <span class="sub"><span class="niche-tag">Family Meals</span> · idea v2 · contains affiliate</span>
+                </td>
+                <td><span class="type-pill sales">Sales</span></td>
+                <td class="format-cell"><span class="fmt-icon"></span>Carousel</td>
+                <td>
+                  <span class="stage-progress">
+                    <span class="pip done"></span>
+                    <span class="pip done"></span>
+                    <span class="pip done"></span>
+                    <span class="pip now"></span>
+                    <span class="pip todo"></span>
+                    <span class="pip todo"></span>
+                  </span>
+                  <span class="stage-label">Editor gate</span>
+                </td>
+                <td class="status-cell"><span class="status-pill review"><span class="dot"></span>Awaiting review</span></td>
+                <td class="age-cell r mono">1d</td>
+              </tr>
+
+              <!-- ROW 5 -->
+              <tr class="idea-row">
+                <td class="expand-cell"><span class="twist">▶</span></td>
+                <td class="id-cell"><span class="id">I-1294</span></td>
+                <td class="title-cell">
+                  <span class="title">Lunchbox swaps that actually get eaten (not Pinterest fantasy)</span>
+                  <span class="sub"><span class="niche-tag">School Age Kids</span> · idea v1</span>
+                </td>
+                <td><span class="type-pill engagement">Engagement</span></td>
+                <td class="format-cell"><span class="fmt-icon" style="background:#7C3AED;"></span>Reel</td>
+                <td>
+                  <span class="stage-progress">
+                    <span class="pip done"></span>
+                    <span class="pip done"></span>
+                    <span class="pip warn"></span>
+                    <span class="pip todo"></span>
+                    <span class="pip todo"></span>
+                    <span class="pip todo"></span>
+                  </span>
+                  <span class="stage-label">Asset · empty prompt</span>
+                </td>
+                <td class="status-cell"><span class="status-pill warn"><span class="dot"></span>Needs prompt</span></td>
+                <td class="age-cell r mono">12h</td>
+              </tr>
+
+              <!-- ROW 6 -->
+              <tr class="idea-row">
+                <td class="expand-cell"><span class="twist">▶</span></td>
+                <td class="id-cell"><span class="id">I-1295</span></td>
+                <td class="title-cell">
+                  <span class="title">The 4-month sleep regression survival kit</span>
+                  <span class="sub"><span class="niche-tag">Baby Sleep</span> · idea v1</span>
+                </td>
+                <td><span class="type-pill authority">Authority</span></td>
+                <td class="format-cell"><span class="fmt-icon"></span>Carousel</td>
+                <td>
+                  <span class="stage-progress">
+                    <span class="pip done"></span>
+                    <span class="pip done"></span>
+                    <span class="pip done"></span>
+                    <span class="pip now"></span>
+                    <span class="pip todo"></span>
+                    <span class="pip todo"></span>
+                  </span>
+                  <span class="stage-label">Editor gate</span>
+                </td>
+                <td class="status-cell"><span class="status-pill review"><span class="dot"></span>Awaiting review</span></td>
+                <td class="age-cell r mono">8h</td>
+              </tr>
+
+              <!-- ROW 7 — published-stage failure -->
+              <tr class="idea-row">
+                <td class="expand-cell"><span class="twist">▶</span></td>
+                <td class="id-cell"><span class="id">I-1281</span></td>
+                <td class="title-cell">
+                  <span class="title">Why "wake windows" fail almost every parent</span>
+                  <span class="sub"><span class="niche-tag">Baby Sleep</span> · idea v4 · already approved</span>
+                </td>
+                <td><span class="type-pill viral">Viral</span></td>
+                <td class="format-cell"><span class="fmt-icon"></span>Carousel</td>
+                <td>
+                  <span class="stage-progress">
+                    <span class="pip done"></span>
+                    <span class="pip done"></span>
+                    <span class="pip done"></span>
+                    <span class="pip done"></span>
+                    <span class="pip done"></span>
+                    <span class="pip err"></span>
+                  </span>
+                  <span class="stage-label">Publish · failed</span>
+                </td>
+                <td class="status-cell"><span class="status-pill err"><span class="dot"></span>Blocked · S2e</span></td>
+                <td class="age-cell r mono">1d</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ============== SIDE PANEL ============== -->
+        <aside class="panel" id="panel">
+          <div class="panel-head">
+            <div class="ctx">
+              <div class="crumbs">Idea I-1284 · Asset A-306 <span class="scn">S2d Editor Gate</span></div>
+              <div class="ttl">Why your toddler refuses to nap (and the 3-step reset)</div>
+            </div>
+            <button class="close" title="Close">×</button>
+          </div>
+
+          <div class="panel-tabs">
+            <div class="panel-tab active">Review &amp; edit <span class="badge">2</span></div>
+            <div class="panel-tab">Caption</div>
+            <div class="panel-tab">Slides <span class="badge warn">1</span></div>
+            <div class="panel-tab">Audit</div>
+          </div>
+
+          <div class="panel-body">
+
+            <!-- Meta block -->
+            <div class="meta-grid">
+              <div class="k">Sub-niche</div><div class="v">Toddler Life · Parenting &amp; Family</div>
+              <div class="k">Type</div><div class="v"><span class="pill" style="background:var(--type-engagement);color:#14532D;">Engagement</span></div>
+              <div class="k">Format</div><div class="v">Carousel · 6 slides · 1080×1350</div>
+              <div class="k">Hook style</div><div class="v">Reassurance / contrarian</div>
+              <div class="k">Generated</div><div class="v">2026-04-23 09:14 UTC <span style="color:var(--text-faint);">(2d ago)</span></div>
+              <div class="k">Last edit</div><div class="v">You · 2026-04-25 18:42 UTC</div>
+              <div class="k">Affiliate</div><div class="v" style="color:var(--text-faint);">none</div>
+            </div>
+
+            <!-- Caption editor -->
+            <div class="field-block">
+              <div class="field-label">
+                Caption
+                <span class="helper">218 / 2,200 chars</span>
+                <span class="revert" title="Revert to AI original">↺ revert</span>
+              </div>
+              <textarea class="caption-text edited">Naps don't fail because your toddler is "bad at sleep." They fail because the day stopped meeting them.
+
+The 3-step reset, in order:
+1. Move outside before 10am
+2. Strip the lunch sugar
+3. Wind-down at 12:30, not 1:00
+
+Save this for Sunday. ✨
+
+#toddlerlife #napstrike #gentleparenting</textarea>
+              <div class="field-meta">
+                <span class="edited">● Edited from AI draft (3 changes)</span>
+                <span>Reading level 6.2 · 4 hashtags</span>
+              </div>
+            </div>
+
+            <!-- Slides -->
+            <div class="field-block">
+              <div class="field-label">
+                Carousel slides (6)
+                <span class="helper">Edit text only — visuals re-render on save</span>
+              </div>
+              <div class="slides">
+
+                <div class="slide">
+                  <div class="slide-head">
+                    <span class="num">01</span>
+                    <span class="role">Hook</span>
+                  </div>
+                  <div class="slide-body">
+                    <div class="slide-thumb">Naps don't fail<br/>because your<br/>toddler is "bad<br/>at sleep."</div>
+                    <div class="slide-edit">
+                      <textarea>Naps don't fail because your toddler is "bad at sleep."</textarea>
+                      <div class="edit-meta"><span>57 / 80 chars</span><span class="edited-tag">● edited</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="slide">
+                  <div class="slide-head">
+                    <span class="num">02</span>
+                    <span class="role">Tension</span>
+                  </div>
+                  <div class="slide-body">
+                    <div class="slide-thumb">They fail<br/>because the day<br/>stopped meeting<br/>them.</div>
+                    <div class="slide-edit">
+                      <textarea>They fail because the day stopped meeting them.</textarea>
+                      <div class="edit-meta"><span>48 / 80 chars</span><span></span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="slide">
+                  <div class="slide-head">
+                    <span class="num">03</span>
+                    <span class="role">Step 1</span>
+                  </div>
+                  <div class="slide-body">
+                    <div class="slide-thumb repeat">Move outside<br/>before 10am.<br/><br/>Light + air do<br/>the regulating.</div>
+                    <div class="slide-edit">
+                      <textarea>Move outside before 10am. Light + air do the regulating, not the routine app.</textarea>
+                      <div class="edit-meta"><span>78 / 120 chars</span><span></span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="slide warn-slide">
+                  <div class="slide-head">
+                    <span class="num">04</span>
+                    <span class="role">Step 2</span>
+                    <span class="alert">⚠ Asset gen reused slide 3's image URL · re-render needed</span>
+                  </div>
+                  <div class="slide-body">
+                    <div class="slide-thumb repeat">Strip the lunch<br/>sugar.<br/><br/>Apple, not<br/>juice. Yogurt,<br/>not pouch.</div>
+                    <div class="slide-edit">
+                      <textarea>Strip the lunch sugar. Apple, not juice. Yogurt, not pouch.</textarea>
+                      <div class="edit-meta"><span>59 / 120 chars</span><span class="edited-tag">● edited</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="slide">
+                  <div class="slide-head">
+                    <span class="num">05</span>
+                    <span class="role">Step 3</span>
+                  </div>
+                  <div class="slide-body">
+                    <div class="slide-thumb">Wind down at<br/>12:30, not 1:00.<br/><br/>Lights low,<br/>voice lower.</div>
+                    <div class="slide-edit">
+                      <textarea>Wind down at 12:30, not 1:00. Lights low, voice lower.</textarea>
+                      <div class="edit-meta"><span>54 / 120 chars</span><span></span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="slide">
+                  <div class="slide-head">
+                    <span class="num">06</span>
+                    <span class="role">CTA</span>
+                  </div>
+                  <div class="slide-body">
+                    <div class="slide-thumb">Save this for<br/>Sunday.<br/><br/>Follow for<br/>more.</div>
+                    <div class="slide-edit">
+                      <textarea>Save this for Sunday. Follow @toddlerlife.daily for the rest.</textarea>
+                      <div class="edit-meta"><span>60 / 120 chars</span><span></span></div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Audit -->
+            <div class="field-block">
+              <div class="field-label">Audit trail <span class="helper">last 5</span></div>
+              <div class="audit">
+                <div class="audit-row user">
+                  <span class="who">You</span><span class="when">just now · 21:08</span>
+                  <span class="what">Edited slide 4 caption ("Apple, not juice. Yogurt, not pouch.")</span>
+                </div>
+                <div class="audit-row user">
+                  <span class="who">You</span><span class="when">2d ago · 18:42</span>
+                  <span class="what">Edited main caption — added wind-down line, removed 2 hashtags</span>
+                </div>
+                <div class="audit-row err">
+                  <span class="who">S2c · Asset Gen</span><span class="when">2d ago · 09:18</span>
+                  <span class="what">Reused R2 url across slide 3 &amp; 5 — flagged for re-render</span>
+                </div>
+                <div class="audit-row">
+                  <span class="who">S2b · Copywriter</span><span class="when">2d ago · 09:14</span>
+                  <span class="what">Generated caption v1 (218 chars · 6 hashtags)</span>
+                </div>
+                <div class="audit-row">
+                  <span class="who">You</span><span class="when">3d ago · 11:02</span>
+                  <span class="what">Approved Idea I-1284 (v3) for content generation</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="panel-foot">
+            <button class="approve">✓ Save &amp; Approve <span class="dirty-tag">· 3 edits</span></button>
+            <button class="reject">Reject</button>
+            <button class="more" title="More actions">⋯</button>
+          </div>
+        </aside>
+
+      </div>
+
+      <div class="footnote">
+        Filtered to "Awaiting approval" · 7 of 38 in flight. Click any row to load it in the side panel · ⌘E to edit caption · ⌘↵ to save &amp; approve.
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+  // Row click → mark selected, fake-load panel header
+  const rows = document.querySelectorAll('tr.idea-row');
+  rows.forEach(r => {
+    r.addEventListener('click', () => {
+      rows.forEach(x => x.classList.remove('selected'));
+      r.classList.add('selected');
+    });
+  });
+
+  // Twist toggle on the chevron cell
+  document.querySelectorAll('.expand-cell').forEach(c => {
+    c.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const row = c.closest('tr.idea-row');
+      if (row) row.classList.toggle('open');
+    });
+  });
+
+  // Tab swap (visual only)
+  document.querySelectorAll('.panel-tab').forEach(t => {
+    t.addEventListener('click', () => {
+      document.querySelectorAll('.panel-tab').forEach(x => x.classList.remove('active'));
+      t.classList.add('active');
+    });
+  });
+
+  // Stage rail click filter (visual)
+  document.querySelectorAll('.stage').forEach(s => {
+    s.addEventListener('click', () => {
+      document.querySelectorAll('.stage').forEach(x => x.classList.remove('active'));
+      s.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>

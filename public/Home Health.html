@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Infinite Factory OS — Home / Health</title>
+<meta name="viewport" content="width=1280" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    /* Status */
+    --ok: #1A7F37;
+    --warn: #B07A00;
+    --err: #C00000;
+    --info: #1F6FEB;
+    /* Content type */
+    --type-viral: #FDE68A;
+    --type-authority: #BFDBFE;
+    --type-engagement: #BBF7D0;
+    --type-sales: #FECACA;
+    /* Pillar */
+    --pillar-monitor: #0E7490;
+    --pillar-execute: #7C3AED;
+    --pillar-edit: #0F766E;
+    --pillar-monetize: #B45309;
+    /* Surface */
+    --nav: #1F2937;
+    --nav-hover: #2A3441;
+    --nav-active: #111827;
+    --bg: #FFFFFF;
+    --panel: #FAFAFA;
+    --row: #F3F4F6;
+    --border: #E5E7EB;
+    --border-strong: #D1D5DB;
+    --text: #111827;
+    --text-muted: #6B7280;
+    --text-faint: #9CA3AF;
+    --text-on-nav: #E5E7EB;
+    --text-on-nav-muted: #9CA3AF;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 13px;
+    line-height: 19px;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; font-feature-settings: "tnum" 1; }
+  .num  { font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
+
+  /* ---------- Layout shell ---------- */
+  .app { display: grid; grid-template-columns: 220px 1fr; min-height: 100vh; }
+
+  /* ---------- Left nav ---------- */
+  .nav {
+    background: var(--nav);
+    color: var(--text-on-nav);
+    padding: 18px 0 14px;
+    display: flex; flex-direction: column;
+    border-right: 1px solid #0b1220;
+    position: sticky; top: 0; height: 100vh;
+  }
+  .nav .brand {
+    padding: 0 18px 18px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    color: #fff;
+    display: flex; align-items: center; gap: 9px;
+  }
+  .brand-mark {
+    width: 18px; height: 18px; border-radius: 4px;
+    background: linear-gradient(135deg, #7C3AED 0%, #0E7490 100%);
+    position: relative;
+    flex: 0 0 auto;
+  }
+  .brand-mark::after {
+    content: ""; position: absolute; inset: 4px; background: var(--nav);
+    border-radius: 1px;
+  }
+  .brand-mark::before {
+    content: ""; position: absolute; left: 7px; top: 3px; bottom: 3px; width: 4px; background: linear-gradient(180deg,#7C3AED,#0E7490);
+  }
+  .nav .group-label {
+    font-size: 10px; line-height: 14px; text-transform: uppercase;
+    letter-spacing: 0.08em; color: #6B7280;
+    padding: 10px 18px 6px;
+  }
+  .nav a {
+    display: flex; align-items: center; gap: 10px;
+    padding: 6px 18px; color: var(--text-on-nav);
+    text-decoration: none; font-size: 13px; line-height: 20px;
+    border-left: 2px solid transparent;
+  }
+  .nav a:hover { background: var(--nav-hover); }
+  .nav a.active {
+    background: var(--nav-active);
+    border-left-color: #fff;
+    color: #fff; font-weight: 600;
+  }
+  .nav a .dot {
+    width: 6px; height: 6px; border-radius: 50%; background: transparent;
+  }
+  .nav a.active .dot { background: #fff; }
+  .nav a .badge {
+    margin-left: auto;
+    background: #374151; color: #E5E7EB;
+    font-size: 10px; line-height: 14px;
+    padding: 1px 6px; border-radius: 10px;
+    font-weight: 600;
+  }
+  .nav a .badge.warn { background: rgba(176,122,0,0.25); color: #FCD34D; }
+  .nav a .badge.err  { background: rgba(192,0,0,0.25);  color: #FCA5A5; }
+  .nav-foot {
+    margin-top: auto;
+    padding: 10px 18px;
+    border-top: 1px solid #0b1220;
+    font-size: 11px; line-height: 15px; color: var(--text-on-nav-muted);
+  }
+  .nav-foot .who { color: #fff; font-weight: 500; font-size: 12px; }
+
+  /* ---------- Content ---------- */
+  .main { background: var(--bg); display: flex; flex-direction: column; }
+  .pageHead {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    padding: 16px 24px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .pageHead h1 {
+    margin: 0; font-size: 22px; line-height: 28px;
+    font-weight: 600; letter-spacing: -0.015em;
+  }
+  .pageHead h1 .light { color: var(--text-muted); font-weight: 400; }
+  .pageHead .meta {
+    display: flex; gap: 10px; align-items: center;
+    font-size: 12px; color: var(--text-muted);
+    flex-wrap: nowrap; white-space: nowrap;
+  }
+  .pageHead .meta .sep { color: var(--border-strong); }
+  .pageHead .niche {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 3px 10px;
+    border: 1px solid var(--border-strong); border-radius: 4px;
+    background: #fff; color: var(--text);
+    font-size: 12px; line-height: 18px;
+    cursor: pointer;
+  }
+  .pageHead .niche .caret { color: var(--text-faint); margin-left: 2px; }
+
+  /* ---------- Body grid ---------- */
+  .body {
+    padding: 16px 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    flex: 1;
+  }
+  .col { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+  .row-2 {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+    gap: 12px;
+    min-width: 0;
+  }
+  .section-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+    margin-bottom: 4px;
+  }
+  .section-head h2 {
+    margin: 0; font-size: 14px; line-height: 20px;
+    font-weight: 600; letter-spacing: -0.005em;
+  }
+  .section-head h2 .pillar-tag {
+    display: inline-block;
+    font-size: 10px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    padding: 1px 6px; border-radius: 3px;
+    margin-right: 8px;
+    vertical-align: 1px;
+  }
+  .section-head h2 .pillar-tag.monitor  { background: rgba(14,116,144,0.10); color: var(--pillar-monitor); }
+  .section-head h2 .pillar-tag.execute  { background: rgba(124,58,237,0.10); color: var(--pillar-execute); }
+  .section-head h2 .pillar-tag.ops      { background: #FEE2E2; color: #7F1D1D; }
+  .section-head .sub {
+    font-size: 11px; color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  /* ---------- Card primitive ---------- */
+  .card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+  .card-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 9px 12px 7px;
+    border-bottom: 1px solid var(--border);
+  }
+  .card-head h3 {
+    margin: 0;
+    font-size: 13px; line-height: 18px; font-weight: 600;
+  }
+  .card-head .right {
+    font-size: 11px; color: var(--text-muted);
+    display: flex; align-items: center; gap: 10px;
+    white-space: nowrap;
+  }
+  .card-head a.link {
+    color: var(--info); text-decoration: none; font-size: 11px;
+  }
+  .card-head a.link:hover { text-decoration: underline; }
+
+  /* ---------- Layer health rail ---------- */
+  .layer-rail {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    overflow: hidden;
+  }
+  .lr-cell {
+    padding: 8px 10px 9px;
+    border-right: 1px solid var(--border);
+    min-width: 0;
+    position: relative;
+  }
+  .lr-cell:last-child { border-right: 0; }
+  .lr-cell::before {
+    content: "";
+    position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  }
+  .lr-cell.ok::before   { background: var(--ok); }
+  .lr-cell.warn::before { background: var(--warn); }
+  .lr-cell.err::before  { background: var(--err); }
+  .lr-cell.info::before { background: var(--info); }
+  .lr-cell .lr-top {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 11px; line-height: 15px;
+  }
+  .lr-cell .lr-id {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 10px; color: var(--text-faint);
+    background: var(--row); padding: 0 4px; border-radius: 2px;
+    flex: 0 0 auto;
+  }
+  .lr-cell .lr-name {
+    font-weight: 600; color: var(--text);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .lr-cell .lr-status {
+    margin-top: 5px;
+    display: flex; align-items: center; gap: 6px;
+    font-size: 12px; line-height: 16px; font-weight: 600;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .lr-cell.ok   .lr-status { color: var(--ok); }
+  .lr-cell.warn .lr-status { color: var(--warn); }
+  .lr-cell.err  .lr-status { color: var(--err); }
+  .lr-cell.info .lr-status { color: var(--info); }
+  .lr-cell .lr-status .pulse {
+    width: 7px; height: 7px; border-radius: 50%; background: currentColor; flex: 0 0 auto;
+  }
+  .lr-cell .lr-meta {
+    margin-top: 1px;
+    font-size: 10px; line-height: 14px; color: var(--text-muted);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+
+  /* KPI strip — wider grid in single-row mode */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  .kpi {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 9px 12px 10px;
+    background: #fff;
+  }
+  .kpi .label {
+    font-size: 11px; line-height: 14px; color: var(--text-muted);
+    font-weight: 500;
+  }
+  .kpi .value {
+    font-size: 24px; line-height: 30px; font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-top: 2px;
+    color: var(--text);
+  }
+  .kpi .value.empty { color: var(--text-faint); font-weight: 600; }
+  .kpi .delta {
+    font-size: 11px; line-height: 15px; color: var(--text-muted);
+    margin-top: 1px;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .kpi .delta.up { color: var(--ok); }
+  .kpi .delta.down { color: var(--err); }
+  .kpi .delta.warn { color: var(--warn); }
+  .kpi .delta.muted { color: var(--text-faint); }
+
+  /* ---------- Active blockers list ---------- */
+  .blockers {}
+  .blocker {
+    display: grid;
+    grid-template-columns: 22px 38px minmax(0,1fr) 70px 78px;
+    gap: 8px;
+    align-items: center;
+    padding: 6px 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+    line-height: 17px;
+  }
+  .blocker:last-child { border-bottom: 0; }
+  .blocker:hover { background: var(--row); cursor: pointer; }
+  .blocker .pri {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 10px; font-weight: 600;
+    color: #fff;
+    width: 22px; height: 16px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 3px;
+  }
+  .blocker .scn-cell {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px; font-weight: 600; color: var(--text);
+    background: var(--row); padding: 0 5px; border-radius: 3px;
+    text-align: center;
+  }
+  .blocker .scn-cell.empty { background: transparent; color: var(--text-faint); font-weight: 500; }
+  .blocker .pri.p0 { background: var(--err); }
+  .blocker .pri.p1 { background: var(--warn); }
+  .blocker .pri.p2 { background: #6B7280; }
+  .blocker .text { min-width: 0; }
+  .blocker .text .t {
+    font-weight: 500;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .blocker .text .t .scn { display: none; }
+  .blocker .text .t .err-frag { color: var(--err); }
+  .blocker .text .t .warn-frag { color: var(--warn); }
+  .blocker .age {
+    font-size: 11px; color: var(--text-muted); white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .blocker .open {
+    font-size: 11px; color: var(--info); text-decoration: none; white-space: nowrap;
+  }
+  .blocker .open:hover { text-decoration: underline; }
+
+  /* ---------- Throughput chart ---------- */
+  .chart {
+    padding: 10px 12px 8px;
+  }
+  .chart .legend {
+    display: flex; gap: 10px; font-size: 11px; color: var(--text-muted);
+    margin-bottom: 8px;
+    flex-wrap: nowrap; align-items: center;
+  }
+  .legend-key {
+    display: inline-flex; align-items: center; gap: 5px;
+  }
+  .legend-key i { width: 8px; height: 8px; border-radius: 1px; display: inline-block; }
+  .bars {
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    align-items: end;
+    gap: 4px;
+    height: 100px;
+    padding: 0 2px;
+  }
+  .day { position: relative; height: 100%; display: flex; flex-direction: column-reverse; gap: 1px; }
+  .seg { width: 100%; }
+  .seg.ideas { background: #CBD5E1; }
+  .seg.captions { background: #94A3B8; }
+  .seg.assets { background: #475569; }
+  .seg.published { background: #1E293B; }
+  .day.drop .seg { background: var(--err); opacity: 0.85; }
+  .x-axis {
+    display: flex; justify-content: space-between;
+    font-size: 10px; color: var(--text-muted);
+    margin-top: 6px; padding: 0 2px;
+    font-variant-numeric: tabular-nums;
+  }
+  .x-axis .dropnote { color: var(--err); }
+
+  /* ---------- Sub-niche table ---------- */
+  table.subniche {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  table.subniche th {
+    text-align: left;
+    font-size: 10px; line-height: 14px;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--text-muted); font-weight: 600;
+    padding: 7px 12px 6px;
+    border-bottom: 1px solid var(--border);
+    background: #fff;
+  }
+  table.subniche th.r { text-align: right; }
+  table.subniche td {
+    padding: 7px 12px;
+    border-bottom: 1px solid var(--border);
+    line-height: 17px;
+  }
+  table.subniche tr:last-child td { border-bottom: 0; }
+  table.subniche tr:hover td { background: var(--row); }
+  table.subniche td.r { text-align: right; font-variant-numeric: tabular-nums; }
+  td .pipeline-bar {
+    display: inline-block;
+    height: 5px; border-radius: 1px;
+    background: var(--text); vertical-align: middle;
+    margin-right: 6px;
+  }
+  td .status-pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 11px; font-weight: 500;
+  }
+  .dot-ok { width: 6px; height: 6px; border-radius: 50%; background: var(--ok); display: inline-block; }
+  .dot-warn { width: 6px; height: 6px; border-radius: 50%; background: var(--warn); display: inline-block; }
+  .dot-err { width: 6px; height: 6px; border-radius: 50%; background: var(--err); display: inline-block; }
+  .empty-cell { color: var(--text-faint); }
+
+  /* ---------- Action buttons ---------- */
+  .btn-primary {
+    background: #111827; color: #fff; border: 1px solid #111827;
+    padding: 5px 11px; border-radius: 4px;
+    font-size: 12px; line-height: 18px; font-weight: 500;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background: #000; }
+  .btn-ghost {
+    background: #fff; color: var(--text); border: 1px solid var(--border-strong);
+    padding: 4px 9px; border-radius: 4px;
+    font-size: 11px; line-height: 15px;
+    cursor: pointer;
+  }
+  .table-foot {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 8px 12px;
+    border-top: 1px solid var(--border);
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+  .table-foot .meta { font-size: 11px; color: var(--text-muted); min-width: 0; }
+  .btn-primary, .btn-ghost { white-space: nowrap; }
+
+  /* ---------- Decisions list ---------- */
+  .decisions {}
+  .decision {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px dashed var(--border);
+    font-size: 12px;
+    line-height: 17px;
+  }
+  .decision:last-child { border-bottom: 0; }
+  .decision .t .ref {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    color: var(--text-muted); font-size: 11px;
+  }
+  .decision .a {
+    font-size: 11px; color: var(--info); text-decoration: none;
+    white-space: nowrap; font-weight: 500;
+  }
+  .decision .a:hover { text-decoration: underline; }
+  .decision .a .arrow { margin-left: 2px; }
+
+  /* ---------- Footnote ---------- */
+  .footnote {
+    grid-column: 1 / -1;
+    font-size: 11px; color: var(--text-faint);
+    padding-top: 4px;
+  }
+
+  /* Type pill helper (unused on this screen but defined per system) */
+  .type-pill {
+    display: inline-block; padding: 1px 7px; border-radius: 999px;
+    font-size: 10px; line-height: 14px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .type-pill.viral { background: var(--type-viral); color: #78350F; }
+  .type-pill.authority { background: var(--type-authority); color: #1E3A8A; }
+  .type-pill.engagement { background: var(--type-engagement); color: #14532D; }
+  .type-pill.sales { background: var(--type-sales); color: #7F1D1D; }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ============== LEFT NAV ============== -->
+  <aside class="nav">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <span>Infinite Factory OS</span>
+    </div>
+
+    <a href="#" class="active"><span class="dot"></span>Home / Health</a>
+    <a href="#"><span class="dot"></span>Niches</a>
+    <a href="#"><span class="dot"></span>Content Pipeline</a>
+    <a href="#"><span class="dot"></span>Editor Queue<span class="badge warn">5</span></a>
+    <a href="#"><span class="dot"></span>Scenarios<span class="badge err">6</span></a>
+    <a href="#"><span class="dot"></span>Prompts &amp; Agents</a>
+    <a href="#"><span class="dot"></span>Performance</a>
+    <a href="#"><span class="dot"></span>Learning Insights</a>
+    <a href="#"><span class="dot"></span>Offers &amp; Intake<span class="badge">3</span></a>
+    <a href="#"><span class="dot"></span>Monetization</a>
+    <a href="#"><span class="dot"></span>Storefront</a>
+    <a href="#"><span class="dot"></span>Brand &amp; Settings</a>
+
+    <div class="nav-foot">
+      <div class="who">Dave</div>
+      <div>dmurphy.ireland@gmail.com</div>
+      <div style="margin-top:6px;">Base <span class="mono">appLHjLQKQEM8j8Tm</span></div>
+    </div>
+  </aside>
+
+  <!-- ============== MAIN ============== -->
+  <main class="main">
+
+    <header class="pageHead">
+      <h1>Home <span class="light">— is the factory healthy?</span></h1>
+      <div class="meta">
+        <span style="font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-faint);">Filter</span>
+        <button class="niche">
+          <span style="width:6px;height:6px;border-radius:50%;background:#9CA3AF;display:inline-block;"></span>
+          All niches
+          <span style="color:var(--text-muted);font-size:11px;">· 1 parent · 5 sub</span>
+          <span class="caret">▾</span>
+        </button>
+        <span class="sep">·</span>
+        <span>Refreshed <span class="mono">21:08 UTC</span></span>
+      </div>
+    </header>
+
+    <div class="body">
+
+      <!-- ============== SECTION 1: PERFORMANCE (CEO) ============== -->
+      <section class="col">
+        <div class="section-head">
+          <h2><span class="pillar-tag monitor">Monitor</span>Performance &amp; growth</h2>
+          <span class="sub">Business KPIs · per-niche pipeline · 14d throughput</span>
+        </div>
+
+        <!-- KPI strip -->
+        <div class="kpi-row">
+          <div class="kpi">
+            <div class="label">Posts published</div>
+            <div class="value num">72</div>
+            <div class="delta muted">last 30d · ~72 lifetime</div>
+          </div>
+          <div class="kpi">
+            <div class="label">Total reach</div>
+            <div class="value num">12.4k</div>
+            <div class="delta up">▲ 18% wow</div>
+          </div>
+          <div class="kpi">
+            <div class="label">Affiliate clicks</div>
+            <div class="value empty num">—</div>
+            <div class="delta warn">awaiting Awin sync</div>
+          </div>
+          <div class="kpi">
+            <div class="label">Net revenue</div>
+            <div class="value num">£0.00</div>
+            <div class="delta muted">0 Sales recorded</div>
+          </div>
+        </div>
+
+        <!-- Sub-niches table + Throughput side-by-side -->
+        <div class="row-2">
+          <!-- Sub-niches table -->
+          <div class="card">
+            <div class="card-head">
+              <h3>Performance snapshot — all sub-niches</h3>
+              <div class="right"><span>Grouped by parent niche</span></div>
+            </div>
+            <table class="subniche">
+              <thead>
+                <tr>
+                  <th>Sub-niche</th>
+                  <th class="r">Pipeline</th>
+                  <th class="r">Posts/wk</th>
+                  <th class="r">Reach</th>
+                  <th class="r" style="padding-right:18px;">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background:var(--row);">
+                  <td colspan="5" style="font-size:10px;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);font-weight:600;padding:5px 12px;">Parenting &amp; Family · 4 active · 1 paused</td>
+                </tr>
+                <tr>
+                  <td>Toddler Life</td>
+                  <td class="r"><span class="pipeline-bar" style="width:24px;"></span>8</td>
+                  <td class="r">5</td>
+                  <td class="r">3.2k</td>
+                  <td class="r"><span class="status-pill"><span class="dot-ok"></span>Active</span></td>
+                </tr>
+                <tr>
+                  <td>Baby Sleep</td>
+                  <td class="r"><span class="pipeline-bar" style="width:32px;"></span>11</td>
+                  <td class="r">6</td>
+                  <td class="r">4.1k</td>
+                  <td class="r"><span class="status-pill"><span class="dot-ok"></span>Active</span></td>
+                </tr>
+                <tr>
+                  <td>School Age Kids</td>
+                  <td class="r"><span class="pipeline-bar" style="width:30px;"></span>10</td>
+                  <td class="r">4</td>
+                  <td class="r">2.6k</td>
+                  <td class="r"><span class="status-pill"><span class="dot-ok"></span>Active</span></td>
+                </tr>
+                <tr>
+                  <td>Family Meals</td>
+                  <td class="r"><span class="pipeline-bar" style="width:27px;"></span>9</td>
+                  <td class="r">5</td>
+                  <td class="r">2.5k</td>
+                  <td class="r"><span class="status-pill"><span class="dot-ok"></span>Active</span></td>
+                </tr>
+                <tr>
+                  <td>Dad Life</td>
+                  <td class="r empty-cell">0</td>
+                  <td class="r empty-cell">0</td>
+                  <td class="r empty-cell">—</td>
+                  <td class="r"><span class="status-pill" style="color:var(--warn);"><span class="dot-warn"></span>Paused</span></td>
+                </tr>
+                <tr style="background:var(--panel);font-weight:600;">
+                  <td>Total · 5 sub-niches</td>
+                  <td class="r">38</td>
+                  <td class="r">20</td>
+                  <td class="r">12.4k</td>
+                  <td class="r" style="color:var(--text-muted);font-weight:500;font-size:11px;">across 1 niche</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="table-foot">
+              <span class="meta">Showing all niches · 1 empty Sub-Niche record needs cleanup</span>
+              <div style="display:flex;gap:6px;flex:0 0 auto;">
+                <button class="btn-ghost">＋ Parent niche</button>
+                <button class="btn-primary">＋ Sub-niche</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Throughput sparkline -->
+          <div class="card">
+            <div class="card-head">
+              <h3>Throughput · 14 days</h3>
+              <div class="right">Ideas → Captions → Assets → Published</div>
+            </div>
+            <div class="chart">
+              <div class="legend">
+                <span class="legend-key"><i style="background:#CBD5E1;"></i>Ideas</span>
+                <span class="legend-key"><i style="background:#94A3B8;"></i>Captions</span>
+                <span class="legend-key"><i style="background:#475569;"></i>Assets</span>
+                <span class="legend-key"><i style="background:#1E293B;"></i>Published</span>
+                <span style="margin-left:auto;color:var(--err);font-weight:500;white-space:nowrap;">■ Apr 25 · S2b stop</span>
+              </div>
+              <div class="bars" id="bars"></div>
+              <div class="x-axis">
+                <span>Apr 12</span>
+                <span>Apr 15</span>
+                <span>Apr 18</span>
+                <span>Apr 21</span>
+                <span>Apr 24</span>
+                <span class="dropnote">Apr 25 ▼</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============== SECTION 2: OPERATIONS ============== -->
+      <section class="col">
+        <div class="section-head">
+          <h2><span class="pillar-tag ops">Operate</span>Factory health</h2>
+          <span class="sub">Layer health · active blockers · decisions waiting on you</span>
+        </div>
+
+        <!-- Layer health rail -->
+        <div class="layer-rail">
+          <div class="lr-cell ok">
+            <div class="lr-top"><span class="lr-id">L1</span><span class="lr-name">Brand</span></div>
+            <div class="lr-status"><span class="pulse"></span>OK</div>
+            <div class="lr-meta">5 sub-niches</div>
+          </div>
+          <div class="lr-cell err">
+            <div class="lr-top"><span class="lr-id">L2</span><span class="lr-name">Content</span></div>
+            <div class="lr-status"><span class="pulse"></span>S2b deactivated</div>
+            <div class="lr-meta">4 scenarios degraded</div>
+          </div>
+          <div class="lr-cell warn">
+            <div class="lr-top"><span class="lr-id">L3</span><span class="lr-name">Video</span></div>
+            <div class="lr-status"><span class="pulse"></span>Empty prompt</div>
+            <div class="lr-meta">S2c · missing guard</div>
+          </div>
+          <div class="lr-cell info">
+            <div class="lr-top"><span class="lr-id">L4</span><span class="lr-name">Intel</span></div>
+            <div class="lr-status"><span class="pulse"></span>Idle</div>
+            <div class="lr-meta">S4a · 0 runs today</div>
+          </div>
+          <div class="lr-cell err">
+            <div class="lr-top"><span class="lr-id">L5</span><span class="lr-name">Ops/Sales</span></div>
+            <div class="lr-status"><span class="pulse"></span>S5g 100% err</div>
+            <div class="lr-meta">Intake stuck</div>
+          </div>
+        </div>
+
+        <!-- Active blockers -->
+        <div class="card">
+          <div class="card-head">
+            <h3>Active blockers <span style="color:var(--text-muted);font-weight:500;">(8)</span></h3>
+            <div class="right">
+              <a href="#" class="link">view all →</a>
+            </div>
+          </div>
+          <div class="blockers">
+            <div class="blocker">
+              <span class="pri p0">P0</span>
+              <span class="scn-cell">S2b</span>
+              <div class="text"><div class="t">Copywriter (4311386) <span class="err-frag">deactivated</span> — 6 BlueprintValidationError</div></div>
+              <span class="age mono">3d</span>
+              <a href="#" class="open">Open Make ↗</a>
+            </div>
+            <div class="blocker">
+              <span class="pri p0">P0</span>
+              <span class="scn-cell">S2b</span>
+              <div class="text"><div class="t">Carousel Slide Plan field type — <span class="err-frag">422 parse error</span></div></div>
+              <span class="age mono">2d</span>
+              <a href="#" class="open">Airtable ↗</a>
+            </div>
+            <div class="blocker">
+              <span class="pri p0">P0</span>
+              <span class="scn-cell">S2d</span>
+              <div class="text"><div class="t">Editor Gate writing to wrong field — should be Publishing Decision</div></div>
+              <span class="age mono">1d</span>
+              <a href="#" class="open">Diff →</a>
+            </div>
+            <div class="blocker">
+              <span class="pri p0">P0</span>
+              <span class="scn-cell">S2e</span>
+              <div class="text"><div class="t">Carousel publish — <span class="err-frag">empty Meta Graph response</span></div></div>
+              <span class="age mono">1d</span>
+              <a href="#" class="open">Inspect ↗</a>
+            </div>
+            <div class="blocker">
+              <span class="pri p1">P1</span>
+              <span class="scn-cell">S2c</span>
+              <div class="text"><div class="t">Carousel Asset Generator reusing identical R2 URLs across 5 slides</div></div>
+              <span class="age mono">1d</span>
+              <a href="#" class="open">Re-render →</a>
+            </div>
+            <div class="blocker">
+              <span class="pri p1">P1</span>
+              <span class="scn-cell">S2b</span>
+              <div class="text"><div class="t">Web Search + JSON mode in one OpenAI call — <span class="warn-frag">incompatible</span></div></div>
+              <span class="age mono">1d</span>
+              <a href="#" class="open">Edit prompt →</a>
+            </div>
+            <div class="blocker">
+              <span class="pri p2">P2</span>
+              <span class="scn-cell empty">—</span>
+              <div class="text"><div class="t">Error Log + Publishing Queue tables effectively dead</div></div>
+              <span class="age mono">38d</span>
+              <a href="#" class="open">Decide →</a>
+            </div>
+            <div class="blocker">
+              <span class="pri p2">P2</span>
+              <span class="scn-cell empty">—</span>
+              <div class="text"><div class="t">Phase 1 prompt-only validation blocked — <span class="err-frag">no OPENAI key</span></div></div>
+              <span class="age mono">0d</span>
+              <a href="#" class="open">Add key →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decisions waiting (now under operator/ops) -->
+        <div class="card">
+          <div class="card-head">
+            <h3>Decisions waiting on you</h3>
+            <a href="#" class="link">view all →</a>
+          </div>
+          <div class="decisions">
+            <div class="decision">
+              <div class="t">1 carousel needs Manual Review <span class="ref">(Asset-306 · Editor Decision: Manual Review)</span></div>
+              <a href="#" class="a">Open<span class="arrow">→</span></a>
+            </div>
+            <div class="decision">
+              <div class="t">3 affiliate offers in intake queue, scored &amp; awaiting Active? toggle <span class="ref">(Offer Intake Queue)</span></div>
+              <a href="#" class="a">Score<span class="arrow">→</span></a>
+            </div>
+            <div class="decision">
+              <div class="t">2 storefront-eligible offers not yet Bio Live <span class="ref">(Affiliate Offers · Bio Sort Order empty)</span></div>
+              <a href="#" class="a">Promote<span class="arrow">→</span></a>
+            </div>
+            <div class="decision">
+              <div class="t">7 Ideas in Draft &gt;7d with empty CEO Custom Instructions <span class="ref">(Ideas)</span></div>
+              <a href="#" class="a">Triage<span class="arrow">→</span></a>
+            </div>
+            <div class="decision">
+              <div class="t">Dad Life sub-niche launch checklist incomplete <span class="ref">(Sub-Niches · Status: Paused)</span></div>
+              <a href="#" class="a">Resume<span class="arrow">→</span></a>
+            </div>
+            <div class="decision">
+              <div class="t">Weekly Learning Insight ready — top hook in Baby Sleep <span class="ref">(Learning Insights)</span></div>
+              <a href="#" class="a">Promote<span class="arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="footnote">
+        Top: Monitor / growth (CEO). Bottom: Ops / health (Operator). Numbers grounded in Airtable read 2026-04-25 21:08 UTC.
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+  // Throughput chart — 14 days. Heights in px (max ~95).
+  // Order in a stacked bar (column-reverse): ideas, captions, assets, published from bottom up.
+  // Live snapshot: 293 Ideas, 152 Captions, 104 Assets, 72 Published lifetime.
+  // Bars are *daily* counts entering each stage; the Apr 25 column collapses (S2b stop).
+  const days = [
+    // [date, ideas, captions, assets, published]
+    ['Apr 12', 22, 14, 9, 6],
+    ['Apr 13', 25, 16, 10, 7],
+    ['Apr 14', 21, 13, 8, 6],
+    ['Apr 15', 28, 17, 11, 7],
+    ['Apr 16', 24, 15, 10, 6],
+    ['Apr 17', 30, 18, 12, 8],
+    ['Apr 18', 26, 16, 10, 7],
+    ['Apr 19', 23, 14, 9, 6],
+    ['Apr 20', 27, 17, 11, 7],
+    ['Apr 21', 29, 18, 11, 8],
+    ['Apr 22', 24, 15, 10, 6],
+    ['Apr 23', 26, 16, 10, 7],
+    ['Apr 24', 22, 13, 8, 5],
+    ['Apr 25',  4,  1, 0, 0],  // S2b stop — drop is visually obvious
+  ];
+  const max = Math.max(...days.flatMap(d => [d[1]]));
+  const total = (d) => d[1] + d[2] + d[3] + d[4];
+  const maxTotal = Math.max(...days.map(total));
+  const wrap = document.getElementById('bars');
+  days.forEach((d, i) => {
+    const div = document.createElement('div');
+    div.className = 'day' + (i === days.length - 1 ? ' drop' : '');
+    const ideas = d[1], captions = d[2], assets = d[3], published = d[4];
+    const t = ideas + captions + assets + published;
+    const h = Math.max(2, Math.round((t / maxTotal) * 95));
+    // Per-segment height proportional within total
+    const seg = (val) => Math.max(0, Math.round((val / Math.max(1,t)) * h));
+    const ph = seg(published);
+    const ah = seg(assets);
+    const ch = seg(captions);
+    const ih = h - ph - ah - ch;
+    div.innerHTML = `
+      <div class="seg published" style="height:${ph}px"></div>
+      <div class="seg assets" style="height:${ah}px"></div>
+      <div class="seg captions" style="height:${ch}px"></div>
+      <div class="seg ideas" style="height:${ih}px"></div>
+    `;
+    wrap.appendChild(div);
+  });
+</script>
+</body>
+</html>

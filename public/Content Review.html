@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Infinite Factory OS — Content Review</title>
+<meta name="viewport" content="width=1440" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  :root {
+    --ok: #1A7F37; --warn: #B07A00; --err: #C00000; --info: #1F6FEB;
+    --type-viral: #FDE68A; --type-authority: #BFDBFE; --type-engagement: #BBF7D0; --type-sales: #FECACA;
+    --pillar-monitor: #0E7490; --pillar-execute: #7C3AED; --pillar-edit: #0F766E; --pillar-monetize: #B45309;
+    --nav: #1F2937; --nav-hover: #2A3441; --nav-active: #111827;
+    --bg: #FFFFFF; --panel: #FAFAFA; --row: #F3F4F6;
+    --border: #E5E7EB; --border-strong: #D1D5DB;
+    --text: #111827; --text-muted: #6B7280; --text-faint: #9CA3AF;
+    --text-on-nav: #E5E7EB; --text-on-nav-muted: #9CA3AF;
+    --ig-blue: #0095F6;
+  }
+  * { box-sizing: border-box; }
+  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  html, body { margin: 0; padding: 0; height: 100%; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13px; line-height: 19px;
+    color: var(--text); background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  .num  { font-variant-numeric: tabular-nums; }
+
+  /* ---- Shell ---- */
+  .app { display: grid; grid-template-columns: 220px 1fr; height: 100vh; overflow: hidden; }
+
+  /* ---- Nav ---- */
+  .nav {
+    background: var(--nav); color: var(--text-on-nav);
+    padding: 18px 0 14px;
+    display: flex; flex-direction: column;
+    border-right: 1px solid #0b1220;
+    height: 100vh; overflow: hidden;
+  }
+  .nav .brand {
+    padding: 0 18px 18px; font-weight: 700; font-size: 14px;
+    letter-spacing: -0.01em; color: #fff;
+    display: flex; align-items: center; gap: 9px;
+  }
+  .brand-mark {
+    width: 18px; height: 18px; border-radius: 4px;
+    background: linear-gradient(135deg, #7C3AED 0%, #0E7490 100%);
+    position: relative; flex: 0 0 auto;
+  }
+  .brand-mark::after { content:""; position:absolute; inset:4px; background:var(--nav); border-radius:1px; }
+  .brand-mark::before { content:""; position:absolute; left:7px; top:3px; bottom:3px; width:4px; background:linear-gradient(180deg,#7C3AED,#0E7490); }
+  .nav a {
+    display: flex; align-items: center; gap: 10px;
+    padding: 6px 18px; color: var(--text-on-nav);
+    text-decoration: none; font-size: 13px; line-height: 20px;
+    border-left: 2px solid transparent;
+  }
+  .nav a:hover { background: var(--nav-hover); }
+  .nav a.active { background: var(--nav-active); border-left-color: #fff; color: #fff; font-weight: 600; }
+  .nav a .dot { width:6px; height:6px; border-radius:50%; background:transparent; }
+  .nav a.active .dot { background: #fff; }
+  .nav a .badge {
+    margin-left: auto; background: #374151; color: #E5E7EB;
+    font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 999px;
+  }
+  .nav a .badge.warn { background: rgba(176,122,0,0.25); color: #FCD34D; }
+  .nav a .badge.err  { background: rgba(192,0,0,0.25);  color: #FCA5A5; }
+  .nav-foot {
+    margin-top: auto; padding: 10px 18px;
+    border-top: 1px solid #0b1220;
+    font-size: 11px; line-height: 15px; color: var(--text-on-nav-muted);
+  }
+  .nav-foot .who { color: #fff; font-weight: 500; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="nav">
+    <div class="brand">
+      <span class="brand-mark"></span>
+      <span>Infinite Factory OS</span>
+    </div>
+    <a href="Home Health.html"><span class="dot"></span>Home / Health</a>
+    <a href="#"><span class="dot"></span>Niches</a>
+    <a href="Content Pipeline.html"><span class="dot"></span>Content Pipeline</a>
+    <a href="#" class="active"><span class="dot"></span>Content Review<span class="badge warn">5</span></a>
+    <a href="#"><span class="dot"></span>Scenarios<span class="badge err">6</span></a>
+    <a href="#"><span class="dot"></span>Prompts &amp; Agents</a>
+    <a href="#"><span class="dot"></span>Performance</a>
+    <a href="#"><span class="dot"></span>Learning Insights</a>
+    <a href="#"><span class="dot"></span>Offers &amp; Intake<span class="badge">3</span></a>
+    <a href="#"><span class="dot"></span>Monetization</a>
+    <a href="#"><span class="dot"></span>Storefront</a>
+    <a href="#"><span class="dot"></span>Brand &amp; Settings</a>
+    <div class="nav-foot">
+      <div class="who">Dave</div>
+      <div>dmurphy.ireland@gmail.com</div>
+      <div style="margin-top:6px;">Base <span class="mono">appLHjLQKQEM8j8Tm</span></div>
+    </div>
+  </aside>
+
+  <div id="root"></div>
+</div>
+
+<script type="text/babel" src="ios-frame.jsx"></script>
+<script type="text/babel">
+// ─── Data ──────────────────────────────────────────────────────────────────
+const QUEUE = [
+  {
+    id: 'ASSET-306',
+    type: 'carousel',
+    status: 'manual_review',
+    subniche: 'Baby Sleep',
+    scenario: 'S2c',
+    created: '2026-04-26',
+    idea: 'Why newborns fight sleep — and what actually helps',
+    slides: [
+      { id: 1, heading: 'Why your newborn FIGHTS sleep', body: '(and what no one tells you)', bg: '#1E293B', textColor: '#F8FAFC' },
+      { id: 2, heading: 'Overtiredness is the #1 culprit', body: 'Miss the sleep window by 10 mins and you\'re in for a 45-minute battle.', bg: '#0F172A', textColor: '#F8FAFC' },
+      { id: 3, heading: 'The "drowsy but awake" myth', body: 'Great in theory. Nearly impossible at 3am with a screaming newborn.', bg: '#1E293B', textColor: '#F8FAFC' },
+      { id: 4, heading: 'What actually works', body: '→ Dark room\n→ White noise at 65db\n→ Feed, wind, wrap — in that order', bg: '#0F172A', textColor: '#F8FAFC' },
+      { id: 5, heading: 'Save this for tonight', body: 'You\'re not doing anything wrong. Newborn sleep is genuinely hard.', bg: '#1E293B', textColor: '#F8FAFC' },
+      { id: 6, heading: 'Follow for more like this 👇', body: '@babysleep.ie · link in bio for our free sleep guide', bg: '#0F172A', textColor: '#CBD5E1' },
+    ],
+    caption: `Why your newborn FIGHTS sleep 😩 (and what actually helps)\n\nOvertiredness is the #1 reason newborns resist sleep — and missing that window by just 10 minutes can mean 45 mins of battle.\n\nSave this for tonight 🌙\n\n#babysleep #newbornlife #newbornsleep #sleeptips #irishmum #irishdad #babytips #parentingireland #momlife #newbornmom`,
+    offer: 'Free Sleep Guide (bio link)',
+    scheduleTime: '2026-04-28 19:00 UTC',
+    editorNote: 'Slide 3 heading might be too negative — flagged for human review',
+    aiConfidence: 74,
+  },
+  {
+    id: 'ASSET-298',
+    type: 'carousel',
+    status: 'manual_review',
+    subniche: 'Toddler Life',
+    scenario: 'S2b',
+    created: '2026-04-25',
+    idea: '5 toddler tantrums decoded',
+    slides: [
+      { id: 1, heading: '5 toddler tantrums — DECODED', body: 'What they mean + what to do', bg: '#7C3AED', textColor: '#F8FAFC' },
+      { id: 2, heading: 'The "I want it NOW" meltdown', body: 'Translation: I\'m overwhelmed and can\'t regulate yet. Try: name the feeling first.', bg: '#6D28D9', textColor: '#F8FAFC' },
+      { id: 3, heading: 'The bedtime stall', body: 'Translation: I\'m scared of separation. Try: a consistent 10-min wind-down ritual.', bg: '#7C3AED', textColor: '#F8FAFC' },
+      { id: 4, heading: 'The supermarket floor moment', body: 'Translation: sensory overload. Try: warning 5 mins before leaving + a snack.', bg: '#6D28D9', textColor: '#F8FAFC' },
+      { id: 5, heading: 'Save + share with a fellow parent', body: 'You\'re not failing. Toddlers are genuinely hard. 💜', bg: '#7C3AED', textColor: '#F8FAFC' },
+    ],
+    caption: `5 toddler tantrums — DECODED 😤\n\nEvery tantrum is your toddler communicating something they can\'t put into words yet.\n\nSave this for the next meltdown 💜\n\n#toddlerlife #toddlertantrums #gentleparenting #parentingtips #toddlermom #irishmum #mumlife #positiveparenting`,
+    offer: null,
+    scheduleTime: '2026-04-29 18:00 UTC',
+    editorNote: 'S2b was deactivated — asset generated from older blueprint. Verify brand voice.',
+    aiConfidence: 61,
+  },
+  {
+    id: 'ASSET-312',
+    type: 'reel',
+    status: 'pending_approval',
+    subniche: 'Family Meals',
+    scenario: 'S2c',
+    created: '2026-04-27',
+    idea: '3-ingredient toddler pasta that takes 12 minutes',
+    script: `[0:00–0:03] Hook — text on screen: "12-minute toddler pasta (3 ingredients)"\n[0:03–0:08] Show pasta boiling. VO: "You need pasta, cream cheese, and frozen peas. That's it."\n[0:08–0:18] Quick cuts: drain pasta, stir in cream cheese, fold in peas. VO: "Stir it together while the pasta's still hot — the sauce makes itself."\n[0:18–0:24] Plating shot. VO: "Kids lose their minds for this. Adults too."\n[0:24–0:28] CTA — text: "Save this. You'll need it on a Tuesday."`,
+    caption: `12-minute toddler pasta 🍝 (3 ingredients, no nonsense)\n\nPasta + cream cheese + frozen peas. Done.\n\nSave this for a Tuesday when everything is terrible 😂\n\n#toddlerfood #quickdinners #familymeals #easydinner #toddlermeals #irishmum #kidsfood #mealideas`,
+    offer: 'Meal planner PDF (affiliate)',
+    scheduleTime: '2026-04-30 12:00 UTC',
+    editorNote: null,
+    aiConfidence: 91,
+  },
+  {
+    id: 'ASSET-301',
+    type: 'static',
+    status: 'pending_approval',
+    subniche: 'Baby Sleep',
+    scenario: 'S2c',
+    created: '2026-04-26',
+    idea: 'Sleep schedule by age — quick reference',
+    imageDesc: 'Dark navy background · age-by-age sleep schedule table · bold white headings · branding bottom right',
+    caption: `Sleep schedule by age 🌙\n\nSave this — you\'ll want it at 2am.\n\nNot all ages nap the same. Here\'s what actually works for each stage.\n\n#babysleep #sleepschedule #newbornmom #babyadvice #irishmum #babytips #sleeptraining #momhacks`,
+    offer: 'Free Sleep Guide',
+    scheduleTime: '2026-04-28 07:00 UTC',
+    editorNote: null,
+    aiConfidence: 88,
+  },
+  {
+    id: 'ASSET-315',
+    type: 'carousel',
+    status: 'pending_approval',
+    subniche: 'School Age Kids',
+    scenario: 'S2b',
+    created: '2026-04-27',
+    idea: 'After-school wind-down routine',
+    slides: [
+      { id: 1, heading: 'After-school meltdowns?', body: 'Here\'s why they happen — and a 20-min fix', bg: '#0F766E', textColor: '#F0FDFA' },
+      { id: 2, heading: 'School is exhausting', body: 'Kids hold it together all day. Home is where they fall apart. That\'s healthy.', bg: '#115E59', textColor: '#F0FDFA' },
+      { id: 3, heading: 'The 20-min wind-down routine', body: '1. Snack immediately\n2. 15 mins screen-free quiet\n3. Then homework / activities', bg: '#0F766E', textColor: '#F0FDFA' },
+      { id: 4, heading: 'What makes it work', body: 'Consistency over perfection. Same order, every day.', bg: '#115E59', textColor: '#F0FDFA' },
+    ],
+    caption: `After-school meltdowns are NOT bad parenting 💚\n\nKids spend all day holding it together. Home is where they feel safe enough to fall apart.\n\nTry this 20-min routine this week.\n\n#schoolagekids #afterschool #parentingtips #kidswellbeing #irishmum #primaryschool #momlife #childdevelopment`,
+    offer: null,
+    scheduleTime: '2026-05-01 17:00 UTC',
+    editorNote: null,
+    aiConfidence: 85,
+  },
+];
+
+// ─── Helpers ───────────────────────────────────────────────────────────────
+const { useState, useRef, useEffect, useCallback } = React;
+
+const TYPE_LABEL = { carousel: 'Carousel', reel: 'Reel', static: 'Static' };
+const TYPE_COLOR = { carousel: '#BFDBFE', reel: '#FDE68A', static: '#BBF7D0' };
+const STATUS_LABEL = { manual_review: 'Manual Review', pending_approval: 'Pending Approval' };
+const STATUS_COLOR = { manual_review: '#FEE2E2', pending_approval: '#FEF3C7' };
+const STATUS_TEXT  = { manual_review: '#7F1D1D', pending_approval: '#78350F' };
+
+function charCount(str) { return str ? str.length : 0; }
+function IG_MAX() { return 2200; }
+
+// ─── Instagram Post Previews ────────────────────────────────────────────────
+
+function CarouselPreview({ slides, activeSlide, onSlide, slideUpdates }) {
+  // Merge AI updates into slides for preview
+  const displaySlides = slides.map((s, i) => {
+    const su = slideUpdates?.[i];
+    if (su?.status === 'updated') return { ...s, heading: su.updatedHeading, body: su.updatedBody };
+    return s;
+  });
+  return (
+    <div style={{ width: '100%', height: '100%', position: 'relative', background: slides[activeSlide]?.bg || '#000', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', overflow: 'hidden', userSelect: 'none' }}>
+      {/* Slide content */}
+      <div style={{ padding: '28px 22px', textAlign: 'center', color: displaySlides[activeSlide]?.textColor || '#fff' }}>
+        <div style={{ fontSize: 18, fontWeight: 700, lineHeight: '24px', marginBottom: 12, letterSpacing: '-0.01em' }}>{displaySlides[activeSlide]?.heading}</div>
+        <div style={{ fontSize: 13, lineHeight: '19px', opacity: 0.85, whiteSpace: 'pre-line' }}>{displaySlides[activeSlide]?.body}</div>
+      </div>
+      {/* Dot indicator */}
+      <div style={{ position: 'absolute', bottom: 14, left: 0, right: 0, display: 'flex', justifyContent: 'center', gap: 5 }}>
+        {slides.map((_, i) => (
+          <div key={i} onClick={() => onSlide(i)} style={{ width: i === activeSlide ? 16 : 6, height: 6, borderRadius: 3, background: i === activeSlide ? '#fff' : 'rgba(255,255,255,0.4)', cursor: 'pointer', transition: 'width 0.2s' }}></div>
+        ))}
+      </div>
+      {/* Arrows */}
+      {activeSlide > 0 && (
+        <div onClick={() => onSlide(activeSlide - 1)} style={{ position: 'absolute', left: 8, top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.35)', color: '#fff', borderRadius: '50%', width: 28, height: 28, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', fontSize: 14 }}>‹</div>
+      )}
+      {activeSlide < slides.length - 1 && (
+        <div onClick={() => onSlide(activeSlide + 1)} style={{ position: 'absolute', right: 8, top: '50%', transform: 'translateY(-50%)', background: 'rgba(0,0,0,0.35)', color: '#fff', borderRadius: '50%', width: 28, height: 28, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', fontSize: 14 }}>›</div>
+      )}
+      {/* Slide counter */}
+      <div style={{ position: 'absolute', top: 10, right: 10, background: 'rgba(0,0,0,0.5)', color: '#fff', fontSize: 10, fontWeight: 600, padding: '2px 7px', borderRadius: 99 }}>{activeSlide + 1}/{slides.length}</div>
+    </div>
+  );
+}
+
+function ReelPreview({ item }) {
+  return (
+    <div style={{ width: '100%', height: '100%', background: 'linear-gradient(160deg, #1a1a2e 0%, #16213e 100%)', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '0 0 20px 0', position: 'relative' }}>
+      {/* Play icon */}
+      <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -60%)', width: 52, height: 52, borderRadius: '50%', background: 'rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(4px)' }}>
+        <div style={{ width: 0, height: 0, borderTop: '10px solid transparent', borderBottom: '10px solid transparent', borderLeft: '18px solid #fff', marginLeft: 4 }}></div>
+      </div>
+      {/* Reel label */}
+      <div style={{ position: 'absolute', top: 10, left: 10, display: 'flex', alignItems: 'center', gap: 5 }}>
+        <div style={{ background: 'rgba(255,255,255,0.2)', padding: '2px 8px', borderRadius: 4, color: '#fff', fontSize: 10, fontWeight: 600, backdropFilter: 'blur(4px)' }}>REEL</div>
+      </div>
+      {/* Duration */}
+      <div style={{ position: 'absolute', bottom: 28, right: 12, color: 'rgba(255,255,255,0.7)', fontSize: 11 }}>0:28</div>
+      {/* Bottom overlay */}
+      <div style={{ padding: '0 14px' }}>
+        <div style={{ color: '#fff', fontWeight: 700, fontSize: 13, lineHeight: '18px', marginBottom: 4 }}>{item.idea}</div>
+        <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: 11 }}>{item.subniche}</div>
+      </div>
+    </div>
+  );
+}
+
+function StaticPreview({ item }) {
+  return (
+    <div style={{ width: '100%', height: '100%', background: '#0F172A', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: 20 }}>
+      <div style={{ color: '#94A3B8', fontSize: 10, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 14 }}>Static Image</div>
+      <div style={{ color: '#F8FAFC', fontWeight: 700, fontSize: 16, textAlign: 'center', lineHeight: '22px', marginBottom: 10 }}>{item.idea}</div>
+      <div style={{ color: '#94A3B8', fontSize: 11, textAlign: 'center', lineHeight: '16px', fontStyle: 'italic' }}>{item.imageDesc}</div>
+      <div style={{ marginTop: 18, fontSize: 10, color: '#475569', border: '1px dashed #334155', padding: '6px 12px', borderRadius: 4 }}>Rendered image from fal.ai / R2</div>
+    </div>
+  );
+}
+
+// ─── Platform config ────────────────────────────────────────────────────────
+const PLATFORMS = [
+  { id: 'instagram', label: 'Instagram', charLimit: 2200, color: '#E1306C' },
+  { id: 'threads',   label: 'Threads',   charLimit: 500,  color: '#000000' },
+  { id: 'tiktok',    label: 'TikTok',    charLimit: 2200, color: '#010101' },
+  { id: 'x',         label: 'X',         charLimit: 280,  color: '#000000' },
+  { id: 'youtube',   label: 'YouTube',   charLimit: 5000, color: '#FF0000' },
+];
+
+// ─── Phone bezel wrapper ─────────────────────────────────────────────────────
+function PhoneBezel({ children, screenBg = '#fff', screenHeight = 496 }) {
+  return (
+    <div style={{ width: 280, flexShrink: 0 }}>
+      <div style={{ background: '#1C1C1E', borderRadius: 40, padding: '12px 8px', boxShadow: '0 0 0 1px #3A3A3C, 0 20px 60px rgba(0,0,0,0.4), inset 0 0 0 1px rgba(255,255,255,0.05)' }}>
+        <div style={{ height: 28, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 2 }}>
+          <div style={{ width: 80, height: 22, background: '#1C1C1E', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
+            <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#2C2C2E' }}></div>
+            <div style={{ width: 50, height: 5, borderRadius: 3, background: '#2C2C2E' }}></div>
+          </div>
+        </div>
+        <div style={{ background: screenBg, borderRadius: 24, overflow: 'hidden', height: screenHeight }}>
+          {children}
+        </div>
+        <div style={{ height: 24, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ width: 90, height: 4, background: '#4A4A4C', borderRadius: 2 }}></div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Instagram preview ───────────────────────────────────────────────────────
+function IGPhoneFrame({ item, activeSlide, onSlide, slideUpdates }) {
+  const handle = '@babysleep.ie';
+  const captionPreview = item.caption ? item.caption.slice(0, 120) + (item.caption.length > 120 ? '… more' : '') : '';
+  return (
+    <PhoneBezel screenBg="#fff">
+      <div style={{ padding: '8px 12px', borderBottom: '1px solid #EFEFEF', display: 'flex', alignItems: 'center', gap: 8 }}>
+        <div style={{ width: 28, height: 28, borderRadius: '50%', background: 'linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)', flexShrink: 0 }}></div>
+        <div style={{ flex: 1 }}><div style={{ fontWeight: 700, fontSize: 11, color: '#000' }}>{handle}</div><div style={{ fontSize: 9, color: '#8E8E8E' }}>{item.subniche}</div></div>
+        <div style={{ fontSize: 18, color: '#000' }}>•••</div>
+      </div>
+      <div style={{ height: 264, position: 'relative', background: '#000' }}>
+        {item.type === 'carousel' && <CarouselPreview slides={item.slides} activeSlide={activeSlide} onSlide={onSlide} slideUpdates={slideUpdates} />}
+        {item.type === 'reel' && <ReelPreview item={item} />}
+        {item.type === 'static' && <StaticPreview item={item} />}
+      </div>
+      <div style={{ padding: '8px 12px 4px', display: 'flex', gap: 12, alignItems: 'center' }}>
+        <span style={{ fontSize: 20 }}>♡</span><span style={{ fontSize: 18 }}>💬</span><span style={{ fontSize: 18 }}>➤</span>
+        <span style={{ marginLeft: 'auto', fontSize: 18 }}>🔖</span>
+      </div>
+      <div style={{ padding: '0 12px 10px' }}>
+        <div style={{ fontSize: 11, lineHeight: '15px' }}><span style={{ fontWeight: 700 }}>{handle} </span><span style={{ color: '#262626' }}>{captionPreview}</span></div>
+        {item.offer && <div style={{ marginTop: 5, fontSize: 10, color: '#0095F6', fontWeight: 500 }}>🔗 {item.offer}</div>}
+        <div style={{ marginTop: 4, fontSize: 10, color: '#8E8E8E' }}>{item.scheduleTime}</div>
+      </div>
+    </PhoneBezel>
+  );
+}
+
+// ─── Threads preview ─────────────────────────────────────────────────────────
+function ThreadsPhoneFrame({ item }) {
+  const handle = '@babysleep.ie';
+  const text = item.caption ? item.caption.slice(0, 500) : '';
+  return (
+    <PhoneBezel screenBg="#fff">
+      {/* Threads top bar */}
+      <div style={{ padding: '10px 14px 8px', borderBottom: '1px solid #DBDBDB', textAlign: 'center', fontWeight: 700, fontSize: 13, color: '#000' }}>Threads</div>
+      <div style={{ padding: '12px 14px', borderBottom: '1px solid #EFEFEF' }}>
+        <div style={{ display: 'flex', gap: 10 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
+            <div style={{ width: 32, height: 32, borderRadius: '50%', background: 'linear-gradient(45deg, #f09433, #dc2743, #bc1888)', flexShrink: 0 }}></div>
+            <div style={{ width: 2, flex: 1, background: '#DBDBDB', borderRadius: 1 }}></div>
+          </div>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ fontWeight: 700, fontSize: 12, color: '#000', marginBottom: 3 }}>{handle}</div>
+            <div style={{ fontSize: 12, lineHeight: '17px', color: '#000', whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>{text.slice(0, 200)}{text.length > 200 ? <span style={{ color: '#0095F6' }}> ...more</span> : ''}</div>
+            {/* Image/carousel stub if applicable */}
+            {(item.type === 'carousel' || item.type === 'static') && (
+              <div style={{ marginTop: 8, height: 120, background: item.slides?.[0]?.bg || '#1E293B', borderRadius: 10, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: 11 }}>1/{item.slides?.length || 1} images</div>
+              </div>
+            )}
+            <div style={{ marginTop: 8, display: 'flex', gap: 14, color: '#8E8E8E', fontSize: 18 }}>
+              <span>♡</span><span>💬</span><span>↻</span><span>➤</span>
+            </div>
+            <div style={{ marginTop: 4, fontSize: 11, color: '#8E8E8E' }}>Like · Reply · {item.scheduleTime?.slice(0,10)}</div>
+          </div>
+        </div>
+      </div>
+      <div style={{ padding: '10px 14px', display: 'flex', gap: 10 }}>
+        <div style={{ width: 28, height: 28, borderRadius: '50%', background: '#F0F0F0', flexShrink: 0 }}></div>
+        <div style={{ fontSize: 12, color: '#8E8E8E', paddingTop: 6 }}>Reply to {handle}…</div>
+      </div>
+      <div style={{ padding: '6px 14px', borderTop: '1px solid #EFEFEF', marginTop: 8, fontSize: 10, color: '#8E8E8E', textAlign: 'center' }}>
+        {text.length}/500 chars · {text.length > 500 ? <span style={{ color: 'var(--err)' }}>Over limit</span> : 'OK'}
+      </div>
+    </PhoneBezel>
+  );
+}
+
+// ─── TikTok preview ──────────────────────────────────────────────────────────
+function TikTokPhoneFrame({ item }) {
+  const handle = '@babysleep.ie';
+  const caption = item.caption ? item.caption.split('\n')[0].slice(0, 80) : '';
+  return (
+    <PhoneBezel screenBg="#000" screenHeight={496}>
+      <div style={{ height: '100%', background: '#000', position: 'relative', display: 'flex', flexDirection: 'column' }}>
+        {/* TikTok top bar */}
+        <div style={{ padding: '10px 14px 6px', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', flexShrink: 0 }}>
+          <span style={{ color: '#fff', fontSize: 12, fontWeight: 700 }}>For You</span>
+          <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: 12, position: 'absolute', right: 40 }}>Following</span>
+        </div>
+        {/* Video area */}
+        <div style={{ flex: 1, position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          {item.type === 'reel' ? <ReelPreview item={item} /> :
+            <div style={{ width: '100%', height: '100%', background: item.slides?.[0]?.bg || '#1E293B', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 8 }}>
+              <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: 11 }}>Carousel → TikTok slideshow</div>
+              <div style={{ color: '#fff', fontWeight: 700, fontSize: 14, textAlign: 'center', padding: '0 20px' }}>{item.slides?.[0]?.heading}</div>
+            </div>
+          }
+          {/* Right actions */}
+          <div style={{ position: 'absolute', right: 8, bottom: 16, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
+            <div style={{ width: 34, height: 34, borderRadius: '50%', background: 'linear-gradient(45deg, #f09433, #dc2743, #bc1888)', border: '2px solid #fff' }}></div>
+            <div style={{ textAlign: 'center' }}><div style={{ fontSize: 20 }}>♡</div><div style={{ color: '#fff', fontSize: 9 }}>24.1k</div></div>
+            <div style={{ textAlign: 'center' }}><div style={{ fontSize: 18 }}>💬</div><div style={{ color: '#fff', fontSize: 9 }}>312</div></div>
+            <div style={{ textAlign: 'center' }}><div style={{ fontSize: 18 }}>🔁</div><div style={{ color: '#fff', fontSize: 9 }}>1.2k</div></div>
+            <div style={{ fontSize: 18 }}>➤</div>
+          </div>
+          {/* Bottom overlay */}
+          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 44, background: 'linear-gradient(transparent, rgba(0,0,0,0.7))', padding: '20px 12px 10px' }}>
+            <div style={{ color: '#fff', fontWeight: 700, fontSize: 12, marginBottom: 3 }}>{handle}</div>
+            <div style={{ color: 'rgba(255,255,255,0.85)', fontSize: 11, lineHeight: '15px' }}>{caption}{caption.length >= 80 ? '…' : ''}</div>
+            <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: 10, marginTop: 4 }}>♪ Original audio · {item.subniche}</div>
+          </div>
+        </div>
+        {/* TikTok bottom bar */}
+        <div style={{ padding: '6px 0 8px', display: 'flex', justifyContent: 'space-around', borderTop: '1px solid #222', flexShrink: 0 }}>
+          {['🏠','🔍','＋','📬','👤'].map((ic, i) => <span key={i} style={{ fontSize: i === 2 ? 22 : 16, color: i === 2 ? '#fff' : 'rgba(255,255,255,0.6)' }}>{ic}</span>)}
+        </div>
+      </div>
+    </PhoneBezel>
+  );
+}
+
+// ─── X / Twitter preview ─────────────────────────────────────────────────────
+function XPhoneFrame({ item }) {
+  const handle = '@babysleep_ie';
+  const text = item.caption ? item.caption.slice(0, 280) : '';
+  const over = item.caption && item.caption.length > 280;
+  return (
+    <PhoneBezel screenBg="#fff">
+      {/* X top bar */}
+      <div style={{ padding: '10px 14px 8px', borderBottom: '1px solid #EFF3F4', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+        <div style={{ width: 28, height: 28, borderRadius: '50%', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 900, fontSize: 14 }}>𝕏</div>
+      </div>
+      <div style={{ padding: '12px 14px', borderBottom: '1px solid #EFF3F4' }}>
+        <div style={{ display: 'flex', gap: 10 }}>
+          <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'linear-gradient(45deg, #f09433, #dc2743, #bc1888)', flexShrink: 0 }}></div>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ display: 'flex', gap: 5, alignItems: 'center', flexWrap: 'wrap' }}>
+              <span style={{ fontWeight: 700, fontSize: 12, color: '#0F1419' }}>Baby Sleep IE</span>
+              <span style={{ fontSize: 11, color: '#536471' }}>{handle}</span>
+            </div>
+            <div style={{ fontSize: 13, lineHeight: '18px', color: '#0F1419', marginTop: 4, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>
+              {text}
+              {over && <span style={{ color: 'var(--err)' }}> [truncated — {item.caption.length - 280} chars over]</span>}
+            </div>
+            {(item.type === 'carousel' || item.type === 'static') && (
+              <div style={{ marginTop: 8, height: 110, background: item.slides?.[0]?.bg || '#1E293B', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: 11 }}>{item.slides?.length > 1 ? `${item.slides.length} images` : 'Image'}</div>
+              </div>
+            )}
+            <div style={{ marginTop: 10, display: 'flex', gap: 18, color: '#536471', fontSize: 16 }}>
+              <span>💬</span><span>🔁</span><span>♡</span><span>📊</span><span>➤</span>
+            </div>
+            <div style={{ marginTop: 4, fontSize: 10, color: '#536471' }}>
+              {text.length}/280 · {over ? <span style={{ color: 'var(--err)', fontWeight: 600 }}>Over limit</span> : <span style={{ color: 'var(--ok)' }}>OK</span>}
+            </div>
+          </div>
+        </div>
+      </div>
+    </PhoneBezel>
+  );
+}
+
+// ─── YouTube Shorts preview ──────────────────────────────────────────────────
+function YouTubePhoneFrame({ item }) {
+  const handle = '@babysleepie';
+  const title = item.idea || '';
+  return (
+    <PhoneBezel screenBg="#000" screenHeight={496}>
+      <div style={{ height: '100%', background: '#0F0F0F', position: 'relative', display: 'flex', flexDirection: 'column' }}>
+        {/* YouTube top */}
+        <div style={{ padding: '10px 14px 6px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+            <div style={{ width: 22, height: 16, background: '#FF0000', borderRadius: 4, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: 0, height: 0, borderTop: '5px solid transparent', borderBottom: '5px solid transparent', borderLeft: '8px solid #fff', marginLeft: 1 }}></div>
+            </div>
+            <span style={{ color: '#fff', fontWeight: 900, fontSize: 12 }}>Shorts</span>
+          </div>
+          <span style={{ color: '#fff', fontSize: 11 }}>🔍</span>
+        </div>
+        {/* Shorts vertical video area */}
+        <div style={{ flex: 1, position: 'relative', background: item.slides?.[0]?.bg || '#1E293B' }}>
+          <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: 52, height: 52, borderRadius: '50%', background: 'rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', backdropFilter: 'blur(4px)' }}>
+              <div style={{ width: 0, height: 0, borderTop: '10px solid transparent', borderBottom: '10px solid transparent', borderLeft: '18px solid #fff', marginLeft: 4 }}></div>
+            </div>
+          </div>
+          {/* Right actions */}
+          <div style={{ position: 'absolute', right: 8, bottom: 60, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
+            <div style={{ textAlign: 'center' }}><div style={{ fontSize: 22 }}>♡</div><div style={{ color: '#fff', fontSize: 9 }}>14.2k</div></div>
+            <div style={{ textAlign: 'center' }}><div style={{ fontSize: 20 }}>💬</div><div style={{ color: '#fff', fontSize: 9 }}>218</div></div>
+            <div style={{ textAlign: 'center' }}><div style={{ fontSize: 20 }}>➤</div><div style={{ color: '#fff', fontSize: 9 }}>Share</div></div>
+            <div style={{ textAlign: 'center' }}><div style={{ fontSize: 20 }}>⋮</div></div>
+          </div>
+          {/* Bottom overlay */}
+          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 48, background: 'linear-gradient(transparent, rgba(0,0,0,0.75))', padding: '20px 12px 10px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 5 }}>
+              <div style={{ width: 24, height: 24, borderRadius: '50%', background: 'linear-gradient(45deg, #f09433, #dc2743, #bc1888)', border: '2px solid #fff' }}></div>
+              <span style={{ color: '#fff', fontWeight: 700, fontSize: 11 }}>{handle}</span>
+              <button style={{ background: '#fff', color: '#000', border: 'none', borderRadius: 4, fontSize: 10, fontWeight: 700, padding: '2px 8px', cursor: 'pointer' }}>Subscribe</button>
+            </div>
+            <div style={{ color: '#fff', fontSize: 12, lineHeight: '16px', fontWeight: 600 }}>{title.slice(0, 70)}{title.length > 70 ? '…' : ''}</div>
+            <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: 10, marginTop: 3 }}>{item.subniche} · #Shorts</div>
+          </div>
+        </div>
+        {/* Progress bar */}
+        <div style={{ height: 2, background: '#333', flexShrink: 0 }}>
+          <div style={{ width: '35%', height: '100%', background: '#FF0000' }}></div>
+        </div>
+        {/* Bottom nav */}
+        <div style={{ padding: '6px 0 8px', display: 'flex', justifyContent: 'space-around', flexShrink: 0 }}>
+          {['🏠','🔍','＋','⬛','👤'].map((ic, i) => <span key={i} style={{ fontSize: 16, color: 'rgba(255,255,255,0.7)' }}>{ic}</span>)}
+        </div>
+      </div>
+    </PhoneBezel>
+  );
+}
+
+// ─── Queue Item ─────────────────────────────────────────────────────────────
+function QueueItem({ item, active, onClick }) {
+  const isManual = item.status === 'manual_review';
+  return (
+    <div onClick={onClick} style={{ padding: '10px 14px', borderBottom: '1px solid var(--border)', cursor: 'pointer', background: active ? '#EFF6FF' : '#fff', borderLeft: active ? '3px solid #1F6FEB' : '3px solid transparent', transition: 'background 0.1s' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 4 }}>
+        <span style={{ fontSize: 10, fontWeight: 600, padding: '1px 6px', borderRadius: 3, background: TYPE_COLOR[item.type], color: '#1E293B' }}>{TYPE_LABEL[item.type]}</span>
+        <span style={{ fontSize: 10, fontWeight: 600, padding: '1px 6px', borderRadius: 3, background: STATUS_COLOR[item.status], color: STATUS_TEXT[item.status] }}>{STATUS_LABEL[item.status]}</span>
+        {isManual && <span style={{ marginLeft: 'auto', fontSize: 10, color: 'var(--err)', fontWeight: 600 }}>⚠ Flagged</span>}
+      </div>
+      <div style={{ fontWeight: 600, fontSize: 12, lineHeight: '16px', color: 'var(--text)', marginBottom: 2 }}>{item.id}</div>
+      <div style={{ fontSize: 11, color: 'var(--text-muted)', lineHeight: '15px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{item.idea}</div>
+      <div style={{ marginTop: 4, display: 'flex', gap: 6, alignItems: 'center' }}>
+        <span style={{ fontSize: 10, color: 'var(--text-faint)', fontFamily: 'JetBrains Mono, monospace' }}>{item.scenario}</span>
+        <span style={{ fontSize: 10, color: 'var(--text-faint)' }}>·</span>
+        <span style={{ fontSize: 10, color: 'var(--text-faint)' }}>{item.subniche}</span>
+        {item.aiConfidence && (
+          <>
+            <span style={{ fontSize: 10, color: 'var(--text-faint)', marginLeft: 'auto' }}>AI {item.aiConfidence}%</span>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ─── Edit Panel ─────────────────────────────────────────────────────────────
+function EditPanel({ item, edits, onEdit, onApprove, onReject, onManualReview, activeSlide, platform, slideUpdates, onSetInstruction, onUpdateSlide, onRevertSlide }) {
+  const platConfig = PLATFORMS.find(p => p.id === platform) || PLATFORMS[0];
+  const charMax = platConfig.charLimit;
+  const cc = charCount(edits.caption || item.caption);
+  const overLimit = cc > charMax;
+
+  const su = slideUpdates[activeSlide] || { instruction: '', status: 'idle' };
+  const currentSlide = item.slides?.[activeSlide];
+  // For preview: use updated text if available
+  const hasUpdate = su.status === 'updated';
+  const slideHeading = hasUpdate ? su.updatedHeading : currentSlide?.heading;
+  const slideBody    = hasUpdate ? su.updatedBody    : currentSlide?.body;
+
+  // Count slides with pending instructions or updates
+  const pendingCount = item.slides ? item.slides.filter((_, i) => slideUpdates[i]?.instruction && slideUpdates[i]?.status === 'idle').length : 0;
+  const updatedCount = item.slides ? item.slides.filter((_, i) => slideUpdates[i]?.status === 'updated').length : 0;
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', minWidth: 0, overflow: 'hidden' }}>
+      {/* Scrollable fields */}
+      <div style={{ flex: 1, overflowY: 'auto', padding: '16px 16px 0' }}>
+
+        {/* Editor note */}
+        {item.editorNote && (
+          <div style={{ background: '#FEF3C7', border: '1px solid #FCD34D', borderRadius: 6, padding: '8px 12px', marginBottom: 14, fontSize: 12, lineHeight: '17px', color: '#78350F' }}>
+            <strong>⚠ Editor flag:</strong> {item.editorNote}
+          </div>
+        )}
+
+        {/* AI confidence */}
+        {item.aiConfidence && (
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
+            <span style={{ fontSize: 11, color: 'var(--text-muted)' }}>AI confidence</span>
+            <div style={{ flex: 1, height: 4, background: 'var(--border)', borderRadius: 2, overflow: 'hidden' }}>
+              <div style={{ width: `${item.aiConfidence}%`, height: '100%', background: item.aiConfidence >= 80 ? 'var(--ok)' : item.aiConfidence >= 60 ? 'var(--warn)' : 'var(--err)', borderRadius: 2 }}></div>
+            </div>
+            <span style={{ fontSize: 11, fontWeight: 600, color: item.aiConfidence >= 80 ? 'var(--ok)' : item.aiConfidence >= 60 ? 'var(--warn)' : 'var(--err)', fontFamily: 'JetBrains Mono, monospace' }}>{item.aiConfidence}%</span>
+          </div>
+        )}
+
+        {/* Carousel slide update request */}
+        {item.type === 'carousel' && item.slides && (
+          <div style={{ marginBottom: 16 }}>
+            {/* Slide header + status summary */}
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
+              <div style={{ fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--text-muted)' }}>
+                Slide {activeSlide + 1} of {item.slides.length}
+              </div>
+              <div style={{ display: 'flex', gap: 4 }}>
+                {item.slides.map((_, i) => {
+                  const s = slideUpdates[i] || {};
+                  const dot = s.status === 'updated' ? { bg: 'var(--ok)', label: '✓' }
+                            : s.status === 'updating' ? { bg: 'var(--warn)', label: '⟳' }
+                            : s.instruction ? { bg: 'var(--warn)', label: '✏' }
+                            : { bg: 'var(--border)', label: i + 1 };
+                  return (
+                    <div key={i} title={`Slide ${i+1}${s.instruction ? ': ' + s.instruction.slice(0,40) : ''}`} style={{ width: 22, height: 22, borderRadius: 4, background: dot.bg, color: dot.bg === 'var(--border)' ? 'var(--text-muted)' : '#fff', fontSize: 10, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'default' }}>{dot.label}</div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Current slide content — read only */}
+            <div style={{ background: 'var(--row)', borderRadius: 6, padding: '8px 10px', marginBottom: 10, border: '1px solid var(--border)' }}>
+              {hasUpdate ? (
+                <>
+                  <div style={{ fontSize: 11, color: 'var(--ok)', fontWeight: 600, marginBottom: 4 }}>✓ Updated by AI</div>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--text)', marginBottom: 2 }}>{slideHeading}</div>
+                  <div style={{ fontSize: 11, color: 'var(--text-muted)', whiteSpace: 'pre-line' }}>{slideBody}</div>
+                  <div style={{ marginTop: 6, fontSize: 10, color: 'var(--text-faint)' }}>
+                    Original: <em>{su.original?.heading}</em>
+                    <button onClick={() => onRevertSlide(activeSlide)} style={{ marginLeft: 8, fontSize: 10, color: 'var(--info)', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>↩ Revert</button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div style={{ fontSize: 11, color: 'var(--text-faint)', fontWeight: 600, marginBottom: 4 }}>Rendered slide content (read-only)</div>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--text)', marginBottom: 2 }}>{currentSlide?.heading}</div>
+                  <div style={{ fontSize: 11, color: 'var(--text-muted)', whiteSpace: 'pre-line' }}>{currentSlide?.body}</div>
+                </>
+              )}
+            </div>
+
+            {/* Required updates instruction */}
+            <div>
+              <label style={{ fontSize: 11, color: 'var(--text-muted)', display: 'block', marginBottom: 4 }}>Required updates for this slide</label>
+              <textarea
+                value={su.instruction}
+                onChange={e => onSetInstruction(activeSlide, e.target.value)}
+                placeholder={`e.g. "Make the heading more positive", "Replace the bullet points with a single clear sentence", "Change tone to be warmer and less clinical"`}
+                rows={3}
+                disabled={su.status === 'updating'}
+                style={{ width: '100%', padding: '7px 10px', border: '1px solid var(--border)', borderRadius: 5, fontSize: 12, lineHeight: '18px', resize: 'vertical', background: su.status === 'updating' ? 'var(--row)' : '#fff', outline: 'none', fontFamily: 'inherit', color: 'var(--text)' }}
+              />
+              <button
+                onClick={() => su.instruction.trim() && onUpdateSlide(activeSlide, currentSlide, su.instruction)}
+                disabled={!su.instruction.trim() || su.status === 'updating'}
+                style={{ marginTop: 6, width: '100%', padding: '7px', borderRadius: 5, border: 'none', background: su.status === 'updating' ? 'var(--border)' : su.instruction.trim() ? 'var(--pillar-execute)' : 'var(--border)', color: su.instruction.trim() && su.status !== 'updating' ? '#fff' : 'var(--text-faint)', fontSize: 12, fontWeight: 600, cursor: su.instruction.trim() && su.status !== 'updating' ? 'pointer' : 'not-allowed', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
+                {su.status === 'updating' ? <><span style={{ display: 'inline-block', animation: 'spin 1s linear infinite' }}>⟳</span> Updating slide…</> : '✦ Update this slide with AI'}
+              </button>
+            </div>
+
+            {/* Summary badge */}
+            {(pendingCount > 0 || updatedCount > 0) && (
+              <div style={{ marginTop: 10, padding: '6px 10px', background: updatedCount === item.slides.length ? '#F0FDF4' : '#FFF7ED', border: `1px solid ${updatedCount === item.slides.length ? '#86EFAC' : '#FCD34D'}`, borderRadius: 5, fontSize: 11, color: updatedCount === item.slides.length ? 'var(--ok)' : 'var(--warn)', fontWeight: 500 }}>
+                {updatedCount > 0 ? `${updatedCount}/${item.slides.length} slides updated` : ''}{pendingCount > 0 ? `${pendingCount} slide${pendingCount > 1 ? 's' : ''} with pending instructions` : ''}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Reel — script read-only + re-render request */}
+        {item.type === 'reel' && (
+          <div style={{ marginBottom: 16 }}>
+            <div style={{ fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--text-muted)', marginBottom: 8 }}>Current script <span style={{ fontWeight: 400, textTransform: 'none', letterSpacing: 0, color: 'var(--text-faint)' }}>(read-only · baked into rendered video)</span></div>
+            <div style={{ background: 'var(--row)', border: '1px solid var(--border)', borderRadius: 5, padding: '8px 10px', fontSize: 11, lineHeight: '17px', color: 'var(--text-muted)', whiteSpace: 'pre-wrap', maxHeight: 120, overflowY: 'auto', fontFamily: 'JetBrains Mono, monospace', marginBottom: 12 }}>
+              {item.script}
+            </div>
+            {(() => {
+              const su = slideUpdates[0] || { instruction: '', status: 'idle' };
+              const isQueued = su.status === 'queued';
+              return (
+                <>
+                  <label style={{ fontSize: 11, color: 'var(--text-muted)', display: 'block', marginBottom: 4 }}>Required updates for re-render</label>
+                  <textarea
+                    value={su.instruction}
+                    onChange={e => onSetInstruction(0, e.target.value)}
+                    placeholder={`e.g. "Make the hook stronger — lead with the problem not the solution", "Replace the CTA with 'save this for meal prep Sunday'", "Slow down the pacing in the cooking section"`}
+                    rows={4}
+                    disabled={isQueued}
+                    style={{ width: '100%', padding: '7px 10px', border: '1px solid var(--border)', borderRadius: 5, fontSize: 12, lineHeight: '18px', resize: 'vertical', background: isQueued ? 'var(--row)' : '#fff', outline: 'none', fontFamily: 'inherit', color: 'var(--text)' }}
+                  />
+                  {isQueued ? (
+                    <div style={{ marginTop: 8, padding: '8px 12px', background: '#F0FDF4', border: '1px solid #86EFAC', borderRadius: 5, fontSize: 11, color: 'var(--ok)', fontWeight: 600 }}>
+                      ✓ Re-render queued · {su.queuedAt} · S2c will pick up with original video reference
+                    </div>
+                  ) : (
+                    <button
+                      onClick={() => {
+                        if (!su.instruction.trim()) return;
+                        onSetInstruction(0, su.instruction);
+                        // Mark as queued with timestamp
+                        onUpdateSlide(0, { heading: 'reel', body: item.script }, su.instruction, true);
+                      }}
+                      disabled={!su.instruction.trim()}
+                      style={{ marginTop: 6, width: '100%', padding: '7px', borderRadius: 5, border: 'none', background: su.instruction.trim() ? '#B45309' : 'var(--border)', color: su.instruction.trim() ? '#fff' : 'var(--text-faint)', fontSize: 12, fontWeight: 600, cursor: su.instruction.trim() ? 'pointer' : 'not-allowed', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
+                      ↺ Queue for re-render via S2c
+                    </button>
+                  )}
+                </>
+              );
+            })()}
+          </div>
+        )}
+
+        {/* Static image — update request */}
+        {item.type === 'static' && (
+          <div style={{ marginBottom: 16 }}>
+            <div style={{ fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--text-muted)', marginBottom: 8 }}>Image</div>
+            <div style={{ background: 'var(--row)', border: '1px solid var(--border)', borderRadius: 5, padding: '8px 10px', fontSize: 11, lineHeight: '17px', color: 'var(--text-muted)', marginBottom: 12, fontStyle: 'italic' }}>
+              {item.imageDesc || 'Rendered image (no description available)'}
+            </div>
+            {(() => {
+              const su = slideUpdates[0] || { instruction: '', status: 'idle' };
+              const isUpdating = su.status === 'updating';
+              const isUpdated  = su.status === 'updated';
+              return (
+                <>
+                  {isUpdated ? (
+                    <div style={{ padding: '8px 10px', background: '#F0FDF4', border: '1px solid #86EFAC', borderRadius: 5, marginBottom: 8 }}>
+                      <div style={{ fontSize: 11, color: 'var(--ok)', fontWeight: 600, marginBottom: 2 }}>✓ Image updated by AI</div>
+                      <div style={{ fontSize: 11, color: 'var(--text-muted)' }}>Instruction applied: <em>{su.instruction}</em></div>
+                      <button onClick={() => onRevertSlide(0)} style={{ marginTop: 4, fontSize: 10, color: 'var(--info)', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>↩ Revert to original</button>
+                    </div>
+                  ) : null}
+                  <label style={{ fontSize: 11, color: 'var(--text-muted)', display: 'block', marginBottom: 4 }}>Required updates</label>
+                  <textarea
+                    value={su.instruction}
+                    onChange={e => onSetInstruction(0, e.target.value)}
+                    placeholder={`e.g. "Change the background to a warmer tone", "Make the headline larger and more prominent", "Add a subtle grid/table layout for the sleep schedule"`}
+                    rows={3}
+                    disabled={isUpdating}
+                    style={{ width: '100%', padding: '7px 10px', border: '1px solid var(--border)', borderRadius: 5, fontSize: 12, lineHeight: '18px', resize: 'vertical', background: isUpdating ? 'var(--row)' : '#fff', outline: 'none', fontFamily: 'inherit', color: 'var(--text)' }}
+                  />
+                  <button
+                    onClick={() => su.instruction.trim() && onUpdateSlide(0, { heading: item.idea, body: item.imageDesc }, su.instruction)}
+                    disabled={!su.instruction.trim() || isUpdating}
+                    style={{ marginTop: 6, width: '100%', padding: '7px', borderRadius: 5, border: 'none', background: isUpdating ? 'var(--border)' : su.instruction.trim() ? 'var(--pillar-execute)' : 'var(--border)', color: isUpdating || !su.instruction.trim() ? 'var(--text-faint)' : '#fff', fontSize: 12, fontWeight: 600, cursor: su.instruction.trim() && !isUpdating ? 'pointer' : 'not-allowed', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
+                    {isUpdating ? <><span style={{ display: 'inline-block', animation: 'spin 1s linear infinite' }}>⟳</span> Updating image…</> : '✦ Update image with AI'}
+                  </button>
+                </>
+              );
+            })()}
+          </div>
+        )}
+
+        {/* Caption */}
+        <div style={{ marginBottom: 16 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+            <div style={{ fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--text-muted)' }}>Caption</div>
+            <span style={{ fontSize: 11, fontFamily: 'JetBrains Mono, monospace', color: overLimit ? 'var(--err)' : cc > charMax * 0.82 ? 'var(--warn)' : 'var(--text-faint)' }}>{cc} / {charMax} · {platConfig.label}</span>
+          </div>
+          <textarea
+            value={edits.caption ?? item.caption}
+            onChange={e => onEdit({ caption: e.target.value })}
+            rows={7}
+            style={{ width: '100%', padding: '8px 10px', border: `1px solid ${overLimit ? 'var(--err)' : 'var(--border)'}`, borderRadius: 5, fontSize: 12, lineHeight: '18px', resize: 'vertical', background: '#fff', outline: 'none', fontFamily: 'inherit' }}
+          />
+          {edits.caption !== undefined && edits.caption !== item.caption && (
+            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 4 }}>
+              <button onClick={() => onEdit({ caption: item.caption })} style={{ fontSize: 11, color: 'var(--info)', background: 'none', border: 'none', cursor: 'pointer', padding: '2px 0' }}>↩ Revert to AI original</button>
+            </div>
+          )}
+        </div>
+
+        {/* Offer + schedule */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 16 }}>
+          <div>
+            <label style={{ fontSize: 11, color: 'var(--text-muted)', display: 'block', marginBottom: 3 }}>Offer / Bio link</label>
+            <input value={item.offer || '—'} readOnly style={{ width: '100%', padding: '5px 8px', border: '1px solid var(--border)', borderRadius: 5, fontSize: 12, background: 'var(--row)', color: 'var(--text-muted)', outline: 'none' }} />
+          </div>
+          <div>
+            <label style={{ fontSize: 11, color: 'var(--text-muted)', display: 'block', marginBottom: 3 }}>Scheduled publish</label>
+            <input value={item.scheduleTime} readOnly style={{ width: '100%', padding: '5px 8px', border: '1px solid var(--border)', borderRadius: 5, fontSize: 12, background: 'var(--row)', color: 'var(--text-muted)', outline: 'none', fontFamily: 'JetBrains Mono, monospace' }} />
+          </div>
+        </div>
+
+        {/* Audit trail stub */}
+        <div style={{ marginBottom: 16, padding: '8px 10px', background: 'var(--row)', borderRadius: 5, fontSize: 11, color: 'var(--text-muted)', lineHeight: '16px' }}>
+          <strong>Audit trail</strong> · Created by S{item.scenario?.slice(1) || '2c'} · AI draft {item.created} · {Object.keys(edits).length > 0 ? <span style={{ color: 'var(--warn)', fontWeight: 600 }}>Edited — not yet saved</span> : <span style={{ color: 'var(--ok)' }}>No edits</span>}
+        </div>
+      </div>
+
+      {/* Approval toolbar — pinned to bottom */}
+      <div style={{ padding: '12px 16px', borderTop: '1px solid var(--border)', background: '#fff', display: 'flex', gap: 8, flexShrink: 0 }}>
+        <button onClick={onReject} style={{ padding: '7px 14px', borderRadius: 5, border: '1px solid var(--border)', background: '#fff', color: 'var(--err)', fontSize: 13, fontWeight: 600, cursor: 'pointer', flex: 1 }}>
+          ✕ Reject
+        </button>
+        <button onClick={onManualReview} style={{ padding: '7px 14px', borderRadius: 5, border: '1px solid var(--border)', background: '#fff', color: 'var(--warn)', fontSize: 13, fontWeight: 600, cursor: 'pointer', flex: 1 }}>
+          ⚑ Flag
+        </button>
+        <button onClick={onApprove} style={{ padding: '7px 14px', borderRadius: 5, border: 'none', background: Object.keys(edits).length > 0 ? 'var(--info)' : 'var(--ok)', color: '#fff', fontSize: 13, fontWeight: 600, cursor: 'pointer', flex: 2 }}>
+          {Object.keys(edits).length > 0 ? '💾 Save & approve' : '✓ Approve'}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// ─── App ────────────────────────────────────────────────────────────────────
+function App() {
+  const [queue, setQueue] = useState(QUEUE);
+  const [activeId, setActiveId] = useState(QUEUE[0].id);
+  const [editsMap, setEditsMap] = useState({});
+  const [slideMap, setSlideMap] = useState({});
+  const [toast, setToast] = useState(null);
+  const [filter, setFilter] = useState('all');
+  const [platform, setPlatform] = useState('instagram');
+  // slideUpdateMap: { [assetId]: { [slideIdx]: { instruction, status: 'idle'|'updating'|'updated', updatedHeading, updatedBody, original } } }
+  const [slideUpdateMap, setSlideUpdateMap] = useState({});
+
+  const item = queue.find(i => i.id === activeId);
+  const edits = editsMap[activeId] || {};
+  const activeSlide = slideMap[activeId] || 0;
+
+  const showToast = (msg, type = 'ok') => {
+    setToast({ msg, type });
+    setTimeout(() => setToast(null), 2800);
+  };
+
+  const onEdit = (patch) => setEditsMap(m => ({ ...m, [activeId]: { ...edits, ...patch } }));
+  const onSlide = (i) => setSlideMap(m => ({ ...m, [activeId]: i }));
+
+  // Slide update helpers
+  const getSlideUpdate = (assetId, slideIdx) => slideUpdateMap[assetId]?.[slideIdx] || { instruction: '', status: 'idle' };
+  const setSlideInstruction = (assetId, slideIdx, instruction) => {
+    setSlideUpdateMap(m => ({ ...m, [assetId]: { ...(m[assetId] || {}), [slideIdx]: { ...getSlideUpdate(assetId, slideIdx), instruction } } }));
+  };
+  const updateSlide = async (assetId, slideIdx, slide, instruction, queueOnly = false) => {
+    // Reel re-render: just queue, don't call AI
+    if (queueOnly) {
+      const ts = new Date().toISOString().slice(0,16).replace('T',' ') + ' UTC';
+      setSlideUpdateMap(m => ({ ...m, [assetId]: { ...(m[assetId] || {}), [slideIdx]: { instruction, status: 'queued', queuedAt: ts } } }));
+      showToast(`Re-render queued for ${assetId} · S2c notified`, 'ok');
+      return;
+    }
+    setSlideUpdateMap(m => ({ ...m, [assetId]: { ...(m[assetId] || {}), [slideIdx]: { ...getSlideUpdate(assetId, slideIdx), status: 'updating' } } }));
+    try {
+      const prompt = `You are updating a single Instagram carousel slide. The slide currently has:\nHeading: "${slide.heading}"\nBody: "${slide.body}"\n\nRequired update from the operator: "${instruction}"\n\nReturn ONLY a JSON object with keys "heading" and "body" containing the updated text. Keep the same tone and style unless instructed otherwise. Keep it concise — headings max 8 words, body max 25 words.`;
+      const result = await window.claude.complete({ messages: [{ role: 'user', content: prompt }] });
+      let parsed;
+      try { parsed = JSON.parse(result.match(/\{[\s\S]*\}/)?.[0] || '{}'); } catch { parsed = {}; }
+      const updatedHeading = parsed.heading || slide.heading;
+      const updatedBody = parsed.body || slide.body;
+      setSlideUpdateMap(m => ({ ...m, [assetId]: { ...(m[assetId] || {}), [slideIdx]: { instruction, status: 'updated', updatedHeading, updatedBody, original: { heading: slide.heading, body: slide.body } } } }));
+      showToast(`Slide ${slideIdx + 1} updated ✓`, 'ok');
+    } catch(e) {
+      setSlideUpdateMap(m => ({ ...m, [assetId]: { ...(m[assetId] || {}), [slideIdx]: { ...getSlideUpdate(assetId, slideIdx), status: 'idle' } } }));
+      showToast('Update failed — try again', 'err');
+    }
+  };
+  const revertSlide = (assetId, slideIdx) => {
+    setSlideUpdateMap(m => ({ ...m, [assetId]: { ...(m[assetId] || {}), [slideIdx]: { instruction: '', status: 'idle' } } }));
+  };
+
+  const onApprove = () => {
+    setQueue(q => q.filter(i => i.id !== activeId));
+    setEditsMap(m => { const n = {...m}; delete n[activeId]; return n; });
+    const remaining = queue.filter(i => i.id !== activeId);
+    if (remaining.length) setActiveId(remaining[0].id);
+    showToast(`${activeId} approved${Object.keys(edits).length > 0 ? ' with edits' : ''} ✓`, 'ok');
+  };
+  const onReject = () => {
+    setQueue(q => q.filter(i => i.id !== activeId));
+    const remaining = queue.filter(i => i.id !== activeId);
+    if (remaining.length) setActiveId(remaining[0].id);
+    showToast(`${activeId} rejected and removed from queue`, 'err');
+  };
+  const onManualReview = () => {
+    setQueue(q => q.map(i => i.id === activeId ? { ...i, status: 'manual_review' } : i));
+    showToast(`${activeId} flagged for manual review`, 'warn');
+  };
+
+  const filtered = queue.filter(i => filter === 'all' || i.status === filter || i.type === filter || i.subniche === filter);
+
+  // Merge edits into item for live preview
+  const previewItem = item ? {
+    ...item,
+    caption: edits.caption ?? item.caption,
+    slides: (edits.slides && item.slides) ? item.slides.map((s, i) => ({ ...s, ...(edits.slides[i] || {}) })) : item.slides,
+    script: edits.script ?? item.script,
+  } : null;
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', background: 'var(--bg)' }}>
+      {/* Page header */}
+      <header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 20px 12px', borderBottom: '1px solid var(--border)', flexShrink: 0 }}>
+        <div>
+          <h1 style={{ margin: 0, fontSize: 20, fontWeight: 600, letterSpacing: '-0.015em', lineHeight: '26px' }}>Content Review <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>— preview, edit &amp; approve</span></h1>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          {/* Filter chips */}
+          {['all', 'manual_review', 'pending_approval', 'carousel', 'reel', 'static'].map(f => (
+            <button key={f} onClick={() => setFilter(f)} style={{ padding: '4px 10px', borderRadius: 99, border: '1px solid var(--border)', background: filter === f ? 'var(--text)' : '#fff', color: filter === f ? '#fff' : 'var(--text-muted)', fontSize: 11, fontWeight: 600, cursor: 'pointer', textTransform: 'capitalize', letterSpacing: '0.02em' }}>
+              {f === 'all' ? `All (${queue.length})` : f === 'manual_review' ? `⚠ Manual review (${queue.filter(i=>i.status==='manual_review').length})` : f === 'pending_approval' ? `Pending (${queue.filter(i=>i.status==='pending_approval').length})` : f.charAt(0).toUpperCase() + f.slice(1)}
+            </button>
+          ))}
+        </div>
+      </header>
+
+      {/* 3-panel body */}
+      <div style={{ flex: 1, display: 'grid', gridTemplateColumns: '264px 1fr 340px', minHeight: 0, overflow: 'hidden' }}>
+
+        {/* ── Queue list ── */}
+        <div style={{ borderRight: '1px solid var(--border)', overflowY: 'auto', background: 'var(--panel)' }}>
+          <div style={{ padding: '8px 14px 6px', borderBottom: '1px solid var(--border)', fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--text-muted)' }}>
+            Review queue · {filtered.length} item{filtered.length !== 1 ? 's' : ''}
+          </div>
+          {filtered.length === 0 && (
+            <div style={{ padding: 24, textAlign: 'center', color: 'var(--text-faint)', fontSize: 12 }}>Queue empty</div>
+          )}
+          {filtered.map(i => (
+            <QueueItem key={i.id} item={i} active={i.id === activeId} onClick={() => setActiveId(i.id)} />
+          ))}
+        </div>
+
+        {/* ── Phone preview ── */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', background: '#F1F5F9', overflowY: 'auto' }}>
+          {/* Platform switcher */}
+          <div style={{ width: '100%', padding: '12px 16px 0', display: 'flex', gap: 6, justifyContent: 'center', flexWrap: 'wrap' }}>
+            {PLATFORMS.map(p => (
+              <button key={p.id} onClick={() => setPlatform(p.id)} style={{ padding: '4px 12px', borderRadius: 99, border: '1px solid', borderColor: platform === p.id ? p.color : 'var(--border)', background: platform === p.id ? p.color : '#fff', color: platform === p.id ? '#fff' : 'var(--text-muted)', fontSize: 11, fontWeight: 600, cursor: 'pointer', transition: 'all 0.15s' }}>
+                {p.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Preview area */}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', flex: 1, padding: '16px 20px', gap: 12, minHeight: 0 }}>
+            {previewItem ? (
+              <>
+                <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                  {PLATFORMS.find(p => p.id === platform)?.label} preview · {TYPE_LABEL[previewItem.type]}
+                </div>
+                {platform === 'instagram' && <IGPhoneFrame item={previewItem} activeSlide={activeSlide} onSlide={onSlide} slideUpdates={slideUpdateMap[activeId] || {}} />}
+                {platform === 'threads'   && <ThreadsPhoneFrame item={previewItem} />}
+                {platform === 'tiktok'    && <TikTokPhoneFrame item={previewItem} />}
+                {platform === 'x'         && <XPhoneFrame item={previewItem} />}
+                {platform === 'youtube'   && <YouTubePhoneFrame item={previewItem} />}
+
+                {previewItem.type === 'carousel' && platform === 'instagram' && (
+                  <div style={{ display: 'flex', gap: 6 }}>
+                    {previewItem.slides.map((_, i) => (
+                      <button key={i} onClick={() => onSlide(i)} style={{ width: 28, height: 20, borderRadius: 4, border: '1px solid var(--border)', background: i === activeSlide ? 'var(--text)' : '#fff', color: i === activeSlide ? '#fff' : 'var(--text-muted)', fontSize: 10, fontWeight: 600, cursor: 'pointer' }}>{i + 1}</button>
+                    ))}
+                  </div>
+                )}
+
+                {/* Platform char limit warning */}
+                {(() => {
+                  const plat = PLATFORMS.find(p => p.id === platform);
+                  const cc = (previewItem.caption || '').length;
+                  const over = cc > plat.charLimit;
+                  if (over) return (
+                    <div style={{ background: '#FEE2E2', border: '1px solid #FCA5A5', borderRadius: 6, padding: '6px 12px', fontSize: 11, color: 'var(--err)', fontWeight: 600 }}>
+                      ⚠ Caption is {cc - plat.charLimit} chars over {plat.label}'s {plat.charLimit} limit
+                    </div>
+                  );
+                  return null;
+                })()}
+
+                <div style={{ fontSize: 11, color: 'var(--text-faint)', textAlign: 'center' }}>
+                  Edits reflect live · {previewItem.scheduleTime}
+                </div>
+              </>
+            ) : (
+              <div style={{ color: 'var(--text-faint)', fontSize: 13 }}>Select an item to preview</div>
+            )}
+          </div>
+        </div>
+
+        {/* ── Edit + approve panel ── */}
+        <div style={{ borderLeft: '1px solid var(--border)', display: 'flex', flexDirection: 'column', minHeight: 0, overflow: 'hidden' }}>
+          {/* Panel header */}
+          <div style={{ padding: '10px 16px 8px', borderBottom: '1px solid var(--border)', flexShrink: 0 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 12, fontWeight: 600, color: 'var(--text)' }}>{item?.id}</span>
+              {item && <span style={{ fontSize: 10, fontWeight: 600, padding: '1px 6px', borderRadius: 3, background: TYPE_COLOR[item.type], color: '#1E293B' }}>{TYPE_LABEL[item.type]}</span>}
+              {item && <span style={{ fontSize: 10, fontWeight: 600, padding: '1px 6px', borderRadius: 3, background: STATUS_COLOR[item.status], color: STATUS_TEXT[item.status] }}>{STATUS_LABEL[item.status]}</span>}
+            </div>
+            {item && <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 2, lineHeight: '15px' }}>{item.idea}</div>}
+          </div>
+          {previewItem ? (
+            <EditPanel item={previewItem} edits={edits} onEdit={onEdit} onApprove={onApprove} onReject={onReject} onManualReview={onManualReview} activeSlide={activeSlide} platform={platform} slideUpdates={slideUpdateMap[activeId] || {}} onSetInstruction={(idx, val) => setSlideInstruction(activeId, idx, val)} onUpdateSlide={(idx, slide, instr) => updateSlide(activeId, idx, slide, instr)} onRevertSlide={(idx) => revertSlide(activeId, idx)} />
+          ) : (
+            <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-faint)', fontSize: 12 }}>No item selected</div>
+          )}
+        </div>
+      </div>
+
+      {/* Toast */}
+      {toast && (
+        <div style={{ position: 'fixed', bottom: 24, left: '50%', transform: 'translateX(-50%)', background: toast.type === 'ok' ? 'var(--ok)' : toast.type === 'err' ? 'var(--err)' : '#B07A00', color: '#fff', padding: '10px 20px', borderRadius: 8, fontSize: 13, fontWeight: 600, boxShadow: '0 4px 20px rgba(0,0,0,0.2)', zIndex: 9999 }}>
+          {toast.msg}
+        </div>
+      )}
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
