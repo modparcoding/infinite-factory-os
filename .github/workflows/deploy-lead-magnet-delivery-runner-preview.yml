@@ -1,0 +1,83 @@
+name: Deploy Lead Magnet Delivery Runner Preview
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'codex/**'
+    paths:
+      - '.github/workflows/deploy-lead-magnet-delivery-runner-preview.yml'
+      - 'workers/lead-magnet-delivery-runner/**'
+
+permissions:
+  contents: read
+
+jobs:
+  deploy-preview:
+    name: Deploy Preview Worker
+    runs-on: ubuntu-latest
+    environment: workers-preview
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      RUNNER_DIR: workers/lead-magnet-delivery-runner
+      WORKER_NAME: lead-magnet-delivery-runner-preview
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: workers/lead-magnet-delivery-runner/package-lock.json
+
+      - name: Install runner dependencies
+        working-directory: ${{ env.RUNNER_DIR }}
+        run: npm ci
+
+      - name: Build and test runner
+        working-directory: ${{ env.RUNNER_DIR }}
+        run: npm run build
+
+      - name: Validate preview secrets
+        env:
+          AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
+          AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          RUNNER_AUTH_SECRET: ${{ secrets.RUNNER_AUTH_SECRET }}
+        run: |
+          for key in CLOUDFLARE_API_TOKEN CLOUDFLARE_ACCOUNT_ID AIRTABLE_TOKEN AIRTABLE_BASE_ID BREVO_API_KEY RUNNER_AUTH_SECRET; do
+            if [ -z "${!key}" ]; then
+              echo "Missing required workers-preview secret: ${key}" >&2
+              exit 1
+            fi
+          done
+
+      - name: Upload preview secrets
+        working-directory: ${{ env.RUNNER_DIR }}
+        env:
+          AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          RUNNER_AUTH_SECRET: ${{ secrets.RUNNER_AUTH_SECRET }}
+        run: |
+          cat > .deploy.secrets.env <<EOF
+          AIRTABLE_TOKEN=${AIRTABLE_TOKEN}
+          BREVO_API_KEY=${BREVO_API_KEY}
+          RUNNER_AUTH_SECRET=${RUNNER_AUTH_SECRET}
+          EOF
+          npx wrangler secret bulk .deploy.secrets.env --name "${WORKER_NAME}"
+          rm -f .deploy.secrets.env
+
+      - name: Deploy preview worker
+        working-directory: ${{ env.RUNNER_DIR }}
+        env:
+          AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
+        run: >
+          npx wrangler deploy
+          --name "${WORKER_NAME}"
+          --keep-vars
+          --var AIRTABLE_BASE_ID:${AIRTABLE_BASE_ID}
+          --var ENABLE_PROOF_SEND:0

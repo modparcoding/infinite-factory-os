@@ -1,0 +1,12 @@
+{
+  "name": "lead-magnet-delivery-runner",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "build": "node --check src/worker.js && npm test"
+  },
+  "devDependencies": {
+    "wrangler": "^4.90.1"
+  }
+}

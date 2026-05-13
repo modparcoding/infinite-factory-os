@@ -1,0 +1,13 @@
+name = "lead-magnet-delivery-runner"
+main = "src/worker.js"
+compatibility_date = "2026-05-13"
+
+[observability]
+enabled = true
+
+[vars]
+AIRTABLE_BASE_ID = "appLHjLQKQEM8j8Tm"
+CONTRACT_TABLE = "Lead Magnet Delivery Contracts"
+EVIDENCE_TABLE = "Lead Magnet Delivery Evidence"
+ENABLE_PROOF_SEND = "0"
+
