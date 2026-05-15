@@ -1,0 +1,462 @@
+[
+  {
+    "case_id": "ATY-BABY-002",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep",
+          "niche": "new parents",
+          "title": "Baby Sleep Relationship Lane",
+          "status": "active",
+          "audience_size": 3200
+        },
+        "journey_stages": [],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-001",
+            "journey_id": "journey-baby-sleep",
+            "label": "Foundations",
+            "campaign_id": "cmp-baby-sleep",
+            "stage_id": "stage-awareness"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-rest-rhythms",
+          "label": "Consistent Resting",
+          "narrative": "Teach one sleep rhythm improvement per week.",
+          "campaign_id": "cmp-baby-sleep"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep",
+          "campaign_name": "Baby Sleep Trust Sequence",
+          "campaign_theme": "theme-rest-rhythms",
+          "objective": "Move caregivers from awareness to offer trustfully",
+          "value_arc_ids": ["arc-baby-001"]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-001",
+          "title": "Publish trust-building routine reel",
+          "priority": 1,
+          "campaign_id": "cmp-baby-sleep",
+          "value": 0.2
+        },
+        "asset": {
+          "asset_id": "asset-baby-001",
+          "source": "render",
+          "url": "https://cdn.example.test/assets/baby-sleep-001.mp4",
+          "campaign_id": "cmp-baby-sleep",
+          "journey_stage_id": "stage-awareness",
+          "backlog_id": "bl-baby-001"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-001",
+          "asset_id": "asset-baby-001",
+          "platform": "instagram",
+          "published_at": "2026-05-01T08:00:00.000Z",
+          "platform_post_id": "ig-post-001"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-001",
+          "published_post_id": "post-baby-001",
+          "impressions": 12400,
+          "engagement": 480,
+          "revenue": 0,
+          "engagement_snapshot": { "saves": 120, "shares": 32, "follows": 8 },
+          "captured_at": "2026-05-01T10:00:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-001-fail-1",
+      "chain_owner": "measurement-agent"
+    },
+    "expected_failure": "journey_stages"
+  },
+  {
+    "case_id": "ATY-BABY-002A",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep",
+          "niche": "new parents",
+          "title": "Baby Sleep Relationship Lane",
+          "status": "active",
+          "audience_size": 3200
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-awareness",
+            "journey_id": "journey-baby-sleep",
+            "name": "Awareness",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-001",
+            "journey_id": "journey-baby-sleep",
+            "label": "Foundations",
+            "campaign_id": "cmp-baby-sleep",
+            "stage_id": "stage-awareness"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-rest-rhythms",
+          "label": "Consistent Resting",
+          "narrative": "Teach one sleep rhythm improvement per week.",
+          "campaign_id": "cmp-baby-sleep"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep",
+          "campaign_name": "Baby Sleep Trust Sequence",
+          "campaign_theme": "theme-rest-rhythms",
+          "objective": "Move caregivers from awareness to offer trustfully",
+          "value_arc_ids": ["arc-baby-001"]
+        },
+        "backlog_item": null,
+        "asset": {
+          "asset_id": "asset-baby-001",
+          "source": "render",
+          "url": "https://cdn.example.test/assets/baby-sleep-001.mp4",
+          "campaign_id": "cmp-baby-sleep",
+          "journey_stage_id": "stage-awareness",
+          "backlog_id": "bl-baby-001"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-001",
+          "asset_id": "asset-baby-001",
+          "platform": "instagram",
+          "published_at": "2026-05-01T08:00:00.000Z",
+          "platform_post_id": "ig-post-001"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-001",
+          "published_post_id": "post-baby-001",
+          "impressions": 12400,
+          "engagement": 480,
+          "revenue": 0,
+          "engagement_snapshot": { "saves": 120, "shares": 32, "follows": 8 },
+          "captured_at": "2026-05-01T10:00:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-001-fail-2",
+      "chain_owner": "measurement-agent"
+    },
+    "expected_failure": "backlog_item"
+  },
+  {
+    "case_id": "ATY-BABY-002B",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep",
+          "niche": "new parents",
+          "title": "Baby Sleep Relationship Lane",
+          "status": "active",
+          "audience_size": 3200
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-awareness",
+            "journey_id": "journey-baby-sleep",
+            "name": "Awareness",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-001",
+            "journey_id": "journey-baby-sleep",
+            "label": "Foundations",
+            "campaign_id": "cmp-baby-sleep",
+            "stage_id": "stage-awareness"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-orphan-theme",
+          "label": "Consistent Resting",
+          "narrative": "Teach one sleep rhythm improvement per week.",
+          "campaign_id": "cmp-baby-sleep"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep",
+          "campaign_name": "Baby Sleep Trust Sequence",
+          "campaign_theme": "theme-rest-rhythms",
+          "objective": "Move caregivers from awareness to offer trustfully",
+          "value_arc_ids": ["arc-baby-001"]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-001",
+          "title": "Publish trust-building routine reel",
+          "priority": 1,
+          "campaign_id": "cmp-baby-sleep",
+          "value": 0.2
+        },
+        "asset": {
+          "asset_id": "asset-baby-001",
+          "source": "render",
+          "url": "https://cdn.example.test/assets/baby-sleep-001.mp4",
+          "campaign_id": "cmp-baby-sleep",
+          "journey_stage_id": "stage-awareness",
+          "backlog_id": "bl-baby-001"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-001",
+          "asset_id": "asset-baby-001",
+          "platform": "instagram",
+          "published_at": "2026-05-01T08:00:00.000Z",
+          "platform_post_id": "ig-post-001"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-001",
+          "published_post_id": "post-baby-001",
+          "impressions": 12400,
+          "engagement": 480,
+          "revenue": 0,
+          "engagement_snapshot": { "saves": 120, "shares": 32, "follows": 8 },
+          "captured_at": "2026-05-01T10:00:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-001-fail-3",
+      "chain_owner": "measurement-agent"
+    },
+    "expected_failure": "campaign_theme_mismatch"
+  },
+  {
+    "case_id": "ATY-BABY-002C",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep",
+          "niche": "new parents",
+          "title": "Baby Sleep Relationship Lane",
+          "status": "active",
+          "audience_size": 3200
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-awareness",
+            "journey_id": "journey-baby-sleep",
+            "name": "Awareness",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-001",
+            "journey_id": "journey-baby-sleep",
+            "label": "Foundations",
+            "campaign_id": "cmp-mismatch",
+            "stage_id": "stage-awareness"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-rest-rhythms",
+          "label": "Consistent Resting",
+          "narrative": "Teach one sleep rhythm improvement per week.",
+          "campaign_id": "cmp-baby-sleep"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep",
+          "campaign_name": "Baby Sleep Trust Sequence",
+          "campaign_theme": "theme-rest-rhythms",
+          "objective": "Move caregivers from awareness to offer trustfully",
+          "value_arc_ids": ["arc-baby-001"]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-001",
+          "title": "Publish trust-building routine reel",
+          "priority": 1,
+          "campaign_id": "cmp-baby-sleep",
+          "value": 0.2
+        },
+        "asset": {
+          "asset_id": "asset-baby-001",
+          "source": "render",
+          "url": "https://cdn.example.test/assets/baby-sleep-001.mp4",
+          "campaign_id": "cmp-baby-sleep",
+          "journey_stage_id": "stage-awareness",
+          "backlog_id": "bl-baby-001"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-001",
+          "asset_id": "asset-baby-001",
+          "platform": "instagram",
+          "published_at": "2026-05-01T08:00:00.000Z",
+          "platform_post_id": "ig-post-001"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-001",
+          "published_post_id": "post-baby-001",
+          "impressions": 12400,
+          "engagement": 480,
+          "revenue": 0,
+          "engagement_snapshot": { "saves": 120, "shares": 32, "follows": 8 },
+          "captured_at": "2026-05-01T10:00:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-001-fail-4",
+      "chain_owner": "measurement-agent"
+    },
+    "expected_failure": "arc_campaign_mismatch"
+  },
+  {
+    "case_id": "ATY-BABY-002D",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-conflict",
+          "niche": "new parents",
+          "title": "Baby Sleep Relationship Lane",
+          "status": "active",
+          "audience_size": 3200
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "journey-conflict",
+            "journey_id": "journey-conflict",
+            "name": "Awareness",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-001",
+            "journey_id": "journey-conflict",
+            "label": "Foundations",
+            "campaign_id": "cmp-baby-sleep",
+            "stage_id": "journey-conflict"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-rest-rhythms",
+          "label": "Consistent Resting",
+          "narrative": "Teach one sleep rhythm improvement per week.",
+          "campaign_id": "cmp-baby-sleep"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep",
+          "campaign_name": "Baby Sleep Trust Sequence",
+          "campaign_theme": "theme-rest-rhythms",
+          "objective": "Move caregivers from awareness to offer trustfully",
+          "value_arc_ids": ["arc-baby-001"]
+        },
+        "backlog_item": {
+          "backlog_id": "journey-conflict",
+          "title": "Publish trust-building routine reel",
+          "priority": 1,
+          "campaign_id": "cmp-baby-sleep",
+          "value": 0.2
+        },
+        "asset": {
+          "asset_id": "asset-baby-001",
+          "source": "render",
+          "url": "https://cdn.example.test/assets/baby-sleep-001.mp4",
+          "campaign_id": "cmp-baby-sleep",
+          "journey_stage_id": "journey-conflict",
+          "backlog_id": "journey-conflict"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-001",
+          "asset_id": "asset-baby-001",
+          "platform": "instagram",
+          "published_at": "2026-05-01T08:00:00.000Z",
+          "platform_post_id": "ig-post-001"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-001",
+          "published_post_id": "post-baby-001",
+          "impressions": 12400,
+          "engagement": 480,
+          "revenue": 0,
+          "engagement_snapshot": { "saves": 120, "shares": 32, "follows": 8 },
+          "captured_at": "2026-05-01T10:00:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-001-fail-5",
+      "chain_owner": "measurement-agent"
+    },
+    "expected_failure": "duplicate_entity_id_detected"
+  },
+  {
+    "case_id": "ATY-BABY-002E",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep",
+          "niche": "new parents",
+          "title": "Baby Sleep Relationship Lane",
+          "status": "active",
+          "audience_size": 3200
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-awareness",
+            "journey_id": "journey-baby-sleep",
+            "name": "Awareness",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-001",
+            "journey_id": "journey-baby-sleep",
+            "label": "Foundations",
+            "campaign_id": "cmp-baby-sleep",
+            "stage_id": "stage-awareness"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-rest-rhythms",
+          "label": "Consistent Resting",
+          "narrative": "Teach one sleep rhythm improvement per week.",
+          "campaign_id": "cmp-baby-sleep"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep",
+          "campaign_name": "Baby Sleep Trust Sequence",
+          "campaign_theme": "theme-rest-rhythms",
+          "objective": "Move caregivers from awareness to offer trustfully",
+          "value_arc_ids": ["arc-baby-001"]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-001",
+          "title": "Publish trust-building routine reel",
+          "priority": 1,
+          "campaign_id": "cmp-baby-sleep",
+          "value": 0.2
+        },
+        "asset": {
+          "asset_id": "asset-baby-001",
+          "source": "render",
+          "url": "https://cdn.example.test/assets/baby-sleep-001.mp4",
+          "campaign_id": "cmp-baby-sleep",
+          "journey_stage_id": "stage-awareness",
+          "backlog_id": "bl-baby-001"
+        },
+        "published_post": {
+          "published_post_id": "asset-baby-001",
+          "asset_id": "asset-baby-001",
+          "platform": "instagram",
+          "published_at": "2026-05-01T08:00:00.000Z",
+          "platform_post_id": "ig-post-001"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-001",
+          "published_post_id": "asset-baby-001",
+          "impressions": 12400,
+          "engagement": 480,
+          "revenue": 0,
+          "engagement_snapshot": { "saves": 120, "shares": 32, "follows": 8 },
+          "captured_at": "2026-05-01T10:00:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-001-fail-6",
+      "chain_owner": "measurement-agent"
+    },
+    "expected_failure": "duplicate_published_post_lineage"
+  }
+]

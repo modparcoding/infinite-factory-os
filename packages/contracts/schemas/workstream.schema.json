@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://infinite-factory-os/contracts/workstream.schema.json",
+  "title": "WorkstreamContract",
+  "type": "object",
+  "required": [
+    "workstream_id",
+    "title",
+    "objective",
+    "scope",
+    "allowed_files",
+    "forbidden_files",
+    "dependencies",
+    "inputs",
+    "outputs",
+    "acceptance_criteria",
+    "tests_required",
+    "risk_level",
+    "requires_human_review",
+    "owner_agent",
+    "status"
+  ],
+  "properties": {
+    "workstream_id": { "type": "string", "pattern": "^WS-[A-Z]{3}-[0-9]{3}$" },
+    "title": { "type": "string", "minLength": 3 },
+    "objective": { "type": "string", "minLength": 3 },
+    "scope": { "type": "string", "minLength": 3 },
+    "allowed_files": { "type": "array", "items": { "type": "string" } },
+    "forbidden_files": { "type": "array", "items": { "type": "string" } },
+    "dependencies": { "type": "array", "items": { "type": "string" } },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "required", "description"],
+        "properties": {
+          "name": { "type": "string" },
+          "required": { "type": "boolean" },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "required", "description"],
+        "properties": {
+          "name": { "type": "string" },
+          "required": { "type": "boolean" },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "acceptance_criteria": { "type": "array", "items": { "type": "string" } },
+    "tests_required": { "type": "array", "items": { "type": "string" } },
+    "risk_level": { "type": "string", "enum": ["low", "medium", "high", "critical"] },
+    "requires_human_review": { "type": "boolean" },
+    "owner_agent": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": ["queued", "blocked", "ready", "in_progress", "completed", "closed", "deprecated"]
+    }
+  }
+}

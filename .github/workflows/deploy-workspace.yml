@@ -1,0 +1,11 @@
+name: Workspace Sanity
+
+on:
+  workflow_dispatch:
+
+jobs:
+  noop:
+    runs-on: ubuntu-latest
+    steps:
+      - name: No-op gate
+        run: echo "No deployment in bootstrap phase"

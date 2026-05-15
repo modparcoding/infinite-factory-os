@@ -1,0 +1,44 @@
+[
+  {
+    "journey_stage_id": "stage-baby-resonance",
+    "journey_id": "journey-baby-sleep-parenting",
+    "name": "Resonance",
+    "sequence_order": 1,
+    "trust_gate": "cold"
+  },
+  {
+    "journey_stage_id": "stage-baby-relief",
+    "journey_id": "journey-baby-sleep-parenting",
+    "name": "Relief",
+    "sequence_order": 2,
+    "trust_gate": "warming"
+  },
+  {
+    "journey_stage_id": "stage-baby-trust",
+    "journey_id": "journey-baby-sleep-parenting",
+    "name": "Trust",
+    "sequence_order": 3,
+    "trust_gate": "engaged"
+  },
+  {
+    "journey_stage_id": "stage-baby-lead-capture",
+    "journey_id": "journey-baby-sleep-parenting",
+    "name": "Lead Capture",
+    "sequence_order": 4,
+    "trust_gate": "engaged"
+  },
+  {
+    "journey_stage_id": "stage-baby-monetization",
+    "journey_id": "journey-baby-sleep-parenting",
+    "name": "Monetization",
+    "sequence_order": 5,
+    "trust_gate": "saturated"
+  },
+  {
+    "journey_stage_id": "stage-baby-retention",
+    "journey_id": "journey-baby-sleep-parenting",
+    "name": "Retention",
+    "sequence_order": 6,
+    "trust_gate": "trusting"
+  }
+]

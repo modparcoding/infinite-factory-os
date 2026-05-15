@@ -1,0 +1,32 @@
+name: Infinite Factory OS CI Scaffold
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  scaffold-verification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install
+        run: corepack install -g pnpm && pnpm install
+
+      - name: Typecheck packages
+        run: pnpm run typecheck
+
+      - name: Validate workstream contracts
+        run: pnpm run validate:workstreams
+
+      - name: Validate replay fixtures
+        run: pnpm run replay:validate
+
+      - name: Dry-run orchestrator
+        run: npm run orchestrator:dry-run

@@ -1,0 +1,55 @@
+{
+  "workstream_id": "WS-RLS-003",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "relationship-state-case-RLS-BABY-PROOF-001",
+      "passed": true,
+      "notes": [
+        "cold"
+      ]
+    },
+    {
+      "name": "relationship-state-case-RLS-BABY-PROOF-002",
+      "passed": true,
+      "notes": [
+        "warming"
+      ]
+    },
+    {
+      "name": "relationship-state-case-RLS-BABY-PROOF-003",
+      "passed": true,
+      "notes": [
+        "engaged"
+      ]
+    },
+    {
+      "name": "relationship-state-case-RLS-BABY-PROOF-004",
+      "passed": true,
+      "notes": [
+        "trusting"
+      ]
+    },
+    {
+      "name": "relationship-state-case-RLS-BABY-PROOF-TRUSTED",
+      "passed": true,
+      "notes": [
+        "trusting"
+      ]
+    },
+    {
+      "name": "relationship-state-failure-RLS-BABY-FAIL-001",
+      "passed": true,
+      "notes": [
+        "at least 3"
+      ]
+    },
+    {
+      "name": "relationship-state-failure-RLS-BABY-FAIL-TRANSITION-001",
+      "passed": true,
+      "notes": [
+        "invalid_trust_transition"
+      ]
+    }
+  ]
+}

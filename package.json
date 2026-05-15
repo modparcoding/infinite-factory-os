@@ -1,0 +1,39 @@
+{
+  "name": "infinite-factory-os",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Agentic relationship-aware substrate for the Infinite Factory platform.",
+  "workspaces": [
+    "packages/*",
+    "services/*",
+    "agents/orchestrator"
+  ],
+  "scripts": {
+    "bootstrap": "pnpm install",
+    "typecheck": "pnpm -r --if-present run typecheck",
+    "build": "pnpm -r --if-present run build",
+    "replay:build": "pnpm exec tsc -p tests/tsconfig.json",
+    "replay:typecheck": "pnpm exec tsc -p tests/tsconfig.json --noEmit",
+    "lint": "pnpm -r --if-present run lint",
+    "validate:workstreams": "pnpm exec tsc -p agents/orchestrator/tsconfig.json --noEmit && node agents/orchestrator/dist/src/orchestrator.js --queue workstreams/queue --show-blocked",
+    "replay:load": "pnpm exec tsc -p tests/tsconfig.json && node tests/dist/tests/replay/load-replay-fixtures.js",
+    "orchestrator:dry-run": "pnpm exec tsc -p agents/orchestrator/tsconfig.json --noEmit && node agents/orchestrator/dist/src/orchestrator.js --queue workstreams/queue",
+    "replay:validate": "pnpm exec tsc -p tests/tsconfig.json && node tests/dist/tests/replay/validate-replay-fixtures.js"
+  },
+  "devDependencies": {
+    "@ifos/services-measurement": "workspace:*",
+    "@ifos/services-publishing-memory": "workspace:*",
+    "@ifos/services-render-qa": "workspace:*",
+    "@ifos/services-relationship-state": "workspace:*",
+    "@types/node": "25.8.0",
+    "@types/js-yaml": "^4.0.9",
+    "js-yaml": "^4.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "zod": "^3.24.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

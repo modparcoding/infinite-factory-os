@@ -1,0 +1,8 @@
+{
+  "agent_id": "measurement-specialist",
+  "contract_scope": ["AttributionLineage", "Performance", "Replay"],
+  "approval_required": true,
+  "autonomy_level": "bounded",
+  "allowed_file_patterns": ["services/measurement/**", "tests/replay/**", "tests/contracts/**", "workstreams/**"],
+  "forbidden_file_patterns": ["services/delivery-runner/**", ".github/**"]
+}

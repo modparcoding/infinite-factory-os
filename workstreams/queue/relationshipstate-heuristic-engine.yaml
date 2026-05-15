@@ -1,0 +1,40 @@
+workstream_id: "WS-RLS-003"
+title: "RelationshipState heuristic engine"
+objective: "Create a deterministic heuristic evaluator for relationship trust and campaign pacing states."
+scope: "packages/contracts, packages/state-machine, packages/policies, services/relationship-state"
+allowed_files:
+  - "services/relationship-state/src/index.ts"
+  - "services/relationship-state/package.json"
+  - "packages/contracts/src/relationship-state.ts"
+  - "packages/policies/policies/trustPacing.policy.json"
+  - "tests/replay/relationship-state.snapshots.json"
+  - "tests/replay/relationship-state.failures.json"
+  - "tests/replay/relationship-state.validation.result.json"
+forbidden_files:
+  - "services/measurement/src/**"
+  - "services/delivery-runner/src/**"
+dependencies:
+  - "WS-PUB-002"
+inputs:
+  - name: input.relationship_state_events
+    required: true
+    description: "Sequence of publishing memory inputs for deterministic relationship scoring."
+outputs:
+  - name: output.relationship_state_snapshot
+    required: true
+    description: "RelationshipState v1 output with derivation trace."
+acceptance_criteria:
+  - "Evaluator only outputs allowed trust states"
+  - "Blocked transitions include explicit reason"
+  - "No autonomous writes to state stores"
+  - "Replay fixtures validate both direct and derived relationship state outputs"
+tests_required:
+  - "tests/contracts/relationship-state.contract.test.ts"
+  - "tests/replay/relationship-state.validation.result.json"
+risk_level: "high"
+requires_human_review: true
+human_review_status: "resolved"
+replay_validation_result_file: "tests/replay/relationship-state.validation.result.json"
+replay_validation_status: "passed"
+owner_agent: "relationship-agent"
+status: "ready"

@@ -1,0 +1,17 @@
+{
+  "policy_id": "trustPacing.v1",
+  "kind": "trust",
+  "scope": "RelationshipState",
+  "requires_human_approval": true,
+  "rules": [
+    {
+      "when": "trust_level == \"trusting\"",
+      "then": "increase_interaction_intent_and_allow_shorter_cadence"
+    },
+    {
+      "when": "trust_level in [\"cold\"]",
+      "then": "apply_conservative_sending_and_cap_per_day=1"
+    }
+  ],
+  "changed_at": "2026-05-15"
+}

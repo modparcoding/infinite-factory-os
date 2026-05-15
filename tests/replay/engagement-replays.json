@@ -1,0 +1,200 @@
+[
+  {
+    "replay_id": "evt-baby-sleep-001",
+    "captured_at": "2026-04-01T06:45:00.000Z",
+    "journey_id": "journey-baby-sleep-parenting",
+    "journey_stage_id": "stage-baby-resonance",
+    "asset_id": "asset-baby-sleep-001",
+    "saves": 9,
+    "shares": 2,
+    "follows": 0,
+    "commercial_signal": false
+  },
+  {
+    "replay_id": "evt-baby-sleep-002",
+    "captured_at": "2026-04-01T08:20:00.000Z",
+    "journey_id": "journey-baby-sleep-parenting",
+    "journey_stage_id": "stage-baby-resonance",
+    "asset_id": "asset-baby-sleep-002",
+    "saves": 7,
+    "shares": 1,
+    "follows": 1,
+    "commercial_signal": false
+  },
+  {
+    "replay_id": "evt-baby-sleep-003",
+    "captured_at": "2026-04-02T07:10:00.000Z",
+    "journey_id": "journey-baby-sleep-parenting",
+    "journey_stage_id": "stage-baby-resonance",
+    "asset_id": "asset-baby-sleep-003",
+    "saves": 8,
+    "shares": 1,
+    "follows": 0,
+    "commercial_signal": false
+  },
+  {
+    "replay_id": "evt-baby-sleep-004",
+    "captured_at": "2026-04-03T07:00:00.000Z",
+    "journey_id": "journey-baby-sleep-parenting",
+    "journey_stage_id": "stage-baby-relief",
+    "asset_id": "asset-baby-sleep-004",
+    "saves": 11,
+    "shares": 2,
+    "follows": 2,
+    "commercial_signal": false
+  },
+  {
+    "replay_id": "evt-baby-sleep-005",
+    "captured_at": "2026-04-03T09:10:00.000Z",
+    "journey_id": "journey-baby-sleep-parenting",
+    "journey_stage_id": "stage-baby-relief",
+    "asset_id": "asset-baby-sleep-005",
+    "saves": 10,
+    "shares": 1,
+    "follows": 2,
+    "commercial_signal": false
+  },
+  {
+    "replay_id": "evt-baby-sleep-006",
+    "captured_at": "2026-04-03T11:45:00.000Z",
+    "journey_id": "journey-baby-sleep-parenting",
+    "journey_stage_id": "stage-baby-relief",
+    "asset_id": "asset-baby-sleep-006",
+    "saves": 12,
+    "shares": 3,
+    "follows": 3,
+    "commercial_signal": false
+  },
+  {
+    "replay_id": "evt-baby-sleep-007",
+    "captured_at": "2026-04-04T06:30:00.000Z",
+    "journey_id": "journey-baby-sleep-parenting",
+    "journey_stage_id": "stage-baby-relief",
+    "asset_id": "asset-baby-sleep-007",
+    "saves": 14,
+    "shares": 2,
+    "follows": 1,
+    "commercial_signal": false
+  },
+  {
+    "replay_id": "evt-baby-sleep-008",
+    "captured_at": "2026-04-05T07:20:00.000Z",
+    "journey_id": "journey-baby-sleep-parenting",
+    "journey_stage_id": "stage-baby-trust",
+    "asset_id": "asset-baby-sleep-008",
+    "saves": 13,
+    "shares": 5,
+    "follows": 4,
+    "commercial_signal": false
+  },
+  {
+    "replay_id": "evt-baby-sleep-009",
+    "captured_at": "2026-04-05T09:00:00.000Z",
+    "journey_id": "journey-baby-sleep-parenting",
+    "journey_stage_id": "stage-baby-trust",
+    "asset_id": "asset-baby-sleep-009",
+    "saves": 15,
+    "shares": 4,
+    "follows": 3,
+    "commercial_signal": false
+  },
+  {
+    "replay_id": "evt-baby-sleep-010",
+    "captured_at": "2026-04-06T08:05:00.000Z",
+    "journey_id": "journey-baby-sleep-parenting",
+    "journey_stage_id": "stage-baby-trust",
+    "asset_id": "asset-baby-sleep-010",
+    "saves": 16,
+    "shares": 6,
+    "follows": 5,
+    "commercial_signal": false
+  },
+  {
+    "replay_id": "evt-baby-sleep-011",
+    "captured_at": "2026-04-07T07:00:00.000Z",
+    "journey_id": "journey-baby-sleep-parenting",
+    "journey_stage_id": "stage-baby-trust",
+    "asset_id": "asset-baby-sleep-011",
+    "saves": 15,
+    "shares": 4,
+    "follows": 6,
+    "commercial_signal": false
+  },
+  {
+    "replay_id": "evt-baby-sleep-012",
+    "captured_at": "2026-04-08T07:30:00.000Z",
+    "journey_id": "journey-baby-sleep-parenting",
+    "journey_stage_id": "stage-baby-lead-capture",
+    "asset_id": "asset-baby-sleep-012",
+    "saves": 18,
+    "shares": 5,
+    "follows": 9,
+    "commercial_signal": true
+  },
+  {
+    "replay_id": "evt-baby-sleep-013",
+    "captured_at": "2026-04-09T06:50:00.000Z",
+    "journey_id": "journey-baby-sleep-parenting",
+    "journey_stage_id": "stage-baby-lead-capture",
+    "asset_id": "asset-baby-sleep-013",
+    "saves": 20,
+    "shares": 4,
+    "follows": 10,
+    "commercial_signal": true
+  },
+  {
+    "replay_id": "evt-baby-sleep-014",
+    "captured_at": "2026-04-10T07:10:00.000Z",
+    "journey_id": "journey-baby-sleep-parenting",
+    "journey_stage_id": "stage-baby-lead-capture",
+    "asset_id": "asset-baby-sleep-014",
+    "saves": 17,
+    "shares": 3,
+    "follows": 8,
+    "commercial_signal": true
+  },
+  {
+    "replay_id": "evt-baby-sleep-015",
+    "captured_at": "2026-04-11T08:00:00.000Z",
+    "journey_id": "journey-baby-sleep-parenting",
+    "journey_stage_id": "stage-baby-monetization",
+    "asset_id": "asset-baby-sleep-015",
+    "saves": 12,
+    "shares": 3,
+    "follows": 6,
+    "commercial_signal": true
+  },
+  {
+    "replay_id": "evt-baby-sleep-016",
+    "captured_at": "2026-04-11T20:00:00.000Z",
+    "journey_id": "journey-baby-sleep-parenting",
+    "journey_stage_id": "stage-baby-monetization",
+    "asset_id": "asset-baby-sleep-016",
+    "saves": 10,
+    "shares": 2,
+    "follows": 4,
+    "commercial_signal": true
+  },
+  {
+    "replay_id": "evt-baby-sleep-017",
+    "captured_at": "2026-04-12T07:15:00.000Z",
+    "journey_id": "journey-baby-sleep-parenting",
+    "journey_stage_id": "stage-baby-retention",
+    "asset_id": "asset-baby-sleep-017",
+    "saves": 19,
+    "shares": 7,
+    "follows": 14,
+    "commercial_signal": false
+  },
+  {
+    "replay_id": "evt-baby-sleep-018",
+    "captured_at": "2026-04-12T20:30:00.000Z",
+    "journey_id": "journey-baby-sleep-parenting",
+    "journey_stage_id": "stage-baby-retention",
+    "asset_id": "asset-baby-sleep-018",
+    "saves": 21,
+    "shares": 6,
+    "follows": 16,
+    "commercial_signal": false
+  }
+]

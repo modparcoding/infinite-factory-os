@@ -1,0 +1,23 @@
+{
+  "name": "@ifos/services-relationship-state",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/src/index.js",
+      "types": "./dist/src/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "echo \"relationship-state test scaffold\""
+  },
+  "dependencies": {
+    "@ifos/contracts": "workspace:*",
+    "@ifos/state-machine": "workspace:*"
+  }
+}

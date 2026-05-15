@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig.base.json",
+  "include": [
+    "replay/**/*.ts",
+    "contracts/**/*.ts",
+    "integration/**/*.ts",
+    "../services/**/*.ts",
+    "../packages/**/*.ts",
+    "../agents/**/*.ts"
+  ],
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "..",
+    "composite": false
+  }
+}

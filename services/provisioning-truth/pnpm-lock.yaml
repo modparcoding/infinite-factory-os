@@ -1,0 +1,16 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@ifos/contracts':
+        specifier: workspace:*
+        version: link:../../packages/contracts
+      '@ifos/shared-utils':
+        specifier: workspace:*
+        version: link:../../packages/shared-utils

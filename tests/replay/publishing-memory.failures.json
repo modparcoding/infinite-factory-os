@@ -1,0 +1,43 @@
+[
+  {
+    "case_id": "PM-BABY-FAIL-001",
+    "source_events": [],
+    "expected_failure": "at least 1"
+  },
+  {
+    "case_id": "PM-BABY-FAIL-002",
+    "source_events": [
+      {
+        "event_id": "evt-pm-100",
+        "campaign_id": "cmp-baby-sleep",
+        "journey_id": "journey-baby-sleep",
+        "journey_stage": "stage-awareness",
+        "cta": "education",
+        "value_type": "tip",
+        "emotional_tone": "empathetic",
+        "commercial_signal": false,
+        "saves": 1,
+        "shares": 0,
+        "follows": 0,
+        "asset_id": "asset-baby-001",
+        "captured_at": "2026-05-01T09:00:00.000Z"
+      },
+      {
+        "event_id": "evt-pm-101",
+        "campaign_id": "cmp-other",
+        "journey_id": "journey-baby-sleep",
+        "journey_stage": "stage-awareness",
+        "cta": "education",
+        "value_type": "tip",
+        "emotional_tone": "empathetic",
+        "commercial_signal": false,
+        "saves": 1,
+        "shares": 0,
+        "follows": 0,
+        "asset_id": "asset-baby-001",
+        "captured_at": "2026-05-01T09:15:00.000Z"
+      }
+    ],
+    "expected_failure": "campaign_id_mismatch"
+  }
+]

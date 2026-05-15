@@ -1,0 +1,16 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@ifos/contracts':
+        specifier: workspace:*
+        version: link:../../packages/contracts
+      '@ifos/state-machine':
+        specifier: workspace:*
+        version: link:../../packages/state-machine

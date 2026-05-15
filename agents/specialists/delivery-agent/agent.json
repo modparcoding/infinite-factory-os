@@ -1,0 +1,8 @@
+{
+  "agent_id": "delivery-specialist",
+  "contract_scope": ["DeliveryContract", "ProofLane", "DeliveryRunnerBoundary"],
+  "approval_required": true,
+  "autonomy_level": "bounded",
+  "allowed_file_patterns": ["services/delivery-runner/**", "packages/contracts/**", "docs/architecture/**", "workstreams/**"],
+  "forbidden_file_patterns": ["services/measurement/**", "services/provisioning-truth/**"]
+}

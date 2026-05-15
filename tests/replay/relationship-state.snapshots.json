@@ -1,0 +1,103 @@
+[
+  {
+    "case_id": "RLS-BABY-PROOF-001",
+    "input": {
+      "relationship_id": "rel-baby-sleep-proof-001",
+      "campaign_id": "cmp-baby-sleep-tiny-wins",
+      "journey_id": "journey-baby-sleep-parenting",
+      "memory_id": "memory-baby-sleep-proof-06",
+      "trust_score": 0.12,
+      "commercial_density": 0,
+      "repetition_risk": 0,
+      "journey_stage_ratio": 0.5
+    },
+    "expected_state": {
+      "relationship_id": "rel-baby-sleep-proof-001",
+      "trust_level": "cold",
+      "trust_score": 0.3488,
+      "campaign_id": "cmp-baby-sleep-tiny-wins",
+      "journey_id": "journey-baby-sleep-parenting"
+    }
+  },
+  {
+    "case_id": "RLS-BABY-PROOF-002",
+    "input": {
+      "relationship_id": "rel-baby-sleep-proof-002",
+      "campaign_id": "cmp-baby-sleep-tiny-wins",
+      "journey_id": "journey-baby-sleep-parenting",
+      "memory_id": "memory-baby-sleep-proof-12",
+      "trust_score": 0.39,
+      "commercial_density": 0.083333,
+      "repetition_risk": 0,
+      "journey_stage_ratio": 0.333333
+    },
+    "expected_state": {
+      "relationship_id": "rel-baby-sleep-proof-002",
+      "trust_level": "warming",
+      "trust_score": 0.5386,
+      "campaign_id": "cmp-baby-sleep-tiny-wins",
+      "journey_id": "journey-baby-sleep-parenting"
+    }
+  },
+  {
+    "case_id": "RLS-BABY-PROOF-003",
+    "input": {
+      "relationship_id": "rel-baby-sleep-proof-003",
+      "campaign_id": "cmp-baby-sleep-tiny-wins",
+      "journey_id": "journey-baby-sleep-parenting",
+      "memory_id": "memory-baby-sleep-proof-15",
+      "trust_score": 0.62,
+      "commercial_density": 0.266667,
+      "repetition_risk": 0,
+      "journey_stage_ratio": 0.266667
+    },
+    "expected_state": {
+      "relationship_id": "rel-baby-sleep-proof-003",
+      "trust_level": "engaged",
+      "trust_score": 0.6868,
+      "campaign_id": "cmp-baby-sleep-tiny-wins",
+      "journey_id": "journey-baby-sleep-parenting"
+    }
+  },
+  {
+    "case_id": "RLS-BABY-PROOF-004",
+    "input": {
+      "relationship_id": "rel-baby-sleep-proof-004",
+      "campaign_id": "cmp-baby-sleep-tiny-wins",
+      "journey_id": "journey-baby-sleep-parenting",
+      "memory_id": "memory-baby-sleep-proof-18",
+      "trust_score": 0.86,
+      "commercial_density": 0.277778,
+      "repetition_risk": 0,
+      "journey_stage_ratio": 0.222222
+    },
+    "expected_state": {
+      "relationship_id": "rel-baby-sleep-proof-004",
+      "trust_level": "trusting",
+      "trust_score": 0.863067,
+      "campaign_id": "cmp-baby-sleep-tiny-wins",
+      "journey_id": "journey-baby-sleep-parenting"
+    }
+  },
+  {
+    "case_id": "RLS-BABY-PROOF-TRUSTED",
+    "input": {
+      "relationship_id": "rel-baby-sleep-proof-005",
+      "campaign_id": "cmp-baby-sleep-tiny-wins",
+      "journey_id": "journey-baby-sleep-parenting",
+      "memory_id": "memory-baby-sleep-proof-18",
+      "trust_score": 0.86,
+      "commercial_density": 0.277778,
+      "repetition_risk": 0,
+      "journey_stage_ratio": 0.222222,
+      "previous_trust_level": "trusted"
+    },
+    "expected_state": {
+      "relationship_id": "rel-baby-sleep-proof-005",
+      "trust_level": "trusting",
+      "trust_score": 0.863067,
+      "campaign_id": "cmp-baby-sleep-tiny-wins",
+      "journey_id": "journey-baby-sleep-parenting"
+    }
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "workstream_id": "WS-ABC-001",
+  "title": "Template Workstream",
+  "objective": "Define the objective in one sentence.",
+  "scope": "Bounded folder/service/contract scope.",
+  "allowed_files": ["services/<service>/**", "packages/contracts/**", "tests/**"],
+  "forbidden_files": [".github/workflows/**", "node_modules/**"],
+  "dependencies": ["WS-ABC-000"],
+  "inputs": [{ "name": "input.path", "required": true, "description": "Primary input contract path." }],
+  "outputs": [{ "name": "output.path", "required": true, "description": "Primary output artifact path." }],
+  "acceptance_criteria": ["Machine-readable contract validates.", "No human-forbidden boundaries touched."],
+  "tests_required": ["replay fixture load", "contract validation"],
+  "risk_level": "medium",
+  "requires_human_review": true,
+  "owner_agent": "content-specialist",
+  "status": "queued"
+}

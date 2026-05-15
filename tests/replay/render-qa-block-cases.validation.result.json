@@ -1,0 +1,76 @@
+{
+  "workstream_id": "WS-Render-QA-Block-Cases",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "render-qa-block-pass-relief-baseline",
+      "passed": true,
+      "notes": [
+        "observed="
+      ]
+    },
+    {
+      "name": "render-qa-block-fail-cta-pressure-exceeds-stage-allowance",
+      "passed": true,
+      "notes": [
+        "observed=cta_pressure_exceeds_stage_allowance"
+      ]
+    },
+    {
+      "name": "render-qa-block-fail-readability-below-threshold",
+      "passed": true,
+      "notes": [
+        "observed=emotional_mismatch,readability_below_threshold,relationship_fit_mismatch"
+      ]
+    },
+    {
+      "name": "render-qa-block-fail-excessive-density",
+      "passed": true,
+      "notes": [
+        "observed=emotional_mismatch,excessive_density,final_slide_breaks_continuity,relationship_fit_mismatch"
+      ]
+    },
+    {
+      "name": "render-qa-block-fail-emotional-mismatch",
+      "passed": true,
+      "notes": [
+        "observed=emotional_mismatch,final_slide_breaks_continuity,relationship_fit_mismatch"
+      ]
+    },
+    {
+      "name": "render-qa-block-fail-relationship-fit-mismatch",
+      "passed": true,
+      "notes": [
+        "observed=emotional_mismatch,excessive_density,hook_not_present,relationship_fit_mismatch"
+      ]
+    },
+    {
+      "name": "render-qa-block-fail-commercial-mismatch",
+      "passed": true,
+      "notes": [
+        "observed=commercial_mismatch,cta_pressure_exceeds_stage_allowance"
+      ]
+    },
+    {
+      "name": "render-qa-block-fail-hook-not-present",
+      "passed": true,
+      "notes": [
+        "observed=hook_not_present"
+      ]
+    },
+    {
+      "name": "render-qa-block-fail-final-slide-breaks-continuity",
+      "passed": true,
+      "notes": [
+        "observed=emotional_mismatch,excessive_density,final_slide_breaks_continuity,relationship_fit_mismatch"
+      ]
+    },
+    {
+      "name": "render-qa-block-fail-mobile-scanability-low",
+      "passed": true,
+      "notes": [
+        "observed=mobile_scanability_low,readability_below_threshold"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+workstream_id: "WS-ATY-001"
+title: "Attribution chain persistence"
+objective: "Persist end-to-end canonical attribution lineage with deterministic replay and schema validation."
+scope: "packages/contracts, services/measurement, tests/replay"
+allowed_files:
+  - "packages/contracts/src/attribution.ts"
+  - "services/measurement/src/index.ts"
+  - "services/measurement/package.json"
+  - "tests/replay/attribution-lineage.snapshots.json"
+  - "tests/replay/attribution-lineage.failures.json"
+  - "tests/replay/attribution-lineage.validation.result.json"
+forbidden_files:
+  - "services/relationship-state/src/**"
+  - "services/delivery-runner/src/**"
+dependencies: []
+inputs:
+  - name: input.chain_seed_file
+    required: true
+    description: "Attribution seed fixture with full Journey->Performance records."
+outputs:
+  - name: output.chain_snapshot_file
+    required: true
+    description: "Canonical chain persistence snapshot artifact."
+  - name: output.schema_validation_result
+    required: true
+    description: "Schema parse result for canonical lineage contract."
+acceptance_criteria:
+  - "Canonical segment order is enforced"
+  - "No duplicate PerformanceRecord IDs in the same chain"
+  - "Replay fixture contains Baby Sleep proving lane sample"
+  - "Every case can be deterministically traced back to BacklogItem + JourneyStage + ValueArc"
+tests_required:
+  - "tests/contracts/attribution-lineage.contract.test.ts"
+  - "tests/replay/attribution-lineage.validation.result.json"
+risk_level: "medium"
+requires_human_review: true
+human_review_status: "resolved"
+replay_validation_result_file: "tests/replay/attribution-lineage.validation.result.json"
+replay_validation_status: "passed"
+owner_agent: "measurement-agent"
+status: "completed"

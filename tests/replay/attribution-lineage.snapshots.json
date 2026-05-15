@@ -1,0 +1,2468 @@
+[
+  {
+    "case_id": "ATY-BABY-PROOF-001",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep-parenting",
+          "niche": "parenting",
+          "title": "New Parent Sleep Support",
+          "status": "active",
+          "audience_size": 4800
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-baby-resonance",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Resonance",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          },
+          {
+            "journey_stage_id": "stage-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Relief",
+            "sequence_order": 2,
+            "trust_gate": "warming"
+          },
+          {
+            "journey_stage_id": "stage-baby-trust",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Trust",
+            "sequence_order": 3,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-lead-capture",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Lead Capture",
+            "sequence_order": 4,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-monetization",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Monetization",
+            "sequence_order": 5,
+            "trust_gate": "saturated"
+          },
+          {
+            "journey_stage_id": "stage-baby-retention",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Retention",
+            "sequence_order": 6,
+            "trust_gate": "trusting"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-empathy",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Emotional Alignment",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-resonance"
+          },
+          {
+            "value_arc_id": "arc-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Immediate Relief",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-relief"
+          },
+          {
+            "value_arc_id": "arc-baby-continuity",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Trust and Continuity",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-trust"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-baby-empathy-bridge",
+          "label": "Exhaustion empathy",
+          "narrative": "Validate parent exhaustion before asking for trust or action.",
+          "campaign_id": "cmp-baby-sleep-tiny-wins"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "campaign_name": "Tiny Sleep Wins for Exhausted Parents",
+          "campaign_theme": "theme-baby-empathy-bridge",
+          "objective": "Move parents from emotional validation to practical trust before restrained commercialization.",
+          "value_arc_ids": [
+            "arc-baby-empathy",
+            "arc-baby-relief",
+            "arc-baby-continuity"
+          ]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-sleep-001",
+          "title": "Validate nightly exhaustion without judgement",
+          "priority": 1,
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "value": 0.05
+        },
+        "asset": {
+          "asset_id": "asset-baby-sleep-001",
+          "source": "rendered-replay-asset",
+          "url": "https://cdn.infinite-factory.test/baby-sleep/asset-baby-sleep-001.mp4",
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "journey_stage_id": "stage-baby-resonance",
+          "stage_id": "stage-baby-resonance",
+          "backlog_id": "bl-baby-sleep-001"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-sleep-001",
+          "asset_id": "asset-baby-sleep-001",
+          "platform": "instagram",
+          "published_at": "2026-04-01T06:49:00.000Z",
+          "platform_post_id": "ig-post-baby-sleep-001"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-sleep-001",
+          "published_post_id": "post-baby-sleep-001",
+          "impressions": 4510,
+          "engagement": 11,
+          "revenue": 0,
+          "engagement_snapshot": {
+            "saves": 9,
+            "shares": 2,
+            "follows": 0
+          },
+          "captured_at": "2026-04-01T07:13:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-proof-001",
+      "chain_owner": "proof-agent"
+    },
+    "expected_signature": "chain-baby-sleep-proof-001::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-empathy-bridge::bl-baby-sleep-001::asset-baby-sleep-001::post-baby-sleep-001::perf-baby-sleep-001"
+  },
+  {
+    "case_id": "ATY-BABY-PROOF-002",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep-parenting",
+          "niche": "parenting",
+          "title": "New Parent Sleep Support",
+          "status": "active",
+          "audience_size": 4800
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-baby-resonance",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Resonance",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          },
+          {
+            "journey_stage_id": "stage-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Relief",
+            "sequence_order": 2,
+            "trust_gate": "warming"
+          },
+          {
+            "journey_stage_id": "stage-baby-trust",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Trust",
+            "sequence_order": 3,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-lead-capture",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Lead Capture",
+            "sequence_order": 4,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-monetization",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Monetization",
+            "sequence_order": 5,
+            "trust_gate": "saturated"
+          },
+          {
+            "journey_stage_id": "stage-baby-retention",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Retention",
+            "sequence_order": 6,
+            "trust_gate": "trusting"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-empathy",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Emotional Alignment",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-resonance"
+          },
+          {
+            "value_arc_id": "arc-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Immediate Relief",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-relief"
+          },
+          {
+            "value_arc_id": "arc-baby-continuity",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Trust and Continuity",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-trust"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-baby-empathy-bridge",
+          "label": "Exhaustion empathy",
+          "narrative": "Validate parent exhaustion before asking for trust or action.",
+          "campaign_id": "cmp-baby-sleep-tiny-wins"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "campaign_name": "Tiny Sleep Wins for Exhausted Parents",
+          "campaign_theme": "theme-baby-empathy-bridge",
+          "objective": "Move parents from emotional validation to practical trust before restrained commercialization.",
+          "value_arc_ids": [
+            "arc-baby-empathy",
+            "arc-baby-relief",
+            "arc-baby-continuity"
+          ]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-sleep-002",
+          "title": "Normalize that tired parenting feels chaotic",
+          "priority": 1,
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "value": 0.05
+        },
+        "asset": {
+          "asset_id": "asset-baby-sleep-002",
+          "source": "rendered-replay-asset",
+          "url": "https://cdn.infinite-factory.test/baby-sleep/asset-baby-sleep-002.mp4",
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "journey_stage_id": "stage-baby-resonance",
+          "stage_id": "stage-baby-resonance",
+          "backlog_id": "bl-baby-sleep-002"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-sleep-002",
+          "asset_id": "asset-baby-sleep-002",
+          "platform": "instagram",
+          "published_at": "2026-04-01T08:24:00.000Z",
+          "platform_post_id": "ig-post-baby-sleep-002"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-sleep-002",
+          "published_post_id": "post-baby-sleep-002",
+          "impressions": 4820,
+          "engagement": 9,
+          "revenue": 0,
+          "engagement_snapshot": {
+            "saves": 7,
+            "shares": 1,
+            "follows": 1
+          },
+          "captured_at": "2026-04-01T08:48:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-proof-002",
+      "chain_owner": "proof-agent"
+    },
+    "expected_signature": "chain-baby-sleep-proof-002::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-empathy-bridge::bl-baby-sleep-002::asset-baby-sleep-002::post-baby-sleep-002::perf-baby-sleep-002"
+  },
+  {
+    "case_id": "ATY-BABY-PROOF-003",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep-parenting",
+          "niche": "parenting",
+          "title": "New Parent Sleep Support",
+          "status": "active",
+          "audience_size": 4800
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-baby-resonance",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Resonance",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          },
+          {
+            "journey_stage_id": "stage-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Relief",
+            "sequence_order": 2,
+            "trust_gate": "warming"
+          },
+          {
+            "journey_stage_id": "stage-baby-trust",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Trust",
+            "sequence_order": 3,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-lead-capture",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Lead Capture",
+            "sequence_order": 4,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-monetization",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Monetization",
+            "sequence_order": 5,
+            "trust_gate": "saturated"
+          },
+          {
+            "journey_stage_id": "stage-baby-retention",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Retention",
+            "sequence_order": 6,
+            "trust_gate": "trusting"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-empathy",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Emotional Alignment",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-resonance"
+          },
+          {
+            "value_arc_id": "arc-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Immediate Relief",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-relief"
+          },
+          {
+            "value_arc_id": "arc-baby-continuity",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Trust and Continuity",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-trust"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-baby-empathy-bridge",
+          "label": "Exhaustion empathy",
+          "narrative": "Validate parent exhaustion before asking for trust or action.",
+          "campaign_id": "cmp-baby-sleep-tiny-wins"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "campaign_name": "Tiny Sleep Wins for Exhausted Parents",
+          "campaign_theme": "theme-baby-empathy-bridge",
+          "objective": "Move parents from emotional validation to practical trust before restrained commercialization.",
+          "value_arc_ids": [
+            "arc-baby-empathy",
+            "arc-baby-relief",
+            "arc-baby-continuity"
+          ]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-sleep-003",
+          "title": "Name the real cause of 3am panic",
+          "priority": 1,
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "value": 0.06
+        },
+        "asset": {
+          "asset_id": "asset-baby-sleep-003",
+          "source": "rendered-replay-asset",
+          "url": "https://cdn.infinite-factory.test/baby-sleep/asset-baby-sleep-003.mp4",
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "journey_stage_id": "stage-baby-resonance",
+          "stage_id": "stage-baby-resonance",
+          "backlog_id": "bl-baby-sleep-003"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-sleep-003",
+          "asset_id": "asset-baby-sleep-003",
+          "platform": "instagram",
+          "published_at": "2026-04-02T07:14:00.000Z",
+          "platform_post_id": "ig-post-baby-sleep-003"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-sleep-003",
+          "published_post_id": "post-baby-sleep-003",
+          "impressions": 5130,
+          "engagement": 9,
+          "revenue": 0,
+          "engagement_snapshot": {
+            "saves": 8,
+            "shares": 1,
+            "follows": 0
+          },
+          "captured_at": "2026-04-02T07:38:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-proof-003",
+      "chain_owner": "proof-agent"
+    },
+    "expected_signature": "chain-baby-sleep-proof-003::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-empathy-bridge::bl-baby-sleep-003::asset-baby-sleep-003::post-baby-sleep-003::perf-baby-sleep-003"
+  },
+  {
+    "case_id": "ATY-BABY-PROOF-004",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep-parenting",
+          "niche": "parenting",
+          "title": "New Parent Sleep Support",
+          "status": "active",
+          "audience_size": 4800
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-baby-resonance",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Resonance",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          },
+          {
+            "journey_stage_id": "stage-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Relief",
+            "sequence_order": 2,
+            "trust_gate": "warming"
+          },
+          {
+            "journey_stage_id": "stage-baby-trust",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Trust",
+            "sequence_order": 3,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-lead-capture",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Lead Capture",
+            "sequence_order": 4,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-monetization",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Monetization",
+            "sequence_order": 5,
+            "trust_gate": "saturated"
+          },
+          {
+            "journey_stage_id": "stage-baby-retention",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Retention",
+            "sequence_order": 6,
+            "trust_gate": "trusting"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-empathy",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Emotional Alignment",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-resonance"
+          },
+          {
+            "value_arc_id": "arc-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Immediate Relief",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-relief"
+          },
+          {
+            "value_arc_id": "arc-baby-continuity",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Trust and Continuity",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-trust"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-baby-relief-utility",
+          "label": "Practical relief",
+          "narrative": "Deliver one practical micro-win per touchpoint.",
+          "campaign_id": "cmp-baby-sleep-tiny-wins"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "campaign_name": "Tiny Sleep Wins for Exhausted Parents",
+          "campaign_theme": "theme-baby-relief-utility",
+          "objective": "Move parents from emotional validation to practical trust before restrained commercialization.",
+          "value_arc_ids": [
+            "arc-baby-empathy",
+            "arc-baby-relief",
+            "arc-baby-continuity"
+          ]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-sleep-004",
+          "title": "A 3-minute nap-reset routine",
+          "priority": 2,
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "value": 0.1
+        },
+        "asset": {
+          "asset_id": "asset-baby-sleep-004",
+          "source": "rendered-replay-asset",
+          "url": "https://cdn.infinite-factory.test/baby-sleep/asset-baby-sleep-004.mp4",
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "journey_stage_id": "stage-baby-relief",
+          "stage_id": "stage-baby-relief",
+          "backlog_id": "bl-baby-sleep-004"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-sleep-004",
+          "asset_id": "asset-baby-sleep-004",
+          "platform": "instagram",
+          "published_at": "2026-04-03T07:04:00.000Z",
+          "platform_post_id": "ig-post-baby-sleep-004"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-sleep-004",
+          "published_post_id": "post-baby-sleep-004",
+          "impressions": 5440,
+          "engagement": 15,
+          "revenue": 0,
+          "engagement_snapshot": {
+            "saves": 11,
+            "shares": 2,
+            "follows": 2
+          },
+          "captured_at": "2026-04-03T07:28:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-proof-004",
+      "chain_owner": "proof-agent"
+    },
+    "expected_signature": "chain-baby-sleep-proof-004::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-relief-utility::bl-baby-sleep-004::asset-baby-sleep-004::post-baby-sleep-004::perf-baby-sleep-004"
+  },
+  {
+    "case_id": "ATY-BABY-PROOF-005",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep-parenting",
+          "niche": "parenting",
+          "title": "New Parent Sleep Support",
+          "status": "active",
+          "audience_size": 4800
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-baby-resonance",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Resonance",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          },
+          {
+            "journey_stage_id": "stage-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Relief",
+            "sequence_order": 2,
+            "trust_gate": "warming"
+          },
+          {
+            "journey_stage_id": "stage-baby-trust",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Trust",
+            "sequence_order": 3,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-lead-capture",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Lead Capture",
+            "sequence_order": 4,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-monetization",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Monetization",
+            "sequence_order": 5,
+            "trust_gate": "saturated"
+          },
+          {
+            "journey_stage_id": "stage-baby-retention",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Retention",
+            "sequence_order": 6,
+            "trust_gate": "trusting"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-empathy",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Emotional Alignment",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-resonance"
+          },
+          {
+            "value_arc_id": "arc-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Immediate Relief",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-relief"
+          },
+          {
+            "value_arc_id": "arc-baby-continuity",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Trust and Continuity",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-trust"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-baby-relief-utility",
+          "label": "Practical relief",
+          "narrative": "Deliver one practical micro-win per touchpoint.",
+          "campaign_id": "cmp-baby-sleep-tiny-wins"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "campaign_name": "Tiny Sleep Wins for Exhausted Parents",
+          "campaign_theme": "theme-baby-relief-utility",
+          "objective": "Move parents from emotional validation to practical trust before restrained commercialization.",
+          "value_arc_ids": [
+            "arc-baby-empathy",
+            "arc-baby-relief",
+            "arc-baby-continuity"
+          ]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-sleep-005",
+          "title": "How to calm a 2-year-old waking cycle in 10 minutes",
+          "priority": 2,
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "value": 0.1
+        },
+        "asset": {
+          "asset_id": "asset-baby-sleep-005",
+          "source": "rendered-replay-asset",
+          "url": "https://cdn.infinite-factory.test/baby-sleep/asset-baby-sleep-005.mp4",
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "journey_stage_id": "stage-baby-relief",
+          "stage_id": "stage-baby-relief",
+          "backlog_id": "bl-baby-sleep-005"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-sleep-005",
+          "asset_id": "asset-baby-sleep-005",
+          "platform": "instagram",
+          "published_at": "2026-04-03T09:14:00.000Z",
+          "platform_post_id": "ig-post-baby-sleep-005"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-sleep-005",
+          "published_post_id": "post-baby-sleep-005",
+          "impressions": 5750,
+          "engagement": 13,
+          "revenue": 0,
+          "engagement_snapshot": {
+            "saves": 10,
+            "shares": 1,
+            "follows": 2
+          },
+          "captured_at": "2026-04-03T09:38:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-proof-005",
+      "chain_owner": "proof-agent"
+    },
+    "expected_signature": "chain-baby-sleep-proof-005::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-relief-utility::bl-baby-sleep-005::asset-baby-sleep-005::post-baby-sleep-005::perf-baby-sleep-005"
+  },
+  {
+    "case_id": "ATY-BABY-PROOF-006",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep-parenting",
+          "niche": "parenting",
+          "title": "New Parent Sleep Support",
+          "status": "active",
+          "audience_size": 4800
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-baby-resonance",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Resonance",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          },
+          {
+            "journey_stage_id": "stage-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Relief",
+            "sequence_order": 2,
+            "trust_gate": "warming"
+          },
+          {
+            "journey_stage_id": "stage-baby-trust",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Trust",
+            "sequence_order": 3,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-lead-capture",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Lead Capture",
+            "sequence_order": 4,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-monetization",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Monetization",
+            "sequence_order": 5,
+            "trust_gate": "saturated"
+          },
+          {
+            "journey_stage_id": "stage-baby-retention",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Retention",
+            "sequence_order": 6,
+            "trust_gate": "trusting"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-empathy",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Emotional Alignment",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-resonance"
+          },
+          {
+            "value_arc_id": "arc-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Immediate Relief",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-relief"
+          },
+          {
+            "value_arc_id": "arc-baby-continuity",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Trust and Continuity",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-trust"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-baby-relief-utility",
+          "label": "Practical relief",
+          "narrative": "Deliver one practical micro-win per touchpoint.",
+          "campaign_id": "cmp-baby-sleep-tiny-wins"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "campaign_name": "Tiny Sleep Wins for Exhausted Parents",
+          "campaign_theme": "theme-baby-relief-utility",
+          "objective": "Move parents from emotional validation to practical trust before restrained commercialization.",
+          "value_arc_ids": [
+            "arc-baby-empathy",
+            "arc-baby-relief",
+            "arc-baby-continuity"
+          ]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-sleep-006",
+          "title": "Overtired signs parents forget during the day",
+          "priority": 3,
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "value": 0.09
+        },
+        "asset": {
+          "asset_id": "asset-baby-sleep-006",
+          "source": "rendered-replay-asset",
+          "url": "https://cdn.infinite-factory.test/baby-sleep/asset-baby-sleep-006.mp4",
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "journey_stage_id": "stage-baby-relief",
+          "stage_id": "stage-baby-relief",
+          "backlog_id": "bl-baby-sleep-006"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-sleep-006",
+          "asset_id": "asset-baby-sleep-006",
+          "platform": "instagram",
+          "published_at": "2026-04-03T11:49:00.000Z",
+          "platform_post_id": "ig-post-baby-sleep-006"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-sleep-006",
+          "published_post_id": "post-baby-sleep-006",
+          "impressions": 6060,
+          "engagement": 18,
+          "revenue": 0,
+          "engagement_snapshot": {
+            "saves": 12,
+            "shares": 3,
+            "follows": 3
+          },
+          "captured_at": "2026-04-03T12:13:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-proof-006",
+      "chain_owner": "proof-agent"
+    },
+    "expected_signature": "chain-baby-sleep-proof-006::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-relief-utility::bl-baby-sleep-006::asset-baby-sleep-006::post-baby-sleep-006::perf-baby-sleep-006"
+  },
+  {
+    "case_id": "ATY-BABY-PROOF-007",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep-parenting",
+          "niche": "parenting",
+          "title": "New Parent Sleep Support",
+          "status": "active",
+          "audience_size": 4800
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-baby-resonance",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Resonance",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          },
+          {
+            "journey_stage_id": "stage-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Relief",
+            "sequence_order": 2,
+            "trust_gate": "warming"
+          },
+          {
+            "journey_stage_id": "stage-baby-trust",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Trust",
+            "sequence_order": 3,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-lead-capture",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Lead Capture",
+            "sequence_order": 4,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-monetization",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Monetization",
+            "sequence_order": 5,
+            "trust_gate": "saturated"
+          },
+          {
+            "journey_stage_id": "stage-baby-retention",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Retention",
+            "sequence_order": 6,
+            "trust_gate": "trusting"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-empathy",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Emotional Alignment",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-resonance"
+          },
+          {
+            "value_arc_id": "arc-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Immediate Relief",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-relief"
+          },
+          {
+            "value_arc_id": "arc-baby-continuity",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Trust and Continuity",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-trust"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-baby-relief-utility",
+          "label": "Practical relief",
+          "narrative": "Deliver one practical micro-win per touchpoint.",
+          "campaign_id": "cmp-baby-sleep-tiny-wins"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "campaign_name": "Tiny Sleep Wins for Exhausted Parents",
+          "campaign_theme": "theme-baby-relief-utility",
+          "objective": "Move parents from emotional validation to practical trust before restrained commercialization.",
+          "value_arc_ids": [
+            "arc-baby-empathy",
+            "arc-baby-relief",
+            "arc-baby-continuity"
+          ]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-sleep-007",
+          "title": "Evening wind-down template for exhausted nights",
+          "priority": 3,
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "value": 0.12
+        },
+        "asset": {
+          "asset_id": "asset-baby-sleep-007",
+          "source": "rendered-replay-asset",
+          "url": "https://cdn.infinite-factory.test/baby-sleep/asset-baby-sleep-007.mp4",
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "journey_stage_id": "stage-baby-relief",
+          "stage_id": "stage-baby-relief",
+          "backlog_id": "bl-baby-sleep-007"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-sleep-007",
+          "asset_id": "asset-baby-sleep-007",
+          "platform": "instagram",
+          "published_at": "2026-04-04T06:34:00.000Z",
+          "platform_post_id": "ig-post-baby-sleep-007"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-sleep-007",
+          "published_post_id": "post-baby-sleep-007",
+          "impressions": 6370,
+          "engagement": 17,
+          "revenue": 0,
+          "engagement_snapshot": {
+            "saves": 14,
+            "shares": 2,
+            "follows": 1
+          },
+          "captured_at": "2026-04-04T06:58:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-proof-007",
+      "chain_owner": "proof-agent"
+    },
+    "expected_signature": "chain-baby-sleep-proof-007::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-relief-utility::bl-baby-sleep-007::asset-baby-sleep-007::post-baby-sleep-007::perf-baby-sleep-007"
+  },
+  {
+    "case_id": "ATY-BABY-PROOF-008",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep-parenting",
+          "niche": "parenting",
+          "title": "New Parent Sleep Support",
+          "status": "active",
+          "audience_size": 4800
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-baby-resonance",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Resonance",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          },
+          {
+            "journey_stage_id": "stage-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Relief",
+            "sequence_order": 2,
+            "trust_gate": "warming"
+          },
+          {
+            "journey_stage_id": "stage-baby-trust",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Trust",
+            "sequence_order": 3,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-lead-capture",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Lead Capture",
+            "sequence_order": 4,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-monetization",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Monetization",
+            "sequence_order": 5,
+            "trust_gate": "saturated"
+          },
+          {
+            "journey_stage_id": "stage-baby-retention",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Retention",
+            "sequence_order": 6,
+            "trust_gate": "trusting"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-empathy",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Emotional Alignment",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-resonance"
+          },
+          {
+            "value_arc_id": "arc-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Immediate Relief",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-relief"
+          },
+          {
+            "value_arc_id": "arc-baby-continuity",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Trust and Continuity",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-trust"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-baby-trust-proof",
+          "label": "Proof-led competence",
+          "narrative": "Build trust with simple wins and observed outcomes.",
+          "campaign_id": "cmp-baby-sleep-tiny-wins"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "campaign_name": "Tiny Sleep Wins for Exhausted Parents",
+          "campaign_theme": "theme-baby-trust-proof",
+          "objective": "Move parents from emotional validation to practical trust before restrained commercialization.",
+          "value_arc_ids": [
+            "arc-baby-empathy",
+            "arc-baby-relief",
+            "arc-baby-continuity"
+          ]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-sleep-008",
+          "title": "What to do when baby wakes at 02:00",
+          "priority": 4,
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "value": 0.14
+        },
+        "asset": {
+          "asset_id": "asset-baby-sleep-008",
+          "source": "rendered-replay-asset",
+          "url": "https://cdn.infinite-factory.test/baby-sleep/asset-baby-sleep-008.mp4",
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "journey_stage_id": "stage-baby-trust",
+          "stage_id": "stage-baby-trust",
+          "backlog_id": "bl-baby-sleep-008"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-sleep-008",
+          "asset_id": "asset-baby-sleep-008",
+          "platform": "instagram",
+          "published_at": "2026-04-05T07:24:00.000Z",
+          "platform_post_id": "ig-post-baby-sleep-008"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-sleep-008",
+          "published_post_id": "post-baby-sleep-008",
+          "impressions": 6680,
+          "engagement": 22,
+          "revenue": 0,
+          "engagement_snapshot": {
+            "saves": 13,
+            "shares": 5,
+            "follows": 4
+          },
+          "captured_at": "2026-04-05T07:48:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-proof-008",
+      "chain_owner": "proof-agent"
+    },
+    "expected_signature": "chain-baby-sleep-proof-008::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-trust-proof::bl-baby-sleep-008::asset-baby-sleep-008::post-baby-sleep-008::perf-baby-sleep-008"
+  },
+  {
+    "case_id": "ATY-BABY-PROOF-009",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep-parenting",
+          "niche": "parenting",
+          "title": "New Parent Sleep Support",
+          "status": "active",
+          "audience_size": 4800
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-baby-resonance",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Resonance",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          },
+          {
+            "journey_stage_id": "stage-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Relief",
+            "sequence_order": 2,
+            "trust_gate": "warming"
+          },
+          {
+            "journey_stage_id": "stage-baby-trust",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Trust",
+            "sequence_order": 3,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-lead-capture",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Lead Capture",
+            "sequence_order": 4,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-monetization",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Monetization",
+            "sequence_order": 5,
+            "trust_gate": "saturated"
+          },
+          {
+            "journey_stage_id": "stage-baby-retention",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Retention",
+            "sequence_order": 6,
+            "trust_gate": "trusting"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-empathy",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Emotional Alignment",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-resonance"
+          },
+          {
+            "value_arc_id": "arc-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Immediate Relief",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-relief"
+          },
+          {
+            "value_arc_id": "arc-baby-continuity",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Trust and Continuity",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-trust"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-baby-trust-proof",
+          "label": "Proof-led competence",
+          "narrative": "Build trust with simple wins and observed outcomes.",
+          "campaign_id": "cmp-baby-sleep-tiny-wins"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "campaign_name": "Tiny Sleep Wins for Exhausted Parents",
+          "campaign_theme": "theme-baby-trust-proof",
+          "objective": "Move parents from emotional validation to practical trust before restrained commercialization.",
+          "value_arc_ids": [
+            "arc-baby-empathy",
+            "arc-baby-relief",
+            "arc-baby-continuity"
+          ]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-sleep-009",
+          "title": "How one family cut crying by changing one cue",
+          "priority": 4,
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "value": 0.14
+        },
+        "asset": {
+          "asset_id": "asset-baby-sleep-009",
+          "source": "rendered-replay-asset",
+          "url": "https://cdn.infinite-factory.test/baby-sleep/asset-baby-sleep-009.mp4",
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "journey_stage_id": "stage-baby-trust",
+          "stage_id": "stage-baby-trust",
+          "backlog_id": "bl-baby-sleep-009"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-sleep-009",
+          "asset_id": "asset-baby-sleep-009",
+          "platform": "instagram",
+          "published_at": "2026-04-05T09:04:00.000Z",
+          "platform_post_id": "ig-post-baby-sleep-009"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-sleep-009",
+          "published_post_id": "post-baby-sleep-009",
+          "impressions": 6990,
+          "engagement": 22,
+          "revenue": 0,
+          "engagement_snapshot": {
+            "saves": 15,
+            "shares": 4,
+            "follows": 3
+          },
+          "captured_at": "2026-04-05T09:28:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-proof-009",
+      "chain_owner": "proof-agent"
+    },
+    "expected_signature": "chain-baby-sleep-proof-009::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-trust-proof::bl-baby-sleep-009::asset-baby-sleep-009::post-baby-sleep-009::perf-baby-sleep-009"
+  },
+  {
+    "case_id": "ATY-BABY-PROOF-010",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep-parenting",
+          "niche": "parenting",
+          "title": "New Parent Sleep Support",
+          "status": "active",
+          "audience_size": 4800
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-baby-resonance",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Resonance",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          },
+          {
+            "journey_stage_id": "stage-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Relief",
+            "sequence_order": 2,
+            "trust_gate": "warming"
+          },
+          {
+            "journey_stage_id": "stage-baby-trust",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Trust",
+            "sequence_order": 3,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-lead-capture",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Lead Capture",
+            "sequence_order": 4,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-monetization",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Monetization",
+            "sequence_order": 5,
+            "trust_gate": "saturated"
+          },
+          {
+            "journey_stage_id": "stage-baby-retention",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Retention",
+            "sequence_order": 6,
+            "trust_gate": "trusting"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-empathy",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Emotional Alignment",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-resonance"
+          },
+          {
+            "value_arc_id": "arc-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Immediate Relief",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-relief"
+          },
+          {
+            "value_arc_id": "arc-baby-continuity",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Trust and Continuity",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-trust"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-baby-trust-proof",
+          "label": "Proof-led competence",
+          "narrative": "Build trust with simple wins and observed outcomes.",
+          "campaign_id": "cmp-baby-sleep-tiny-wins"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "campaign_name": "Tiny Sleep Wins for Exhausted Parents",
+          "campaign_theme": "theme-baby-trust-proof",
+          "objective": "Move parents from emotional validation to practical trust before restrained commercialization.",
+          "value_arc_ids": [
+            "arc-baby-empathy",
+            "arc-baby-relief",
+            "arc-baby-continuity"
+          ]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-sleep-010",
+          "title": "Simple cue-stacking protocol for 7 nights",
+          "priority": 5,
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "value": 0.15
+        },
+        "asset": {
+          "asset_id": "asset-baby-sleep-010",
+          "source": "rendered-replay-asset",
+          "url": "https://cdn.infinite-factory.test/baby-sleep/asset-baby-sleep-010.mp4",
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "journey_stage_id": "stage-baby-trust",
+          "stage_id": "stage-baby-trust",
+          "backlog_id": "bl-baby-sleep-010"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-sleep-010",
+          "asset_id": "asset-baby-sleep-010",
+          "platform": "instagram",
+          "published_at": "2026-04-06T08:09:00.000Z",
+          "platform_post_id": "ig-post-baby-sleep-010"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-sleep-010",
+          "published_post_id": "post-baby-sleep-010",
+          "impressions": 7300,
+          "engagement": 27,
+          "revenue": 0,
+          "engagement_snapshot": {
+            "saves": 16,
+            "shares": 6,
+            "follows": 5
+          },
+          "captured_at": "2026-04-06T08:33:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-proof-010",
+      "chain_owner": "proof-agent"
+    },
+    "expected_signature": "chain-baby-sleep-proof-010::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-trust-proof::bl-baby-sleep-010::asset-baby-sleep-010::post-baby-sleep-010::perf-baby-sleep-010"
+  },
+  {
+    "case_id": "ATY-BABY-PROOF-011",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep-parenting",
+          "niche": "parenting",
+          "title": "New Parent Sleep Support",
+          "status": "active",
+          "audience_size": 4800
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-baby-resonance",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Resonance",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          },
+          {
+            "journey_stage_id": "stage-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Relief",
+            "sequence_order": 2,
+            "trust_gate": "warming"
+          },
+          {
+            "journey_stage_id": "stage-baby-trust",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Trust",
+            "sequence_order": 3,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-lead-capture",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Lead Capture",
+            "sequence_order": 4,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-monetization",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Monetization",
+            "sequence_order": 5,
+            "trust_gate": "saturated"
+          },
+          {
+            "journey_stage_id": "stage-baby-retention",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Retention",
+            "sequence_order": 6,
+            "trust_gate": "trusting"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-empathy",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Emotional Alignment",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-resonance"
+          },
+          {
+            "value_arc_id": "arc-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Immediate Relief",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-relief"
+          },
+          {
+            "value_arc_id": "arc-baby-continuity",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Trust and Continuity",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-trust"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-baby-trust-proof",
+          "label": "Proof-led competence",
+          "narrative": "Build trust with simple wins and observed outcomes.",
+          "campaign_id": "cmp-baby-sleep-tiny-wins"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "campaign_name": "Tiny Sleep Wins for Exhausted Parents",
+          "campaign_theme": "theme-baby-trust-proof",
+          "objective": "Move parents from emotional validation to practical trust before restrained commercialization.",
+          "value_arc_ids": [
+            "arc-baby-empathy",
+            "arc-baby-relief",
+            "arc-baby-continuity"
+          ]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-sleep-011",
+          "title": "Soft-check question: would a sleep guide help?",
+          "priority": 5,
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "value": 0.13
+        },
+        "asset": {
+          "asset_id": "asset-baby-sleep-011",
+          "source": "rendered-replay-asset",
+          "url": "https://cdn.infinite-factory.test/baby-sleep/asset-baby-sleep-011.mp4",
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "journey_stage_id": "stage-baby-trust",
+          "stage_id": "stage-baby-trust",
+          "backlog_id": "bl-baby-sleep-011"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-sleep-011",
+          "asset_id": "asset-baby-sleep-011",
+          "platform": "instagram",
+          "published_at": "2026-04-07T07:04:00.000Z",
+          "platform_post_id": "ig-post-baby-sleep-011"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-sleep-011",
+          "published_post_id": "post-baby-sleep-011",
+          "impressions": 7610,
+          "engagement": 25,
+          "revenue": 0,
+          "engagement_snapshot": {
+            "saves": 15,
+            "shares": 4,
+            "follows": 6
+          },
+          "captured_at": "2026-04-07T07:28:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-proof-011",
+      "chain_owner": "proof-agent"
+    },
+    "expected_signature": "chain-baby-sleep-proof-011::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-trust-proof::bl-baby-sleep-011::asset-baby-sleep-011::post-baby-sleep-011::perf-baby-sleep-011"
+  },
+  {
+    "case_id": "ATY-BABY-PROOF-012",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep-parenting",
+          "niche": "parenting",
+          "title": "New Parent Sleep Support",
+          "status": "active",
+          "audience_size": 4800
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-baby-resonance",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Resonance",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          },
+          {
+            "journey_stage_id": "stage-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Relief",
+            "sequence_order": 2,
+            "trust_gate": "warming"
+          },
+          {
+            "journey_stage_id": "stage-baby-trust",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Trust",
+            "sequence_order": 3,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-lead-capture",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Lead Capture",
+            "sequence_order": 4,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-monetization",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Monetization",
+            "sequence_order": 5,
+            "trust_gate": "saturated"
+          },
+          {
+            "journey_stage_id": "stage-baby-retention",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Retention",
+            "sequence_order": 6,
+            "trust_gate": "trusting"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-empathy",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Emotional Alignment",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-resonance"
+          },
+          {
+            "value_arc_id": "arc-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Immediate Relief",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-relief"
+          },
+          {
+            "value_arc_id": "arc-baby-continuity",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Trust and Continuity",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-trust"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-baby-soft-collect",
+          "label": "Lead with care",
+          "narrative": "Guide parents toward a low-friction sleep guide.",
+          "campaign_id": "cmp-baby-sleep-tiny-wins"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "campaign_name": "Tiny Sleep Wins for Exhausted Parents",
+          "campaign_theme": "theme-baby-soft-collect",
+          "objective": "Move parents from emotional validation to practical trust before restrained commercialization.",
+          "value_arc_ids": [
+            "arc-baby-empathy",
+            "arc-baby-relief",
+            "arc-baby-continuity"
+          ]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-sleep-012",
+          "title": "Free sleep guide: first 5 minutes routine",
+          "priority": 6,
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "value": 0.16
+        },
+        "asset": {
+          "asset_id": "asset-baby-sleep-012",
+          "source": "rendered-replay-asset",
+          "url": "https://cdn.infinite-factory.test/baby-sleep/asset-baby-sleep-012.mp4",
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "journey_stage_id": "stage-baby-lead-capture",
+          "stage_id": "stage-baby-lead-capture",
+          "backlog_id": "bl-baby-sleep-012"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-sleep-012",
+          "asset_id": "asset-baby-sleep-012",
+          "platform": "instagram",
+          "published_at": "2026-04-08T07:34:00.000Z",
+          "platform_post_id": "ig-post-baby-sleep-012"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-sleep-012",
+          "published_post_id": "post-baby-sleep-012",
+          "impressions": 7920,
+          "engagement": 32,
+          "revenue": 0,
+          "engagement_snapshot": {
+            "saves": 18,
+            "shares": 5,
+            "follows": 9
+          },
+          "captured_at": "2026-04-08T07:58:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-proof-012",
+      "chain_owner": "proof-agent"
+    },
+    "expected_signature": "chain-baby-sleep-proof-012::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-soft-collect::bl-baby-sleep-012::asset-baby-sleep-012::post-baby-sleep-012::perf-baby-sleep-012"
+  },
+  {
+    "case_id": "ATY-BABY-PROOF-013",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep-parenting",
+          "niche": "parenting",
+          "title": "New Parent Sleep Support",
+          "status": "active",
+          "audience_size": 4800
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-baby-resonance",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Resonance",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          },
+          {
+            "journey_stage_id": "stage-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Relief",
+            "sequence_order": 2,
+            "trust_gate": "warming"
+          },
+          {
+            "journey_stage_id": "stage-baby-trust",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Trust",
+            "sequence_order": 3,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-lead-capture",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Lead Capture",
+            "sequence_order": 4,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-monetization",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Monetization",
+            "sequence_order": 5,
+            "trust_gate": "saturated"
+          },
+          {
+            "journey_stage_id": "stage-baby-retention",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Retention",
+            "sequence_order": 6,
+            "trust_gate": "trusting"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-empathy",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Emotional Alignment",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-resonance"
+          },
+          {
+            "value_arc_id": "arc-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Immediate Relief",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-relief"
+          },
+          {
+            "value_arc_id": "arc-baby-continuity",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Trust and Continuity",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-trust"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-baby-soft-collect",
+          "label": "Lead with care",
+          "narrative": "Guide parents toward a low-friction sleep guide.",
+          "campaign_id": "cmp-baby-sleep-tiny-wins"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "campaign_name": "Tiny Sleep Wins for Exhausted Parents",
+          "campaign_theme": "theme-baby-soft-collect",
+          "objective": "Move parents from emotional validation to practical trust before restrained commercialization.",
+          "value_arc_ids": [
+            "arc-baby-empathy",
+            "arc-baby-relief",
+            "arc-baby-continuity"
+          ]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-sleep-013",
+          "title": "Download-ready bedtime routine card",
+          "priority": 6,
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "value": 0.16
+        },
+        "asset": {
+          "asset_id": "asset-baby-sleep-013",
+          "source": "rendered-replay-asset",
+          "url": "https://cdn.infinite-factory.test/baby-sleep/asset-baby-sleep-013.mp4",
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "journey_stage_id": "stage-baby-lead-capture",
+          "stage_id": "stage-baby-lead-capture",
+          "backlog_id": "bl-baby-sleep-013"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-sleep-013",
+          "asset_id": "asset-baby-sleep-013",
+          "platform": "instagram",
+          "published_at": "2026-04-09T06:54:00.000Z",
+          "platform_post_id": "ig-post-baby-sleep-013"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-sleep-013",
+          "published_post_id": "post-baby-sleep-013",
+          "impressions": 8230,
+          "engagement": 34,
+          "revenue": 0,
+          "engagement_snapshot": {
+            "saves": 20,
+            "shares": 4,
+            "follows": 10
+          },
+          "captured_at": "2026-04-09T07:18:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-proof-013",
+      "chain_owner": "proof-agent"
+    },
+    "expected_signature": "chain-baby-sleep-proof-013::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-soft-collect::bl-baby-sleep-013::asset-baby-sleep-013::post-baby-sleep-013::perf-baby-sleep-013"
+  },
+  {
+    "case_id": "ATY-BABY-PROOF-014",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep-parenting",
+          "niche": "parenting",
+          "title": "New Parent Sleep Support",
+          "status": "active",
+          "audience_size": 4800
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-baby-resonance",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Resonance",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          },
+          {
+            "journey_stage_id": "stage-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Relief",
+            "sequence_order": 2,
+            "trust_gate": "warming"
+          },
+          {
+            "journey_stage_id": "stage-baby-trust",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Trust",
+            "sequence_order": 3,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-lead-capture",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Lead Capture",
+            "sequence_order": 4,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-monetization",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Monetization",
+            "sequence_order": 5,
+            "trust_gate": "saturated"
+          },
+          {
+            "journey_stage_id": "stage-baby-retention",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Retention",
+            "sequence_order": 6,
+            "trust_gate": "trusting"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-empathy",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Emotional Alignment",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-resonance"
+          },
+          {
+            "value_arc_id": "arc-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Immediate Relief",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-relief"
+          },
+          {
+            "value_arc_id": "arc-baby-continuity",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Trust and Continuity",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-trust"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-baby-soft-collect",
+          "label": "Lead with care",
+          "narrative": "Guide parents toward a low-friction sleep guide.",
+          "campaign_id": "cmp-baby-sleep-tiny-wins"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "campaign_name": "Tiny Sleep Wins for Exhausted Parents",
+          "campaign_theme": "theme-baby-soft-collect",
+          "objective": "Move parents from emotional validation to practical trust before restrained commercialization.",
+          "value_arc_ids": [
+            "arc-baby-empathy",
+            "arc-baby-relief",
+            "arc-baby-continuity"
+          ]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-sleep-014",
+          "title": "Sleep guide bundle signup with gentle framing",
+          "priority": 7,
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "value": 0.18
+        },
+        "asset": {
+          "asset_id": "asset-baby-sleep-014",
+          "source": "rendered-replay-asset",
+          "url": "https://cdn.infinite-factory.test/baby-sleep/asset-baby-sleep-014.mp4",
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "journey_stage_id": "stage-baby-lead-capture",
+          "stage_id": "stage-baby-lead-capture",
+          "backlog_id": "bl-baby-sleep-014"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-sleep-014",
+          "asset_id": "asset-baby-sleep-014",
+          "platform": "instagram",
+          "published_at": "2026-04-10T07:14:00.000Z",
+          "platform_post_id": "ig-post-baby-sleep-014"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-sleep-014",
+          "published_post_id": "post-baby-sleep-014",
+          "impressions": 8540,
+          "engagement": 28,
+          "revenue": 0,
+          "engagement_snapshot": {
+            "saves": 17,
+            "shares": 3,
+            "follows": 8
+          },
+          "captured_at": "2026-04-10T07:38:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-proof-014",
+      "chain_owner": "proof-agent"
+    },
+    "expected_signature": "chain-baby-sleep-proof-014::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-soft-collect::bl-baby-sleep-014::asset-baby-sleep-014::post-baby-sleep-014::perf-baby-sleep-014"
+  },
+  {
+    "case_id": "ATY-BABY-PROOF-015",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep-parenting",
+          "niche": "parenting",
+          "title": "New Parent Sleep Support",
+          "status": "active",
+          "audience_size": 4800
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-baby-resonance",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Resonance",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          },
+          {
+            "journey_stage_id": "stage-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Relief",
+            "sequence_order": 2,
+            "trust_gate": "warming"
+          },
+          {
+            "journey_stage_id": "stage-baby-trust",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Trust",
+            "sequence_order": 3,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-lead-capture",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Lead Capture",
+            "sequence_order": 4,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-monetization",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Monetization",
+            "sequence_order": 5,
+            "trust_gate": "saturated"
+          },
+          {
+            "journey_stage_id": "stage-baby-retention",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Retention",
+            "sequence_order": 6,
+            "trust_gate": "trusting"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-empathy",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Emotional Alignment",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-resonance"
+          },
+          {
+            "value_arc_id": "arc-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Immediate Relief",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-relief"
+          },
+          {
+            "value_arc_id": "arc-baby-continuity",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Trust and Continuity",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-trust"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-baby-careful-commercial",
+          "label": "Commercial pacing",
+          "narrative": "Introduce products only where context and trust justify it.",
+          "campaign_id": "cmp-baby-sleep-tiny-wins"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "campaign_name": "Tiny Sleep Wins for Exhausted Parents",
+          "campaign_theme": "theme-baby-careful-commercial",
+          "objective": "Move parents from emotional validation to practical trust before restrained commercialization.",
+          "value_arc_ids": [
+            "arc-baby-empathy",
+            "arc-baby-relief",
+            "arc-baby-continuity"
+          ]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-sleep-015",
+          "title": "Gentle product offer: white-noise playlist",
+          "priority": 8,
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "value": 0.2
+        },
+        "asset": {
+          "asset_id": "asset-baby-sleep-015",
+          "source": "rendered-replay-asset",
+          "url": "https://cdn.infinite-factory.test/baby-sleep/asset-baby-sleep-015.mp4",
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "journey_stage_id": "stage-baby-monetization",
+          "stage_id": "stage-baby-monetization",
+          "backlog_id": "bl-baby-sleep-015"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-sleep-015",
+          "asset_id": "asset-baby-sleep-015",
+          "platform": "instagram",
+          "published_at": "2026-04-11T08:04:00.000Z",
+          "platform_post_id": "ig-post-baby-sleep-015"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-sleep-015",
+          "published_post_id": "post-baby-sleep-015",
+          "impressions": 8850,
+          "engagement": 21,
+          "revenue": 34.989999999999995,
+          "engagement_snapshot": {
+            "saves": 12,
+            "shares": 3,
+            "follows": 6
+          },
+          "captured_at": "2026-04-11T08:28:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-proof-015",
+      "chain_owner": "proof-agent"
+    },
+    "expected_signature": "chain-baby-sleep-proof-015::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-careful-commercial::bl-baby-sleep-015::asset-baby-sleep-015::post-baby-sleep-015::perf-baby-sleep-015"
+  },
+  {
+    "case_id": "ATY-BABY-PROOF-016",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep-parenting",
+          "niche": "parenting",
+          "title": "New Parent Sleep Support",
+          "status": "active",
+          "audience_size": 4800
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-baby-resonance",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Resonance",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          },
+          {
+            "journey_stage_id": "stage-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Relief",
+            "sequence_order": 2,
+            "trust_gate": "warming"
+          },
+          {
+            "journey_stage_id": "stage-baby-trust",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Trust",
+            "sequence_order": 3,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-lead-capture",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Lead Capture",
+            "sequence_order": 4,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-monetization",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Monetization",
+            "sequence_order": 5,
+            "trust_gate": "saturated"
+          },
+          {
+            "journey_stage_id": "stage-baby-retention",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Retention",
+            "sequence_order": 6,
+            "trust_gate": "trusting"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-empathy",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Emotional Alignment",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-resonance"
+          },
+          {
+            "value_arc_id": "arc-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Immediate Relief",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-relief"
+          },
+          {
+            "value_arc_id": "arc-baby-continuity",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Trust and Continuity",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-trust"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-baby-careful-commercial",
+          "label": "Commercial pacing",
+          "narrative": "Introduce products only where context and trust justify it.",
+          "campaign_id": "cmp-baby-sleep-tiny-wins"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "campaign_name": "Tiny Sleep Wins for Exhausted Parents",
+          "campaign_theme": "theme-baby-careful-commercial",
+          "objective": "Move parents from emotional validation to practical trust before restrained commercialization.",
+          "value_arc_ids": [
+            "arc-baby-empathy",
+            "arc-baby-relief",
+            "arc-baby-continuity"
+          ]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-sleep-016",
+          "title": "Sleep rhythm upgrade mini course invite",
+          "priority": 8,
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "value": 0.22
+        },
+        "asset": {
+          "asset_id": "asset-baby-sleep-016",
+          "source": "rendered-replay-asset",
+          "url": "https://cdn.infinite-factory.test/baby-sleep/asset-baby-sleep-016.mp4",
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "journey_stage_id": "stage-baby-monetization",
+          "stage_id": "stage-baby-monetization",
+          "backlog_id": "bl-baby-sleep-016"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-sleep-016",
+          "asset_id": "asset-baby-sleep-016",
+          "platform": "instagram",
+          "published_at": "2026-04-11T20:04:00.000Z",
+          "platform_post_id": "ig-post-baby-sleep-016"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-sleep-016",
+          "published_post_id": "post-baby-sleep-016",
+          "impressions": 9160,
+          "engagement": 16,
+          "revenue": 35.989999999999995,
+          "engagement_snapshot": {
+            "saves": 10,
+            "shares": 2,
+            "follows": 4
+          },
+          "captured_at": "2026-04-11T20:28:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-proof-016",
+      "chain_owner": "proof-agent"
+    },
+    "expected_signature": "chain-baby-sleep-proof-016::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-careful-commercial::bl-baby-sleep-016::asset-baby-sleep-016::post-baby-sleep-016::perf-baby-sleep-016"
+  },
+  {
+    "case_id": "ATY-BABY-PROOF-017",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep-parenting",
+          "niche": "parenting",
+          "title": "New Parent Sleep Support",
+          "status": "active",
+          "audience_size": 4800
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-baby-resonance",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Resonance",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          },
+          {
+            "journey_stage_id": "stage-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Relief",
+            "sequence_order": 2,
+            "trust_gate": "warming"
+          },
+          {
+            "journey_stage_id": "stage-baby-trust",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Trust",
+            "sequence_order": 3,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-lead-capture",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Lead Capture",
+            "sequence_order": 4,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-monetization",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Monetization",
+            "sequence_order": 5,
+            "trust_gate": "saturated"
+          },
+          {
+            "journey_stage_id": "stage-baby-retention",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Retention",
+            "sequence_order": 6,
+            "trust_gate": "trusting"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-empathy",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Emotional Alignment",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-resonance"
+          },
+          {
+            "value_arc_id": "arc-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Immediate Relief",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-relief"
+          },
+          {
+            "value_arc_id": "arc-baby-continuity",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Trust and Continuity",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-trust"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-baby-soft-collect",
+          "label": "Lead with care",
+          "narrative": "Guide parents toward a low-friction sleep guide.",
+          "campaign_id": "cmp-baby-sleep-tiny-wins"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "campaign_name": "Tiny Sleep Wins for Exhausted Parents",
+          "campaign_theme": "theme-baby-soft-collect",
+          "objective": "Move parents from emotional validation to practical trust before restrained commercialization.",
+          "value_arc_ids": [
+            "arc-baby-empathy",
+            "arc-baby-relief",
+            "arc-baby-continuity"
+          ]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-sleep-017",
+          "title": "Weekly check-in template: how did it go?",
+          "priority": 9,
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "value": 0.12
+        },
+        "asset": {
+          "asset_id": "asset-baby-sleep-017",
+          "source": "rendered-replay-asset",
+          "url": "https://cdn.infinite-factory.test/baby-sleep/asset-baby-sleep-017.mp4",
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "journey_stage_id": "stage-baby-retention",
+          "stage_id": "stage-baby-retention",
+          "backlog_id": "bl-baby-sleep-017"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-sleep-017",
+          "asset_id": "asset-baby-sleep-017",
+          "platform": "instagram",
+          "published_at": "2026-04-12T07:19:00.000Z",
+          "platform_post_id": "ig-post-baby-sleep-017"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-sleep-017",
+          "published_post_id": "post-baby-sleep-017",
+          "impressions": 9470,
+          "engagement": 40,
+          "revenue": 0,
+          "engagement_snapshot": {
+            "saves": 19,
+            "shares": 7,
+            "follows": 14
+          },
+          "captured_at": "2026-04-12T07:43:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-proof-017",
+      "chain_owner": "proof-agent"
+    },
+    "expected_signature": "chain-baby-sleep-proof-017::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-soft-collect::bl-baby-sleep-017::asset-baby-sleep-017::post-baby-sleep-017::perf-baby-sleep-017"
+  },
+  {
+    "case_id": "ATY-BABY-PROOF-018",
+    "seed": {
+      "source": {
+        "audience_journey": {
+          "journey_id": "journey-baby-sleep-parenting",
+          "niche": "parenting",
+          "title": "New Parent Sleep Support",
+          "status": "active",
+          "audience_size": 4800
+        },
+        "journey_stages": [
+          {
+            "journey_stage_id": "stage-baby-resonance",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Resonance",
+            "sequence_order": 1,
+            "trust_gate": "cold"
+          },
+          {
+            "journey_stage_id": "stage-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Relief",
+            "sequence_order": 2,
+            "trust_gate": "warming"
+          },
+          {
+            "journey_stage_id": "stage-baby-trust",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Trust",
+            "sequence_order": 3,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-lead-capture",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Lead Capture",
+            "sequence_order": 4,
+            "trust_gate": "engaged"
+          },
+          {
+            "journey_stage_id": "stage-baby-monetization",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Monetization",
+            "sequence_order": 5,
+            "trust_gate": "saturated"
+          },
+          {
+            "journey_stage_id": "stage-baby-retention",
+            "journey_id": "journey-baby-sleep-parenting",
+            "name": "Retention",
+            "sequence_order": 6,
+            "trust_gate": "trusting"
+          }
+        ],
+        "value_arcs": [
+          {
+            "value_arc_id": "arc-baby-empathy",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Emotional Alignment",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-resonance"
+          },
+          {
+            "value_arc_id": "arc-baby-relief",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Immediate Relief",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-relief"
+          },
+          {
+            "value_arc_id": "arc-baby-continuity",
+            "journey_id": "journey-baby-sleep-parenting",
+            "label": "Trust and Continuity",
+            "campaign_id": "cmp-baby-sleep-tiny-wins",
+            "stage_id": "stage-baby-trust"
+          }
+        ],
+        "campaign_theme": {
+          "theme_id": "theme-baby-soft-collect",
+          "label": "Lead with care",
+          "narrative": "Guide parents toward a low-friction sleep guide.",
+          "campaign_id": "cmp-baby-sleep-tiny-wins"
+        },
+        "campaign": {
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "campaign_name": "Tiny Sleep Wins for Exhausted Parents",
+          "campaign_theme": "theme-baby-soft-collect",
+          "objective": "Move parents from emotional validation to practical trust before restrained commercialization.",
+          "value_arc_ids": [
+            "arc-baby-empathy",
+            "arc-baby-relief",
+            "arc-baby-continuity"
+          ]
+        },
+        "backlog_item": {
+          "backlog_id": "bl-baby-sleep-018",
+          "title": "Post-nap debrief and small wins celebration",
+          "priority": 9,
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "value": 0.12
+        },
+        "asset": {
+          "asset_id": "asset-baby-sleep-018",
+          "source": "rendered-replay-asset",
+          "url": "https://cdn.infinite-factory.test/baby-sleep/asset-baby-sleep-018.mp4",
+          "campaign_id": "cmp-baby-sleep-tiny-wins",
+          "journey_stage_id": "stage-baby-retention",
+          "stage_id": "stage-baby-retention",
+          "backlog_id": "bl-baby-sleep-018"
+        },
+        "published_post": {
+          "published_post_id": "post-baby-sleep-018",
+          "asset_id": "asset-baby-sleep-018",
+          "platform": "instagram",
+          "published_at": "2026-04-12T20:34:00.000Z",
+          "platform_post_id": "ig-post-baby-sleep-018"
+        },
+        "performance_record": {
+          "performance_id": "perf-baby-sleep-018",
+          "published_post_id": "post-baby-sleep-018",
+          "impressions": 9780,
+          "engagement": 43,
+          "revenue": 0,
+          "engagement_snapshot": {
+            "saves": 21,
+            "shares": 6,
+            "follows": 16
+          },
+          "captured_at": "2026-04-12T20:58:00.000Z"
+        }
+      },
+      "chain_id": "chain-baby-sleep-proof-018",
+      "chain_owner": "proof-agent"
+    },
+    "expected_signature": "chain-baby-sleep-proof-018::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-soft-collect::bl-baby-sleep-018::asset-baby-sleep-018::post-baby-sleep-018::perf-baby-sleep-018"
+  }
+]

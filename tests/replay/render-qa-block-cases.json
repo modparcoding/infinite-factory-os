@@ -1,0 +1,388 @@
+{
+  "fixture_id": "RS-QA-BLOCK-001",
+  "scenario": "Render QA block-condition hardening cases",
+  "cases": [
+    {
+      "case_id": "pass-relief-baseline",
+      "input": {
+        "backlog_item_id": "bl-baby-sleep-004",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_stage_id": "stage-baby-relief",
+        "journey_stage_label": "Relief",
+        "value_arc_id": "arc-baby-relief",
+        "value_arc_label": "Immediate Relief",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "campaign_theme_label": "Practical relief",
+        "relationship_objective": "Relief",
+        "audience_state_before": "warming",
+        "audience_state_after": "warming",
+        "hook": "A 3-minute reset lowers panic without adding new work.",
+        "caption": "Move to a dim room, lower stimulation, and repeat one simple cue for 8 minutes.",
+        "suggested_visual_direction": "clean checklist layout with generous whitespace",
+        "cta_policy": "save",
+        "commercial_intent": "low",
+        "hook_direction": "quick utility",
+        "emotional_tone": "practical",
+        "success_metric": "saves and follows from one calm utility routine"
+      },
+      "expected": {
+        "passed": true,
+        "blocked": false,
+        "block_conditions": []
+      }
+    },
+    {
+      "case_id": "fail-cta-pressure-exceeds-stage-allowance",
+      "input": {
+        "backlog_item_id": "bl-baby-sleep-004",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_stage_id": "stage-baby-relief",
+        "journey_stage_label": "Relief",
+        "value_arc_id": "arc-baby-relief",
+        "value_arc_label": "Immediate Relief",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "campaign_theme_label": "Practical relief",
+        "relationship_objective": "Relief",
+        "audience_state_before": "warming",
+        "audience_state_after": "warming",
+        "hook": "A 3-minute reset lowers panic without adding new work.",
+        "caption": "Move to a dim room, lower stimulation, and repeat one simple cue for 8 minutes.",
+        "suggested_visual_direction": "clean checklist layout with generous whitespace",
+        "cta_policy": "save",
+        "commercial_intent": "low",
+        "hook_direction": "quick utility",
+        "emotional_tone": "practical",
+        "success_metric": "saves and follows from one calm utility routine"
+      },
+      "request_overrides": {
+        "cta_policy": "none"
+      },
+      "expected": {
+        "passed": false,
+        "blocked": true,
+        "block_conditions": ["cta_pressure_exceeds_stage_allowance"]
+      }
+    },
+    {
+      "case_id": "fail-readability-below-threshold",
+      "input": {
+        "backlog_item_id": "bl-baby-sleep-012",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_stage_id": "stage-baby-lead-capture",
+        "journey_stage_label": "Lead Capture",
+        "value_arc_id": "arc-baby-continuity",
+        "value_arc_label": "Trust and Continuity",
+        "campaign_theme_id": "theme-baby-soft-collect",
+        "campaign_theme_label": "Lead with care",
+        "relationship_objective": "Lead Capture",
+        "audience_state_before": "engaged",
+        "audience_state_after": "engaged",
+        "hook": "If this sequence helped, here is a short printable guide you can use tonight.",
+        "caption": "This printable guide includes a 5-minute routine and a simple notes template for the first two weeks.",
+        "suggested_visual_direction": "soft offer framing with restrained CTA emphasis",
+        "cta_policy": "soft_lead",
+        "commercial_intent": "low",
+        "hook_direction": "downloadable value",
+        "emotional_tone": "helpful",
+        "success_metric": "optional guide requests and steady saves"
+      },
+      "slide_overrides": [
+        {
+          "slide_index": 1,
+          "copy": "If this sequence helped tonight and your baby is waking often, use a predictable order with gentle light, soft noise control, and a steady routine with fewer choices, fewer options, fewer steps, fewer prompts, and one calm phrase repeated every time for a little more emotional continuity while keeping tonight simple for your body and your baby together"
+        }
+      ],
+      "expected": {
+        "passed": false,
+        "blocked": true,
+        "block_conditions": ["readability_below_threshold", "emotional_mismatch", "relationship_fit_mismatch"]
+      }
+    },
+    {
+      "case_id": "fail-excessive-density",
+      "input": {
+        "backlog_item_id": "bl-baby-sleep-012",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_stage_id": "stage-baby-lead-capture",
+        "journey_stage_label": "Lead Capture",
+        "value_arc_id": "arc-baby-continuity",
+        "value_arc_label": "Trust and Continuity",
+        "campaign_theme_id": "theme-baby-soft-collect",
+        "campaign_theme_label": "Lead with care",
+        "relationship_objective": "Lead Capture",
+        "audience_state_before": "engaged",
+        "audience_state_after": "engaged",
+        "hook": "If this sequence helped, here is a short printable guide you can use tonight.",
+        "caption": "This printable guide includes a 5-minute routine and a simple notes template for the first two weeks.",
+        "suggested_visual_direction": "soft offer framing with restrained CTA emphasis",
+        "cta_policy": "soft_lead",
+        "commercial_intent": "low",
+        "hook_direction": "downloadable value",
+        "emotional_tone": "helpful",
+        "success_metric": "optional guide requests and steady saves"
+      },
+      "slide_overrides": [
+        {
+          "slide_index": 1,
+          "copy": "sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep"
+        },
+        {
+          "slide_index": 2,
+          "copy": "sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep"
+        },
+        {
+          "slide_index": 3,
+          "copy": "sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep"
+        },
+        {
+          "slide_index": 4,
+          "copy": "sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep sleep"
+        }
+      ],
+      "expected": {
+        "passed": false,
+        "blocked": true,
+        "block_conditions": ["excessive_density", "emotional_mismatch", "final_slide_breaks_continuity", "relationship_fit_mismatch"]
+      }
+    },
+    {
+      "case_id": "fail-emotional-mismatch",
+      "input": {
+        "backlog_item_id": "bl-baby-sleep-008",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_stage_id": "stage-baby-trust",
+        "journey_stage_label": "Trust",
+        "value_arc_id": "arc-baby-continuity",
+        "value_arc_label": "Trust and Continuity",
+        "campaign_theme_id": "theme-baby-trust-proof",
+        "campaign_theme_label": "Proof-led competence",
+        "relationship_objective": "Trust",
+        "audience_state_before": "warming",
+        "audience_state_after": "engaged",
+        "hook": "What one family learned by changing one cue for 7 nights.",
+        "caption": "One family kept everything the same and changed only wake timing. Results became calmer over repeated nights.",
+        "suggested_visual_direction": "evidence-first proof sequence with soft graph language",
+        "cta_policy": "story",
+        "commercial_intent": "none",
+        "hook_direction": "competence by repeatability",
+        "emotional_tone": "reassuring",
+        "success_metric": "comments with repeat routines and follow-through"
+      },
+      "request_overrides": {
+        "emotional_tone": "aggressive"
+      },
+      "slide_overrides": [
+        {
+          "slide_index": 1,
+          "copy": "Quarterly quarterly quarterly convert leads fast and win the funnel with a scalable growth campaign."
+        },
+        {
+          "slide_index": 2,
+          "copy": "Performance dashboard says this method is optimized for retention, conversion, and velocity tonight."
+        },
+        {
+          "slide_index": 3,
+          "copy": "If conversion is your focus, cut the pause and move the next step every 90 seconds."
+        },
+        {
+          "slide_index": 4,
+          "copy": "Comment with your metrics only, then we review and rerank the sequence together."
+        }
+      ],
+      "expected": {
+        "passed": false,
+        "blocked": true,
+        "block_conditions": ["emotional_mismatch", "relationship_fit_mismatch", "final_slide_breaks_continuity"]
+      }
+    },
+    {
+      "case_id": "fail-relationship-fit-mismatch",
+      "input": {
+        "backlog_item_id": "bl-baby-sleep-008",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_stage_id": "stage-baby-trust",
+        "journey_stage_label": "Trust",
+        "value_arc_id": "arc-baby-continuity",
+        "value_arc_label": "Trust and Continuity",
+        "campaign_theme_id": "theme-baby-trust-proof",
+        "campaign_theme_label": "Proof-led competence",
+        "relationship_objective": "Monetization",
+        "audience_state_before": "warming",
+        "audience_state_after": "engaged",
+        "hook": "What one family learned by changing one cue for 7 nights.",
+        "caption": "One family kept everything the same and changed only wake timing. Results became calmer over repeated nights.",
+        "suggested_visual_direction": "evidence-first proof sequence with soft graph language",
+        "cta_policy": "story",
+        "commercial_intent": "none",
+        "hook_direction": "competence by repeatability",
+        "emotional_tone": "reassuring",
+        "success_metric": "comments with repeat routines and follow-through"
+      },
+      "expected": {
+        "passed": false,
+        "blocked": true,
+        "block_conditions": ["excessive_density", "emotional_mismatch", "relationship_fit_mismatch", "hook_not_present"]
+      }
+    },
+    {
+      "case_id": "fail-commercial-mismatch",
+      "input": {
+        "backlog_item_id": "bl-baby-sleep-004",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_stage_id": "stage-baby-relief",
+        "journey_stage_label": "Relief",
+        "value_arc_id": "arc-baby-relief",
+        "value_arc_label": "Immediate Relief",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "campaign_theme_label": "Practical relief",
+        "relationship_objective": "Relief",
+        "audience_state_before": "warming",
+        "audience_state_after": "warming",
+        "hook": "A 3-minute reset lowers panic without adding new work.",
+        "caption": "Move to a dim room, lower stimulation, and repeat one simple cue for 8 minutes.",
+        "suggested_visual_direction": "clean checklist layout with generous whitespace",
+        "cta_policy": "save",
+        "commercial_intent": "low",
+        "hook_direction": "quick utility",
+        "emotional_tone": "practical",
+        "success_metric": "saves and follows from one calm utility routine"
+      },
+      "request_overrides": {
+        "commercial_intent": "checkout"
+      },
+      "slide_overrides": [
+        {
+          "slide_index": 3,
+          "cta_text": "checkout the full routine",
+          "cta_position": "inline"
+        },
+        {
+          "slide_index": 4,
+          "cta_text": "checkout the full 1-minute sequence",
+          "cta_position": "final"
+        }
+      ],
+      "expected": {
+        "passed": false,
+        "blocked": true,
+        "block_conditions": ["cta_pressure_exceeds_stage_allowance", "commercial_mismatch"]
+      }
+    },
+    {
+      "case_id": "fail-hook-not-present",
+      "input": {
+        "backlog_item_id": "bl-baby-sleep-004",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_stage_id": "stage-baby-relief",
+        "journey_stage_label": "Relief",
+        "value_arc_id": "arc-baby-relief",
+        "value_arc_label": "Immediate Relief",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "campaign_theme_label": "Practical relief",
+        "relationship_objective": "Relief",
+        "audience_state_before": "warming",
+        "audience_state_after": "warming",
+        "hook": "Now",
+        "caption": "Move to a dim room, lower stimulation, and repeat one simple cue for 8 minutes.",
+        "suggested_visual_direction": "clean checklist layout with generous whitespace",
+        "cta_policy": "save",
+        "commercial_intent": "low",
+        "hook_direction": "quick utility",
+        "emotional_tone": "practical",
+        "success_metric": "saves and follows from one calm utility routine"
+      },
+      "expected": {
+        "passed": false,
+        "blocked": true,
+        "block_conditions": ["hook_not_present"]
+      }
+    },
+    {
+      "case_id": "fail-final-slide-breaks-continuity",
+      "input": {
+        "backlog_item_id": "bl-baby-sleep-008",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_stage_id": "stage-baby-trust",
+        "journey_stage_label": "Trust",
+        "value_arc_id": "arc-baby-continuity",
+        "value_arc_label": "Trust and Continuity",
+        "campaign_theme_id": "theme-baby-trust-proof",
+        "campaign_theme_label": "Proof-led competence",
+        "relationship_objective": "Trust",
+        "audience_state_before": "warming",
+        "audience_state_after": "engaged",
+        "hook": "What one family learned by changing one cue for 7 nights.",
+        "caption": "One family kept everything the same and changed only wake timing. Results became calmer over repeated nights.",
+        "suggested_visual_direction": "evidence-first proof sequence with soft graph language",
+        "cta_policy": "story",
+        "commercial_intent": "none",
+        "hook_direction": "competence by repeatability",
+        "emotional_tone": "reassuring",
+        "success_metric": "comments with repeat routines and follow-through"
+      },
+      "slide_overrides": [
+        {
+          "slide_index": 4,
+          "copy": "Tell me your schedule and I will reply with a quick list."
+        },
+        {
+          "slide_index": 4,
+          "cta_position": "final",
+          "cta_text": "Reply now"
+        }
+      ],
+      "expected": {
+        "passed": false,
+        "blocked": true,
+        "block_conditions": ["excessive_density", "emotional_mismatch", "relationship_fit_mismatch", "final_slide_breaks_continuity"]
+      }
+    },
+    {
+      "case_id": "fail-mobile-scanability-low",
+      "input": {
+        "backlog_item_id": "bl-baby-sleep-004",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_stage_id": "stage-baby-relief",
+        "journey_stage_label": "Relief",
+        "value_arc_id": "arc-baby-relief",
+        "value_arc_label": "Immediate Relief",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "campaign_theme_label": "Practical relief",
+        "relationship_objective": "Relief",
+        "audience_state_before": "warming",
+        "audience_state_after": "warming",
+        "hook": "A 3-minute reset lowers panic without adding new work.",
+        "caption": "Move to a dim room, lower stimulation, and repeat one simple cue for 8 minutes.",
+        "suggested_visual_direction": "clean checklist layout with generous whitespace",
+        "cta_policy": "save",
+        "commercial_intent": "low",
+        "hook_direction": "quick utility",
+        "emotional_tone": "practical",
+        "success_metric": "saves and follows from one calm utility routine"
+      },
+      "slide_overrides": [
+        {
+          "slide_index": 1,
+          "copy": "Use this reset this evening and keep a short note.",
+          "mobile_lines": [
+            "Use this reset this evening and keep your calm notes close",
+            "through the house with low light, simple breathing, and rhythm",
+            "portable notes are a way to compare each night with clarity",
+            "at your next wake cycle, pause and keep tracking the same cue",
+            "before deciding what to test, write only one thing you noticed",
+            "and then you can compare for the full two-week progression",
+            "patterns across the week can reveal real emotional drift and safety",
+            "with calm consistency and care, avoid adding new pressure now",
+            "after one full breathing round, return to this lane only once",
+            "you can see the shift across the first ninety minutes tonight"
+          ]
+        }
+      ],
+      "expected": {
+        "passed": false,
+        "blocked": true,
+        "block_conditions": ["mobile_scanability_low", "readability_below_threshold"]
+      }
+    }
+  ]
+}

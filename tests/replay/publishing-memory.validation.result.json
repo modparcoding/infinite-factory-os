@@ -1,0 +1,62 @@
+{
+  "workstream_id": "WS-PUB-002",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "publishing-memory-case-PM-BABY-PROOF-03",
+      "passed": true,
+      "notes": [
+        "memory-baby-sleep-proof-03"
+      ]
+    },
+    {
+      "name": "publishing-memory-case-PM-BABY-PROOF-06",
+      "passed": true,
+      "notes": [
+        "memory-baby-sleep-proof-06"
+      ]
+    },
+    {
+      "name": "publishing-memory-case-PM-BABY-PROOF-09",
+      "passed": true,
+      "notes": [
+        "memory-baby-sleep-proof-09"
+      ]
+    },
+    {
+      "name": "publishing-memory-case-PM-BABY-PROOF-12",
+      "passed": true,
+      "notes": [
+        "memory-baby-sleep-proof-12"
+      ]
+    },
+    {
+      "name": "publishing-memory-case-PM-BABY-PROOF-15",
+      "passed": true,
+      "notes": [
+        "memory-baby-sleep-proof-15"
+      ]
+    },
+    {
+      "name": "publishing-memory-case-PM-BABY-PROOF-18",
+      "passed": true,
+      "notes": [
+        "memory-baby-sleep-proof-18"
+      ]
+    },
+    {
+      "name": "publishing-memory-failure-PM-BABY-FAIL-001",
+      "passed": true,
+      "notes": [
+        "at least 1"
+      ]
+    },
+    {
+      "name": "publishing-memory-failure-PM-BABY-FAIL-002",
+      "passed": true,
+      "notes": [
+        "campaign_id_mismatch"
+      ]
+    }
+  ]
+}

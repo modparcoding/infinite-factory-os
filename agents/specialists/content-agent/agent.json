@@ -1,0 +1,8 @@
+{
+  "agent_id": "content-specialist",
+  "contract_scope": ["AudienceJourney", "CampaignPlanner", "ContentRouting"],
+  "approval_required": true,
+  "autonomy_level": "bounded",
+  "allowed_file_patterns": ["services/campaign-planner/**", "services/render-qa/**", "workstreams/**"],
+  "forbidden_file_patterns": ["services/measurement/**", "packages/provider-clients/**"]
+}

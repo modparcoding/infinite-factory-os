@@ -1,0 +1,8 @@
+{
+  "agent_id": "relationship-specialist",
+  "contract_scope": ["RelationshipState", "PublishingMemory", "TrustPacing", "CampaignSequencing"],
+  "approval_required": true,
+  "autonomy_level": "bounded",
+  "allowed_file_patterns": ["services/relationship-state/**", "services/publishing-memory/**", "packages/policies/**", "packages/events/**", "workstreams/**"],
+  "forbidden_file_patterns": ["services/provisioning-truth/**", "services/delivery-runner/**"]
+}

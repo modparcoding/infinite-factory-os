@@ -1,0 +1,14 @@
+{
+  "workstream_id": "WS-ATY-001+WS-PUB-002+WS-RLS-003",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "end-to-end-E2E-BABY-SLEEP-PROOF-001",
+      "passed": true,
+      "notes": [
+        "chain-baby-sleep-proof-001::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-empathy-bridge::bl-baby-sleep-001::asset-baby-sleep-001::post-baby-sleep-001::perf-baby-sleep-001",
+        "trusting"
+      ]
+    }
+  ]
+}

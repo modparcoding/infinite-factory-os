@@ -1,0 +1,16 @@
+{
+  "name": "@ifos/orchestrator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "scan": "node dist/orchestrator.js --queue ../workstreams/queue",
+    "test": "echo \"orchestrator test scaffold\""
+  },
+  "dependencies": {
+    "@ifos/contracts": "workspace:*",
+    "@ifos/shared-utils": "workspace:*"
+  }
+}

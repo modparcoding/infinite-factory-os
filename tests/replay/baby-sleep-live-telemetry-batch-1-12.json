@@ -1,0 +1,1575 @@
+{
+  "batch_id": "LIVE-BABY-SLEEP-B1-2026Q2-01",
+  "lane_id": "baby-sleep-parenting-proving-lane",
+  "batch_type": "live-publishing-readiness-batch",
+  "package_scope": {
+    "posts_planned": 12,
+    "window": "2026-05-20T07:00:00.000Z to 2026-05-25T18:30:00.000Z",
+    "commercial_injection": "minimal and late"
+  },
+  "publishing_cadence": {
+    "cadence_notes": "Two posts per day at morning/evening London windows; keep calm pacing and preserve validation lead-in.",
+    "sequence_gap_hours": 12,
+    "max_posts_per_day": 2,
+    "recommended_schedule": [
+      {
+        "sequence": 1,
+        "scheduled_at_utc": "2026-05-20T07:00:00.000Z",
+        "recommended_window_local": "07:00–08:30 local",
+        "cta_instruction": "No CTA. Provide emotional validation and offer pause, no action required.",
+        "notes": "comments with emotional validation statements and saves on the post."
+      },
+      {
+        "sequence": 2,
+        "scheduled_at_utc": "2026-05-20T19:00:00.000Z",
+        "recommended_window_local": "18:00–19:30 local",
+        "cta_instruction": "No CTA. Provide emotional validation and offer pause, no action required.",
+        "notes": "number of comments sharing real situations and screenshot saves."
+      },
+      {
+        "sequence": 3,
+        "scheduled_at_utc": "2026-05-21T07:00:00.000Z",
+        "recommended_window_local": "07:00–08:30 local",
+        "cta_instruction": "No CTA. Provide emotional validation and offer pause, no action required.",
+        "notes": "time-on-post proxies and post saves indicating practical resonance."
+      },
+      {
+        "sequence": 4,
+        "scheduled_at_utc": "2026-05-21T19:00:00.000Z",
+        "recommended_window_local": "18:00–19:30 local",
+        "cta_instruction": "Offer save as optional reinforcement for this post.",
+        "notes": "save count and number of comments saying they used it tonight."
+      },
+      {
+        "sequence": 5,
+        "scheduled_at_utc": "2026-05-22T07:00:00.000Z",
+        "recommended_window_local": "07:00–08:30 local",
+        "cta_instruction": "Offer save as optional reinforcement for this post.",
+        "notes": "completion replies + saves from parents who attempt it once before 10 p.m."
+      },
+      {
+        "sequence": 6,
+        "scheduled_at_utc": "2026-05-22T19:00:00.000Z",
+        "recommended_window_local": "18:00–19:30 local",
+        "cta_instruction": "Invite follow only if they want continuity support.",
+        "notes": "follows and saves from parents reporting better night recognition."
+      },
+      {
+        "sequence": 7,
+        "scheduled_at_utc": "2026-05-23T07:00:00.000Z",
+        "recommended_window_local": "07:00–08:30 local",
+        "cta_instruction": "Offer save as optional reinforcement for this post.",
+        "notes": "template saves and share saves-to-shares ratio."
+      },
+      {
+        "sequence": 8,
+        "scheduled_at_utc": "2026-05-23T19:00:00.000Z",
+        "recommended_window_local": "18:00–19:30 local",
+        "cta_instruction": "Ask one soft follow-up question to invite context sharing.",
+        "notes": "comments mentioning repetition and follow-up questions from returning parents."
+      },
+      {
+        "sequence": 9,
+        "scheduled_at_utc": "2026-05-24T07:00:00.000Z",
+        "recommended_window_local": "07:00–08:30 local",
+        "cta_instruction": "Ask one soft follow-up question to invite context sharing.",
+        "notes": "comments with evidence language like \"we tried this\" and saves on the explanation."
+      },
+      {
+        "sequence": 10,
+        "scheduled_at_utc": "2026-05-24T19:00:00.000Z",
+        "recommended_window_local": "18:00–19:30 local",
+        "cta_instruction": "Invite follow only if they want continuity support.",
+        "notes": "saved sessions, follow-through comments, and rhythm tracker shares."
+      },
+      {
+        "sequence": 11,
+        "scheduled_at_utc": "2026-05-25T07:00:00.000Z",
+        "recommended_window_local": "07:00–08:30 local",
+        "cta_instruction": "Ask one soft follow-up question to invite context sharing.",
+        "notes": "DM replies + message opt-ins where parents ask for structured support."
+      },
+      {
+        "sequence": 12,
+        "scheduled_at_utc": "2026-05-25T19:00:00.000Z",
+        "recommended_window_local": "18:00–19:30 local",
+        "cta_instruction": "Offer the downloadable guide with one clear opt-in path.",
+        "notes": "guide downloads and quality opt-in replies from parents who already show consistency language."
+      }
+    ]
+  },
+  "metadata_lineage_persistence": [
+    "journey-baby-sleep-parenting",
+    "cmp-baby-sleep-tiny-wins",
+    "stage-baby-resonance",
+    "arc-baby-empathy",
+    "theme-baby-empathy-bridge",
+    "bl-baby-sleep-001",
+    "asset-baby-sleep-001",
+    "chain-baby-sleep-proof-001",
+    "perf-baby-sleep-001",
+    "bl-baby-sleep-002",
+    "asset-baby-sleep-002",
+    "chain-baby-sleep-proof-002",
+    "perf-baby-sleep-002",
+    "bl-baby-sleep-003",
+    "asset-baby-sleep-003",
+    "chain-baby-sleep-proof-003",
+    "perf-baby-sleep-003",
+    "stage-baby-relief",
+    "arc-baby-relief",
+    "theme-baby-relief-utility",
+    "bl-baby-sleep-004",
+    "asset-baby-sleep-004",
+    "chain-baby-sleep-proof-004",
+    "perf-baby-sleep-004",
+    "bl-baby-sleep-005",
+    "asset-baby-sleep-005",
+    "chain-baby-sleep-proof-005",
+    "perf-baby-sleep-005",
+    "bl-baby-sleep-006",
+    "asset-baby-sleep-006",
+    "chain-baby-sleep-proof-006",
+    "perf-baby-sleep-006",
+    "bl-baby-sleep-007",
+    "asset-baby-sleep-007",
+    "chain-baby-sleep-proof-007",
+    "perf-baby-sleep-007",
+    "stage-baby-trust",
+    "arc-baby-continuity",
+    "theme-baby-trust-proof",
+    "bl-baby-sleep-008",
+    "asset-baby-sleep-008",
+    "chain-baby-sleep-proof-008",
+    "perf-baby-sleep-008",
+    "bl-baby-sleep-009",
+    "asset-baby-sleep-009",
+    "chain-baby-sleep-proof-009",
+    "perf-baby-sleep-009",
+    "bl-baby-sleep-010",
+    "asset-baby-sleep-010",
+    "chain-baby-sleep-proof-010",
+    "perf-baby-sleep-010",
+    "bl-baby-sleep-011",
+    "asset-baby-sleep-011",
+    "chain-baby-sleep-proof-011",
+    "perf-baby-sleep-011",
+    "stage-baby-lead-capture",
+    "theme-baby-soft-collect",
+    "bl-baby-sleep-012",
+    "asset-baby-sleep-012",
+    "chain-baby-sleep-proof-012",
+    "perf-baby-sleep-012"
+  ],
+  "posts": [
+    {
+      "sequence": 1,
+      "backlog_item_id": "bl-baby-sleep-001",
+      "post_id": "post-baby-sleep-001",
+      "published_at_utc": "2026-05-20T07:00:00.000Z",
+      "content": {
+        "journey_stage_id": "stage-baby-resonance",
+        "value_arc_id": "arc-baby-empathy",
+        "campaign_theme_id": "theme-baby-empathy-bridge",
+        "relationship_objective": "Resonance",
+        "audience_state_before": "cold",
+        "audience_state_after": "cold"
+      },
+      "publishing_ready_content": {
+        "hook": "You are exhausted, and that is valid. This post is for you.",
+        "caption": "If you are reading this at 2:00 a.m. with a crying baby and a blank stare, please know this: the exhaustion is real and not your failure. Exhaustion is information, not shame. Tonight, name what is happening and get one thing off your plate so your body can rest sooner.",
+        "suggested_visual_direction": "Soft, handheld phone-shot in kitchen at 2 a.m.; one parent on couch with damp eyes and a sleeping baby in a bassinet, warm low lighting.",
+        "cta_instructions": "No CTA. Provide emotional validation and offer pause, no action required.",
+        "success_metric": "comments with emotional validation statements and saves on the post."
+      },
+      "attribution_ids": {
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage_id": "stage-baby-resonance",
+        "value_arc_id": "arc-baby-empathy",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-empathy-bridge",
+        "backlog_item_id": "bl-baby-sleep-001",
+        "asset_id": "asset-baby-sleep-001",
+        "chain_id": "chain-baby-sleep-proof-001",
+        "published_post_id": "post-baby-sleep-001",
+        "performance_record_id": "perf-baby-sleep-001"
+      },
+      "expected_engagement_bands": [
+        {
+          "metric": "saves",
+          "target": 9,
+          "min": 5,
+          "max": 16,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "shares",
+          "target": 2,
+          "min": 1,
+          "max": 4,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "follows",
+          "target": 0,
+          "min": 0,
+          "max": 1,
+          "tolerance_ratio": 0.6
+        }
+      ],
+      "expected_relationship_effect": "Moves audience from initial distance toward warmth. Reduces resistance and creates immediate permission for practical advice later.",
+      "expected_publishing_memory": {
+        "trust_band": "cold",
+        "memory_id": "pm-baby-sleep-001",
+        "stage_ratio_after": {
+          "stage-baby-resonance": 1
+        },
+        "cta_ratio_after": {
+          "none": 1
+        },
+        "commercial_density_after": 0,
+        "trend": "up",
+        "saves_shares_follows_delta": {
+          "saves": 9,
+          "shares": 2,
+          "follows": 0
+        }
+      },
+      "expected_relationship_state": {
+        "state_after_post": "cold",
+        "trust_score_estimate": 0.24,
+        "trust_gate_after": "cold",
+        "confidence": "low"
+      },
+      "confirm_if": [
+        "Validation-first posts perform as expected when saves/follows are in range and comments are supportive.",
+        "No direct product framing and no abrupt ask should appear in comments as friction."
+      ],
+      "invalidate_if": [
+        "If follows outpace saves by >4:1 in two consecutive posts.",
+        "If resonance posts create complaint sentiment about pressure or judgement."
+      ],
+      "drift": {
+        "savings_drift_ratio": 0,
+        "stage_distribution_shift": 0,
+        "trust_delta": 0,
+        "commercial_density_delta": 0
+      }
+    },
+    {
+      "sequence": 2,
+      "backlog_item_id": "bl-baby-sleep-002",
+      "post_id": "post-baby-sleep-002",
+      "published_at_utc": "2026-05-20T19:00:00.000Z",
+      "content": {
+        "journey_stage_id": "stage-baby-resonance",
+        "value_arc_id": "arc-baby-empathy",
+        "campaign_theme_id": "theme-baby-empathy-bridge",
+        "relationship_objective": "Resonance",
+        "audience_state_before": "cold",
+        "audience_state_after": "cold-to-warming"
+      },
+      "publishing_ready_content": {
+        "hook": "Most parents feel chaotic. You are not doing this poorly.",
+        "caption": "I want to say this out loud: your chaos tonight does not mean you are failing. Parenting in exhaustion feels loud, messy, and endless. The goal tonight is not perfection—just one small reset so your system feels manageable again.",
+        "suggested_visual_direction": "Text card + B-roll of messy play mat reset into calm bedtime corner, no perfect image fetish, just real objects and real mess.",
+        "cta_instructions": "No CTA. Provide emotional validation and offer pause, no action required.",
+        "success_metric": "number of comments sharing real situations and screenshot saves."
+      },
+      "attribution_ids": {
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage_id": "stage-baby-resonance",
+        "value_arc_id": "arc-baby-empathy",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-empathy-bridge",
+        "backlog_item_id": "bl-baby-sleep-002",
+        "asset_id": "asset-baby-sleep-002",
+        "chain_id": "chain-baby-sleep-proof-002",
+        "published_post_id": "post-baby-sleep-002",
+        "performance_record_id": "perf-baby-sleep-002"
+      },
+      "expected_engagement_bands": [
+        {
+          "metric": "saves",
+          "target": 7,
+          "min": 4,
+          "max": 13,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "shares",
+          "target": 1,
+          "min": 0,
+          "max": 2,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "follows",
+          "target": 1,
+          "min": 0,
+          "max": 2,
+          "tolerance_ratio": 0.6
+        }
+      ],
+      "expected_relationship_effect": "Reinforces that the feed is a safe place; increases willingness to follow the lane’s logic and opens next-step trust channel.",
+      "expected_publishing_memory": {
+        "trust_band": "warming",
+        "memory_id": "pm-baby-sleep-002",
+        "stage_ratio_after": {
+          "stage-baby-resonance": 1
+        },
+        "cta_ratio_after": {
+          "none": 1
+        },
+        "commercial_density_after": 0,
+        "trend": "down",
+        "saves_shares_follows_delta": {
+          "saves": -2,
+          "shares": -1,
+          "follows": 1
+        }
+      },
+      "expected_relationship_state": {
+        "state_after_post": "cold-to-warming",
+        "trust_score_estimate": 0.26,
+        "trust_gate_after": "warming",
+        "confidence": "low"
+      },
+      "confirm_if": [
+        "Validation-first posts perform as expected when saves/follows are in range and comments are supportive.",
+        "No direct product framing and no abrupt ask should appear in comments as friction."
+      ],
+      "invalidate_if": [
+        "If follows outpace saves by >4:1 in two consecutive posts.",
+        "If resonance posts create complaint sentiment about pressure or judgement."
+      ],
+      "drift": {
+        "savings_drift_ratio": 0,
+        "stage_distribution_shift": 0,
+        "trust_delta": 0,
+        "commercial_density_delta": 0
+      }
+    },
+    {
+      "sequence": 3,
+      "backlog_item_id": "bl-baby-sleep-003",
+      "post_id": "post-baby-sleep-003",
+      "published_at_utc": "2026-05-21T07:00:00.000Z",
+      "content": {
+        "journey_stage_id": "stage-baby-resonance",
+        "value_arc_id": "arc-baby-empathy",
+        "campaign_theme_id": "theme-baby-empathy-bridge",
+        "relationship_objective": "Resonance",
+        "audience_state_before": "cold",
+        "audience_state_after": "warming"
+      },
+      "publishing_ready_content": {
+        "hook": "What if the reason nights feel impossible is a 3 a.m. pattern, not a personality flaw?",
+        "caption": "I hear parents say, \"I can’t do this anymore.\" Often it is not weakness; it is a pattern repeat. I can offer one clean lens tonight: 3am means your cues are out of sync, not that you are behind.",
+        "suggested_visual_direction": "Close-up visual with a single cue checklist on paper: \"0:00 to 3:00 triggers\" and warm handwriting notes.",
+        "cta_instructions": "No CTA. Provide emotional validation and offer pause, no action required.",
+        "success_metric": "time-on-post proxies and post saves indicating practical resonance."
+      },
+      "attribution_ids": {
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage_id": "stage-baby-resonance",
+        "value_arc_id": "arc-baby-empathy",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-empathy-bridge",
+        "backlog_item_id": "bl-baby-sleep-003",
+        "asset_id": "asset-baby-sleep-003",
+        "chain_id": "chain-baby-sleep-proof-003",
+        "published_post_id": "post-baby-sleep-003",
+        "performance_record_id": "perf-baby-sleep-003"
+      },
+      "expected_engagement_bands": [
+        {
+          "metric": "saves",
+          "target": 8,
+          "min": 4,
+          "max": 14,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "shares",
+          "target": 1,
+          "min": 0,
+          "max": 2,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "follows",
+          "target": 0,
+          "min": 0,
+          "max": 1,
+          "tolerance_ratio": 0.6
+        }
+      ],
+      "expected_relationship_effect": "Pushes emotional safety further up and legitimizes audience context. Prepares to accept small, testable routines.",
+      "expected_publishing_memory": {
+        "trust_band": "warming",
+        "memory_id": "pm-baby-sleep-003",
+        "stage_ratio_after": {
+          "stage-baby-resonance": 1
+        },
+        "cta_ratio_after": {
+          "none": 1
+        },
+        "commercial_density_after": 0,
+        "trend": "up",
+        "saves_shares_follows_delta": {
+          "saves": 1,
+          "shares": 0,
+          "follows": -1
+        }
+      },
+      "expected_relationship_state": {
+        "state_after_post": "warming",
+        "trust_score_estimate": 0.28,
+        "trust_gate_after": "warming",
+        "confidence": "medium"
+      },
+      "confirm_if": [
+        "Validation-first posts perform as expected when saves/follows are in range and comments are supportive.",
+        "No direct product framing and no abrupt ask should appear in comments as friction."
+      ],
+      "invalidate_if": [
+        "If follows outpace saves by >4:1 in two consecutive posts.",
+        "If resonance posts create complaint sentiment about pressure or judgement."
+      ],
+      "drift": {
+        "savings_drift_ratio": 0,
+        "stage_distribution_shift": 0,
+        "trust_delta": 0,
+        "commercial_density_delta": 0
+      }
+    },
+    {
+      "sequence": 4,
+      "backlog_item_id": "bl-baby-sleep-004",
+      "post_id": "post-baby-sleep-004",
+      "published_at_utc": "2026-05-21T19:00:00.000Z",
+      "content": {
+        "journey_stage_id": "stage-baby-relief",
+        "value_arc_id": "arc-baby-relief",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "relationship_objective": "Relief",
+        "audience_state_before": "warming",
+        "audience_state_after": "warming"
+      },
+      "publishing_ready_content": {
+        "hook": "3 minutes that reduce 3 a.m. panic instead of creating a new routine to keep up with.",
+        "caption": "Try this tonight: when your baby is over-stimulated, do one 3-minute nap-reset sequence: dim room, close a window, quiet hum, one calm phrase. Done in under 3 minutes. If they still don’t settle, stop at 10 minutes and pick up.",
+        "suggested_visual_direction": "A screen-recorded timer + simple action steps, filmed with natural light and no staged perfection.",
+        "cta_instructions": "Offer save as optional reinforcement for this post.",
+        "success_metric": "save count and number of comments saying they used it tonight."
+      },
+      "attribution_ids": {
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage_id": "stage-baby-relief",
+        "value_arc_id": "arc-baby-relief",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "backlog_item_id": "bl-baby-sleep-004",
+        "asset_id": "asset-baby-sleep-004",
+        "chain_id": "chain-baby-sleep-proof-004",
+        "published_post_id": "post-baby-sleep-004",
+        "performance_record_id": "perf-baby-sleep-004"
+      },
+      "expected_engagement_bands": [
+        {
+          "metric": "saves",
+          "target": 11,
+          "min": 6,
+          "max": 20,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "shares",
+          "target": 2,
+          "min": 1,
+          "max": 4,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "follows",
+          "target": 2,
+          "min": 1,
+          "max": 4,
+          "tolerance_ratio": 0.6
+        }
+      ],
+      "expected_relationship_effect": "Shifts audience from emotional acknowledgement into belief that guidance can be practically useful.",
+      "expected_publishing_memory": {
+        "trust_band": "warming",
+        "memory_id": "pm-baby-sleep-004",
+        "stage_ratio_after": {
+          "stage-baby-resonance": 0.75,
+          "stage-baby-relief": 0.25
+        },
+        "cta_ratio_after": {
+          "none": 0.75,
+          "save": 0.25
+        },
+        "commercial_density_after": 0,
+        "trend": "up",
+        "saves_shares_follows_delta": {
+          "saves": 3,
+          "shares": 1,
+          "follows": 2
+        }
+      },
+      "expected_relationship_state": {
+        "state_after_post": "warming",
+        "trust_score_estimate": 0.3,
+        "trust_gate_after": "warming",
+        "confidence": "medium"
+      },
+      "confirm_if": [
+        "Utility posts are expected to convert emotional readiness into practical saving behavior.",
+        "Saves and follow growth should move in the same direction as utility retention."
+      ],
+      "invalidate_if": [
+        "If saves are flat while follows climb, audience may be passive-not-engaged.",
+        "If follow-up questions drop for two utility posts, reset pacing to easier tips."
+      ],
+      "drift": {
+        "savings_drift_ratio": 0,
+        "stage_distribution_shift": 0,
+        "trust_delta": 0,
+        "commercial_density_delta": 0
+      }
+    },
+    {
+      "sequence": 5,
+      "backlog_item_id": "bl-baby-sleep-005",
+      "post_id": "post-baby-sleep-005",
+      "published_at_utc": "2026-05-22T07:00:00.000Z",
+      "content": {
+        "journey_stage_id": "stage-baby-relief",
+        "value_arc_id": "arc-baby-relief",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "relationship_objective": "Relief",
+        "audience_state_before": "warming",
+        "audience_state_after": "warming"
+      },
+      "publishing_ready_content": {
+        "hook": "Here is a micro win you can use before midnight collapse.",
+        "caption": "If your child wakes after 20 minutes, try a 10-minute wake-to-breath reset: lights off, water sip, shoulder pressure, then same wording as routine. No lectures. No more than 10 minutes.",
+        "suggested_visual_direction": "Step-by-step phone overlay on a real parent-night routine with close shots on cue cards and room lighting changes.",
+        "cta_instructions": "Offer save as optional reinforcement for this post.",
+        "success_metric": "completion replies + saves from parents who attempt it once before 10 p.m."
+      },
+      "attribution_ids": {
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage_id": "stage-baby-relief",
+        "value_arc_id": "arc-baby-relief",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "backlog_item_id": "bl-baby-sleep-005",
+        "asset_id": "asset-baby-sleep-005",
+        "chain_id": "chain-baby-sleep-proof-005",
+        "published_post_id": "post-baby-sleep-005",
+        "performance_record_id": "perf-baby-sleep-005"
+      },
+      "expected_engagement_bands": [
+        {
+          "metric": "saves",
+          "target": 10,
+          "min": 6,
+          "max": 18,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "shares",
+          "target": 1,
+          "min": 0,
+          "max": 2,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "follows",
+          "target": 2,
+          "min": 1,
+          "max": 4,
+          "tolerance_ratio": 0.6
+        }
+      ],
+      "expected_relationship_effect": "Builds confidence that the account can reduce pain quickly; raises retention intent.",
+      "expected_publishing_memory": {
+        "trust_band": "warming",
+        "memory_id": "pm-baby-sleep-005",
+        "stage_ratio_after": {
+          "stage-baby-resonance": 0.6,
+          "stage-baby-relief": 0.4
+        },
+        "cta_ratio_after": {
+          "none": 0.6,
+          "save": 0.4
+        },
+        "commercial_density_after": 0,
+        "trend": "down",
+        "saves_shares_follows_delta": {
+          "saves": -1,
+          "shares": -1,
+          "follows": 0
+        }
+      },
+      "expected_relationship_state": {
+        "state_after_post": "warming",
+        "trust_score_estimate": 0.32,
+        "trust_gate_after": "warming",
+        "confidence": "medium"
+      },
+      "confirm_if": [
+        "Utility posts are expected to convert emotional readiness into practical saving behavior.",
+        "Saves and follow growth should move in the same direction as utility retention."
+      ],
+      "invalidate_if": [
+        "If saves are flat while follows climb, audience may be passive-not-engaged.",
+        "If follow-up questions drop for two utility posts, reset pacing to easier tips."
+      ],
+      "drift": {
+        "savings_drift_ratio": 0,
+        "stage_distribution_shift": 0,
+        "trust_delta": 0,
+        "commercial_density_delta": 0
+      }
+    },
+    {
+      "sequence": 6,
+      "backlog_item_id": "bl-baby-sleep-006",
+      "post_id": "post-baby-sleep-006",
+      "published_at_utc": "2026-05-22T19:00:00.000Z",
+      "content": {
+        "journey_stage_id": "stage-baby-relief",
+        "value_arc_id": "arc-baby-relief",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "relationship_objective": "Relief",
+        "audience_state_before": "warming",
+        "audience_state_after": "warming"
+      },
+      "publishing_ready_content": {
+        "hook": "The biggest 3 a.m. issue is often overtired signs you stop noticing.",
+        "caption": "Look for three signs: repeated head-turning, quick leg kicks, and repeated false settling. When you spot all three, stop adding stimulation and start a wind-down cue. The goal tonight is not to win the night, just stabilize the rhythm.",
+        "suggested_visual_direction": "Two-column split frame: signs checklist and a parent applying the cue, no polished production, candid home light.",
+        "cta_instructions": "Invite follow only if they want continuity support.",
+        "success_metric": "follows and saves from parents reporting better night recognition."
+      },
+      "attribution_ids": {
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage_id": "stage-baby-relief",
+        "value_arc_id": "arc-baby-relief",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "backlog_item_id": "bl-baby-sleep-006",
+        "asset_id": "asset-baby-sleep-006",
+        "chain_id": "chain-baby-sleep-proof-006",
+        "published_post_id": "post-baby-sleep-006",
+        "performance_record_id": "perf-baby-sleep-006"
+      },
+      "expected_engagement_bands": [
+        {
+          "metric": "saves",
+          "target": 12,
+          "min": 7,
+          "max": 21,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "shares",
+          "target": 3,
+          "min": 1,
+          "max": 6,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "follows",
+          "target": 3,
+          "min": 1,
+          "max": 6,
+          "tolerance_ratio": 0.6
+        }
+      ],
+      "expected_relationship_effect": "Trust increases with perceived competence; audience starts expecting consistency, not hype.",
+      "expected_publishing_memory": {
+        "trust_band": "warming",
+        "memory_id": "pm-baby-sleep-006",
+        "stage_ratio_after": {
+          "stage-baby-resonance": 0.5,
+          "stage-baby-relief": 0.5
+        },
+        "cta_ratio_after": {
+          "none": 0.5,
+          "save": 0.333333,
+          "follow": 0.166667
+        },
+        "commercial_density_after": 0,
+        "trend": "up",
+        "saves_shares_follows_delta": {
+          "saves": 2,
+          "shares": 2,
+          "follows": 1
+        }
+      },
+      "expected_relationship_state": {
+        "state_after_post": "warming",
+        "trust_score_estimate": 0.35,
+        "trust_gate_after": "warming",
+        "confidence": "medium"
+      },
+      "confirm_if": [
+        "Utility posts are expected to convert emotional readiness into practical saving behavior.",
+        "Saves and follow growth should move in the same direction as utility retention."
+      ],
+      "invalidate_if": [
+        "If saves are flat while follows climb, audience may be passive-not-engaged.",
+        "If follow-up questions drop for two utility posts, reset pacing to easier tips."
+      ],
+      "drift": {
+        "savings_drift_ratio": 0,
+        "stage_distribution_shift": 0,
+        "trust_delta": 0,
+        "commercial_density_delta": 0
+      }
+    },
+    {
+      "sequence": 7,
+      "backlog_item_id": "bl-baby-sleep-007",
+      "post_id": "post-baby-sleep-007",
+      "published_at_utc": "2026-05-23T07:00:00.000Z",
+      "content": {
+        "journey_stage_id": "stage-baby-relief",
+        "value_arc_id": "arc-baby-relief",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "relationship_objective": "Relief",
+        "audience_state_before": "warming",
+        "audience_state_after": "warming"
+      },
+      "publishing_ready_content": {
+        "hook": "You do not need a full routine tonight—just one calming sequence.",
+        "caption": "Use this mini wind-down template when you only have 15 minutes: dim blue light, close room noise, one comforting phrase, 5 deep breaths together, then place them back. If it works, repeat exactly 3 days in a row.",
+        "suggested_visual_direction": "Top-down shot of a hand writing 3 steps on a notepad, then the room transition before and after.",
+        "cta_instructions": "Offer save as optional reinforcement for this post.",
+        "success_metric": "template saves and share saves-to-shares ratio."
+      },
+      "attribution_ids": {
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage_id": "stage-baby-relief",
+        "value_arc_id": "arc-baby-relief",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "backlog_item_id": "bl-baby-sleep-007",
+        "asset_id": "asset-baby-sleep-007",
+        "chain_id": "chain-baby-sleep-proof-007",
+        "published_post_id": "post-baby-sleep-007",
+        "performance_record_id": "perf-baby-sleep-007"
+      },
+      "expected_engagement_bands": [
+        {
+          "metric": "saves",
+          "target": 14,
+          "min": 8,
+          "max": 25,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "shares",
+          "target": 2,
+          "min": 1,
+          "max": 4,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "follows",
+          "target": 1,
+          "min": 0,
+          "max": 2,
+          "tolerance_ratio": 0.6
+        }
+      ],
+      "expected_relationship_effect": "Demonstrates reliability; strengthens transition into trust stage by encouraging repetition instead of novelty.",
+      "expected_publishing_memory": {
+        "trust_band": "warming",
+        "memory_id": "pm-baby-sleep-007",
+        "stage_ratio_after": {
+          "stage-baby-resonance": 0.428571,
+          "stage-baby-relief": 0.571429
+        },
+        "cta_ratio_after": {
+          "none": 0.428571,
+          "save": 0.428571,
+          "follow": 0.142857
+        },
+        "commercial_density_after": 0,
+        "trend": "down",
+        "saves_shares_follows_delta": {
+          "saves": 2,
+          "shares": -1,
+          "follows": -2
+        }
+      },
+      "expected_relationship_state": {
+        "state_after_post": "warming",
+        "trust_score_estimate": 0.38,
+        "trust_gate_after": "warming",
+        "confidence": "medium"
+      },
+      "confirm_if": [
+        "Utility posts are expected to convert emotional readiness into practical saving behavior.",
+        "Saves and follow growth should move in the same direction as utility retention."
+      ],
+      "invalidate_if": [
+        "If saves are flat while follows climb, audience may be passive-not-engaged.",
+        "If follow-up questions drop for two utility posts, reset pacing to easier tips."
+      ],
+      "drift": {
+        "savings_drift_ratio": 0,
+        "stage_distribution_shift": 0,
+        "trust_delta": 0,
+        "commercial_density_delta": 0
+      }
+    },
+    {
+      "sequence": 8,
+      "backlog_item_id": "bl-baby-sleep-008",
+      "post_id": "post-baby-sleep-008",
+      "published_at_utc": "2026-05-23T19:00:00.000Z",
+      "content": {
+        "journey_stage_id": "stage-baby-trust",
+        "value_arc_id": "arc-baby-continuity",
+        "campaign_theme_id": "theme-baby-trust-proof",
+        "relationship_objective": "Trust",
+        "audience_state_before": "warming",
+        "audience_state_after": "warming-to-trusting-edge"
+      },
+      "publishing_ready_content": {
+        "hook": "One family stabilized nights with one cue change and kept it for a week.",
+        "caption": "A parent recently shared that replacing one cue made all the difference: instead of changing everything at once, they adjusted wake timing and bedtime cue together for 7 nights. That steadiness helped the crying drop and made the mornings less chaotic.",
+        "suggested_visual_direction": "Reel using anonymized message screenshot and visual of the exact cue sequence with calm captions.",
+        "cta_instructions": "Ask one soft follow-up question to invite context sharing.",
+        "success_metric": "comments mentioning repetition and follow-up questions from returning parents."
+      },
+      "attribution_ids": {
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage_id": "stage-baby-trust",
+        "value_arc_id": "arc-baby-continuity",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-trust-proof",
+        "backlog_item_id": "bl-baby-sleep-008",
+        "asset_id": "asset-baby-sleep-008",
+        "chain_id": "chain-baby-sleep-proof-008",
+        "published_post_id": "post-baby-sleep-008",
+        "performance_record_id": "perf-baby-sleep-008"
+      },
+      "expected_engagement_bands": [
+        {
+          "metric": "saves",
+          "target": 13,
+          "min": 7,
+          "max": 23,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "shares",
+          "target": 5,
+          "min": 3,
+          "max": 9,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "follows",
+          "target": 4,
+          "min": 2,
+          "max": 7,
+          "tolerance_ratio": 0.6
+        }
+      ],
+      "expected_relationship_effect": "Marks transition into trust-stage behavior; followers should begin to self-identify as ongoing students in the lane.",
+      "expected_publishing_memory": {
+        "trust_band": "trusting",
+        "memory_id": "pm-baby-sleep-008",
+        "stage_ratio_after": {
+          "stage-baby-resonance": 0.375,
+          "stage-baby-relief": 0.5,
+          "stage-baby-trust": 0.125
+        },
+        "cta_ratio_after": {
+          "none": 0.375,
+          "save": 0.375,
+          "follow": 0.125,
+          "story": 0.125
+        },
+        "commercial_density_after": 0,
+        "trend": "up",
+        "saves_shares_follows_delta": {
+          "saves": -1,
+          "shares": 3,
+          "follows": 3
+        }
+      },
+      "expected_relationship_state": {
+        "state_after_post": "warming-to-trusting-edge",
+        "trust_score_estimate": 0.42,
+        "trust_gate_after": "trusting",
+        "confidence": "high"
+      },
+      "confirm_if": [
+        "Trust proof posts should increase outcome-language comments and repeat-consumption signals.",
+        "CTA should remain conversational; no hard conversion language in early trust posts."
+      ],
+      "invalidate_if": [
+        "If proof content does not produce routine-repeat mentions, trust confidence is not increasing.",
+        "If saves remain high but follows dip for three consecutive trust posts, pacing has slipped."
+      ],
+      "drift": {
+        "savings_drift_ratio": 0,
+        "stage_distribution_shift": 0,
+        "trust_delta": 0,
+        "commercial_density_delta": 0
+      }
+    },
+    {
+      "sequence": 9,
+      "backlog_item_id": "bl-baby-sleep-009",
+      "post_id": "post-baby-sleep-009",
+      "published_at_utc": "2026-05-24T07:00:00.000Z",
+      "content": {
+        "journey_stage_id": "stage-baby-trust",
+        "value_arc_id": "arc-baby-continuity",
+        "campaign_theme_id": "theme-baby-trust-proof",
+        "relationship_objective": "Trust",
+        "audience_state_before": "warming",
+        "audience_state_after": "warming"
+      },
+      "publishing_ready_content": {
+        "hook": "The same baby, different day: one small cue shift and 7 nights changed the outcome.",
+        "caption": "Small changes repeated can out-perform big changes. Here is one example: same room, same bedtime window, same words, one cue reordered. Less stress for one parent and better rhythm.",
+        "suggested_visual_direction": "Before/after chart on screen with one parent journaling and then implementing the same pattern for several nights.",
+        "cta_instructions": "Ask one soft follow-up question to invite context sharing.",
+        "success_metric": "comments with evidence language like \"we tried this\" and saves on the explanation."
+      },
+      "attribution_ids": {
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage_id": "stage-baby-trust",
+        "value_arc_id": "arc-baby-continuity",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-trust-proof",
+        "backlog_item_id": "bl-baby-sleep-009",
+        "asset_id": "asset-baby-sleep-009",
+        "chain_id": "chain-baby-sleep-proof-009",
+        "published_post_id": "post-baby-sleep-009",
+        "performance_record_id": "perf-baby-sleep-009"
+      },
+      "expected_engagement_bands": [
+        {
+          "metric": "saves",
+          "target": 15,
+          "min": 9,
+          "max": 27,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "shares",
+          "target": 4,
+          "min": 2,
+          "max": 7,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "follows",
+          "target": 3,
+          "min": 1,
+          "max": 6,
+          "tolerance_ratio": 0.6
+        }
+      ],
+      "expected_relationship_effect": "Trust level becomes behaviorally stable; engagement language should move from venting to outcome reporting.",
+      "expected_publishing_memory": {
+        "trust_band": "warming",
+        "memory_id": "pm-baby-sleep-009",
+        "stage_ratio_after": {
+          "stage-baby-resonance": 0.333333,
+          "stage-baby-relief": 0.444444,
+          "stage-baby-trust": 0.222222
+        },
+        "cta_ratio_after": {
+          "none": 0.333333,
+          "save": 0.333333,
+          "follow": 0.111111,
+          "story": 0.222222
+        },
+        "commercial_density_after": 0,
+        "trend": "up",
+        "saves_shares_follows_delta": {
+          "saves": 2,
+          "shares": -1,
+          "follows": -1
+        }
+      },
+      "expected_relationship_state": {
+        "state_after_post": "warming",
+        "trust_score_estimate": 0.46,
+        "trust_gate_after": "warming",
+        "confidence": "high"
+      },
+      "confirm_if": [
+        "Trust proof posts should increase outcome-language comments and repeat-consumption signals.",
+        "CTA should remain conversational; no hard conversion language in early trust posts."
+      ],
+      "invalidate_if": [
+        "If proof content does not produce routine-repeat mentions, trust confidence is not increasing.",
+        "If saves remain high but follows dip for three consecutive trust posts, pacing has slipped."
+      ],
+      "drift": {
+        "savings_drift_ratio": 0,
+        "stage_distribution_shift": 0,
+        "trust_delta": 0,
+        "commercial_density_delta": 0
+      }
+    },
+    {
+      "sequence": 10,
+      "backlog_item_id": "bl-baby-sleep-010",
+      "post_id": "post-baby-sleep-010",
+      "published_at_utc": "2026-05-24T19:00:00.000Z",
+      "content": {
+        "journey_stage_id": "stage-baby-trust",
+        "value_arc_id": "arc-baby-continuity",
+        "campaign_theme_id": "theme-baby-trust-proof",
+        "relationship_objective": "Trust",
+        "audience_state_before": "warming",
+        "audience_state_after": "warming-to-engaged-edge"
+      },
+      "publishing_ready_content": {
+        "hook": "One 7-night routine can be enough if the rhythm is consistent.",
+        "caption": "This week, don’t add a new trick. Run only one cue stack for 7 nights: wake window, room condition, phrase sequence. Trust the data from your own calendar before making the next change.",
+        "suggested_visual_direction": "Day-by-day rhythm tracker graphic with small check marks and real, imperfect room scenes.",
+        "cta_instructions": "Invite follow only if they want continuity support.",
+        "success_metric": "saved sessions, follow-through comments, and rhythm tracker shares."
+      },
+      "attribution_ids": {
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage_id": "stage-baby-trust",
+        "value_arc_id": "arc-baby-continuity",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-trust-proof",
+        "backlog_item_id": "bl-baby-sleep-010",
+        "asset_id": "asset-baby-sleep-010",
+        "chain_id": "chain-baby-sleep-proof-010",
+        "published_post_id": "post-baby-sleep-010",
+        "performance_record_id": "perf-baby-sleep-010"
+      },
+      "expected_engagement_bands": [
+        {
+          "metric": "saves",
+          "target": 16,
+          "min": 9,
+          "max": 28,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "shares",
+          "target": 6,
+          "min": 3,
+          "max": 11,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "follows",
+          "target": 5,
+          "min": 3,
+          "max": 9,
+          "tolerance_ratio": 0.6
+        }
+      ],
+      "expected_relationship_effect": "Confidence in the lane rises; perceived authority is tied to measurable process, not emotion alone.",
+      "expected_publishing_memory": {
+        "trust_band": "engaged",
+        "memory_id": "pm-baby-sleep-010",
+        "stage_ratio_after": {
+          "stage-baby-resonance": 0.3,
+          "stage-baby-relief": 0.4,
+          "stage-baby-trust": 0.3
+        },
+        "cta_ratio_after": {
+          "none": 0.3,
+          "save": 0.3,
+          "follow": 0.2,
+          "story": 0.2
+        },
+        "commercial_density_after": 0,
+        "trend": "up",
+        "saves_shares_follows_delta": {
+          "saves": 1,
+          "shares": 2,
+          "follows": 2
+        }
+      },
+      "expected_relationship_state": {
+        "state_after_post": "warming-to-engaged-edge",
+        "trust_score_estimate": 0.5,
+        "trust_gate_after": "engaged",
+        "confidence": "high"
+      },
+      "confirm_if": [
+        "Trust proof posts should increase outcome-language comments and repeat-consumption signals.",
+        "CTA should remain conversational; no hard conversion language in early trust posts."
+      ],
+      "invalidate_if": [
+        "If proof content does not produce routine-repeat mentions, trust confidence is not increasing.",
+        "If saves remain high but follows dip for three consecutive trust posts, pacing has slipped."
+      ],
+      "drift": {
+        "savings_drift_ratio": 0,
+        "stage_distribution_shift": 0,
+        "trust_delta": 0,
+        "commercial_density_delta": 0
+      }
+    },
+    {
+      "sequence": 11,
+      "backlog_item_id": "bl-baby-sleep-011",
+      "post_id": "post-baby-sleep-011",
+      "published_at_utc": "2026-05-25T07:00:00.000Z",
+      "content": {
+        "journey_stage_id": "stage-baby-trust",
+        "value_arc_id": "arc-baby-continuity",
+        "campaign_theme_id": "theme-baby-trust-proof",
+        "relationship_objective": "Trust",
+        "audience_state_before": "warming",
+        "audience_state_after": "warming"
+      },
+      "publishing_ready_content": {
+        "hook": "Would you like me to send the 3-day reset text set next?",
+        "caption": "Quick check: what part of the reset is still hard? If you want, I can message a calm version in a follow-up. No pressure, only if you want practical support for the next 48 hours.",
+        "suggested_visual_direction": "Single-screen DM-style text conversation mockup with invite language and plain, non-salesy tone.",
+        "cta_instructions": "Ask one soft follow-up question to invite context sharing.",
+        "success_metric": "DM replies + message opt-ins where parents ask for structured support."
+      },
+      "attribution_ids": {
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage_id": "stage-baby-trust",
+        "value_arc_id": "arc-baby-continuity",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-trust-proof",
+        "backlog_item_id": "bl-baby-sleep-011",
+        "asset_id": "asset-baby-sleep-011",
+        "chain_id": "chain-baby-sleep-proof-011",
+        "published_post_id": "post-baby-sleep-011",
+        "performance_record_id": "perf-baby-sleep-011"
+      },
+      "expected_engagement_bands": [
+        {
+          "metric": "saves",
+          "target": 15,
+          "min": 9,
+          "max": 27,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "shares",
+          "target": 4,
+          "min": 2,
+          "max": 7,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "follows",
+          "target": 6,
+          "min": 3,
+          "max": 11,
+          "tolerance_ratio": 0.6
+        }
+      ],
+      "expected_relationship_effect": "Encourages bi-directional trust; shifts audience from passive reader to active participant.",
+      "expected_publishing_memory": {
+        "trust_band": "engaged",
+        "memory_id": "pm-baby-sleep-011",
+        "stage_ratio_after": {
+          "stage-baby-resonance": 0.272727,
+          "stage-baby-relief": 0.363636,
+          "stage-baby-trust": 0.363636
+        },
+        "cta_ratio_after": {
+          "none": 0.272727,
+          "save": 0.272727,
+          "follow": 0.181818,
+          "story": 0.272727
+        },
+        "commercial_density_after": 0,
+        "trend": "down",
+        "saves_shares_follows_delta": {
+          "saves": -1,
+          "shares": -2,
+          "follows": 1
+        }
+      },
+      "expected_relationship_state": {
+        "state_after_post": "warming",
+        "trust_score_estimate": 0.53,
+        "trust_gate_after": "engaged",
+        "confidence": "high"
+      },
+      "confirm_if": [
+        "Trust proof posts should increase outcome-language comments and repeat-consumption signals.",
+        "CTA should remain conversational; no hard conversion language in early trust posts."
+      ],
+      "invalidate_if": [
+        "If proof content does not produce routine-repeat mentions, trust confidence is not increasing.",
+        "If saves remain high but follows dip for three consecutive trust posts, pacing has slipped."
+      ],
+      "drift": {
+        "savings_drift_ratio": 0,
+        "stage_distribution_shift": 0,
+        "trust_delta": 0,
+        "commercial_density_delta": 0
+      }
+    },
+    {
+      "sequence": 12,
+      "backlog_item_id": "bl-baby-sleep-012",
+      "post_id": "post-baby-sleep-012",
+      "published_at_utc": "2026-05-25T19:00:00.000Z",
+      "content": {
+        "journey_stage_id": "stage-baby-lead-capture",
+        "value_arc_id": "arc-baby-continuity",
+        "campaign_theme_id": "theme-baby-soft-collect",
+        "relationship_objective": "Lead Capture",
+        "audience_state_before": "engaged",
+        "audience_state_after": "warming"
+      },
+      "publishing_ready_content": {
+        "hook": "If this sequence helped, here is a short printable starter guide you can use tonight.",
+        "caption": "If you are ready for the same routine in one practical file, use the mini 5-minute guide: night cues, wake response, and a 2-week notes template. Free to download, no strings attached.",
+        "suggested_visual_direction": "Clean cover shot of a PDF-style checklist beside parent desk supplies; no aggressive branding, no hard sale.",
+        "cta_instructions": "Offer the downloadable guide with one clear opt-in path.",
+        "success_metric": "guide downloads and quality opt-in replies from parents who already show consistency language."
+      },
+      "attribution_ids": {
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage_id": "stage-baby-lead-capture",
+        "value_arc_id": "arc-baby-continuity",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-soft-collect",
+        "backlog_item_id": "bl-baby-sleep-012",
+        "asset_id": "asset-baby-sleep-012",
+        "chain_id": "chain-baby-sleep-proof-012",
+        "published_post_id": "post-baby-sleep-012",
+        "performance_record_id": "perf-baby-sleep-012"
+      },
+      "expected_engagement_bands": [
+        {
+          "metric": "saves",
+          "target": 18,
+          "min": 10,
+          "max": 32,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "shares",
+          "target": 5,
+          "min": 3,
+          "max": 9,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "follows",
+          "target": 9,
+          "min": 5,
+          "max": 16,
+          "tolerance_ratio": 0.6
+        },
+        {
+          "metric": "lead_captures",
+          "target": 2,
+          "min": 1,
+          "max": 4,
+          "tolerance_ratio": 0.6
+        }
+      ],
+      "expected_relationship_effect": "If telemetry is supportive, audience should interpret this as useful aid, not a sales turn; trust should hold and convert.",
+      "expected_publishing_memory": {
+        "trust_band": "engaged",
+        "memory_id": "pm-baby-sleep-012",
+        "stage_ratio_after": {
+          "stage-baby-resonance": 0.25,
+          "stage-baby-relief": 0.333333,
+          "stage-baby-trust": 0.333333,
+          "stage-baby-lead-capture": 0.083333
+        },
+        "cta_ratio_after": {
+          "none": 0.25,
+          "save": 0.25,
+          "follow": 0.166667,
+          "story": 0.25,
+          "soft-lead": 0.083333
+        },
+        "commercial_density_after": 0.083333,
+        "trend": "up",
+        "saves_shares_follows_delta": {
+          "saves": 3,
+          "shares": 1,
+          "follows": 3
+        }
+      },
+      "expected_relationship_state": {
+        "state_after_post": "warming",
+        "trust_score_estimate": 0.54,
+        "trust_gate_after": "engaged",
+        "confidence": "high"
+      },
+      "confirm_if": [
+        "Monitor for expected pattern drift and keep tone stable."
+      ],
+      "invalidate_if": [
+        "If trust score drops for consecutive posts, pause campaign.",
+        "Rework hook to lower pressure and restore resonance."
+      ],
+      "drift": {
+        "savings_drift_ratio": 0,
+        "stage_distribution_shift": 0,
+        "trust_delta": 0,
+        "commercial_density_delta": 0
+      }
+    }
+  ],
+  "drift_detection_rules": [
+    {
+      "rule_id": "DRIFT-SAVES-01",
+      "metric": "saves",
+      "threshold": 0.45,
+      "severity": "warn",
+      "action": "Hold next post, replace with utility variant if saves stay below range for 2 posts."
+    },
+    {
+      "rule_id": "DRIFT-TRUST-02",
+      "metric": "trust_score",
+      "threshold": 0.2,
+      "severity": "critical",
+      "action": "Pause monetization and run 2 resonance posts before continuing."
+    },
+    {
+      "rule_id": "DRIFT-REPETITION-03",
+      "metric": "repetition_risk",
+      "threshold": 0.55,
+      "severity": "warn",
+      "action": "Adjust hook wording and visual style before publishing next post."
+    },
+    {
+      "rule_id": "DRIFT-COMMERCIAL-04",
+      "metric": "commercial_density",
+      "threshold": 0.15,
+      "severity": "warn",
+      "action": "Reduce commercial mentions by 50% and defer product references for 2 posts."
+    }
+  ],
+  "over_commercialization_rules": [
+    {
+      "rule_id": "OC-CHECK-01",
+      "metric": "commercial_density",
+      "threshold": 0.12,
+      "window_posts": 4,
+      "warning": "If commercial density exceeds this windowed threshold, gate lead-capture escalation and ask human review."
+    },
+    {
+      "rule_id": "OC-CHECK-02",
+      "metric": "saves_to_follows_ratio",
+      "threshold": 0.35,
+      "window_posts": 3,
+      "warning": "If saves_to_follows ratio drops below target, relationship content may be sales-first."
+    }
+  ],
+  "comparison_plan": {
+    "simulated_progression_expectations": {
+      "relationship": [
+        {
+          "post": 1,
+          "state": "cold",
+          "trust_score": 0.24
+        },
+        {
+          "post": 4,
+          "state": "warming",
+          "trust_score": 0.3
+        },
+        {
+          "post": 6,
+          "state": "warming",
+          "trust_score": 0.35
+        },
+        {
+          "post": 8,
+          "state": "warming-to-trust-edge",
+          "trust_score": 0.42
+        },
+        {
+          "post": 10,
+          "state": "warming",
+          "trust_score": 0.5
+        },
+        {
+          "post": 12,
+          "state": "warming",
+          "trust_score": 0.54
+        }
+      ],
+      "publishing_memory": [
+        {
+          "post": 1,
+          "expectation": "First three posts are resonance-heavy with no monetization pressure."
+        },
+        {
+          "post": 2,
+          "expectation": "By post 6, relief and trust cues should produce repeatability behavior."
+        },
+        {
+          "post": 3,
+          "expectation": "By post 10, outcome language should appear consistently from returning users."
+        },
+        {
+          "post": 4,
+          "expectation": "By post 12, only first low-pressure lead capture should be visible."
+        }
+      ],
+      "relationship_state": [
+        {
+          "post": 1,
+          "state": "cold",
+          "trust_gate_after": "cold",
+          "trust_score": 0.24
+        },
+        {
+          "post": 2,
+          "state": "cold-to-warming",
+          "trust_gate_after": "warming",
+          "trust_score": 0.26
+        },
+        {
+          "post": 3,
+          "state": "warming",
+          "trust_gate_after": "warming",
+          "trust_score": 0.28
+        },
+        {
+          "post": 4,
+          "state": "warming",
+          "trust_gate_after": "warming",
+          "trust_score": 0.3
+        },
+        {
+          "post": 5,
+          "state": "warming",
+          "trust_gate_after": "warming",
+          "trust_score": 0.32
+        },
+        {
+          "post": 6,
+          "state": "warming",
+          "trust_gate_after": "warming",
+          "trust_score": 0.35
+        },
+        {
+          "post": 7,
+          "state": "warming",
+          "trust_gate_after": "warming",
+          "trust_score": 0.38
+        },
+        {
+          "post": 8,
+          "state": "warming-to-trusting-edge",
+          "trust_gate_after": "trusting",
+          "trust_score": 0.42
+        },
+        {
+          "post": 9,
+          "state": "warming",
+          "trust_gate_after": "warming",
+          "trust_score": 0.46
+        },
+        {
+          "post": 10,
+          "state": "warming-to-engaged-edge",
+          "trust_gate_after": "engaged",
+          "trust_score": 0.5
+        },
+        {
+          "post": 11,
+          "state": "warming",
+          "trust_gate_after": "engaged",
+          "trust_score": 0.53
+        },
+        {
+          "post": 12,
+          "state": "warming",
+          "trust_gate_after": "engaged",
+          "trust_score": 0.54
+        }
+      ]
+    },
+    "real_telemetry_validation_signals": {
+      "validates_model_when": [
+        "Cold posts produce high emotional saves and low hard CTA friction for posts 1-3.",
+        "Relief posts produce sustained save-to-share ratio and follow growth with minimal comment complaints about advice overload.",
+        "Trust posts trigger increasing story and follow interactions, especially parent outcome updates and repeat attempts.",
+        "Lead-capture post keeps saves>shares and follows growth, with guide opt-ins concentrated among already engaged users.",
+        "Commercial density after lead-capture remains below 0.15 for the 12-post window and relationship state remains at least warming by post 12."
+      ],
+      "invalidates_model_when": [
+        "High follow growth in Resonance stage accompanied by low saves and high shares (signals content is shareable but not actionable).",
+        "Relief posts generate strong saves but sharp increase in negative comments about mismatch with child age/stage and no follow-through.",
+        "Trust posts lose follows or show repeated one-time saves with no continuity mentions.",
+        "Lead-capture post drives hard friction: many follows down + unsubscribes or high negative sentiment.",
+        "Commercial density crosses thresholds without corresponding trust score increase (relationship stagnates or declines)."
+      ]
+    },
+    "most_likely_wrong_heuristics": [
+      "single-day averages for engagement are over-weighted vs trend persistence",
+      "repetition risk can stay zero in short windows and still feel repetitive to humans",
+      "emotional tone mix alone may not separate caring language from passive-aggressive advice.",
+      "commercial sensitivity threshold may need to be lowered for parent-night-time content (low tolerance)."
+    ],
+    "sensitive_stages": [
+      "Resonance: if too little emotional validity appears, trust never stabilizes in later stages.",
+      "Lead-capture timing: if introduced before visible trust signals, retention and saves-to-follow ratio drop hard.",
+      "Commercial onset: first checkout-like CTA in this lane is the highest-risk transition point.",
+      "Trust proof density: too many proof posts without enough routine clarity can feel manipulative."
+    ],
+    "over_commercialization_risk_hotspots": [
+      "First soft-lead placement (post 12) if converted into direct sales framing.",
+      "Any increase in commercial density above 0.15 before post 12 without warm trust score rise.",
+      "Checkout attempts before explicit follow-through behavior appears in trust evidence comments."
+    ]
+  },
+  "live_ingestion_readiness": {
+    "prepared_schema_fields": [
+      "published_post_id",
+      "platform",
+      "captured_at",
+      "attribution_ids",
+      "saves",
+      "shares",
+      "follows",
+      "comments",
+      "lead_captures"
+    ],
+    "required_sources": [
+      "Instagram post export or manual capture",
+      "Publishing metadata store",
+      "Campaign backlog attribution IDs"
+    ],
+    "capture_instructions": [
+      "Capture every metric within 6 hours of publish time.",
+      "Keep one record per post in UTC with attribution lineage IDs.",
+      "Use comments count as a quality proxy when lead capture is zero."
+    ]
+  },
+  "human_review_checklist": [
+    "Verify no post has a sales tone before state reaches at least engaged in audience sentiment.",
+    "Confirm backlog_id → asset_id → post_id → performance_record_id IDs are complete for all posts.",
+    "Check that cadence does not exceed 2 posts/day during first 12 posts.",
+    "Confirm commercial density remains below 0.12 through post 11.",
+    "Confirm lead capture only appears in post 12 and one prior trust-staged post if needed.",
+    "Verify first-time parent sentiment remains supportive after posts 1-3."
+  ]
+}

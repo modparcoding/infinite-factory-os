@@ -1,0 +1,1740 @@
+[
+  {
+    "case_id": "PM-BABY-PROOF-03",
+    "input_events": [
+      {
+        "event_id": "evt-baby-sleep-001",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-resonance",
+        "cta": "none",
+        "value_type": "validation",
+        "emotional_tone": "empathetic",
+        "commercial_signal": false,
+        "saves": 9,
+        "shares": 2,
+        "follows": 0,
+        "asset_id": "asset-baby-sleep-001",
+        "captured_at": "2026-04-01T06:45:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-002",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-resonance",
+        "cta": "none",
+        "value_type": "validation",
+        "emotional_tone": "reassuring",
+        "commercial_signal": false,
+        "saves": 7,
+        "shares": 1,
+        "follows": 1,
+        "asset_id": "asset-baby-sleep-002",
+        "captured_at": "2026-04-01T08:20:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-003",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-resonance",
+        "cta": "none",
+        "value_type": "validation",
+        "emotional_tone": "gentle",
+        "commercial_signal": false,
+        "saves": 8,
+        "shares": 1,
+        "follows": 0,
+        "asset_id": "asset-baby-sleep-003",
+        "captured_at": "2026-04-02T07:10:00.000Z"
+      }
+    ],
+    "expected_snapshot": {
+      "memory_id": "memory-baby-sleep-proof-03",
+      "campaign_id": "cmp-baby-sleep-tiny-wins",
+      "journey_id": "journey-baby-sleep-parenting",
+      "derived_at": "2026-04-02T07:10:00.000Z",
+      "stage_distribution": {
+        "stage-baby-resonance": {
+          "count": 3,
+          "ratio": 1
+        }
+      },
+      "cta_distribution": {
+        "none": {
+          "count": 3,
+          "ratio": 1
+        }
+      },
+      "value_type_mix": {
+        "validation": {
+          "count": 3,
+          "ratio": 1
+        }
+      },
+      "emotional_tone_mix": {
+        "empathetic": {
+          "count": 1,
+          "ratio": 0.333333
+        },
+        "gentle": {
+          "count": 1,
+          "ratio": 0.333333
+        },
+        "reassuring": {
+          "count": 1,
+          "ratio": 0.333333
+        }
+      },
+      "commercial_density": 0,
+      "saves_shares_follows_trends": {
+        "saves_delta": -1,
+        "shares_delta": -1,
+        "follows_delta": 0,
+        "direction": "down",
+        "movement_strength": -0.02
+      },
+      "repetition_risk": 0,
+      "engagement_rate": 9.666667,
+      "snapshot_version": "v1.0.0",
+      "source_event_ids": [
+        "evt-baby-sleep-001",
+        "evt-baby-sleep-002",
+        "evt-baby-sleep-003"
+      ],
+      "immutable": true
+    }
+  },
+  {
+    "case_id": "PM-BABY-PROOF-06",
+    "input_events": [
+      {
+        "event_id": "evt-baby-sleep-001",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-resonance",
+        "cta": "none",
+        "value_type": "validation",
+        "emotional_tone": "empathetic",
+        "commercial_signal": false,
+        "saves": 9,
+        "shares": 2,
+        "follows": 0,
+        "asset_id": "asset-baby-sleep-001",
+        "captured_at": "2026-04-01T06:45:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-002",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-resonance",
+        "cta": "none",
+        "value_type": "validation",
+        "emotional_tone": "reassuring",
+        "commercial_signal": false,
+        "saves": 7,
+        "shares": 1,
+        "follows": 1,
+        "asset_id": "asset-baby-sleep-002",
+        "captured_at": "2026-04-01T08:20:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-003",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-resonance",
+        "cta": "none",
+        "value_type": "validation",
+        "emotional_tone": "gentle",
+        "commercial_signal": false,
+        "saves": 8,
+        "shares": 1,
+        "follows": 0,
+        "asset_id": "asset-baby-sleep-003",
+        "captured_at": "2026-04-02T07:10:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-004",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-relief",
+        "cta": "save",
+        "value_type": "checklist",
+        "emotional_tone": "practical",
+        "commercial_signal": false,
+        "saves": 11,
+        "shares": 2,
+        "follows": 2,
+        "asset_id": "asset-baby-sleep-004",
+        "captured_at": "2026-04-03T07:00:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-005",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-relief",
+        "cta": "save",
+        "value_type": "tip",
+        "emotional_tone": "calm",
+        "commercial_signal": false,
+        "saves": 10,
+        "shares": 1,
+        "follows": 2,
+        "asset_id": "asset-baby-sleep-005",
+        "captured_at": "2026-04-03T09:10:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-006",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-relief",
+        "cta": "follow",
+        "value_type": "tip",
+        "emotional_tone": "steady",
+        "commercial_signal": false,
+        "saves": 12,
+        "shares": 3,
+        "follows": 3,
+        "asset_id": "asset-baby-sleep-006",
+        "captured_at": "2026-04-03T11:45:00.000Z"
+      }
+    ],
+    "expected_snapshot": {
+      "memory_id": "memory-baby-sleep-proof-06",
+      "campaign_id": "cmp-baby-sleep-tiny-wins",
+      "journey_id": "journey-baby-sleep-parenting",
+      "derived_at": "2026-04-03T11:45:00.000Z",
+      "stage_distribution": {
+        "stage-baby-relief": {
+          "count": 3,
+          "ratio": 0.5
+        },
+        "stage-baby-resonance": {
+          "count": 3,
+          "ratio": 0.5
+        }
+      },
+      "cta_distribution": {
+        "follow": {
+          "count": 1,
+          "ratio": 0.166667
+        },
+        "none": {
+          "count": 3,
+          "ratio": 0.5
+        },
+        "save": {
+          "count": 2,
+          "ratio": 0.333333
+        }
+      },
+      "value_type_mix": {
+        "checklist": {
+          "count": 1,
+          "ratio": 0.166667
+        },
+        "tip": {
+          "count": 2,
+          "ratio": 0.333333
+        },
+        "validation": {
+          "count": 3,
+          "ratio": 0.5
+        }
+      },
+      "emotional_tone_mix": {
+        "calm": {
+          "count": 1,
+          "ratio": 0.166667
+        },
+        "empathetic": {
+          "count": 1,
+          "ratio": 0.166667
+        },
+        "gentle": {
+          "count": 1,
+          "ratio": 0.166667
+        },
+        "practical": {
+          "count": 1,
+          "ratio": 0.166667
+        },
+        "reassuring": {
+          "count": 1,
+          "ratio": 0.166667
+        },
+        "steady": {
+          "count": 1,
+          "ratio": 0.166667
+        }
+      },
+      "commercial_density": 0,
+      "saves_shares_follows_trends": {
+        "saves_delta": 3,
+        "shares_delta": 1,
+        "follows_delta": 3,
+        "direction": "up",
+        "movement_strength": 0.07
+      },
+      "repetition_risk": 0,
+      "engagement_rate": 12.5,
+      "snapshot_version": "v1.0.0",
+      "source_event_ids": [
+        "evt-baby-sleep-001",
+        "evt-baby-sleep-002",
+        "evt-baby-sleep-003",
+        "evt-baby-sleep-004",
+        "evt-baby-sleep-005",
+        "evt-baby-sleep-006"
+      ],
+      "immutable": true
+    }
+  },
+  {
+    "case_id": "PM-BABY-PROOF-09",
+    "input_events": [
+      {
+        "event_id": "evt-baby-sleep-001",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-resonance",
+        "cta": "none",
+        "value_type": "validation",
+        "emotional_tone": "empathetic",
+        "commercial_signal": false,
+        "saves": 9,
+        "shares": 2,
+        "follows": 0,
+        "asset_id": "asset-baby-sleep-001",
+        "captured_at": "2026-04-01T06:45:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-002",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-resonance",
+        "cta": "none",
+        "value_type": "validation",
+        "emotional_tone": "reassuring",
+        "commercial_signal": false,
+        "saves": 7,
+        "shares": 1,
+        "follows": 1,
+        "asset_id": "asset-baby-sleep-002",
+        "captured_at": "2026-04-01T08:20:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-003",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-resonance",
+        "cta": "none",
+        "value_type": "validation",
+        "emotional_tone": "gentle",
+        "commercial_signal": false,
+        "saves": 8,
+        "shares": 1,
+        "follows": 0,
+        "asset_id": "asset-baby-sleep-003",
+        "captured_at": "2026-04-02T07:10:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-004",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-relief",
+        "cta": "save",
+        "value_type": "checklist",
+        "emotional_tone": "practical",
+        "commercial_signal": false,
+        "saves": 11,
+        "shares": 2,
+        "follows": 2,
+        "asset_id": "asset-baby-sleep-004",
+        "captured_at": "2026-04-03T07:00:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-005",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-relief",
+        "cta": "save",
+        "value_type": "tip",
+        "emotional_tone": "calm",
+        "commercial_signal": false,
+        "saves": 10,
+        "shares": 1,
+        "follows": 2,
+        "asset_id": "asset-baby-sleep-005",
+        "captured_at": "2026-04-03T09:10:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-006",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-relief",
+        "cta": "follow",
+        "value_type": "tip",
+        "emotional_tone": "steady",
+        "commercial_signal": false,
+        "saves": 12,
+        "shares": 3,
+        "follows": 3,
+        "asset_id": "asset-baby-sleep-006",
+        "captured_at": "2026-04-03T11:45:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-007",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-relief",
+        "cta": "save",
+        "value_type": "routine",
+        "emotional_tone": "supportive",
+        "commercial_signal": false,
+        "saves": 14,
+        "shares": 2,
+        "follows": 1,
+        "asset_id": "asset-baby-sleep-007",
+        "captured_at": "2026-04-04T06:30:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-008",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-trust",
+        "cta": "story",
+        "value_type": "proof",
+        "emotional_tone": "reassuring",
+        "commercial_signal": false,
+        "saves": 13,
+        "shares": 5,
+        "follows": 4,
+        "asset_id": "asset-baby-sleep-008",
+        "captured_at": "2026-04-05T07:20:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-009",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-trust",
+        "cta": "story",
+        "value_type": "proof",
+        "emotional_tone": "uplifting",
+        "commercial_signal": false,
+        "saves": 15,
+        "shares": 4,
+        "follows": 3,
+        "asset_id": "asset-baby-sleep-009",
+        "captured_at": "2026-04-05T09:00:00.000Z"
+      }
+    ],
+    "expected_snapshot": {
+      "memory_id": "memory-baby-sleep-proof-09",
+      "campaign_id": "cmp-baby-sleep-tiny-wins",
+      "journey_id": "journey-baby-sleep-parenting",
+      "derived_at": "2026-04-05T09:00:00.000Z",
+      "stage_distribution": {
+        "stage-baby-relief": {
+          "count": 4,
+          "ratio": 0.444444
+        },
+        "stage-baby-resonance": {
+          "count": 3,
+          "ratio": 0.333333
+        },
+        "stage-baby-trust": {
+          "count": 2,
+          "ratio": 0.222222
+        }
+      },
+      "cta_distribution": {
+        "follow": {
+          "count": 1,
+          "ratio": 0.111111
+        },
+        "none": {
+          "count": 3,
+          "ratio": 0.333333
+        },
+        "save": {
+          "count": 3,
+          "ratio": 0.333333
+        },
+        "story": {
+          "count": 2,
+          "ratio": 0.222222
+        }
+      },
+      "value_type_mix": {
+        "checklist": {
+          "count": 1,
+          "ratio": 0.111111
+        },
+        "proof": {
+          "count": 2,
+          "ratio": 0.222222
+        },
+        "routine": {
+          "count": 1,
+          "ratio": 0.111111
+        },
+        "tip": {
+          "count": 2,
+          "ratio": 0.222222
+        },
+        "validation": {
+          "count": 3,
+          "ratio": 0.333333
+        }
+      },
+      "emotional_tone_mix": {
+        "calm": {
+          "count": 1,
+          "ratio": 0.111111
+        },
+        "empathetic": {
+          "count": 1,
+          "ratio": 0.111111
+        },
+        "gentle": {
+          "count": 1,
+          "ratio": 0.111111
+        },
+        "practical": {
+          "count": 1,
+          "ratio": 0.111111
+        },
+        "reassuring": {
+          "count": 2,
+          "ratio": 0.222222
+        },
+        "steady": {
+          "count": 1,
+          "ratio": 0.111111
+        },
+        "supportive": {
+          "count": 1,
+          "ratio": 0.111111
+        },
+        "uplifting": {
+          "count": 1,
+          "ratio": 0.111111
+        }
+      },
+      "commercial_density": 0,
+      "saves_shares_follows_trends": {
+        "saves_delta": 6,
+        "shares_delta": 2,
+        "follows_delta": 3,
+        "direction": "up",
+        "movement_strength": 0.11
+      },
+      "repetition_risk": 0,
+      "engagement_rate": 15.111111,
+      "snapshot_version": "v1.0.0",
+      "source_event_ids": [
+        "evt-baby-sleep-001",
+        "evt-baby-sleep-002",
+        "evt-baby-sleep-003",
+        "evt-baby-sleep-004",
+        "evt-baby-sleep-005",
+        "evt-baby-sleep-006",
+        "evt-baby-sleep-007",
+        "evt-baby-sleep-008",
+        "evt-baby-sleep-009"
+      ],
+      "immutable": true
+    }
+  },
+  {
+    "case_id": "PM-BABY-PROOF-12",
+    "input_events": [
+      {
+        "event_id": "evt-baby-sleep-001",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-resonance",
+        "cta": "none",
+        "value_type": "validation",
+        "emotional_tone": "empathetic",
+        "commercial_signal": false,
+        "saves": 9,
+        "shares": 2,
+        "follows": 0,
+        "asset_id": "asset-baby-sleep-001",
+        "captured_at": "2026-04-01T06:45:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-002",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-resonance",
+        "cta": "none",
+        "value_type": "validation",
+        "emotional_tone": "reassuring",
+        "commercial_signal": false,
+        "saves": 7,
+        "shares": 1,
+        "follows": 1,
+        "asset_id": "asset-baby-sleep-002",
+        "captured_at": "2026-04-01T08:20:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-003",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-resonance",
+        "cta": "none",
+        "value_type": "validation",
+        "emotional_tone": "gentle",
+        "commercial_signal": false,
+        "saves": 8,
+        "shares": 1,
+        "follows": 0,
+        "asset_id": "asset-baby-sleep-003",
+        "captured_at": "2026-04-02T07:10:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-004",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-relief",
+        "cta": "save",
+        "value_type": "checklist",
+        "emotional_tone": "practical",
+        "commercial_signal": false,
+        "saves": 11,
+        "shares": 2,
+        "follows": 2,
+        "asset_id": "asset-baby-sleep-004",
+        "captured_at": "2026-04-03T07:00:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-005",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-relief",
+        "cta": "save",
+        "value_type": "tip",
+        "emotional_tone": "calm",
+        "commercial_signal": false,
+        "saves": 10,
+        "shares": 1,
+        "follows": 2,
+        "asset_id": "asset-baby-sleep-005",
+        "captured_at": "2026-04-03T09:10:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-006",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-relief",
+        "cta": "follow",
+        "value_type": "tip",
+        "emotional_tone": "steady",
+        "commercial_signal": false,
+        "saves": 12,
+        "shares": 3,
+        "follows": 3,
+        "asset_id": "asset-baby-sleep-006",
+        "captured_at": "2026-04-03T11:45:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-007",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-relief",
+        "cta": "save",
+        "value_type": "routine",
+        "emotional_tone": "supportive",
+        "commercial_signal": false,
+        "saves": 14,
+        "shares": 2,
+        "follows": 1,
+        "asset_id": "asset-baby-sleep-007",
+        "captured_at": "2026-04-04T06:30:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-008",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-trust",
+        "cta": "story",
+        "value_type": "proof",
+        "emotional_tone": "reassuring",
+        "commercial_signal": false,
+        "saves": 13,
+        "shares": 5,
+        "follows": 4,
+        "asset_id": "asset-baby-sleep-008",
+        "captured_at": "2026-04-05T07:20:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-009",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-trust",
+        "cta": "story",
+        "value_type": "proof",
+        "emotional_tone": "uplifting",
+        "commercial_signal": false,
+        "saves": 15,
+        "shares": 4,
+        "follows": 3,
+        "asset_id": "asset-baby-sleep-009",
+        "captured_at": "2026-04-05T09:00:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-010",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-trust",
+        "cta": "follow",
+        "value_type": "framework",
+        "emotional_tone": "confident",
+        "commercial_signal": false,
+        "saves": 16,
+        "shares": 6,
+        "follows": 5,
+        "asset_id": "asset-baby-sleep-010",
+        "captured_at": "2026-04-06T08:05:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-011",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-trust",
+        "cta": "story",
+        "value_type": "framework",
+        "emotional_tone": "respectful",
+        "commercial_signal": false,
+        "saves": 15,
+        "shares": 4,
+        "follows": 6,
+        "asset_id": "asset-baby-sleep-011",
+        "captured_at": "2026-04-07T07:00:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-012",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-lead-capture",
+        "cta": "soft-lead",
+        "value_type": "resource",
+        "emotional_tone": "helpful",
+        "commercial_signal": true,
+        "saves": 18,
+        "shares": 5,
+        "follows": 9,
+        "asset_id": "asset-baby-sleep-012",
+        "captured_at": "2026-04-08T07:30:00.000Z"
+      }
+    ],
+    "expected_snapshot": {
+      "memory_id": "memory-baby-sleep-proof-12",
+      "campaign_id": "cmp-baby-sleep-tiny-wins",
+      "journey_id": "journey-baby-sleep-parenting",
+      "derived_at": "2026-04-08T07:30:00.000Z",
+      "stage_distribution": {
+        "stage-baby-lead-capture": {
+          "count": 1,
+          "ratio": 0.083333
+        },
+        "stage-baby-relief": {
+          "count": 4,
+          "ratio": 0.333333
+        },
+        "stage-baby-resonance": {
+          "count": 3,
+          "ratio": 0.25
+        },
+        "stage-baby-trust": {
+          "count": 4,
+          "ratio": 0.333333
+        }
+      },
+      "cta_distribution": {
+        "follow": {
+          "count": 2,
+          "ratio": 0.166667
+        },
+        "none": {
+          "count": 3,
+          "ratio": 0.25
+        },
+        "save": {
+          "count": 3,
+          "ratio": 0.25
+        },
+        "soft-lead": {
+          "count": 1,
+          "ratio": 0.083333
+        },
+        "story": {
+          "count": 3,
+          "ratio": 0.25
+        }
+      },
+      "value_type_mix": {
+        "checklist": {
+          "count": 1,
+          "ratio": 0.083333
+        },
+        "framework": {
+          "count": 2,
+          "ratio": 0.166667
+        },
+        "proof": {
+          "count": 2,
+          "ratio": 0.166667
+        },
+        "resource": {
+          "count": 1,
+          "ratio": 0.083333
+        },
+        "routine": {
+          "count": 1,
+          "ratio": 0.083333
+        },
+        "tip": {
+          "count": 2,
+          "ratio": 0.166667
+        },
+        "validation": {
+          "count": 3,
+          "ratio": 0.25
+        }
+      },
+      "emotional_tone_mix": {
+        "calm": {
+          "count": 1,
+          "ratio": 0.083333
+        },
+        "confident": {
+          "count": 1,
+          "ratio": 0.083333
+        },
+        "empathetic": {
+          "count": 1,
+          "ratio": 0.083333
+        },
+        "gentle": {
+          "count": 1,
+          "ratio": 0.083333
+        },
+        "helpful": {
+          "count": 1,
+          "ratio": 0.083333
+        },
+        "practical": {
+          "count": 1,
+          "ratio": 0.083333
+        },
+        "reassuring": {
+          "count": 2,
+          "ratio": 0.166667
+        },
+        "respectful": {
+          "count": 1,
+          "ratio": 0.083333
+        },
+        "steady": {
+          "count": 1,
+          "ratio": 0.083333
+        },
+        "supportive": {
+          "count": 1,
+          "ratio": 0.083333
+        },
+        "uplifting": {
+          "count": 1,
+          "ratio": 0.083333
+        }
+      },
+      "commercial_density": 0.083333,
+      "saves_shares_follows_trends": {
+        "saves_delta": 9,
+        "shares_delta": 3,
+        "follows_delta": 9,
+        "direction": "up",
+        "movement_strength": 0.21
+      },
+      "repetition_risk": 0,
+      "engagement_rate": 18.333333,
+      "snapshot_version": "v1.0.0",
+      "source_event_ids": [
+        "evt-baby-sleep-001",
+        "evt-baby-sleep-002",
+        "evt-baby-sleep-003",
+        "evt-baby-sleep-004",
+        "evt-baby-sleep-005",
+        "evt-baby-sleep-006",
+        "evt-baby-sleep-007",
+        "evt-baby-sleep-008",
+        "evt-baby-sleep-009",
+        "evt-baby-sleep-010",
+        "evt-baby-sleep-011",
+        "evt-baby-sleep-012"
+      ],
+      "immutable": true
+    }
+  },
+  {
+    "case_id": "PM-BABY-PROOF-15",
+    "input_events": [
+      {
+        "event_id": "evt-baby-sleep-001",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-resonance",
+        "cta": "none",
+        "value_type": "validation",
+        "emotional_tone": "empathetic",
+        "commercial_signal": false,
+        "saves": 9,
+        "shares": 2,
+        "follows": 0,
+        "asset_id": "asset-baby-sleep-001",
+        "captured_at": "2026-04-01T06:45:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-002",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-resonance",
+        "cta": "none",
+        "value_type": "validation",
+        "emotional_tone": "reassuring",
+        "commercial_signal": false,
+        "saves": 7,
+        "shares": 1,
+        "follows": 1,
+        "asset_id": "asset-baby-sleep-002",
+        "captured_at": "2026-04-01T08:20:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-003",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-resonance",
+        "cta": "none",
+        "value_type": "validation",
+        "emotional_tone": "gentle",
+        "commercial_signal": false,
+        "saves": 8,
+        "shares": 1,
+        "follows": 0,
+        "asset_id": "asset-baby-sleep-003",
+        "captured_at": "2026-04-02T07:10:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-004",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-relief",
+        "cta": "save",
+        "value_type": "checklist",
+        "emotional_tone": "practical",
+        "commercial_signal": false,
+        "saves": 11,
+        "shares": 2,
+        "follows": 2,
+        "asset_id": "asset-baby-sleep-004",
+        "captured_at": "2026-04-03T07:00:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-005",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-relief",
+        "cta": "save",
+        "value_type": "tip",
+        "emotional_tone": "calm",
+        "commercial_signal": false,
+        "saves": 10,
+        "shares": 1,
+        "follows": 2,
+        "asset_id": "asset-baby-sleep-005",
+        "captured_at": "2026-04-03T09:10:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-006",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-relief",
+        "cta": "follow",
+        "value_type": "tip",
+        "emotional_tone": "steady",
+        "commercial_signal": false,
+        "saves": 12,
+        "shares": 3,
+        "follows": 3,
+        "asset_id": "asset-baby-sleep-006",
+        "captured_at": "2026-04-03T11:45:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-007",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-relief",
+        "cta": "save",
+        "value_type": "routine",
+        "emotional_tone": "supportive",
+        "commercial_signal": false,
+        "saves": 14,
+        "shares": 2,
+        "follows": 1,
+        "asset_id": "asset-baby-sleep-007",
+        "captured_at": "2026-04-04T06:30:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-008",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-trust",
+        "cta": "story",
+        "value_type": "proof",
+        "emotional_tone": "reassuring",
+        "commercial_signal": false,
+        "saves": 13,
+        "shares": 5,
+        "follows": 4,
+        "asset_id": "asset-baby-sleep-008",
+        "captured_at": "2026-04-05T07:20:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-009",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-trust",
+        "cta": "story",
+        "value_type": "proof",
+        "emotional_tone": "uplifting",
+        "commercial_signal": false,
+        "saves": 15,
+        "shares": 4,
+        "follows": 3,
+        "asset_id": "asset-baby-sleep-009",
+        "captured_at": "2026-04-05T09:00:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-010",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-trust",
+        "cta": "follow",
+        "value_type": "framework",
+        "emotional_tone": "confident",
+        "commercial_signal": false,
+        "saves": 16,
+        "shares": 6,
+        "follows": 5,
+        "asset_id": "asset-baby-sleep-010",
+        "captured_at": "2026-04-06T08:05:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-011",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-trust",
+        "cta": "story",
+        "value_type": "framework",
+        "emotional_tone": "respectful",
+        "commercial_signal": false,
+        "saves": 15,
+        "shares": 4,
+        "follows": 6,
+        "asset_id": "asset-baby-sleep-011",
+        "captured_at": "2026-04-07T07:00:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-012",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-lead-capture",
+        "cta": "soft-lead",
+        "value_type": "resource",
+        "emotional_tone": "helpful",
+        "commercial_signal": true,
+        "saves": 18,
+        "shares": 5,
+        "follows": 9,
+        "asset_id": "asset-baby-sleep-012",
+        "captured_at": "2026-04-08T07:30:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-013",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-lead-capture",
+        "cta": "soft-lead",
+        "value_type": "resource",
+        "emotional_tone": "encouraging",
+        "commercial_signal": true,
+        "saves": 20,
+        "shares": 4,
+        "follows": 10,
+        "asset_id": "asset-baby-sleep-013",
+        "captured_at": "2026-04-09T06:50:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-014",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-lead-capture",
+        "cta": "soft-lead",
+        "value_type": "resource",
+        "emotional_tone": "respectful",
+        "commercial_signal": true,
+        "saves": 17,
+        "shares": 3,
+        "follows": 8,
+        "asset_id": "asset-baby-sleep-014",
+        "captured_at": "2026-04-10T07:10:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-015",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-monetization",
+        "cta": "checkout",
+        "value_type": "offer",
+        "emotional_tone": "practical",
+        "commercial_signal": true,
+        "saves": 12,
+        "shares": 3,
+        "follows": 6,
+        "asset_id": "asset-baby-sleep-015",
+        "captured_at": "2026-04-11T08:00:00.000Z"
+      }
+    ],
+    "expected_snapshot": {
+      "memory_id": "memory-baby-sleep-proof-15",
+      "campaign_id": "cmp-baby-sleep-tiny-wins",
+      "journey_id": "journey-baby-sleep-parenting",
+      "derived_at": "2026-04-11T08:00:00.000Z",
+      "stage_distribution": {
+        "stage-baby-lead-capture": {
+          "count": 3,
+          "ratio": 0.2
+        },
+        "stage-baby-monetization": {
+          "count": 1,
+          "ratio": 0.066667
+        },
+        "stage-baby-relief": {
+          "count": 4,
+          "ratio": 0.266667
+        },
+        "stage-baby-resonance": {
+          "count": 3,
+          "ratio": 0.2
+        },
+        "stage-baby-trust": {
+          "count": 4,
+          "ratio": 0.266667
+        }
+      },
+      "cta_distribution": {
+        "checkout": {
+          "count": 1,
+          "ratio": 0.066667
+        },
+        "follow": {
+          "count": 2,
+          "ratio": 0.133333
+        },
+        "none": {
+          "count": 3,
+          "ratio": 0.2
+        },
+        "save": {
+          "count": 3,
+          "ratio": 0.2
+        },
+        "soft-lead": {
+          "count": 3,
+          "ratio": 0.2
+        },
+        "story": {
+          "count": 3,
+          "ratio": 0.2
+        }
+      },
+      "value_type_mix": {
+        "checklist": {
+          "count": 1,
+          "ratio": 0.066667
+        },
+        "framework": {
+          "count": 2,
+          "ratio": 0.133333
+        },
+        "offer": {
+          "count": 1,
+          "ratio": 0.066667
+        },
+        "proof": {
+          "count": 2,
+          "ratio": 0.133333
+        },
+        "resource": {
+          "count": 3,
+          "ratio": 0.2
+        },
+        "routine": {
+          "count": 1,
+          "ratio": 0.066667
+        },
+        "tip": {
+          "count": 2,
+          "ratio": 0.133333
+        },
+        "validation": {
+          "count": 3,
+          "ratio": 0.2
+        }
+      },
+      "emotional_tone_mix": {
+        "calm": {
+          "count": 1,
+          "ratio": 0.066667
+        },
+        "confident": {
+          "count": 1,
+          "ratio": 0.066667
+        },
+        "empathetic": {
+          "count": 1,
+          "ratio": 0.066667
+        },
+        "encouraging": {
+          "count": 1,
+          "ratio": 0.066667
+        },
+        "gentle": {
+          "count": 1,
+          "ratio": 0.066667
+        },
+        "helpful": {
+          "count": 1,
+          "ratio": 0.066667
+        },
+        "practical": {
+          "count": 2,
+          "ratio": 0.133333
+        },
+        "reassuring": {
+          "count": 2,
+          "ratio": 0.133333
+        },
+        "respectful": {
+          "count": 2,
+          "ratio": 0.133333
+        },
+        "steady": {
+          "count": 1,
+          "ratio": 0.066667
+        },
+        "supportive": {
+          "count": 1,
+          "ratio": 0.066667
+        },
+        "uplifting": {
+          "count": 1,
+          "ratio": 0.066667
+        }
+      },
+      "commercial_density": 0.266667,
+      "saves_shares_follows_trends": {
+        "saves_delta": 3,
+        "shares_delta": 1,
+        "follows_delta": 6,
+        "direction": "up",
+        "movement_strength": 0.1
+      },
+      "repetition_risk": 0,
+      "engagement_rate": 20.2,
+      "snapshot_version": "v1.0.0",
+      "source_event_ids": [
+        "evt-baby-sleep-001",
+        "evt-baby-sleep-002",
+        "evt-baby-sleep-003",
+        "evt-baby-sleep-004",
+        "evt-baby-sleep-005",
+        "evt-baby-sleep-006",
+        "evt-baby-sleep-007",
+        "evt-baby-sleep-008",
+        "evt-baby-sleep-009",
+        "evt-baby-sleep-010",
+        "evt-baby-sleep-011",
+        "evt-baby-sleep-012",
+        "evt-baby-sleep-013",
+        "evt-baby-sleep-014",
+        "evt-baby-sleep-015"
+      ],
+      "immutable": true
+    }
+  },
+  {
+    "case_id": "PM-BABY-PROOF-18",
+    "input_events": [
+      {
+        "event_id": "evt-baby-sleep-001",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-resonance",
+        "cta": "none",
+        "value_type": "validation",
+        "emotional_tone": "empathetic",
+        "commercial_signal": false,
+        "saves": 9,
+        "shares": 2,
+        "follows": 0,
+        "asset_id": "asset-baby-sleep-001",
+        "captured_at": "2026-04-01T06:45:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-002",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-resonance",
+        "cta": "none",
+        "value_type": "validation",
+        "emotional_tone": "reassuring",
+        "commercial_signal": false,
+        "saves": 7,
+        "shares": 1,
+        "follows": 1,
+        "asset_id": "asset-baby-sleep-002",
+        "captured_at": "2026-04-01T08:20:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-003",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-resonance",
+        "cta": "none",
+        "value_type": "validation",
+        "emotional_tone": "gentle",
+        "commercial_signal": false,
+        "saves": 8,
+        "shares": 1,
+        "follows": 0,
+        "asset_id": "asset-baby-sleep-003",
+        "captured_at": "2026-04-02T07:10:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-004",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-relief",
+        "cta": "save",
+        "value_type": "checklist",
+        "emotional_tone": "practical",
+        "commercial_signal": false,
+        "saves": 11,
+        "shares": 2,
+        "follows": 2,
+        "asset_id": "asset-baby-sleep-004",
+        "captured_at": "2026-04-03T07:00:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-005",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-relief",
+        "cta": "save",
+        "value_type": "tip",
+        "emotional_tone": "calm",
+        "commercial_signal": false,
+        "saves": 10,
+        "shares": 1,
+        "follows": 2,
+        "asset_id": "asset-baby-sleep-005",
+        "captured_at": "2026-04-03T09:10:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-006",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-relief",
+        "cta": "follow",
+        "value_type": "tip",
+        "emotional_tone": "steady",
+        "commercial_signal": false,
+        "saves": 12,
+        "shares": 3,
+        "follows": 3,
+        "asset_id": "asset-baby-sleep-006",
+        "captured_at": "2026-04-03T11:45:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-007",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-relief",
+        "cta": "save",
+        "value_type": "routine",
+        "emotional_tone": "supportive",
+        "commercial_signal": false,
+        "saves": 14,
+        "shares": 2,
+        "follows": 1,
+        "asset_id": "asset-baby-sleep-007",
+        "captured_at": "2026-04-04T06:30:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-008",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-trust",
+        "cta": "story",
+        "value_type": "proof",
+        "emotional_tone": "reassuring",
+        "commercial_signal": false,
+        "saves": 13,
+        "shares": 5,
+        "follows": 4,
+        "asset_id": "asset-baby-sleep-008",
+        "captured_at": "2026-04-05T07:20:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-009",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-trust",
+        "cta": "story",
+        "value_type": "proof",
+        "emotional_tone": "uplifting",
+        "commercial_signal": false,
+        "saves": 15,
+        "shares": 4,
+        "follows": 3,
+        "asset_id": "asset-baby-sleep-009",
+        "captured_at": "2026-04-05T09:00:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-010",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-trust",
+        "cta": "follow",
+        "value_type": "framework",
+        "emotional_tone": "confident",
+        "commercial_signal": false,
+        "saves": 16,
+        "shares": 6,
+        "follows": 5,
+        "asset_id": "asset-baby-sleep-010",
+        "captured_at": "2026-04-06T08:05:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-011",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-trust",
+        "cta": "story",
+        "value_type": "framework",
+        "emotional_tone": "respectful",
+        "commercial_signal": false,
+        "saves": 15,
+        "shares": 4,
+        "follows": 6,
+        "asset_id": "asset-baby-sleep-011",
+        "captured_at": "2026-04-07T07:00:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-012",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-lead-capture",
+        "cta": "soft-lead",
+        "value_type": "resource",
+        "emotional_tone": "helpful",
+        "commercial_signal": true,
+        "saves": 18,
+        "shares": 5,
+        "follows": 9,
+        "asset_id": "asset-baby-sleep-012",
+        "captured_at": "2026-04-08T07:30:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-013",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-lead-capture",
+        "cta": "soft-lead",
+        "value_type": "resource",
+        "emotional_tone": "encouraging",
+        "commercial_signal": true,
+        "saves": 20,
+        "shares": 4,
+        "follows": 10,
+        "asset_id": "asset-baby-sleep-013",
+        "captured_at": "2026-04-09T06:50:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-014",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-lead-capture",
+        "cta": "soft-lead",
+        "value_type": "resource",
+        "emotional_tone": "respectful",
+        "commercial_signal": true,
+        "saves": 17,
+        "shares": 3,
+        "follows": 8,
+        "asset_id": "asset-baby-sleep-014",
+        "captured_at": "2026-04-10T07:10:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-015",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-monetization",
+        "cta": "checkout",
+        "value_type": "offer",
+        "emotional_tone": "practical",
+        "commercial_signal": true,
+        "saves": 12,
+        "shares": 3,
+        "follows": 6,
+        "asset_id": "asset-baby-sleep-015",
+        "captured_at": "2026-04-11T08:00:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-016",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-monetization",
+        "cta": "checkout",
+        "value_type": "offer",
+        "emotional_tone": "confident",
+        "commercial_signal": true,
+        "saves": 10,
+        "shares": 2,
+        "follows": 4,
+        "asset_id": "asset-baby-sleep-016",
+        "captured_at": "2026-04-11T20:00:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-017",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-retention",
+        "cta": "community",
+        "value_type": "support",
+        "emotional_tone": "encouraging",
+        "commercial_signal": false,
+        "saves": 19,
+        "shares": 7,
+        "follows": 14,
+        "asset_id": "asset-baby-sleep-017",
+        "captured_at": "2026-04-12T07:15:00.000Z"
+      },
+      {
+        "event_id": "evt-baby-sleep-018",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "journey_id": "journey-baby-sleep-parenting",
+        "journey_stage": "stage-baby-retention",
+        "cta": "community",
+        "value_type": "support",
+        "emotional_tone": "celebratory",
+        "commercial_signal": false,
+        "saves": 21,
+        "shares": 6,
+        "follows": 16,
+        "asset_id": "asset-baby-sleep-018",
+        "captured_at": "2026-04-12T20:30:00.000Z"
+      }
+    ],
+    "expected_snapshot": {
+      "memory_id": "memory-baby-sleep-proof-18",
+      "campaign_id": "cmp-baby-sleep-tiny-wins",
+      "journey_id": "journey-baby-sleep-parenting",
+      "derived_at": "2026-04-12T20:30:00.000Z",
+      "stage_distribution": {
+        "stage-baby-lead-capture": {
+          "count": 3,
+          "ratio": 0.166667
+        },
+        "stage-baby-monetization": {
+          "count": 2,
+          "ratio": 0.111111
+        },
+        "stage-baby-relief": {
+          "count": 4,
+          "ratio": 0.222222
+        },
+        "stage-baby-resonance": {
+          "count": 3,
+          "ratio": 0.166667
+        },
+        "stage-baby-retention": {
+          "count": 2,
+          "ratio": 0.111111
+        },
+        "stage-baby-trust": {
+          "count": 4,
+          "ratio": 0.222222
+        }
+      },
+      "cta_distribution": {
+        "checkout": {
+          "count": 2,
+          "ratio": 0.111111
+        },
+        "community": {
+          "count": 2,
+          "ratio": 0.111111
+        },
+        "follow": {
+          "count": 2,
+          "ratio": 0.111111
+        },
+        "none": {
+          "count": 3,
+          "ratio": 0.166667
+        },
+        "save": {
+          "count": 3,
+          "ratio": 0.166667
+        },
+        "soft-lead": {
+          "count": 3,
+          "ratio": 0.166667
+        },
+        "story": {
+          "count": 3,
+          "ratio": 0.166667
+        }
+      },
+      "value_type_mix": {
+        "checklist": {
+          "count": 1,
+          "ratio": 0.055556
+        },
+        "framework": {
+          "count": 2,
+          "ratio": 0.111111
+        },
+        "offer": {
+          "count": 2,
+          "ratio": 0.111111
+        },
+        "proof": {
+          "count": 2,
+          "ratio": 0.111111
+        },
+        "resource": {
+          "count": 3,
+          "ratio": 0.166667
+        },
+        "routine": {
+          "count": 1,
+          "ratio": 0.055556
+        },
+        "support": {
+          "count": 2,
+          "ratio": 0.111111
+        },
+        "tip": {
+          "count": 2,
+          "ratio": 0.111111
+        },
+        "validation": {
+          "count": 3,
+          "ratio": 0.166667
+        }
+      },
+      "emotional_tone_mix": {
+        "calm": {
+          "count": 1,
+          "ratio": 0.055556
+        },
+        "celebratory": {
+          "count": 1,
+          "ratio": 0.055556
+        },
+        "confident": {
+          "count": 2,
+          "ratio": 0.111111
+        },
+        "empathetic": {
+          "count": 1,
+          "ratio": 0.055556
+        },
+        "encouraging": {
+          "count": 2,
+          "ratio": 0.111111
+        },
+        "gentle": {
+          "count": 1,
+          "ratio": 0.055556
+        },
+        "helpful": {
+          "count": 1,
+          "ratio": 0.055556
+        },
+        "practical": {
+          "count": 2,
+          "ratio": 0.111111
+        },
+        "reassuring": {
+          "count": 2,
+          "ratio": 0.111111
+        },
+        "respectful": {
+          "count": 2,
+          "ratio": 0.111111
+        },
+        "steady": {
+          "count": 1,
+          "ratio": 0.055556
+        },
+        "supportive": {
+          "count": 1,
+          "ratio": 0.055556
+        },
+        "uplifting": {
+          "count": 1,
+          "ratio": 0.055556
+        }
+      },
+      "commercial_density": 0.277778,
+      "saves_shares_follows_trends": {
+        "saves_delta": 12,
+        "shares_delta": 4,
+        "follows_delta": 16,
+        "direction": "up",
+        "movement_strength": 0.32
+      },
+      "repetition_risk": 0,
+      "engagement_rate": 22.333333,
+      "snapshot_version": "v1.0.0",
+      "source_event_ids": [
+        "evt-baby-sleep-001",
+        "evt-baby-sleep-002",
+        "evt-baby-sleep-003",
+        "evt-baby-sleep-004",
+        "evt-baby-sleep-005",
+        "evt-baby-sleep-006",
+        "evt-baby-sleep-007",
+        "evt-baby-sleep-008",
+        "evt-baby-sleep-009",
+        "evt-baby-sleep-010",
+        "evt-baby-sleep-011",
+        "evt-baby-sleep-012",
+        "evt-baby-sleep-013",
+        "evt-baby-sleep-014",
+        "evt-baby-sleep-015",
+        "evt-baby-sleep-016",
+        "evt-baby-sleep-017",
+        "evt-baby-sleep-018"
+      ],
+      "immutable": true
+    }
+  }
+]

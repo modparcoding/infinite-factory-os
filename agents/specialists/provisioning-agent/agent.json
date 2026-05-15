@@ -1,0 +1,8 @@
+{
+  "agent_id": "provisioning-specialist",
+  "contract_scope": ["ProvisioningContract", "LeadRoutes", "StorefrontTruth"],
+  "approval_required": true,
+  "autonomy_level": "bounded",
+  "allowed_file_patterns": ["services/provisioning-truth/**", "packages/contracts/**", "workstreams/**"],
+  "forbidden_file_patterns": ["services/delivery-runner/**", "services/measurement/**"]
+}

@@ -1,0 +1,1085 @@
+{
+  "fixture_id": "RS-BABY-SLEEP-CAROUSEL-001",
+  "scenario": "baby-sleep-render-qa-stage-examples",
+  "created_at": "2026-05-15T10:00:00.000Z",
+  "examples": [
+    {
+      "example_id": "render-qa-resonance-001",
+      "source_backlog_item_id": "bl-baby-sleep-001",
+      "template": {
+        "template_id": "car-bl-baby-sleep-001-resonance-v1",
+        "generated_by": "render-qa-service",
+        "generated_at": "2026-05-15T10:00:00.000Z",
+        "source_backlog_item_id": "bl-baby-sleep-001",
+        "source_attribution": {
+          "journey_stage_id": "stage-baby-resonance",
+          "value_arc_id": "arc-baby-empathy",
+          "journey_stage_label": "Resonance",
+          "value_arc_label": "Emotional Alignment",
+          "campaign_theme_id": "theme-baby-empathy-bridge",
+          "campaign_theme_label": "Exhaustion empathy"
+        },
+        "relationship_objective": "Resonance",
+        "audience_state_before": "cold",
+        "audience_state_after": "warming",
+        "hook": "You are exhausted, and that is valid. This post is for you.",
+        "commercial_intent": "none",
+        "cta_policy": "none",
+        "emotional_tone": "empathetic",
+        "hook_direction": "emotional validation",
+        "mobile_constraints": {
+          "max_word_per_line": 6,
+          "max_lines_per_slide": 5,
+          "max_slide_word_count": 16,
+          "recommended_word_per_slide": 12
+        },
+        "slides": [
+          {
+            "slide_index": 1,
+            "intent": "hook",
+            "copy": "You are exhausted, and that is valid. This post is for you.",
+            "copy_hierarchy": {
+              "headline": "Emotional Hook",
+              "support_copy": "validation for emotional pacing",
+              "micro_copy": "permission to feel"
+            },
+            "visual_direction": "high whitespace with soft framing",
+            "visual": {
+              "composition": "high whitespace with soft framing",
+              "framing": "tight center subject, generous margins",
+              "mobile_safe": true,
+              "fatigue_risk": 0.12,
+              "notes": [
+                "mobile first",
+                "low visual load"
+              ]
+            },
+            "mobile_lines": [
+              "you are exhausted, and",
+              "that is valid.",
+              "this post is for",
+              "you"
+            ],
+            "cta_position": "none",
+            "tone_markers": [
+              "validation for emotional pacing"
+            ],
+            "word_count": 12,
+            "visual_complexity": 0.75,
+            "cta_slot": "none",
+            "whitespace_bias": 0.27,
+            "slide_energy": 0.86,
+            "continuity_weight": 0.26,
+            "visual_pacing": 0.29
+          },
+          {
+            "slide_index": 2,
+            "intent": "validation",
+            "copy": "You are not failing, you are awake tonight. This lane begins with permission and support.",
+            "copy_hierarchy": {
+              "headline": "Permission",
+              "support_copy": "normalize emotional reality",
+              "micro_copy": "calmly anchored"
+            },
+            "visual_direction": "high whitespace with soft framing",
+            "visual": {
+              "composition": "high whitespace with soft framing",
+              "framing": "tight center subject, generous margins",
+              "mobile_safe": true,
+              "fatigue_risk": 0.08,
+              "notes": [
+                "mobile first",
+                "low visual load"
+              ]
+            },
+            "mobile_lines": [
+              "you are not failing, you",
+              "are awake tonight.",
+              "this lane begins",
+              "with permission and",
+              "support"
+            ],
+            "cta_position": "none",
+            "tone_markers": [
+              "normalize emotional reality"
+            ],
+            "word_count": 15,
+            "visual_complexity": 0.9375,
+            "cta_slot": "none",
+            "whitespace_bias": 0.0825,
+            "slide_energy": 0.475,
+            "continuity_weight": 0.37,
+            "visual_pacing": 0.275
+          },
+          {
+            "slide_index": 3,
+            "intent": "utility_step",
+            "copy": "Tonight, try one small reset for 60 seconds before anything else: exhale, soften your voice, and reset expectations.",
+            "copy_hierarchy": {
+              "headline": "Micro reset",
+              "support_copy": "one small reset before pressure builds",
+              "micro_copy": "practical with low intensity"
+            },
+            "visual_direction": "high whitespace with soft framing",
+            "visual": {
+              "composition": "high whitespace with soft framing",
+              "framing": "tight center subject, generous margins",
+              "mobile_safe": true,
+              "fatigue_risk": 0.14,
+              "notes": [
+                "mobile first",
+                "low visual load"
+              ]
+            },
+            "mobile_lines": [
+              "tonight, try one small",
+              "reset for 60 seconds",
+              "before anything else:",
+              "exhale, soften",
+              "your voice"
+            ],
+            "cta_position": "none",
+            "tone_markers": [
+              "one small reset before pressure builds"
+            ],
+            "word_count": 18,
+            "visual_complexity": 1,
+            "cta_slot": "none",
+            "whitespace_bias": 0.02,
+            "slide_energy": 0.63,
+            "continuity_weight": 0.45,
+            "visual_pacing": 0.27
+          },
+          {
+            "slide_index": 4,
+            "intent": "summary",
+            "copy": "Stay with this lane and keep the pace calm. Recovery comes in tiny, humane steps.",
+            "copy_hierarchy": {
+              "headline": "Keep the channel",
+              "support_copy": "continuity promise",
+              "micro_copy": "slow progress is real"
+            },
+            "visual_direction": "high whitespace with soft framing",
+            "visual": {
+              "composition": "high whitespace with soft framing",
+              "framing": "tight center subject, generous margins",
+              "mobile_safe": true,
+              "fatigue_risk": 0.1,
+              "notes": [
+                "mobile first",
+                "low visual load"
+              ]
+            },
+            "mobile_lines": [
+              "stay with this lane",
+              "and keep the pace",
+              "calm. recovery",
+              "comes in tiny",
+              "humane steps"
+            ],
+            "cta_position": "none",
+            "tone_markers": [
+              "continuity promise"
+            ],
+            "word_count": 15,
+            "visual_complexity": 0.9375,
+            "cta_slot": "none",
+            "whitespace_bias": 0.0825,
+            "slide_energy": 0.355,
+            "continuity_weight": 0.78,
+            "visual_pacing": 0.275
+          }
+        ],
+        "qa": {
+          "stage_fit": {
+            "score": 1,
+            "notes": [
+              "stage intent alignment",
+              "policy=Resonance",
+              "requested_policy=none"
+            ]
+          },
+          "readability": {
+            "score": 0.82,
+            "notes": [
+              "word and hook fit",
+              "threshold=0.84"
+            ]
+          },
+          "density": {
+            "score": 0.85,
+            "notes": [
+              "content density",
+              "policy_target=0.62"
+            ]
+          },
+          "emotional_coherence": {
+            "score": 0.84,
+            "notes": [
+              "tone tokens",
+              "presence",
+              "safe",
+              "permission",
+              "slow",
+              "support"
+            ]
+          },
+          "relationship_fit": {
+            "score": 0.94,
+            "notes": [
+              "objective continuity",
+              "target=0.94"
+            ]
+          },
+          "cta_appropriateness": {
+            "score": 1,
+            "notes": [
+              "policy ctas",
+              "none"
+            ]
+          },
+          "commercial_pressure": {
+            "score": 1,
+            "notes": [
+              "input intent",
+              "none",
+              "threshold=0.04"
+            ]
+          },
+          "saveability": {
+            "score": 0.75,
+            "notes": [
+              "reusability signals",
+              "soft retention language"
+            ]
+          },
+          "mobile_scanability": {
+            "score": 0.96,
+            "notes": [
+              "mobile chunking",
+              "max_words_per_line=6"
+            ]
+          },
+          "overall": 0.88
+        },
+        "validation": {
+          "passed": true,
+          "blocked": false,
+          "block_conditions": [],
+          "warnings": [
+            "monitor emotional drift across variants"
+          ]
+        }
+      }
+    },
+    {
+      "example_id": "render-qa-relief-004",
+      "source_backlog_item_id": "bl-baby-sleep-004",
+      "template": {
+        "template_id": "car-bl-baby-sleep-004-relief-v1",
+        "generated_by": "render-qa-service",
+        "generated_at": "2026-05-15T10:10:00.000Z",
+        "source_backlog_item_id": "bl-baby-sleep-004",
+        "source_attribution": {
+          "journey_stage_id": "stage-baby-relief",
+          "value_arc_id": "arc-baby-relief",
+          "journey_stage_label": "Relief",
+          "value_arc_label": "Immediate Relief",
+          "campaign_theme_id": "theme-baby-relief-utility",
+          "campaign_theme_label": "Practical relief"
+        },
+        "relationship_objective": "Relief",
+        "audience_state_before": "warming",
+        "audience_state_after": "warming",
+        "hook": "3 minutes that reduce 3 a.m. panic instead of creating a new routine to keep up with.",
+        "commercial_intent": "low",
+        "cta_policy": "save",
+        "emotional_tone": "practical",
+        "hook_direction": "quick utility",
+        "mobile_constraints": {
+          "max_word_per_line": 7,
+          "max_lines_per_slide": 6,
+          "max_slide_word_count": 24,
+          "recommended_word_per_slide": 18
+        },
+        "slides": [
+          {
+            "slide_index": 1,
+            "intent": "hook",
+            "copy": "3 minutes that reduce 3 a.m. panic instead of creating a new routine to keep up with.",
+            "copy_hierarchy": {
+              "headline": "Quick Relief",
+              "support_copy": "relief-focused opening",
+              "micro_copy": "immediate utility"
+            },
+            "visual_direction": "clean checklist layout with generous whitespace",
+            "visual": {
+              "composition": "clean checklist layout with generous whitespace",
+              "framing": "tight center subject, generous margins",
+              "mobile_safe": true,
+              "fatigue_risk": 0.18,
+              "notes": [
+                "mobile first",
+                "low visual load"
+              ]
+            },
+            "mobile_lines": [
+              "3 minutes that reduce",
+              "3 a.m. panic instead",
+              "of creating a",
+              "new routine",
+              "to keep up"
+            ],
+            "cta_position": "none",
+            "tone_markers": [
+              "relief-focused opening"
+            ],
+            "word_count": 17,
+            "visual_complexity": 0.772727,
+            "cta_slot": "none",
+            "whitespace_bias": 0.247273,
+            "slide_energy": 0.861818,
+            "continuity_weight": 0.22,
+            "visual_pacing": 0.458182
+          },
+          {
+            "slide_index": 2,
+            "intent": "utility_step",
+            "copy": "If your child is over stimulated, move to dim room. Lower noise. Use one phrase: breathe and reset.",
+            "copy_hierarchy": {
+              "headline": "What is happening",
+              "support_copy": "practical diagnosis",
+              "micro_copy": "immediate reset"
+            },
+            "visual_direction": "clean checklist layout with generous whitespace",
+            "visual": {
+              "composition": "clean checklist layout with generous whitespace",
+              "framing": "tight center subject, generous margins",
+              "mobile_safe": true,
+              "fatigue_risk": 0.16,
+              "notes": [
+                "mobile first",
+                "low visual load"
+              ]
+            },
+            "mobile_lines": [
+              "if your child is",
+              "over stimulated,",
+              "move to dim",
+              "room, lower noise",
+              "and breathe"
+            ],
+            "cta_position": "none",
+            "tone_markers": [
+              "practical diagnosis"
+            ],
+            "word_count": 18,
+            "visual_complexity": 0.818182,
+            "cta_slot": "none",
+            "whitespace_bias": 0.201818,
+            "slide_energy": 0.615455,
+            "continuity_weight": 0.45,
+            "visual_pacing": 0.454545
+          },
+          {
+            "slide_index": 3,
+            "intent": "utility_step",
+            "copy": "Step 1: pause the room. Step 2: lower stimulation. Step 3: repeat the same phrase and wait 8 minutes.",
+            "copy_hierarchy": {
+              "headline": "3-minute reset",
+              "support_copy": "simple action sequence",
+              "micro_copy": "repeatable routine"
+            },
+            "visual_direction": "clean checklist layout with generous whitespace",
+            "visual": {
+              "composition": "clean checklist layout with generous whitespace",
+              "framing": "tight center subject, generous margins",
+              "mobile_safe": true,
+              "fatigue_risk": 0.2,
+              "notes": [
+                "mobile first",
+                "low visual load"
+              ]
+            },
+            "mobile_lines": [
+              "step 1: pause the room.",
+              "step 2: lower stimulation.",
+              "step 3: repeat the same",
+              "phrase and wait 8",
+              "minutes"
+            ],
+            "cta_text": "Save this reset",
+            "cta_position": "inline",
+            "tone_markers": [
+              "simple action sequence"
+            ],
+            "word_count": 19,
+            "visual_complexity": 0.863636,
+            "cta_slot": "inline",
+            "whitespace_bias": 0.156364,
+            "slide_energy": 0.679091,
+            "continuity_weight": 0.45,
+            "visual_pacing": 0.510909
+          },
+          {
+            "slide_index": 4,
+            "intent": "summary",
+            "copy": "Try it for one night, then adjust only one variable.",
+            "copy_hierarchy": {
+              "headline": "Simple progression",
+              "support_copy": "conservative utility",
+              "micro_copy": "low friction next step"
+            },
+            "visual_direction": "clean checklist layout with generous whitespace",
+            "visual": {
+              "composition": "clean checklist layout with generous whitespace",
+              "framing": "tight center subject, generous margins",
+              "mobile_safe": true,
+              "fatigue_risk": 0.11,
+              "notes": [
+                "mobile first",
+                "low visual load"
+              ]
+            },
+            "mobile_lines": [
+              "try it for one night,",
+              "then adjust only one",
+              "variable"
+            ],
+            "cta_position": "none",
+            "tone_markers": [
+              "conservative utility"
+            ],
+            "word_count": 10,
+            "visual_complexity": 0.454545,
+            "cta_slot": "none",
+            "whitespace_bias": 0.565455,
+            "slide_energy": 0.316364,
+            "continuity_weight": 0.7,
+            "visual_pacing": 0.483636
+          }
+        ],
+        "qa": {
+          "stage_fit": {
+            "score": 0.84,
+            "notes": [
+              "stage intent alignment",
+              "policy=Relief",
+              "requested_policy=save"
+            ]
+          },
+          "readability": {
+            "score": 0.78,
+            "notes": [
+              "word and hook fit",
+              "threshold=0.76"
+            ]
+          },
+          "density": {
+            "score": 0.66,
+            "notes": [
+              "content density",
+              "policy_target=0.67"
+            ]
+          },
+          "emotional_coherence": {
+            "score": 0.8,
+            "notes": [
+              "tone tokens",
+              "small",
+              "quick",
+              "repeat",
+              "tonight",
+              "simple"
+            ]
+          },
+          "relationship_fit": {
+            "score": 0.84,
+            "notes": [
+              "objective continuity",
+              "target=0.84"
+            ]
+          },
+          "cta_appropriateness": {
+            "score": 0.84,
+            "notes": [
+              "policy ctas",
+              "none, save, follow, story"
+            ]
+          },
+          "commercial_pressure": {
+            "score": 0.89,
+            "notes": [
+              "input intent",
+              "low",
+              "threshold=0.12"
+            ]
+          },
+          "saveability": {
+            "score": 0.91,
+            "notes": [
+              "reusability signals",
+              "soft retention language"
+            ]
+          },
+          "mobile_scanability": {
+            "score": 0.92,
+            "notes": [
+              "mobile chunking",
+              "max_words_per_line=7"
+            ]
+          },
+          "overall": 0.84
+        },
+        "validation": {
+          "passed": true,
+          "blocked": false,
+          "block_conditions": [],
+          "warnings": [
+            "monitor Step 3 completion comments for actual utility uptake"
+          ]
+        }
+      }
+    },
+    {
+      "example_id": "render-qa-trust-008",
+      "source_backlog_item_id": "bl-baby-sleep-008",
+      "template": {
+        "template_id": "car-bl-baby-sleep-008-trust-v1",
+        "generated_by": "render-qa-service",
+        "generated_at": "2026-05-15T10:20:00.000Z",
+        "source_backlog_item_id": "bl-baby-sleep-008",
+        "source_attribution": {
+          "journey_stage_id": "stage-baby-trust",
+          "value_arc_id": "arc-baby-continuity",
+          "journey_stage_label": "Trust",
+          "value_arc_label": "Trust and Continuity",
+          "campaign_theme_id": "theme-baby-trust-proof",
+          "campaign_theme_label": "Proof-led competence"
+        },
+        "relationship_objective": "Trust",
+        "audience_state_before": "warming",
+        "audience_state_after": "engaged",
+        "hook": "What one family learned by changing one cue for 7 nights.",
+        "commercial_intent": "none",
+        "cta_policy": "story",
+        "emotional_tone": "reassuring",
+        "hook_direction": "competence by repeatability",
+        "mobile_constraints": {
+          "max_word_per_line": 7,
+          "max_lines_per_slide": 6,
+          "max_slide_word_count": 26,
+          "recommended_word_per_slide": 18
+        },
+        "slides": [
+          {
+            "slide_index": 1,
+            "intent": "hook",
+            "copy": "What one family learned by changing one cue for 7 nights.",
+            "copy_hierarchy": {
+              "headline": "Trust Signal",
+              "support_copy": "trust-first opening",
+              "micro_copy": "evidence direction"
+            },
+            "visual_direction": "evidence-first proof sequence with soft graph language",
+            "visual": {
+              "composition": "evidence-first proof sequence with soft graph language",
+              "framing": "tight center subject, generous margins",
+              "mobile_safe": true,
+              "fatigue_risk": 0.21,
+              "notes": [
+                "mobile first",
+                "low visual load"
+              ]
+            },
+            "mobile_lines": [
+              "what one family learned",
+              "by changing one cue",
+              "for 7 nights"
+            ],
+            "cta_position": "none",
+            "tone_markers": [
+              "trust-first opening"
+            ],
+            "word_count": 11,
+            "visual_complexity": 0.458333,
+            "cta_slot": "none",
+            "whitespace_bias": 0.571667,
+            "slide_energy": 0.836667,
+            "continuity_weight": 0.22,
+            "visual_pacing": 0.563333
+          },
+          {
+            "slide_index": 2,
+            "intent": "proof",
+            "copy": "One family kept everything the same and changed only wake timing. Results became calmer over repeated nights.",
+            "copy_hierarchy": {
+              "headline": "Pattern repeats",
+              "support_copy": "evidence-based proof",
+              "micro_copy": "continuity signal"
+            },
+            "visual_direction": "evidence-first proof sequence with soft graph language",
+            "visual": {
+              "composition": "evidence-first proof sequence with soft graph language",
+              "framing": "tight center subject, generous margins",
+              "mobile_safe": true,
+              "fatigue_risk": 0.2,
+              "notes": [
+                "mobile first",
+                "low visual load"
+              ]
+            },
+            "mobile_lines": [
+              "one family kept",
+              "everything the same",
+              "and changed only",
+              "wake timing",
+              "results softened"
+            ],
+            "cta_position": "none",
+            "tone_markers": [
+              "evidence-based proof"
+            ],
+            "word_count": 17,
+            "visual_complexity": 0.708333,
+            "cta_slot": "none",
+            "whitespace_bias": 0.321667,
+            "slide_energy": 0.556667,
+            "continuity_weight": 0.4,
+            "visual_pacing": 0.543333
+          },
+          {
+            "slide_index": 3,
+            "intent": "utility_step",
+            "copy": "If you are testing this, keep one stable routine for 7 nights before changing another variable.",
+            "copy_hierarchy": {
+              "headline": "Keep the sequence",
+              "support_copy": "consistency instruction",
+              "micro_copy": "reduce changes"
+            },
+            "visual_direction": "evidence-first proof sequence with soft graph language",
+            "visual": {
+              "composition": "evidence-first proof sequence with soft graph language",
+              "framing": "tight center subject, generous margins",
+              "mobile_safe": true,
+              "fatigue_risk": 0.18,
+              "notes": [
+                "mobile first",
+                "low visual load"
+              ]
+            },
+            "mobile_lines": [
+              "if you are testing this",
+              "keep one stable",
+              "routine for 7 nights",
+              "before changing",
+              "anything else"
+            ],
+            "cta_position": "none",
+            "tone_markers": [
+              "consistency instruction"
+            ],
+            "word_count": 16,
+            "visual_complexity": 0.666667,
+            "cta_slot": "none",
+            "whitespace_bias": 0.363333,
+            "slide_energy": 0.603333,
+            "continuity_weight": 0.45,
+            "visual_pacing": 0.546667
+          },
+          {
+            "slide_index": 4,
+            "intent": "continuity",
+            "copy": "Reply with results and what was stable; this lane will keep the same method and add support only when outcomes show up.",
+            "copy_hierarchy": {
+              "headline": "Relationship continuity",
+              "support_copy": "community continuity",
+              "micro_copy": "response invitation"
+            },
+            "visual_direction": "evidence-first proof sequence with soft graph language",
+            "visual": {
+              "composition": "evidence-first proof sequence with soft graph language",
+              "framing": "tight center subject, generous margins",
+              "mobile_safe": true,
+              "fatigue_risk": 0.16,
+              "notes": [
+                "mobile first",
+                "low visual load"
+              ]
+            },
+            "mobile_lines": [
+              "reply with results",
+              "and what was",
+              "stable; this lane",
+              "keeps the same",
+              "method"
+            ],
+            "cta_text": "Reply with results",
+            "cta_position": "inline",
+            "tone_markers": [
+              "community continuity"
+            ],
+            "word_count": 22,
+            "visual_complexity": 0.916667,
+            "cta_slot": "inline",
+            "whitespace_bias": 0.113333,
+            "slide_energy": 0.553333,
+            "continuity_weight": 1,
+            "visual_pacing": 0.586667
+          }
+        ],
+        "qa": {
+          "stage_fit": {
+            "score": 0.79,
+            "notes": [
+              "stage intent alignment",
+              "policy=Trust",
+              "requested_policy=story"
+            ]
+          },
+          "readability": {
+            "score": 0.74,
+            "notes": [
+              "word and hook fit",
+              "threshold=0.72"
+            ]
+          },
+          "density": {
+            "score": 0.69,
+            "notes": [
+              "content density",
+              "policy_target=0.72"
+            ]
+          },
+          "emotional_coherence": {
+            "score": 0.72,
+            "notes": [
+              "tone tokens",
+              "consistency",
+              "proof",
+              "repeat",
+              "routine",
+              "results"
+            ]
+          },
+          "relationship_fit": {
+            "score": 0.88,
+            "notes": [
+              "objective continuity",
+              "target=0.82"
+            ]
+          },
+          "cta_appropriateness": {
+            "score": 0.75,
+            "notes": [
+              "policy ctas",
+              "none, save, follow, story"
+            ]
+          },
+          "commercial_pressure": {
+            "score": 0.98,
+            "notes": [
+              "input intent",
+              "none",
+              "threshold=0.12"
+            ]
+          },
+          "saveability": {
+            "score": 0.89,
+            "notes": [
+              "reusability signals",
+              "soft retention language"
+            ]
+          },
+          "mobile_scanability": {
+            "score": 0.9,
+            "notes": [
+              "mobile chunking",
+              "max_words_per_line=7"
+            ]
+          },
+          "overall": 0.82
+        },
+        "validation": {
+          "passed": true,
+          "blocked": false,
+          "block_conditions": [],
+          "warnings": [
+            "watch for response quality from comments to avoid over-inviting"
+          ]
+        }
+      }
+    },
+    {
+      "example_id": "render-qa-lead-capture-012",
+      "source_backlog_item_id": "bl-baby-sleep-012",
+      "template": {
+        "template_id": "car-bl-baby-sleep-012-lead-v1",
+        "generated_by": "render-qa-service",
+        "generated_at": "2026-05-15T10:30:00.000Z",
+        "source_backlog_item_id": "bl-baby-sleep-012",
+        "source_attribution": {
+          "journey_stage_id": "stage-baby-lead-capture",
+          "value_arc_id": "arc-baby-continuity",
+          "journey_stage_label": "Lead Capture",
+          "value_arc_label": "Trust and Continuity",
+          "campaign_theme_id": "theme-baby-soft-collect",
+          "campaign_theme_label": "Lead with care"
+        },
+        "relationship_objective": "Lead Capture",
+        "audience_state_before": "engaged",
+        "audience_state_after": "engaged",
+        "hook": "If this sequence helped, here is a short printable starter guide you can use tonight.",
+        "commercial_intent": "low",
+        "cta_policy": "soft lead magnet",
+        "emotional_tone": "helpful",
+        "hook_direction": "downloadable value",
+        "mobile_constraints": {
+          "max_word_per_line": 8,
+          "max_lines_per_slide": 6,
+          "max_slide_word_count": 28,
+          "recommended_word_per_slide": 20
+        },
+        "slides": [
+          {
+            "slide_index": 1,
+            "intent": "hook",
+            "copy": "If this sequence helped, here is a short printable starter guide you can use tonight.",
+            "copy_hierarchy": {
+              "headline": "Need context check",
+              "support_copy": "value lead hook",
+              "micro_copy": "calm invitation"
+            },
+            "visual_direction": "soft offer framing with restrained CTA emphasis",
+            "visual": {
+              "composition": "soft offer framing with restrained CTA emphasis",
+              "framing": "tight center subject, generous margins",
+              "mobile_safe": true,
+              "fatigue_risk": 0.15,
+              "notes": [
+                "mobile first",
+                "low visual load"
+              ]
+            },
+            "mobile_lines": [
+              "if this sequence helped,",
+              "here is a short",
+              "printable starter guide",
+              "you can use",
+              "tonight"
+            ],
+            "cta_position": "none",
+            "tone_markers": [
+              "value lead hook"
+            ],
+            "word_count": 15,
+            "visual_complexity": 0.576923,
+            "cta_slot": "none",
+            "whitespace_bias": 0.453077,
+            "slide_energy": 0.846154,
+            "continuity_weight": 0.22,
+            "visual_pacing": 0.393846
+          },
+          {
+            "slide_index": 2,
+            "intent": "resource_offer",
+            "copy": "This printable guide includes a 5-minute routine and a simple notes template for the first two weeks.",
+            "copy_hierarchy": {
+              "headline": "Guide value",
+              "support_copy": "download value framing",
+              "micro_copy": "low-pressure utility"
+            },
+            "visual_direction": "soft offer framing with restrained CTA emphasis",
+            "visual": {
+              "composition": "soft offer framing with restrained CTA emphasis",
+              "framing": "tight center subject, generous margins",
+              "mobile_safe": true,
+              "fatigue_risk": 0.13,
+              "notes": [
+                "mobile first",
+                "low visual load"
+              ]
+            },
+            "mobile_lines": [
+              "this printable guide",
+              "includes a 5-minute",
+              "routine and a simple",
+              "notes template",
+              "for two weeks"
+            ],
+            "cta_position": "none",
+            "tone_markers": [
+              "download value framing"
+            ],
+            "word_count": 17,
+            "visual_complexity": 0.653846,
+            "cta_slot": "none",
+            "whitespace_bias": 0.376154,
+            "slide_energy": 0.402308,
+            "continuity_weight": 0.58,
+            "visual_pacing": 0.387692
+          },
+          {
+            "slide_index": 3,
+            "intent": "utility_step",
+            "copy": "It includes: calm reset script, 2-week notes, and one rhythm tracker you can keep in one place.",
+            "copy_hierarchy": {
+              "headline": "What the guide includes",
+              "support_copy": "clear resource map",
+              "micro_copy": "specific utility"
+            },
+            "visual_direction": "soft offer framing with restrained CTA emphasis",
+            "visual": {
+              "composition": "soft offer framing with restrained CTA emphasis",
+              "framing": "tight center subject, generous margins",
+              "mobile_safe": true,
+              "fatigue_risk": 0.12,
+              "notes": [
+                "mobile first",
+                "low visual load"
+              ]
+            },
+            "mobile_lines": [
+              "it includes:",
+              "calm reset script",
+              "2-week notes",
+              "and a rhythm",
+              "tracker you can keep"
+            ],
+            "cta_position": "none",
+            "tone_markers": [
+              "clear resource map"
+            ],
+            "word_count": 17,
+            "visual_complexity": 0.653846,
+            "cta_slot": "none",
+            "whitespace_bias": 0.376154,
+            "slide_energy": 0.602308,
+            "continuity_weight": 0.45,
+            "visual_pacing": 0.387692
+          },
+          {
+            "slide_index": 4,
+            "intent": "soft_invite",
+            "copy": "If useful, ask for it in comments as \"guide\" and I will send a quiet starter version.",
+            "copy_hierarchy": {
+              "headline": "Optional next step",
+              "support_copy": "low-friction capture",
+              "micro_copy": "permission-based ask"
+            },
+            "visual_direction": "soft offer framing with restrained CTA emphasis",
+            "visual": {
+              "composition": "soft offer framing with restrained CTA emphasis",
+              "framing": "tight center subject, generous margins",
+              "mobile_safe": true,
+              "fatigue_risk": 0.1,
+              "notes": [
+                "mobile first",
+                "low visual load"
+              ]
+            },
+            "mobile_lines": [
+              "if useful, ask for it",
+              "in comments as",
+              "\"guide\" and I",
+              "will send",
+              "a quiet starter"
+            ],
+            "cta_text": "Comment GUIDE",
+            "cta_position": "final",
+            "tone_markers": [
+              "low-friction capture"
+            ],
+            "word_count": 17,
+            "visual_complexity": 0.653846,
+            "cta_slot": "final",
+            "whitespace_bias": 0.376154,
+            "slide_energy": 0.592308,
+            "continuity_weight": 0.75,
+            "visual_pacing": 0.447692
+          }
+        ],
+        "qa": {
+          "stage_fit": {
+            "score": 0.82,
+            "notes": [
+              "stage intent alignment",
+              "policy=Lead Capture",
+              "requested_policy=soft_lead_magnet"
+            ]
+          },
+          "readability": {
+            "score": 0.71,
+            "notes": [
+              "word and hook fit",
+              "threshold=0.7"
+            ]
+          },
+          "density": {
+            "score": 0.65,
+            "notes": [
+              "content density",
+              "policy_target=0.64"
+            ]
+          },
+          "emotional_coherence": {
+            "score": 0.72,
+            "notes": [
+              "tone tokens",
+              "guide",
+              "download",
+              "quietly",
+              "optional",
+              "value-first"
+            ]
+          },
+          "relationship_fit": {
+            "score": 0.84,
+            "notes": [
+              "objective continuity",
+              "target=0.82"
+            ]
+          },
+          "cta_appropriateness": {
+            "score": 0.76,
+            "notes": [
+              "policy ctas",
+              "none, soft_lead, story, follow"
+            ]
+          },
+          "commercial_pressure": {
+            "score": 0.82,
+            "notes": [
+              "input intent",
+              "low",
+              "threshold=0.24"
+            ]
+          },
+          "saveability": {
+            "score": 0.88,
+            "notes": [
+              "reusability signals",
+              "soft retention language"
+            ]
+          },
+          "mobile_scanability": {
+            "score": 0.9,
+            "notes": [
+              "mobile chunking",
+              "max_words_per_line=8"
+            ]
+          },
+          "overall": 0.78
+        },
+        "validation": {
+          "passed": true,
+          "blocked": false,
+          "block_conditions": [],
+          "warnings": [
+            "if request volume spikes before trust consolidation, pause this CTA for 24h"
+          ]
+        }
+      }
+    }
+  ]
+}

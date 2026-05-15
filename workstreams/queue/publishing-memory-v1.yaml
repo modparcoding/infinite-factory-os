@@ -1,0 +1,39 @@
+workstream_id: "WS-PUB-002"
+title: "PublishingMemory v1"
+objective: "Create a replayable publishing memory calculation that derives deterministic pacing metrics from posting activity."
+scope: "packages/contracts, packages/policies, services/publishing-memory, tests/replay"
+allowed_files:
+  - "services/publishing-memory/src/index.ts"
+  - "services/publishing-memory/package.json"
+  - "packages/contracts/src/publishing-memory.ts"
+  - "tests/replay/publishing-memory.snapshots.json"
+  - "tests/replay/publishing-memory.failures.json"
+  - "tests/replay/publishing-memory.validation.result.json"
+forbidden_files:
+  - "services/delivery-runner/src/**"
+  - "tests/contracts/placeholder/**"
+dependencies:
+  - "WS-ATY-001"
+inputs:
+  - name: input.relationship_state_seed
+    required: true
+    description: "Publishing event history with deterministic event IDs."
+outputs:
+  - name: output.publishing_memory_v1_snapshot
+    required: true
+    description: "PublishingMemory v1 snapshot artifact."
+acceptance_criteria:
+  - "Machine-readable memory schema emits deterministic outputs"
+  - "Replay fixture can recreate the same snapshot every run"
+  - "No direct policy changes are embedded in calculation code"
+  - "Repetition risk and commercial density are deterministic"
+tests_required:
+  - "tests/contracts/publishing-memory.contract.test.ts"
+  - "tests/replay/publishing-memory.validation.result.json"
+risk_level: "medium"
+requires_human_review: true
+human_review_status: "resolved"
+replay_validation_result_file: "tests/replay/publishing-memory.validation.result.json"
+replay_validation_status: "passed"
+owner_agent: "relationship-agent"
+status: "completed"

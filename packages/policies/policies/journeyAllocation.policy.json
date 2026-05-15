@@ -1,0 +1,13 @@
+{
+  "policy_id": "journeyAllocation.v1",
+  "kind": "journey",
+  "scope": "AudienceJourney",
+  "requires_human_approval": true,
+  "rules": [
+    {
+      "when": "trust_level in [\"cold\",\"warming\"] and campaign_stage == \"new\"",
+      "then": "allocate_to_first_eligible_stage_and_limit_frequency"
+    }
+  ],
+  "changed_at": "2026-05-15"
+}

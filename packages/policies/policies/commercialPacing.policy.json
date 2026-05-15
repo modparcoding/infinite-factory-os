@@ -1,0 +1,13 @@
+{
+  "policy_id": "commercialPacing.v1",
+  "kind": "commercial",
+  "scope": "Monetization",
+  "requires_human_approval": true,
+  "rules": [
+    {
+      "when": "journey_stage == \"graduation\" && trust_level == \"trusting\"",
+      "then": "allow_offer_surface_level = 1"
+    }
+  ],
+  "changed_at": "2026-05-15"
+}

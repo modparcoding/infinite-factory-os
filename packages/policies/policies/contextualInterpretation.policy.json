@@ -1,0 +1,13 @@
+{
+  "policy_id": "contextualInterpretation.v1",
+  "kind": "interpretation",
+  "scope": "PerformanceInterpretation",
+  "requires_human_approval": true,
+  "rules": [
+    {
+      "when": "engagement_drop_after_campaign_change",
+      "then": "deprioritize_posting_sequence_for_24h_and_open_review"
+    }
+  ],
+  "changed_at": "2026-05-15"
+}

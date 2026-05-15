@@ -1,0 +1,31 @@
+[
+  {
+    "case_id": "RLS-BABY-FAIL-001",
+    "input": {
+      "relationship_id": "rel-baby-sleep-001",
+      "campaign_id": "cmp-baby-sleep",
+      "journey_id": "",
+      "memory_id": "pm-baby-001",
+      "trust_score": 0.5,
+      "commercial_density": 0.2,
+      "repetition_risk": 0.2,
+      "journey_stage_ratio": 0.4
+    },
+    "expected_failure": "at least 3"
+  },
+  {
+    "case_id": "RLS-BABY-FAIL-TRANSITION-001",
+    "input": {
+      "relationship_id": "rel-baby-sleep-002",
+      "campaign_id": "cmp-baby-sleep",
+      "journey_id": "journey-baby-sleep",
+      "memory_id": "pm-baby-transition-001",
+      "trust_score": 0.05,
+      "commercial_density": 0.1,
+      "repetition_risk": 0.2,
+      "journey_stage_ratio": 0.3,
+      "previous_trust_level": "trusting"
+    },
+    "expected_failure": "invalid_trust_transition"
+  }
+]

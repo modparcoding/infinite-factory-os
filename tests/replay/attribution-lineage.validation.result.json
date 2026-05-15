@@ -1,0 +1,174 @@
+{
+  "workstream_id": "WS-ATY-001",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "attribution-case-ATY-BABY-PROOF-001",
+      "passed": true,
+      "notes": [
+        "chain-baby-sleep-proof-001::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-empathy-bridge::bl-baby-sleep-001::asset-baby-sleep-001::post-baby-sleep-001::perf-baby-sleep-001"
+      ]
+    },
+    {
+      "name": "attribution-case-ATY-BABY-PROOF-002",
+      "passed": true,
+      "notes": [
+        "chain-baby-sleep-proof-002::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-empathy-bridge::bl-baby-sleep-002::asset-baby-sleep-002::post-baby-sleep-002::perf-baby-sleep-002"
+      ]
+    },
+    {
+      "name": "attribution-case-ATY-BABY-PROOF-003",
+      "passed": true,
+      "notes": [
+        "chain-baby-sleep-proof-003::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-empathy-bridge::bl-baby-sleep-003::asset-baby-sleep-003::post-baby-sleep-003::perf-baby-sleep-003"
+      ]
+    },
+    {
+      "name": "attribution-case-ATY-BABY-PROOF-004",
+      "passed": true,
+      "notes": [
+        "chain-baby-sleep-proof-004::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-relief-utility::bl-baby-sleep-004::asset-baby-sleep-004::post-baby-sleep-004::perf-baby-sleep-004"
+      ]
+    },
+    {
+      "name": "attribution-case-ATY-BABY-PROOF-005",
+      "passed": true,
+      "notes": [
+        "chain-baby-sleep-proof-005::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-relief-utility::bl-baby-sleep-005::asset-baby-sleep-005::post-baby-sleep-005::perf-baby-sleep-005"
+      ]
+    },
+    {
+      "name": "attribution-case-ATY-BABY-PROOF-006",
+      "passed": true,
+      "notes": [
+        "chain-baby-sleep-proof-006::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-relief-utility::bl-baby-sleep-006::asset-baby-sleep-006::post-baby-sleep-006::perf-baby-sleep-006"
+      ]
+    },
+    {
+      "name": "attribution-case-ATY-BABY-PROOF-007",
+      "passed": true,
+      "notes": [
+        "chain-baby-sleep-proof-007::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-relief-utility::bl-baby-sleep-007::asset-baby-sleep-007::post-baby-sleep-007::perf-baby-sleep-007"
+      ]
+    },
+    {
+      "name": "attribution-case-ATY-BABY-PROOF-008",
+      "passed": true,
+      "notes": [
+        "chain-baby-sleep-proof-008::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-trust-proof::bl-baby-sleep-008::asset-baby-sleep-008::post-baby-sleep-008::perf-baby-sleep-008"
+      ]
+    },
+    {
+      "name": "attribution-case-ATY-BABY-PROOF-009",
+      "passed": true,
+      "notes": [
+        "chain-baby-sleep-proof-009::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-trust-proof::bl-baby-sleep-009::asset-baby-sleep-009::post-baby-sleep-009::perf-baby-sleep-009"
+      ]
+    },
+    {
+      "name": "attribution-case-ATY-BABY-PROOF-010",
+      "passed": true,
+      "notes": [
+        "chain-baby-sleep-proof-010::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-trust-proof::bl-baby-sleep-010::asset-baby-sleep-010::post-baby-sleep-010::perf-baby-sleep-010"
+      ]
+    },
+    {
+      "name": "attribution-case-ATY-BABY-PROOF-011",
+      "passed": true,
+      "notes": [
+        "chain-baby-sleep-proof-011::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-trust-proof::bl-baby-sleep-011::asset-baby-sleep-011::post-baby-sleep-011::perf-baby-sleep-011"
+      ]
+    },
+    {
+      "name": "attribution-case-ATY-BABY-PROOF-012",
+      "passed": true,
+      "notes": [
+        "chain-baby-sleep-proof-012::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-soft-collect::bl-baby-sleep-012::asset-baby-sleep-012::post-baby-sleep-012::perf-baby-sleep-012"
+      ]
+    },
+    {
+      "name": "attribution-case-ATY-BABY-PROOF-013",
+      "passed": true,
+      "notes": [
+        "chain-baby-sleep-proof-013::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-soft-collect::bl-baby-sleep-013::asset-baby-sleep-013::post-baby-sleep-013::perf-baby-sleep-013"
+      ]
+    },
+    {
+      "name": "attribution-case-ATY-BABY-PROOF-014",
+      "passed": true,
+      "notes": [
+        "chain-baby-sleep-proof-014::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-soft-collect::bl-baby-sleep-014::asset-baby-sleep-014::post-baby-sleep-014::perf-baby-sleep-014"
+      ]
+    },
+    {
+      "name": "attribution-case-ATY-BABY-PROOF-015",
+      "passed": true,
+      "notes": [
+        "chain-baby-sleep-proof-015::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-careful-commercial::bl-baby-sleep-015::asset-baby-sleep-015::post-baby-sleep-015::perf-baby-sleep-015"
+      ]
+    },
+    {
+      "name": "attribution-case-ATY-BABY-PROOF-016",
+      "passed": true,
+      "notes": [
+        "chain-baby-sleep-proof-016::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-careful-commercial::bl-baby-sleep-016::asset-baby-sleep-016::post-baby-sleep-016::perf-baby-sleep-016"
+      ]
+    },
+    {
+      "name": "attribution-case-ATY-BABY-PROOF-017",
+      "passed": true,
+      "notes": [
+        "chain-baby-sleep-proof-017::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-soft-collect::bl-baby-sleep-017::asset-baby-sleep-017::post-baby-sleep-017::perf-baby-sleep-017"
+      ]
+    },
+    {
+      "name": "attribution-case-ATY-BABY-PROOF-018",
+      "passed": true,
+      "notes": [
+        "chain-baby-sleep-proof-018::journey-baby-sleep-parenting::stage-baby-resonance::arc-baby-continuity::cmp-baby-sleep-tiny-wins::theme-baby-soft-collect::bl-baby-sleep-018::asset-baby-sleep-018::post-baby-sleep-018::perf-baby-sleep-018"
+      ]
+    },
+    {
+      "name": "attribution-failure-ATY-BABY-002",
+      "passed": true,
+      "notes": [
+        "journey_stages"
+      ]
+    },
+    {
+      "name": "attribution-failure-ATY-BABY-002A",
+      "passed": true,
+      "notes": [
+        "backlog_item"
+      ]
+    },
+    {
+      "name": "attribution-failure-ATY-BABY-002B",
+      "passed": true,
+      "notes": [
+        "Attribution seed validation failed: campaign_theme_mismatch"
+      ]
+    },
+    {
+      "name": "attribution-failure-ATY-BABY-002C",
+      "passed": true,
+      "notes": [
+        "Attribution seed validation failed: arc_campaign_mismatch"
+      ]
+    },
+    {
+      "name": "attribution-failure-ATY-BABY-002D",
+      "passed": true,
+      "notes": [
+        "Attribution seed validation failed: duplicate_entity_id_detected"
+      ]
+    },
+    {
+      "name": "attribution-failure-ATY-BABY-002E",
+      "passed": true,
+      "notes": [
+        "Attribution seed validation failed: duplicate_entity_id_detected,duplicate_published_post_lineage"
+      ]
+    }
+  ]
+}
