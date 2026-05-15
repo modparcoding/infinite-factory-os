@@ -12,3 +12,10 @@ Required fixture categories:
 - RelationshipState snapshots
 - engagement replay examples
 - attribution lineage replay
+- rendering-capability baseline replay
+- rendering-capability archetype replay
+- rendering-capability visual-state replay
+- rendering-capability token replay
+- rendering-capability bounded-edit replay
+- rendering-capability export-manifest replay
+- rendering-capability mutation fixture

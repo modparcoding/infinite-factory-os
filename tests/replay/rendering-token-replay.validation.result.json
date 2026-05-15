@@ -1,0 +1,27 @@
+{
+  "workstream_id": "WS-RENDERING-TOKEN",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "render-token-baseline-token-default-consistency",
+      "passed": true,
+      "notes": [
+        "contract=render::bl-baby-sleep-008::trust::4::sig::__version___rendering_capability_v1_0_0___stage___trust___constraints____width__8__lines__6__ratio__"
+      ]
+    },
+    {
+      "name": "render-token-mutate-token-default-consistency",
+      "passed": true,
+      "notes": [
+        "whitespace_rhythm_failure"
+      ]
+    },
+    {
+      "name": "render-token-baseline-token-contrast-degeneration",
+      "passed": true,
+      "notes": [
+        "contract=render::bl-baby-sleep-004::relief::4::sig::__version___rendering_capability_v1_0_0___stage___relief___constraints____width__8__lines__6__ratio_"
+      ]
+    }
+  ]
+}

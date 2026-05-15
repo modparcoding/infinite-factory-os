@@ -1,5 +1,11 @@
 # Runbook: Onboarding a New Workstream
 
+Start every session by running:
+
+- `review docs/project-memory.md`
+
+and treat it as the canonical source of truth before proceeding.
+
 1. Create workstream file in `workstreams/queue` using the template.
 2. Keep scope to one service and approved files.
 3. Include explicit dependencies and acceptance criteria.

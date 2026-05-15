@@ -1,0 +1,91 @@
+{
+  "workstream_id": "WS-RENDERING-MUTATION",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "render-mutation-mutation-overflow-text-wrap",
+      "passed": true,
+      "notes": [
+        "mobile_unreadability"
+      ]
+    },
+    {
+      "name": "render-mutation-mutation-density-collapse",
+      "passed": true,
+      "notes": [
+        "excessive_density|weak_distinctiveness"
+      ]
+    },
+    {
+      "name": "render-mutation-mutation-hierarchy-collapse",
+      "passed": true,
+      "notes": [
+        "typography_hierarchy_collapse"
+      ]
+    },
+    {
+      "name": "render-mutation-mutation-cta-overload",
+      "passed": true,
+      "notes": [
+        "cta_pressure_too_high"
+      ]
+    },
+    {
+      "name": "render-mutation-mutation-commercial-mismatch",
+      "passed": true,
+      "notes": [
+        "cta_pressure_too_high"
+      ]
+    },
+    {
+      "name": "render-mutation-mutation-whitespace-failure",
+      "passed": true,
+      "notes": [
+        "unsafe_clipping"
+      ]
+    },
+    {
+      "name": "render-mutation-mutation-contrast-failure",
+      "passed": true,
+      "notes": [
+        "contrast_failure"
+      ]
+    },
+    {
+      "name": "render-mutation-mutation-invalid-archetype-mapping",
+      "passed": true,
+      "notes": [
+        "render_id=render::bl-baby-sleep-004::relief::4::sig::__version___rendering_capability_v1_0_0___stage___relief___constraints____width__8__lines__6__ratio_",
+        "findings=template_inconsistency"
+      ]
+    },
+    {
+      "name": "render-mutation-mutation-invalid-token-profile",
+      "passed": true,
+      "notes": [
+        "failure=true"
+      ]
+    },
+    {
+      "name": "render-mutation-mutation-invalid-visual-state",
+      "passed": true,
+      "notes": [
+        "failure=true"
+      ]
+    },
+    {
+      "name": "render-mutation-mutation-replay-reconstruction-mismatch",
+      "passed": true,
+      "notes": [
+        "reconstruction_mismatch"
+      ]
+    },
+    {
+      "name": "render-mutation-mutation-non-deterministic-edit-sequence",
+      "passed": true,
+      "notes": [
+        "template_inconsistency"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "fixture_id": "RC-V1-VISUAL-001",
+  "scenario": "Visual-state replay and determinism",
+  "cases": [
+    {
+      "case_id": "visual-low-intensity",
+      "input": {
+        "asset_type": "carousel",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "backlog_item_id": "bl-baby-sleep-004",
+        "brand_identity_id": "bi-baby-sleep-relief",
+        "content_policy_id": "policy-baby-relief",
+        "journey_stage": "Relief",
+        "slides": [
+          {
+            "slide_index": 1,
+            "content_archetype": "hook_headline",
+            "headline": "Keep your room and your rhythm calm",
+            "body": "A low intensity design supports a calm first pass.",
+            "tone_tags": ["calm", "low"]
+          },
+          {
+            "slide_index": 2,
+            "content_archetype": "pain_problem",
+            "headline": "Overthinking creates noise",
+            "body": "Small changes keep cognitive load predictable."
+          },
+          {
+            "slide_index": 3,
+            "content_archetype": "comparison_before_after",
+            "headline": "Before and after this cue",
+            "body": "A calmer body response starts before the second wake."
+          }
+        ],
+        "cta_policy": "save",
+        "visual_direction": "low energy and generous white space",
+        "format_constraints": {
+          "aspect_ratio": "4:5",
+          "safe_margins": {
+            "top": 0.08,
+            "right": 0.06,
+            "bottom": 0.08,
+            "left": 0.06
+          },
+          "max_word_per_line": 7,
+          "max_lines_per_slide": 6,
+          "min_slide_count": 3,
+          "max_slide_count": 8
+        },
+        "visual_state": {
+          "visual_intensity": 0.22,
+          "density_profile": 0.28,
+          "emotional_temperature": 0.45,
+          "cognitive_load_target": 4,
+          "trust_visual_mode": "supportive",
+          "motion_expectation": "none"
+        },
+        "design_tokens_profile": {
+          "profile_id": "rcv1-vis-low",
+          "whitespace_bias": 0.62,
+          "spacing_scale": {
+            "section_gap": 0.26,
+            "content_gap": 0.2,
+            "element_gap": 0.12,
+            "rhythm_step": 0.08
+          },
+          "typography_hierarchy": {
+            "heading_scale": 1,
+            "support_scale": 0.84,
+            "micro_scale": 0.68,
+            "line_height": 1.34
+          },
+          "safe_zones": {
+            "horizontal_buffer_ratio": 0.08,
+            "vertical_buffer_ratio": 0.09
+          },
+          "contrast_policy": {
+            "minimum_ratio": 4.5,
+            "heading_boost_ratio": 7,
+            "body_ratio": 4.8
+          },
+          "hierarchy_weights": {
+            "heading": 0.5,
+            "support": 0.32,
+            "micro": 0.18
+          },
+          "container_padding_rules": {
+            "compact": 0.06,
+            "normal": 0.09,
+            "generous": 0.11
+          },
+          "emphasis_color_policy": {
+            "primary_alpha": 0.82,
+            "support_alpha": 0.6,
+            "cta_alpha": 0.72
+          }
+        }
+      }
+    },
+    {
+      "case_id": "visual-high-intensity",
+      "input": {
+        "asset_type": "carousel",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "backlog_item_id": "bl-baby-sleep-004",
+        "brand_identity_id": "bi-baby-sleep-relief",
+        "content_policy_id": "policy-baby-relief",
+        "journey_stage": "Relief",
+        "slides": [
+          {
+            "slide_index": 1,
+            "content_archetype": "hook_headline",
+            "headline": "Keep your room and your rhythm calm",
+            "body": "A low intensity design supports a calm first pass.",
+            "tone_tags": ["calm", "low"]
+          },
+          {
+            "slide_index": 2,
+            "content_archetype": "pain_problem",
+            "headline": "Overthinking creates noise",
+            "body": "Small changes keep cognitive load predictable."
+          },
+          {
+            "slide_index": 3,
+            "content_archetype": "comparison_before_after",
+            "headline": "Before and after this cue",
+            "body": "A calmer body response starts before the second wake."
+          }
+        ],
+        "cta_policy": "save",
+        "visual_direction": "high energy and compact guidance",
+        "format_constraints": {
+          "aspect_ratio": "4:5",
+          "safe_margins": {
+            "top": 0.08,
+            "right": 0.06,
+            "bottom": 0.08,
+            "left": 0.06
+          },
+          "max_word_per_line": 7,
+          "max_lines_per_slide": 6,
+          "min_slide_count": 3,
+          "max_slide_count": 8
+        },
+        "visual_state": {
+          "visual_intensity": 0.68,
+          "density_profile": 0.6,
+          "emotional_temperature": 0.6,
+          "cognitive_load_target": 5,
+          "trust_visual_mode": "directive",
+          "motion_expectation": "subtle"
+        },
+        "design_tokens_profile": {
+          "profile_id": "rcv1-vis-high",
+          "whitespace_bias": 0.46,
+          "spacing_scale": {
+            "section_gap": 0.22,
+            "content_gap": 0.18,
+            "element_gap": 0.1,
+            "rhythm_step": 0.08
+          },
+          "typography_hierarchy": {
+            "heading_scale": 1,
+            "support_scale": 0.84,
+            "micro_scale": 0.68,
+            "line_height": 1.34
+          },
+          "safe_zones": {
+            "horizontal_buffer_ratio": 0.08,
+            "vertical_buffer_ratio": 0.09
+          },
+          "contrast_policy": {
+            "minimum_ratio": 4.5,
+            "heading_boost_ratio": 7,
+            "body_ratio": 4.8
+          },
+          "hierarchy_weights": {
+            "heading": 0.5,
+            "support": 0.32,
+            "micro": 0.18
+          },
+          "container_padding_rules": {
+            "compact": 0.06,
+            "normal": 0.09,
+            "generous": 0.11
+          },
+          "emphasis_color_policy": {
+            "primary_alpha": 0.82,
+            "support_alpha": 0.6,
+            "cta_alpha": 0.72
+          }
+        }
+      },
+      "expected_relative_shift": {
+        "spacing_bias": "lower_than_baseline"
+      }
+      ,
+      "compare_to_case_id": "visual-low-intensity"
+    }
+  ]
+}

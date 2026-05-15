@@ -1,0 +1,41 @@
+{
+  "workstream_id": "WS-RENDERING-VISUAL",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "render-visual-visual-low-intensity",
+      "passed": true,
+      "notes": [
+        "spacing=0.7136"
+      ]
+    },
+    {
+      "name": "render-visual-reconstruct-visual-low-intensity",
+      "passed": true,
+      "notes": [
+        "replay=true"
+      ]
+    },
+    {
+      "name": "render-visual-visual-high-intensity",
+      "passed": true,
+      "notes": [
+        "spacing=0.4976"
+      ]
+    },
+    {
+      "name": "render-visual-reconstruct-visual-high-intensity",
+      "passed": true,
+      "notes": [
+        "replay=true"
+      ]
+    },
+    {
+      "name": "render-visual-shift-visual-high-intensity",
+      "passed": true,
+      "notes": [
+        "lhs=0.4976 rhs=0.7136"
+      ]
+    }
+  ]
+}

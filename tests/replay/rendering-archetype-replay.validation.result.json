@@ -1,0 +1,22 @@
+{
+  "workstream_id": "WS-RENDERING-ARCHETYPE",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "render-archetype-archetype-swap-template",
+      "passed": true,
+      "notes": [
+        "render::bl-baby-sleep-004::relief::4::sig::__version___rendering_capability_v1_0_0___stage___relief___constraints____width__8__lines__6__ratio_",
+        "archetypes=progressive_checklist,layered_framework,stacked_story,split_comparison"
+      ]
+    },
+    {
+      "name": "render-archetype-archetype-change-layout-variant",
+      "passed": true,
+      "notes": [
+        "render::bl-baby-sleep-004::relief::4::sig::__version___rendering_capability_v1_0_0___stage___relief___constraints____width__8__lines__6__ratio_",
+        "archetypes=centered_hook,split_comparison,before_after,layered_framework"
+      ]
+    }
+  ]
+}

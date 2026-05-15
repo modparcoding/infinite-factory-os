@@ -1,0 +1,1256 @@
+{
+  "fixture_id": "RC-V1-MUTATION-001",
+  "scenario": "Rendering mutation coverage",
+  "cases": [
+    {
+      "case_id": "mutation-overflow-text-wrap",
+      "mutation_category": "overflow",
+      "input": {
+        "asset_type": "carousel",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "backlog_item_id": "bl-baby-sleep-004",
+        "brand_identity_id": "bi-baby-sleep-relief",
+        "content_policy_id": "policy-baby-relief",
+        "journey_stage": "Relief",
+        "slides": [
+          {
+            "slide_index": 1,
+            "content_archetype": "hook_headline",
+            "headline": "This headline is intentionally too dense for its constraints",
+            "body": "Words keep running long and they should overflow if line limits are set to a very strict value."
+          },
+          {
+            "slide_index": 2,
+            "content_archetype": "pain_problem",
+            "headline": "Long lines create overflow risk quickly",
+            "body": "If line wrapping is too strict this should show a hard text overflow warning every time it runs."
+          }
+        ],
+        "cta_policy": "save",
+        "visual_direction": "overflow stress test",
+        "format_constraints": {
+          "aspect_ratio": "4:5",
+          "safe_margins": {
+            "top": 0.08,
+            "right": 0.06,
+            "bottom": 0.08,
+            "left": 0.06
+          },
+          "max_word_per_line": 4,
+          "max_lines_per_slide": 3,
+          "min_slide_count": 3,
+          "max_slide_count": 8
+        },
+        "visual_state": {
+          "visual_intensity": 0.38,
+          "density_profile": 0.42,
+          "emotional_temperature": 0.52,
+          "cognitive_load_target": 5,
+          "trust_visual_mode": "supportive",
+          "motion_expectation": "none"
+        },
+        "design_tokens_profile": {
+          "profile_id": "rcv1-mutation-overflow",
+          "whitespace_bias": 0.58,
+          "spacing_scale": {
+            "section_gap": 0.28,
+            "content_gap": 0.2,
+            "element_gap": 0.12,
+            "rhythm_step": 0.08
+          },
+          "typography_hierarchy": {
+            "heading_scale": 1,
+            "support_scale": 0.84,
+            "micro_scale": 0.68,
+            "line_height": 1.34
+          },
+          "safe_zones": {
+            "horizontal_buffer_ratio": 0.08,
+            "vertical_buffer_ratio": 0.09
+          },
+          "contrast_policy": {
+            "minimum_ratio": 4.5,
+            "heading_boost_ratio": 7,
+            "body_ratio": 4.8
+          },
+          "hierarchy_weights": {
+            "heading": 0.48,
+            "support": 0.34,
+            "micro": 0.18
+          },
+          "container_padding_rules": {
+            "compact": 0.06,
+            "normal": 0.09,
+            "generous": 0.12
+          },
+          "emphasis_color_policy": {
+            "primary_alpha": 0.82,
+            "support_alpha": 0.6,
+            "cta_alpha": 0.72
+          }
+        }
+      },
+      "expected_finding_codes": ["mobile_unreadability"]
+    },
+    {
+      "case_id": "mutation-density-collapse",
+      "mutation_category": "density_collapse",
+      "input": {
+        "asset_type": "carousel",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "backlog_item_id": "bl-baby-sleep-004",
+        "brand_identity_id": "bi-baby-sleep-relief",
+        "content_policy_id": "policy-baby-relief",
+        "journey_stage": "Relief",
+        "slides": [
+          {
+            "slide_index": 1,
+            "content_archetype": "hook_headline",
+            "headline": "Same word same word",
+            "body": "repeat repeat repeat"
+          },
+          {
+            "slide_index": 2,
+            "content_archetype": "pain_problem",
+            "headline": "same word same word",
+            "body": "repeat repeat repeat"
+          },
+          {
+            "slide_index": 3,
+            "content_archetype": "checklist_steps",
+            "headline": "same word same word",
+            "body": "repeat repeat repeat"
+          },
+          {
+            "slide_index": 4,
+            "content_archetype": "cta_next_step",
+            "headline": "same word same word",
+            "body": "repeat repeat repeat",
+            "cta_position": "inline",
+            "cta_text": "SAVE"
+          }
+        ],
+        "cta_policy": "story",
+        "visual_direction": "density collapse",
+        "format_constraints": {
+          "aspect_ratio": "4:5",
+          "safe_margins": {
+            "top": 0.08,
+            "right": 0.06,
+            "bottom": 0.08,
+            "left": 0.06
+          },
+          "max_word_per_line": 8,
+          "max_lines_per_slide": 6,
+          "min_slide_count": 3,
+          "max_slide_count": 10
+        },
+        "visual_state": {
+          "visual_intensity": 0.44,
+          "density_profile": 0.52,
+          "emotional_temperature": 0.54,
+          "cognitive_load_target": 5,
+          "trust_visual_mode": "supportive",
+          "motion_expectation": "none"
+        },
+        "design_tokens_profile": {
+          "profile_id": "rcv1-mutation-density",
+          "whitespace_bias": 0.72,
+          "spacing_scale": {
+            "section_gap": 0.28,
+            "content_gap": 0.2,
+            "element_gap": 0.12,
+            "rhythm_step": 0.08
+          },
+          "typography_hierarchy": {
+            "heading_scale": 1,
+            "support_scale": 0.84,
+            "micro_scale": 0.68,
+            "line_height": 1.34
+          },
+          "safe_zones": {
+            "horizontal_buffer_ratio": 0.08,
+            "vertical_buffer_ratio": 0.09
+          },
+          "contrast_policy": {
+            "minimum_ratio": 4.5,
+            "heading_boost_ratio": 7,
+            "body_ratio": 4.8
+          },
+          "hierarchy_weights": {
+            "heading": 0.5,
+            "support": 0.32,
+            "micro": 0.18
+          },
+          "container_padding_rules": {
+            "compact": 0.06,
+            "normal": 0.09,
+            "generous": 0.11
+          },
+          "emphasis_color_policy": {
+            "primary_alpha": 0.82,
+            "support_alpha": 0.6,
+            "cta_alpha": 0.72
+          }
+        }
+      },
+      "expected_finding_codes": ["excessive_density"]
+    },
+    {
+      "case_id": "mutation-hierarchy-collapse",
+      "mutation_category": "hierarchy_collapse",
+      "input": {
+        "asset_type": "carousel",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "backlog_item_id": "bl-baby-sleep-004",
+        "brand_identity_id": "bi-baby-sleep-relief",
+        "content_policy_id": "policy-baby-relief",
+        "journey_stage": "Trust",
+        "slides": [
+          {
+            "slide_index": 1,
+            "content_archetype": "hook_headline",
+            "headline": "Weak headline should collapse hierarchy",
+            "body": "This is a single clear sentence for testing hierarchy."
+          },
+          {
+            "slide_index": 2,
+            "content_archetype": "quote_affirmation",
+            "headline": "Hierarchy collapse test",
+            "body": "A balanced hierarchy should stay visible even in edge cases."
+          },
+          {
+            "slide_index": 3,
+            "content_archetype": "cta_next_step",
+            "headline": "Try hierarchy probe",
+            "body": "Take a minimal action and keep the cadence.",
+            "cta_position": "final",
+            "cta_text": "SAVE"
+          }
+        ],
+        "cta_policy": "save",
+        "visual_direction": "hierarchy stress test",
+        "format_constraints": {
+          "aspect_ratio": "4:5",
+          "safe_margins": {
+            "top": 0.08,
+            "right": 0.06,
+            "bottom": 0.08,
+            "left": 0.06
+          },
+          "max_word_per_line": 8,
+          "max_lines_per_slide": 6,
+          "min_slide_count": 3,
+          "max_slide_count": 10
+        },
+        "visual_state": {
+          "visual_intensity": 0.48,
+          "density_profile": 0.52,
+          "emotional_temperature": 0.55,
+          "cognitive_load_target": 5,
+          "trust_visual_mode": "neutral",
+          "motion_expectation": "none"
+        },
+        "design_tokens_profile": {
+          "profile_id": "rcv1-mutation-hierarchy",
+          "whitespace_bias": 0.5,
+          "spacing_scale": {
+            "section_gap": 0.28,
+            "content_gap": 0.2,
+            "element_gap": 0.12,
+            "rhythm_step": 0.08
+          },
+          "typography_hierarchy": {
+            "heading_scale": 1,
+            "support_scale": 0.84,
+            "micro_scale": 0.68,
+            "line_height": 1.34
+          },
+          "safe_zones": {
+            "horizontal_buffer_ratio": 0.08,
+            "vertical_buffer_ratio": 0.09
+          },
+          "contrast_policy": {
+            "minimum_ratio": 4.5,
+            "heading_boost_ratio": 7,
+            "body_ratio": 4.8
+          },
+          "hierarchy_weights": {
+            "heading": 0.01,
+            "support": 0.67,
+            "micro": 0.32
+          },
+          "container_padding_rules": {
+            "compact": 0.06,
+            "normal": 0.09,
+            "generous": 0.11
+          },
+          "emphasis_color_policy": {
+            "primary_alpha": 0.82,
+            "support_alpha": 0.6,
+            "cta_alpha": 0.72
+          }
+        }
+      },
+      "expected_finding_codes": ["typography_hierarchy_collapse"]
+    },
+    {
+      "case_id": "mutation-cta-overload",
+      "mutation_category": "cta_overload",
+      "input": {
+        "asset_type": "carousel",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "backlog_item_id": "bl-baby-sleep-004",
+        "brand_identity_id": "bi-baby-sleep-relief",
+        "content_policy_id": "policy-baby-relief",
+        "journey_stage": "Relief",
+        "slides": [
+          {
+            "slide_index": 1,
+            "content_archetype": "hook_headline",
+            "headline": "CTA overload should be clear",
+            "body": "This test pushes CTA pressure by adding too many actions.",
+            "cta_position": "final",
+            "cta_text": "Start"
+          },
+          {
+            "slide_index": 2,
+            "content_archetype": "pain_problem",
+            "headline": "CTA overload should be clear",
+            "body": "Adding repeated action prompts reduces trust pressure.",
+            "cta_position": "inline",
+            "cta_text": "Try"
+          },
+          {
+            "slide_index": 3,
+            "content_archetype": "comparison_before_after",
+            "headline": "Second pass",
+            "body": "Too many prompts in one lane should stay bounded.",
+            "cta_position": "top",
+            "cta_text": "Save"
+          },
+          {
+            "slide_index": 4,
+            "content_archetype": "checklist_steps",
+            "headline": "Still pressing",
+            "body": "Add one more cta to push pressure.",
+            "cta_position": "inline",
+            "cta_text": "Comment"
+          },
+          {
+            "slide_index": 5,
+            "content_archetype": "quote_affirmation",
+            "headline": "One more prompt",
+            "body": "Keep it readable despite pressure.",
+            "cta_position": "final",
+            "cta_text": "Action"
+          },
+          {
+            "slide_index": 6,
+            "content_archetype": "cta_next_step",
+            "headline": "Last prompt",
+            "body": "The lane should report CTA pressure tolerance.",
+            "cta_position": "inline",
+            "cta_text": "Done"
+          }
+        ],
+        "cta_policy": "direct",
+        "visual_direction": "cta pressure test",
+        "format_constraints": {
+          "aspect_ratio": "4:5",
+          "safe_margins": {
+            "top": 0.08,
+            "right": 0.06,
+            "bottom": 0.08,
+            "left": 0.06
+          },
+          "max_word_per_line": 8,
+          "max_lines_per_slide": 6,
+          "min_slide_count": 3,
+          "max_slide_count": 10
+        },
+        "visual_state": {
+          "visual_intensity": 0.42,
+          "density_profile": 0.46,
+          "emotional_temperature": 0.55,
+          "cognitive_load_target": 5,
+          "trust_visual_mode": "supportive",
+          "motion_expectation": "none"
+        },
+        "design_tokens_profile": {
+          "profile_id": "rcv1-mutation-cta",
+          "whitespace_bias": 0.56,
+          "spacing_scale": {
+            "section_gap": 0.28,
+            "content_gap": 0.2,
+            "element_gap": 0.12,
+            "rhythm_step": 0.08
+          },
+          "typography_hierarchy": {
+            "heading_scale": 1,
+            "support_scale": 0.84,
+            "micro_scale": 0.68,
+            "line_height": 1.34
+          },
+          "safe_zones": {
+            "horizontal_buffer_ratio": 0.08,
+            "vertical_buffer_ratio": 0.09
+          },
+          "contrast_policy": {
+            "minimum_ratio": 4.5,
+            "heading_boost_ratio": 7,
+            "body_ratio": 4.8
+          },
+          "hierarchy_weights": {
+            "heading": 0.48,
+            "support": 0.34,
+            "micro": 0.18
+          },
+          "container_padding_rules": {
+            "compact": 0.06,
+            "normal": 0.09,
+            "generous": 0.11
+          },
+          "emphasis_color_policy": {
+            "primary_alpha": 0.82,
+            "support_alpha": 0.6,
+            "cta_alpha": 0.72
+          }
+        }
+      },
+      "expected_finding_codes": ["cta_pressure_too_high"]
+    },
+    {
+      "case_id": "mutation-commercial-mismatch",
+      "mutation_category": "commercial_mismatch",
+      "input": {
+        "asset_type": "carousel",
+        "campaign_id": "cmp-baby-sleep-trust",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "backlog_item_id": "bl-baby-sleep-008",
+        "brand_identity_id": "bi-baby-sleep-trust",
+        "content_policy_id": "policy-baby-trust",
+        "journey_stage": "Monetization",
+        "slides": [
+          {
+            "slide_index": 1,
+            "content_archetype": "hook_headline",
+            "headline": "Commercial mismatch probe",
+            "body": "This lane uses high CTA pressure and visual pressure.",
+            "cta_position": "final",
+            "cta_text": "Buy"
+          },
+          {
+            "slide_index": 2,
+            "content_archetype": "insight_reframe",
+            "headline": "Pressure test",
+            "body": "Keep one lane but many prompts can drift tone too commercial.",
+            "cta_position": "inline",
+            "cta_text": "Shop"
+          },
+          {
+            "slide_index": 3,
+            "content_archetype": "example_scenario",
+            "headline": "Still pushing",
+            "body": "Repeat prompts intentionally to lower pressure quality.",
+            "cta_position": "top",
+            "cta_text": "Enroll"
+          },
+          {
+            "slide_index": 4,
+            "content_archetype": "cta_next_step",
+            "headline": "Commercial mismatch",
+            "body": "This should trigger pressure drift in scoring.",
+            "cta_position": "final",
+            "cta_text": "Act"
+          }
+        ],
+        "cta_policy": "direct",
+        "visual_direction": "commercial pressure",
+        "format_constraints": {
+          "aspect_ratio": "4:5",
+          "safe_margins": {
+            "top": 0.08,
+            "right": 0.06,
+            "bottom": 0.08,
+            "left": 0.06
+          },
+          "max_word_per_line": 8,
+          "max_lines_per_slide": 6,
+          "min_slide_count": 3,
+          "max_slide_count": 10
+        },
+        "visual_state": {
+          "visual_intensity": 0.6,
+          "density_profile": 0.58,
+          "emotional_temperature": 0.6,
+          "cognitive_load_target": 5,
+          "trust_visual_mode": "directive",
+          "motion_expectation": "subtle"
+        },
+        "design_tokens_profile": {
+          "profile_id": "rcv1-mutation-commercial",
+          "whitespace_bias": 0.45,
+          "spacing_scale": {
+            "section_gap": 0.24,
+            "content_gap": 0.19,
+            "element_gap": 0.1,
+            "rhythm_step": 0.08
+          },
+          "typography_hierarchy": {
+            "heading_scale": 1,
+            "support_scale": 0.84,
+            "micro_scale": 0.68,
+            "line_height": 1.34
+          },
+          "safe_zones": {
+            "horizontal_buffer_ratio": 0.08,
+            "vertical_buffer_ratio": 0.09
+          },
+          "contrast_policy": {
+            "minimum_ratio": 4.5,
+            "heading_boost_ratio": 7,
+            "body_ratio": 4.8
+          },
+          "hierarchy_weights": {
+            "heading": 0.5,
+            "support": 0.32,
+            "micro": 0.18
+          },
+          "container_padding_rules": {
+            "compact": 0.06,
+            "normal": 0.09,
+            "generous": 0.11
+          },
+          "emphasis_color_policy": {
+            "primary_alpha": 0.82,
+            "support_alpha": 0.6,
+            "cta_alpha": 0.72
+          }
+        }
+      },
+      "expected_finding_codes": ["cta_pressure_too_high"]
+    },
+    {
+      "case_id": "mutation-whitespace-failure",
+      "mutation_category": "whitespace_failure",
+      "input": {
+        "asset_type": "carousel",
+        "campaign_id": "cmp-baby-sleep-trust-proof",
+        "campaign_theme_id": "theme-baby-trust-proof",
+        "backlog_item_id": "bl-baby-sleep-008",
+        "brand_identity_id": "bi-baby-sleep-trust",
+        "content_policy_id": "policy-baby-trust",
+        "journey_stage": "Trust",
+        "slides": [
+          {
+            "slide_index": 1,
+            "content_archetype": "hook_headline",
+            "headline": "Whitespace failure",
+            "body": "Push safe-zone mismatch to assert clipping failure."
+          },
+          {
+            "slide_index": 2,
+            "content_archetype": "insight_reframe",
+            "headline": "Unsafe clipping expected",
+            "body": "Keep safe-zone mismatch above failure threshold.",
+            "cta_position": "final",
+            "cta_text": "SAVE"
+          }
+        ],
+        "cta_policy": "save",
+        "visual_direction": "whitespace mismatch",
+        "format_constraints": {
+          "aspect_ratio": "4:5",
+          "safe_margins": {
+            "top": 0.08,
+            "right": 0.06,
+            "bottom": 0.08,
+            "left": 0.06
+          },
+          "max_word_per_line": 8,
+          "max_lines_per_slide": 6,
+          "min_slide_count": 3,
+          "max_slide_count": 8
+        },
+        "visual_state": {
+          "visual_intensity": 0.36,
+          "density_profile": 0.44,
+          "emotional_temperature": 0.52,
+          "cognitive_load_target": 5,
+          "trust_visual_mode": "neutral",
+          "motion_expectation": "none"
+        },
+        "design_tokens_profile": {
+          "profile_id": "rcv1-mutation-whitespace",
+          "whitespace_bias": 0.56,
+          "spacing_scale": {
+            "section_gap": 0.26,
+            "content_gap": 0.2,
+            "element_gap": 0.12,
+            "rhythm_step": 0.08
+          },
+          "typography_hierarchy": {
+            "heading_scale": 1,
+            "support_scale": 0.84,
+            "micro_scale": 0.68,
+            "line_height": 1.34
+          },
+          "safe_zones": {
+            "horizontal_buffer_ratio": 0.45,
+            "vertical_buffer_ratio": 0.45
+          },
+          "contrast_policy": {
+            "minimum_ratio": 4.5,
+            "heading_boost_ratio": 7,
+            "body_ratio": 4.8
+          },
+          "hierarchy_weights": {
+            "heading": 0.48,
+            "support": 0.34,
+            "micro": 0.18
+          },
+          "container_padding_rules": {
+            "compact": 0.06,
+            "normal": 0.09,
+            "generous": 0.11
+          },
+          "emphasis_color_policy": {
+            "primary_alpha": 0.82,
+            "support_alpha": 0.6,
+            "cta_alpha": 0.72
+          }
+        }
+      },
+      "expected_finding_codes": ["unsafe_clipping"]
+    },
+    {
+      "case_id": "mutation-contrast-failure",
+      "mutation_category": "contrast_failure",
+      "input": {
+        "asset_type": "carousel",
+        "campaign_id": "cmp-baby-sleep-relief",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "backlog_item_id": "bl-baby-sleep-004",
+        "brand_identity_id": "bi-baby-sleep-relief",
+        "content_policy_id": "policy-baby-relief",
+        "journey_stage": "Relief",
+        "slides": [
+          {
+            "slide_index": 1,
+            "content_archetype": "hook_headline",
+            "headline": "Contrast failure case",
+            "body": "Contrast is intentionally low in token policy."
+          },
+          {
+            "slide_index": 2,
+            "content_archetype": "comparison_before_after",
+            "headline": "Low contrast expected",
+            "body": "This should trip the contrast finding deterministically."
+          }
+        ],
+        "cta_policy": "save",
+        "visual_direction": "contrast stress",
+        "format_constraints": {
+          "aspect_ratio": "4:5",
+          "safe_margins": {
+            "top": 0.08,
+            "right": 0.06,
+            "bottom": 0.08,
+            "left": 0.06
+          },
+          "max_word_per_line": 8,
+          "max_lines_per_slide": 6,
+          "min_slide_count": 3,
+          "max_slide_count": 8
+        },
+        "visual_state": {
+          "visual_intensity": 0.44,
+          "density_profile": 0.46,
+          "emotional_temperature": 0.52,
+          "cognitive_load_target": 5,
+          "trust_visual_mode": "supportive",
+          "motion_expectation": "none"
+        },
+        "design_tokens_profile": {
+          "profile_id": "rcv1-mutation-contrast",
+          "whitespace_bias": 0.56,
+          "spacing_scale": {
+            "section_gap": 0.26,
+            "content_gap": 0.2,
+            "element_gap": 0.12,
+            "rhythm_step": 0.08
+          },
+          "typography_hierarchy": {
+            "heading_scale": 1,
+            "support_scale": 0.84,
+            "micro_scale": 0.68,
+            "line_height": 1.34
+          },
+          "safe_zones": {
+            "horizontal_buffer_ratio": 0.08,
+            "vertical_buffer_ratio": 0.09
+          },
+          "contrast_policy": {
+            "minimum_ratio": 1.2,
+            "heading_boost_ratio": 1.4,
+            "body_ratio": 1.1
+          },
+          "hierarchy_weights": {
+            "heading": 0.48,
+            "support": 0.34,
+            "micro": 0.18
+          },
+          "container_padding_rules": {
+            "compact": 0.06,
+            "normal": 0.09,
+            "generous": 0.11
+          },
+          "emphasis_color_policy": {
+            "primary_alpha": 0.82,
+            "support_alpha": 0.6,
+            "cta_alpha": 0.72
+          }
+        }
+      },
+      "expected_finding_codes": ["contrast_failure"]
+    },
+    {
+      "case_id": "mutation-invalid-archetype-mapping",
+      "mutation_category": "invalid_archetype_mapping",
+      "input": {
+        "asset_type": "carousel",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "backlog_item_id": "bl-baby-sleep-004",
+        "brand_identity_id": "bi-baby-sleep-relief",
+        "content_policy_id": "policy-baby-relief",
+        "journey_stage": "Relief",
+        "slides": [
+          {
+            "slide_index": 1,
+            "content_archetype": "hook_headline",
+            "headline": "Invalid mapping safety",
+            "body": "System should ignore unknown archetypes in edits."
+          },
+          {
+            "slide_index": 2,
+            "content_archetype": "pain_problem",
+            "headline": "Archetype invalid mapping",
+            "body": "Edit operations may carry unsupported values."
+          },
+          {
+            "slide_index": 3,
+            "content_archetype": "cta_next_step",
+            "headline": "Still valid output",
+            "body": "Execution must stay deterministic with safe output.",
+            "cta_position": "final",
+            "cta_text": "SAFE"
+          }
+        ],
+        "cta_policy": "save",
+        "visual_direction": "invalid archetype",
+        "format_constraints": {
+          "aspect_ratio": "4:5",
+          "safe_margins": {
+            "top": 0.08,
+            "right": 0.06,
+            "bottom": 0.08,
+            "left": 0.06
+          },
+          "max_word_per_line": 8,
+          "max_lines_per_slide": 6,
+          "min_slide_count": 3,
+          "max_slide_count": 8
+        },
+        "visual_state": {
+          "visual_intensity": 0.42,
+          "density_profile": 0.46,
+          "emotional_temperature": 0.52,
+          "cognitive_load_target": 5,
+          "trust_visual_mode": "supportive",
+          "motion_expectation": "none"
+        },
+        "design_tokens_profile": {
+          "profile_id": "rcv1-mutation-archetype",
+          "whitespace_bias": 0.56,
+          "spacing_scale": {
+            "section_gap": 0.26,
+            "content_gap": 0.2,
+            "element_gap": 0.12,
+            "rhythm_step": 0.08
+          },
+          "typography_hierarchy": {
+            "heading_scale": 1,
+            "support_scale": 0.84,
+            "micro_scale": 0.68,
+            "line_height": 1.34
+          },
+          "safe_zones": {
+            "horizontal_buffer_ratio": 0.08,
+            "vertical_buffer_ratio": 0.09
+          },
+          "contrast_policy": {
+            "minimum_ratio": 4.5,
+            "heading_boost_ratio": 7,
+            "body_ratio": 4.8
+          },
+          "hierarchy_weights": {
+            "heading": 0.48,
+            "support": 0.34,
+            "micro": 0.18
+          },
+          "container_padding_rules": {
+            "compact": 0.06,
+            "normal": 0.09,
+            "generous": 0.11
+          },
+          "emphasis_color_policy": {
+            "primary_alpha": 0.82,
+            "support_alpha": 0.6,
+            "cta_alpha": 0.72
+          }
+        }
+      },
+      "edits": {
+        "edits": [
+          {
+            "op": "change_layout_variant",
+            "slide_index": 2,
+            "layout_archetype_id": "invalid_archetype"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "mutation-invalid-token-profile",
+      "mutation_category": "invalid_token_profile",
+      "input": {
+        "asset_type": "carousel",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "backlog_item_id": "bl-baby-sleep-004",
+        "brand_identity_id": "bi-baby-sleep-relief",
+        "content_policy_id": "policy-baby-relief",
+        "journey_stage": "Relief",
+        "slides": [
+          {
+            "slide_index": 1,
+            "content_archetype": "hook_headline",
+            "headline": "Invalid profile should fail",
+            "body": "Token profile intentionally breaks schema limits."
+          }
+        ],
+        "cta_policy": "save",
+        "visual_direction": "invalid token profile",
+        "format_constraints": {
+          "aspect_ratio": "4:5",
+          "safe_margins": {
+            "top": 0.08,
+            "right": 0.06,
+            "bottom": 0.08,
+            "left": 0.06
+          },
+          "max_word_per_line": 8,
+          "max_lines_per_slide": 6,
+          "min_slide_count": 3,
+          "max_slide_count": 8
+        },
+        "visual_state": {
+          "visual_intensity": 0.42,
+          "density_profile": 0.46,
+          "emotional_temperature": 0.52,
+          "cognitive_load_target": 5,
+          "trust_visual_mode": "supportive",
+          "motion_expectation": "none"
+        },
+        "design_tokens_profile": {
+          "profile_id": "rcv1-mutation-invalid-token",
+          "whitespace_bias": 1.2,
+          "spacing_scale": {
+            "section_gap": 0.28,
+            "content_gap": 0.2,
+            "element_gap": 0.12,
+            "rhythm_step": 0.08
+          },
+          "typography_hierarchy": {
+            "heading_scale": 1,
+            "support_scale": 0.84,
+            "micro_scale": 0.68,
+            "line_height": 1.34
+          },
+          "safe_zones": {
+            "horizontal_buffer_ratio": 0.08,
+            "vertical_buffer_ratio": 0.09
+          },
+          "contrast_policy": {
+            "minimum_ratio": 4.5,
+            "heading_boost_ratio": 7,
+            "body_ratio": 4.8
+          },
+          "hierarchy_weights": {
+            "heading": 0.48,
+            "support": 0.34,
+            "micro": 0.18
+          },
+          "container_padding_rules": {
+            "compact": 0.06,
+            "normal": 0.09,
+            "generous": 0.11
+          },
+          "emphasis_color_policy": {
+            "primary_alpha": 0.82,
+            "support_alpha": 0.6,
+            "cta_alpha": 0.72
+          }
+        }
+      },
+      "expected_failure_fragment": "whitespace_bias"
+    },
+    {
+      "case_id": "mutation-invalid-visual-state",
+      "mutation_category": "invalid_visual_state",
+      "input": {
+        "asset_type": "carousel",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "backlog_item_id": "bl-baby-sleep-004",
+        "brand_identity_id": "bi-baby-sleep-relief",
+        "content_policy_id": "policy-baby-relief",
+        "journey_stage": "Relief",
+        "slides": [
+          {
+            "slide_index": 1,
+            "content_archetype": "hook_headline",
+            "headline": "Invalid visual should fail",
+            "body": "Visual state intentionally breaches numeric constraints."
+          },
+          {
+            "slide_index": 2,
+            "content_archetype": "insight_reframe",
+            "headline": "This should parse fail",
+            "body": "The mutation case should be rejected before generation.",
+            "cta_position": "final",
+            "cta_text": "SAVE"
+          },
+          {
+            "slide_index": 3,
+            "content_archetype": "cta_next_step",
+            "headline": "Validation path",
+            "body": "No valid render should happen for invalid visual.",
+            "cta_position": "inline",
+            "cta_text": "NEXT"
+          }
+        ],
+        "cta_policy": "save",
+        "visual_direction": "invalid visual state",
+        "format_constraints": {
+          "aspect_ratio": "4:5",
+          "safe_margins": {
+            "top": 0.08,
+            "right": 0.06,
+            "bottom": 0.08,
+            "left": 0.06
+          },
+          "max_word_per_line": 8,
+          "max_lines_per_slide": 6,
+          "min_slide_count": 3,
+          "max_slide_count": 8
+        },
+        "visual_state": {
+          "visual_intensity": 1.2,
+          "density_profile": 0.46,
+          "emotional_temperature": 0.52,
+          "cognitive_load_target": 5,
+          "trust_visual_mode": "supportive",
+          "motion_expectation": "none"
+        },
+        "design_tokens_profile": {
+          "profile_id": "rcv1-mutation-invalid-visual",
+          "whitespace_bias": 0.56,
+          "spacing_scale": {
+            "section_gap": 0.26,
+            "content_gap": 0.2,
+            "element_gap": 0.12,
+            "rhythm_step": 0.08
+          },
+          "typography_hierarchy": {
+            "heading_scale": 1,
+            "support_scale": 0.84,
+            "micro_scale": 0.68,
+            "line_height": 1.34
+          },
+          "safe_zones": {
+            "horizontal_buffer_ratio": 0.08,
+            "vertical_buffer_ratio": 0.09
+          },
+          "contrast_policy": {
+            "minimum_ratio": 4.5,
+            "heading_boost_ratio": 7,
+            "body_ratio": 4.8
+          },
+          "hierarchy_weights": {
+            "heading": 0.48,
+            "support": 0.34,
+            "micro": 0.18
+          },
+          "container_padding_rules": {
+            "compact": 0.06,
+            "normal": 0.09,
+            "generous": 0.11
+          },
+          "emphasis_color_policy": {
+            "primary_alpha": 0.82,
+            "support_alpha": 0.6,
+            "cta_alpha": 0.72
+          }
+        }
+      },
+      "expected_failure_fragment": "visual_intensity"
+    },
+    {
+      "case_id": "mutation-replay-reconstruction-mismatch",
+      "mutation_category": "replay_reconstruction_mismatch",
+      "input": {
+        "asset_type": "carousel",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "backlog_item_id": "bl-baby-sleep-004",
+        "brand_identity_id": "bi-baby-sleep-relief",
+        "content_policy_id": "policy-baby-relief",
+        "journey_stage": "Trust",
+        "slides": [
+          {
+            "slide_index": 1,
+            "content_archetype": "hook_headline",
+            "headline": "Replay reconstruction mismatch",
+            "body": "This input is used to verify reconstruction drift is detected."
+          },
+          {
+            "slide_index": 2,
+            "content_archetype": "pain_problem",
+            "headline": "Reconstruction mismatch check",
+            "body": "One variation in visual state should change generated output."
+          },
+          {
+            "slide_index": 3,
+            "content_archetype": "quote_affirmation",
+            "headline": "Drift probe",
+            "body": "The mutation check must show mismatch when reconstruct input is perturbed."
+          }
+        ],
+        "cta_policy": "story",
+        "visual_direction": "replay probe",
+        "format_constraints": {
+          "aspect_ratio": "4:5",
+          "safe_margins": {
+            "top": 0.08,
+            "right": 0.06,
+            "bottom": 0.08,
+            "left": 0.06
+          },
+          "max_word_per_line": 8,
+          "max_lines_per_slide": 6,
+          "min_slide_count": 3,
+          "max_slide_count": 8
+        },
+        "visual_state": {
+          "visual_intensity": 0.35,
+          "density_profile": 0.42,
+          "emotional_temperature": 0.52,
+          "cognitive_load_target": 5,
+          "trust_visual_mode": "neutral",
+          "motion_expectation": "none"
+        },
+        "design_tokens_profile": {
+          "profile_id": "rcv1-mutation-replay",
+          "whitespace_bias": 0.56,
+          "spacing_scale": {
+            "section_gap": 0.26,
+            "content_gap": 0.2,
+            "element_gap": 0.12,
+            "rhythm_step": 0.08
+          },
+          "typography_hierarchy": {
+            "heading_scale": 1,
+            "support_scale": 0.84,
+            "micro_scale": 0.68,
+            "line_height": 1.34
+          },
+          "safe_zones": {
+            "horizontal_buffer_ratio": 0.08,
+            "vertical_buffer_ratio": 0.09
+          },
+          "contrast_policy": {
+            "minimum_ratio": 4.5,
+            "heading_boost_ratio": 7,
+            "body_ratio": 4.8
+          },
+          "hierarchy_weights": {
+            "heading": 0.48,
+            "support": 0.34,
+            "micro": 0.18
+          },
+          "container_padding_rules": {
+            "compact": 0.06,
+            "normal": 0.09,
+            "generous": 0.11
+          },
+          "emphasis_color_policy": {
+            "primary_alpha": 0.82,
+            "support_alpha": 0.6,
+            "cta_alpha": 0.72
+          }
+        }
+      }
+    },
+    {
+      "case_id": "mutation-non-deterministic-edit-sequence",
+      "mutation_category": "non_deterministic_edit_sequence",
+      "input": {
+        "asset_type": "carousel",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "backlog_item_id": "bl-baby-sleep-004",
+        "brand_identity_id": "bi-baby-sleep-relief",
+        "content_policy_id": "policy-baby-relief",
+        "journey_stage": "Lead Capture",
+        "slides": [
+          {
+            "slide_index": 1,
+            "content_archetype": "hook_headline",
+            "headline": "Edit sequence should be deterministic",
+            "body": "The same bounded edits in swapped order should converge."
+          },
+          {
+            "slide_index": 2,
+            "content_archetype": "pain_problem",
+            "headline": "Order-independent validation",
+            "body": "Reordering non-commutative operations should still be stable."
+          },
+          {
+            "slide_index": 3,
+            "content_archetype": "checklist_steps",
+            "headline": "No drift expected",
+            "body": "Deterministic replay layer should hold.",
+            "cta_position": "final",
+            "cta_text": "Save"
+          },
+          {
+            "slide_index": 4,
+            "content_archetype": "cta_next_step",
+            "headline": "Final proof point",
+            "body": "If outputs drift, mutation is flagged.",
+            "cta_position": "inline",
+            "cta_text": "Next"
+          }
+        ],
+        "cta_policy": "save",
+        "visual_direction": "non deterministic edit order",
+        "format_constraints": {
+          "aspect_ratio": "4:5",
+          "safe_margins": {
+            "top": 0.08,
+            "right": 0.06,
+            "bottom": 0.08,
+            "left": 0.06
+          },
+          "max_word_per_line": 8,
+          "max_lines_per_slide": 6,
+          "min_slide_count": 3,
+          "max_slide_count": 8
+        },
+        "visual_state": {
+          "visual_intensity": 0.45,
+          "density_profile": 0.5,
+          "emotional_temperature": 0.54,
+          "cognitive_load_target": 5,
+          "trust_visual_mode": "supportive",
+          "motion_expectation": "none"
+        },
+        "design_tokens_profile": {
+          "profile_id": "rcv1-mutation-sequence",
+          "whitespace_bias": 0.57,
+          "spacing_scale": {
+            "section_gap": 0.26,
+            "content_gap": 0.2,
+            "element_gap": 0.12,
+            "rhythm_step": 0.08
+          },
+          "typography_hierarchy": {
+            "heading_scale": 1,
+            "support_scale": 0.84,
+            "micro_scale": 0.68,
+            "line_height": 1.34
+          },
+          "safe_zones": {
+            "horizontal_buffer_ratio": 0.08,
+            "vertical_buffer_ratio": 0.09
+          },
+          "contrast_policy": {
+            "minimum_ratio": 4.5,
+            "heading_boost_ratio": 7,
+            "body_ratio": 4.8
+          },
+          "hierarchy_weights": {
+            "heading": 0.48,
+            "support": 0.34,
+            "micro": 0.18
+          },
+          "container_padding_rules": {
+            "compact": 0.06,
+            "normal": 0.09,
+            "generous": 0.11
+          },
+          "emphasis_color_policy": {
+            "primary_alpha": 0.82,
+            "support_alpha": 0.6,
+            "cta_alpha": 0.72
+          }
+        }
+      },
+      "edits": {
+        "edits": [
+          {
+            "op": "adjust_text_hierarchy",
+            "slide_index": 1,
+            "role": "headline",
+            "delta": 1
+          },
+          {
+            "op": "reflow_content",
+            "slide_index": 3,
+            "line_limit_override": 5
+          },
+          {
+            "op": "adjust_spacing_density",
+            "density_delta": 1
+          }
+        ]
+      },
+      "alternate_edits": {
+        "edits": [
+          {
+            "op": "adjust_spacing_density",
+            "density_delta": 1
+          },
+          {
+            "op": "reflow_content",
+            "slide_index": 3,
+            "line_limit_override": 5
+          },
+          {
+            "op": "adjust_text_hierarchy",
+            "slide_index": 1,
+            "role": "headline",
+            "delta": 1
+          }
+        ]
+      }
+    }
+  ]
+}

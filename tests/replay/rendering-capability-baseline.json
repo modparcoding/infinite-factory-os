@@ -1,0 +1,225 @@
+{
+  "fixture_id": "RC-V1-BASE-001",
+  "scenario": "Deterministic baseline rendering contracts",
+  "cases": [
+    {
+      "case_id": "baseline-relief-trust-safe",
+      "input": {
+        "asset_type": "carousel",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-relief-utility",
+        "backlog_item_id": "bl-baby-sleep-004",
+        "brand_identity_id": "bi-baby-sleep-trust",
+        "content_policy_id": "policy-baby-relief",
+        "journey_stage": "Relief",
+        "slides": [
+          {
+            "slide_index": 1,
+            "content_archetype": "hook_headline",
+            "headline": "A calmer night starts with one cue",
+            "body": "Move to a dim room, lower sound, and repeat one calm phrase.",
+            "cta_text": "Save this cue",
+            "cta_position": "final",
+            "tone_tags": ["calm", "practical", "start"]
+          },
+          {
+            "slide_index": 2,
+            "content_archetype": "pain_problem",
+            "headline": "When nights feel loud",
+            "body": "Your routine becomes harder when noise and brightness pile up in small moments.",
+            "tone_tags": ["pain", "support", "practical"]
+          },
+          {
+            "slide_index": 3,
+            "content_archetype": "checklist_steps",
+            "headline": "Small reset sequence",
+            "body": "Dim lights, one cue, one cue repeat, then pause.",
+            "cta_position": "none",
+            "tone_tags": ["progress", "sequence", "easy"]
+          },
+          {
+            "slide_index": 4,
+            "content_archetype": "cta_next_step",
+            "headline": "Tonight, keep this only this",
+            "body": "Do one step now and repeat tomorrow with smaller pressure.",
+            "cta_text": "Comment READY",
+            "cta_position": "inline",
+            "tone_tags": ["close", "next", "steady"]
+          }
+        ],
+        "cta_policy": "save",
+        "visual_direction": "clean checklist with generous white space",
+        "format_constraints": {
+          "aspect_ratio": "4:5",
+          "safe_margins": {
+            "top": 0.08,
+            "right": 0.06,
+            "bottom": 0.08,
+            "left": 0.06
+          },
+          "max_word_per_line": 8,
+          "max_lines_per_slide": 6,
+          "min_slide_count": 3,
+          "max_slide_count": 8
+        },
+        "visual_state": {
+          "visual_intensity": 0.36,
+          "density_profile": 0.42,
+          "emotional_temperature": 0.53,
+          "cognitive_load_target": 5,
+          "trust_visual_mode": "supportive",
+          "motion_expectation": "none"
+        },
+        "design_tokens_profile": {
+          "profile_id": "rcv1-baseline-a",
+          "whitespace_bias": 0.58,
+          "spacing_scale": {
+            "section_gap": 0.28,
+            "content_gap": 0.2,
+            "element_gap": 0.12,
+            "rhythm_step": 0.08
+          },
+          "typography_hierarchy": {
+            "heading_scale": 1,
+            "support_scale": 0.84,
+            "micro_scale": 0.68,
+            "line_height": 1.34
+          },
+          "safe_zones": {
+            "horizontal_buffer_ratio": 0.08,
+            "vertical_buffer_ratio": 0.09
+          },
+          "contrast_policy": {
+            "minimum_ratio": 4.8,
+            "heading_boost_ratio": 7,
+            "body_ratio": 4.8
+          },
+          "hierarchy_weights": {
+            "heading": 0.47,
+            "support": 0.35,
+            "micro": 0.18
+          },
+          "container_padding_rules": {
+            "compact": 0.06,
+            "normal": 0.09,
+            "generous": 0.12
+          },
+          "emphasis_color_policy": {
+            "primary_alpha": 0.82,
+            "support_alpha": 0.6,
+            "cta_alpha": 0.72
+          }
+        }
+      }
+    },
+    {
+      "case_id": "baseline-trust-clean",
+      "input": {
+        "asset_type": "carousel",
+        "campaign_id": "cmp-baby-sleep-tiny-wins",
+        "campaign_theme_id": "theme-baby-trust-proof",
+        "backlog_item_id": "bl-baby-sleep-008",
+        "brand_identity_id": "bi-baby-sleep-trust",
+        "content_policy_id": "policy-baby-trust",
+        "journey_stage": "Trust",
+        "slides": [
+          {
+            "slide_index": 1,
+            "content_archetype": "hook_headline",
+            "headline": "Trust grows when the rhythm stays steady",
+            "body": "Use one cue for one week before adding anything new.",
+            "cta_text": "Save this for later",
+            "cta_position": "final",
+            "tone_tags": ["trust", "steady", "calm"]
+          },
+          {
+            "slide_index": 2,
+            "content_archetype": "comparison_before_after",
+            "headline": "Before this, after this",
+            "body": "From repeated panic to clearer night loops with one consistent approach.",
+            "tone_tags": ["compare", "continuity"]
+          },
+          {
+            "slide_index": 3,
+            "content_archetype": "example_scenario",
+            "headline": "Tonight, try this",
+            "body": "Keep the room predictable and note only what shifted once each night.",
+            "tone_tags": ["example", "habit", "small"]
+          },
+          {
+            "slide_index": 4,
+            "content_archetype": "cta_next_step",
+            "headline": "Next step with care",
+            "body": "If this felt steady, book one follow-up habit for tomorrow.",
+            "cta_text": "Comment with your first note",
+            "cta_position": "inline",
+            "tone_tags": ["next", "guide", "care"]
+          }
+        ],
+        "cta_policy": "follow",
+        "visual_direction": "low-noise proof layout with calm spacing",
+        "format_constraints": {
+          "aspect_ratio": "4:5",
+          "safe_margins": {
+            "top": 0.09,
+            "right": 0.07,
+            "bottom": 0.09,
+            "left": 0.07
+          },
+          "max_word_per_line": 8,
+          "max_lines_per_slide": 6,
+          "min_slide_count": 3,
+          "max_slide_count": 8
+        },
+        "visual_state": {
+          "visual_intensity": 0.48,
+          "density_profile": 0.52,
+          "emotional_temperature": 0.56,
+          "cognitive_load_target": 5,
+          "trust_visual_mode": "neutral",
+          "motion_expectation": "none"
+        },
+        "design_tokens_profile": {
+          "profile_id": "rcv1-baseline-b",
+          "whitespace_bias": 0.56,
+          "spacing_scale": {
+            "section_gap": 0.24,
+            "content_gap": 0.19,
+            "element_gap": 0.1,
+            "rhythm_step": 0.08
+          },
+          "typography_hierarchy": {
+            "heading_scale": 1,
+            "support_scale": 0.84,
+            "micro_scale": 0.67,
+            "line_height": 1.34
+          },
+          "safe_zones": {
+            "horizontal_buffer_ratio": 0.09,
+            "vertical_buffer_ratio": 0.1
+          },
+          "contrast_policy": {
+            "minimum_ratio": 5,
+            "heading_boost_ratio": 7.2,
+            "body_ratio": 5
+          },
+          "hierarchy_weights": {
+            "heading": 0.49,
+            "support": 0.34,
+            "micro": 0.17
+          },
+          "container_padding_rules": {
+            "compact": 0.05,
+            "normal": 0.08,
+            "generous": 0.11
+          },
+          "emphasis_color_policy": {
+            "primary_alpha": 0.82,
+            "support_alpha": 0.58,
+            "cta_alpha": 0.72
+          }
+        }
+      }
+    }
+  ]
+}
