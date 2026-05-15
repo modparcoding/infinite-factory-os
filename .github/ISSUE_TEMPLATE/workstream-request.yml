@@ -1,0 +1,50 @@
+name: Workstream Request
+description: Request a bounded workstream assignment for an agent.
+title: "[Workstream] "
+labels:
+  - workstream
+  - needs-triage
+body:
+  - type: input
+    id: workstream_id
+    attributes:
+      label: Workstream ID
+      description: Canonical ID for the workstream.
+      placeholder: WS-XXX-###
+    validations:
+      required: false
+  - type: input
+    id: owner_agent
+    attributes:
+      label: Owner agent
+      description: Orchestrator-assigned specialist.
+      placeholder: provisioning-agent
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: Concrete operational goal for this workstream.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance criteria
+      description: Explicit, testable criteria and expected fixtures/results.
+    validations:
+      required: true
+  - type: input
+    id: dependency_ids
+    attributes:
+      label: Dependencies
+      description: Comma-separated list of required upstream workstream IDs.
+    validations:
+      required: false
+  - type: checkboxes
+    id: human_review
+    attributes:
+      label: Human review required
+      options:
+        - label: requires_human_review
